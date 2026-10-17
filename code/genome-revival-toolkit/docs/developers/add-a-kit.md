@@ -379,7 +379,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Structure check failed.' }
 if ($LASTEXITCODE -ne 0) { throw 'Schema check failed.' }
 Push-Location (Join-Path $Project '../..')
 try {
-    & $Python -X utf8 -B tools/spec_lint.py
+    & $Python -X utf8 -B (Join-Path $Project 'tools/spec_lint.py')
     if ($LASTEXITCODE -ne 0) { throw 'Specification lint failed.' }
 } finally { Pop-Location }
 & $Python -X utf8 -B -m unittest tests.unit.test_kit_template -v
