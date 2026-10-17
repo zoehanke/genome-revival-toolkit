@@ -1,0 +1,3 @@
+id,group,colonies,unit,plated_volume_uL,role
+o1,fusion,9,colony,100,fusion
+o2,control,31,colony,100,inactivated_donor_control

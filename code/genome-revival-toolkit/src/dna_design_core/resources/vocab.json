@@ -1,0 +1,326 @@
+{
+  "moment": [
+    {
+      "value": "admission",
+      "description": "Plan admission before execution."
+    },
+    {
+      "value": "step",
+      "description": "Self reports and host expectations for one step."
+    },
+    {
+      "value": "final",
+      "description": "Checks used for judgement, sealing or verification."
+    }
+  ],
+  "outcome": [
+    {
+      "value": "PASS",
+      "description": "Checked and satisfied within the stated scope."
+    },
+    {
+      "value": "FAIL",
+      "description": "Checked and contradicted within the stated scope."
+    },
+    {
+      "value": "UNKNOWN",
+      "description": "Not determined because evidence or execution was unavailable."
+    },
+    {
+      "value": "NOT_APPLICABLE",
+      "description": "Inapplicable for a stated reason backed by evidence."
+    }
+  ],
+  "scope": [
+    {
+      "value": "content_model",
+      "description": "Computational content and domain consistency."
+    },
+    {
+      "value": "preparation_model",
+      "description": "Preparation feasibility within the stated model."
+    },
+    {
+      "value": "file",
+      "description": "Faithfulness and integrity of files and records."
+    },
+    {
+      "value": "user_goal",
+      "description": "Coverage of the declared computable requirements."
+    }
+  ],
+  "issuer": [
+    {
+      "value": "check_capability",
+      "description": "A registered CHECK capability."
+    },
+    {
+      "value": "tool_self_report",
+      "description": "A capability reporting on its own output."
+    },
+    {
+      "value": "host_expectation",
+      "description": "A host-provided expectation evaluated by the runtime."
+    }
+  ],
+  "role": [
+    {
+      "value": "ACTION",
+      "description": "A capability that performs a planned action."
+    },
+    {
+      "value": "CHECK",
+      "description": "A read-only checking capability."
+    }
+  ],
+  "output_role": [
+    {
+      "value": "construct",
+      "description": "A construct requiring preparation-model checks."
+    },
+    {
+      "value": "component",
+      "description": "A component with material checks when applicable."
+    },
+    {
+      "value": "primer_set",
+      "description": "Primers requiring quality, order and reaction checks."
+    },
+    {
+      "value": "analysis",
+      "description": "An analytical output; domain checks come from declarations."
+    }
+  ],
+  "run_state": [
+    {
+      "value": "PLANNED",
+      "description": "An admitted plan has not begun execution."
+    },
+    {
+      "value": "RUNNING",
+      "description": "The run is executing or has pending work."
+    },
+    {
+      "value": "HALTED",
+      "description": "A failed step awaits revision or abandonment."
+    },
+    {
+      "value": "COMPLETED",
+      "description": "No pending steps remain and failed steps have replacements."
+    },
+    {
+      "value": "ABANDONED",
+      "description": "The run was abandoned and is terminal."
+    }
+  ],
+  "step_state": [
+    {
+      "value": "PENDING",
+      "description": "No execution event exists for the step."
+    },
+    {
+      "value": "RUNNING",
+      "description": "The step has started without a terminal event."
+    },
+    {
+      "value": "COMPLETED",
+      "description": "Execution and required host expectations completed."
+    },
+    {
+      "value": "FAILED",
+      "description": "Execution or a host expectation failed."
+    }
+  ],
+  "effects": [
+    {
+      "value": "pure",
+      "description": "No external side effect is declared."
+    },
+    {
+      "value": "reads_files",
+      "description": "Reads declared files."
+    },
+    {
+      "value": "writes_files",
+      "description": "Writes only in the supplied work directory."
+    },
+    {
+      "value": "external_process",
+      "description": "Runs a local process through the execution context."
+    }
+  ],
+  "status": [
+    {
+      "value": "draft",
+      "description": "A rule is in draft form."
+    },
+    {
+      "value": "active",
+      "description": "A rule is in use."
+    },
+    {
+      "value": "retired",
+      "description": "A rule is no longer in use."
+    }
+  ],
+  "verification_status": [
+    {
+      "value": "unverified",
+      "description": "The source has no recorded human verification."
+    },
+    {
+      "value": "verified",
+      "description": "A human source-verification receipt is recorded."
+    }
+  ],
+  "review": [
+    {
+      "value": "none",
+      "description": "No review record exists."
+    },
+    {
+      "value": "draft",
+      "description": "Changes were requested or the record is incomplete."
+    },
+    {
+      "value": "reviewed",
+      "description": "An approval record matches the reviewed content."
+    },
+    {
+      "value": "stale",
+      "description": "The content differs from the review record."
+    }
+  ],
+  "actor": [
+    {
+      "value": "program",
+      "description": "A program-observed fact."
+    },
+    {
+      "value": "ai_host",
+      "description": "A declaration submitted by the host."
+    },
+    {
+      "value": "human",
+      "description": "An interactive human declaration."
+    },
+    {
+      "value": "unknown",
+      "description": "The information origin is unknown."
+    }
+  ],
+  "origin": [
+    {
+      "value": "plan_declared",
+      "description": "A reason supplied with a plan or revision."
+    },
+    {
+      "value": "original_statement",
+      "description": "A statement matching recorded source text."
+    },
+    {
+      "value": "organized_summary",
+      "description": "A later organized summary."
+    },
+    {
+      "value": "later_interpretation",
+      "description": "A later interpretation."
+    },
+    {
+      "value": "unknown",
+      "description": "The origin is not established."
+    }
+  ],
+  "relation_basis": [
+    {
+      "value": "hash_equal",
+      "description": "An explicit input binding has equal content hashes."
+    },
+    {
+      "value": "declared",
+      "description": "The relationship is declared rather than program-verified."
+    }
+  ],
+  "input_origin": [
+    {
+      "value": "user_file",
+      "description": "A local file supplied by the user."
+    },
+    {
+      "value": "researcher_observation",
+      "description": "An observation reported by a researcher."
+    }
+  ],
+  "source_class": [
+    {
+      "value": "literature",
+      "description": "A cited research publication."
+    },
+    {
+      "value": "official_method",
+      "description": "An official method or documentation source."
+    },
+    {
+      "value": "project_contract",
+      "description": "A declared project boundary or requirement."
+    },
+    {
+      "value": "lab_protocol",
+      "description": "A laboratory protocol or experience record."
+    },
+    {
+      "value": "database_record",
+      "description": "An identified database record."
+    }
+  ],
+  "laboratory_label": [
+    {
+      "value": "PLANNED",
+      "description": "A laboratory operation is planned."
+    },
+    {
+      "value": "NOT_PERFORMED",
+      "description": "A laboratory operation has not been performed."
+    }
+  ],
+  "error_category": [
+    {
+      "value": "INVALID_INPUT",
+      "description": "An operation was not admitted because input is invalid."
+    },
+    {
+      "value": "CAPABILITY_FAILURE",
+      "description": "A capability failed to execute its contract."
+    },
+    {
+      "value": "ENVIRONMENT",
+      "description": "A local runtime dependency or resource is unavailable."
+    },
+    {
+      "value": "POLICY",
+      "description": "An operation violates the declared policy."
+    },
+    {
+      "value": "INTEGRITY",
+      "description": "Content or history does not match its recorded identity."
+    },
+    {
+      "value": "INTERNAL",
+      "description": "An unexpected implementation failure occurred."
+    }
+  ],
+  "exit_code": [
+    {
+      "value": 0,
+      "description": "The command completed; scientific outcomes are separate."
+    },
+    {
+      "value": 1,
+      "description": "The command returned an error."
+    },
+    {
+      "value": 10,
+      "description": "Mandatory checks refused sealing; this is not an execution error."
+    }
+  ]
+}

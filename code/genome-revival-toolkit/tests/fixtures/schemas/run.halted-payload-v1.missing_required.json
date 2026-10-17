@@ -1,0 +1,11 @@
+{
+  "schema_id": "run.halted-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required reason."
+  },
+  "data": {
+    "step_id": "s1"
+  }
+}

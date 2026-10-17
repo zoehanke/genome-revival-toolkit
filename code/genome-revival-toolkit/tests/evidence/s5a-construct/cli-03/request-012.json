@@ -1,0 +1,227 @@
+{
+  "schema": "pipeline-v1",
+  "version": 1,
+  "goal_digest": "63699e4ae9b7df0c246d438002d6c5ca1681214237bb4ec38c98b65682f23dc2",
+  "steps": [
+    {
+      "step_id": "reference",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "input_reference"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the supplied synthetic linear reference."
+    },
+    {
+      "step_id": "cargo",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "input_cargo"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the actual selected cargo source."
+    },
+    {
+      "step_id": "donor_template",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "input_donor_template"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the actual complete donor template; do not create it from the model."
+    },
+    {
+      "step_id": "model",
+      "use": "construct.model_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": 100,
+        "end": 160,
+        "arm_length": 50,
+        "cargo_start": 0,
+        "cargo_end": 90
+      },
+      "why": "Compute the independent source-bound expectation before preparation."
+    },
+    {
+      "step_id": "design",
+      "use": "construct.design_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        },
+        "donor_template": {
+          "step": "donor_template",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": 100,
+        "end": 160,
+        "arm_length": 50,
+        "cargo_start": 0,
+        "cargo_end": 90,
+        "preparation_method": "pcr",
+        "primer_length": 20,
+        "donor_start": 30,
+        "donor_end": 220
+      },
+      "why": "Prepare through actual template PCR and the requested assembly method."
+    },
+    {
+      "step_id": "assay",
+      "use": "construct.design_junction_assay",
+      "inputs": {
+        "original": {
+          "step": "reference",
+          "port": "material"
+        },
+        "edited": {
+          "step": "design",
+          "port": "edited"
+        },
+        "donor": {
+          "step": "design",
+          "port": "product"
+        }
+      },
+      "params": {
+        "start": 100,
+        "end": 160,
+        "arm_length": 50,
+        "primer_length": 20
+      },
+      "why": "Test external junction primers on edited, original and residual donor DNA."
+    },
+    {
+      "step_id": "original_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "reference",
+          "port": "material"
+        }
+      },
+      "params": {
+        "name": "original.gb"
+      },
+      "why": "Export the exact original assay background."
+    },
+    {
+      "step_id": "edited_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "design",
+          "port": "edited"
+        }
+      },
+      "params": {
+        "name": "edited.gb"
+      },
+      "why": "Export the exact edited assay background."
+    },
+    {
+      "step_id": "donor_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "design",
+          "port": "product"
+        }
+      },
+      "params": {
+        "name": "donor.gb"
+      },
+      "why": "Export the actual PCR/assembly product for independent recomputation."
+    },
+    {
+      "step_id": "handoff",
+      "use": "construct.export_handoff",
+      "inputs": {
+        "original_file": {
+          "step": "original_file",
+          "port": "file"
+        },
+        "edited_file": {
+          "step": "edited_file",
+          "port": "file"
+        },
+        "assay": {
+          "step": "assay",
+          "port": "assay"
+        }
+      },
+      "params": {},
+      "why": "Bind actual reference-file hashes and junction primers into the D11 file protocol."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "donor",
+      "from": {
+        "step": "design",
+        "port": "product"
+      },
+      "target": "donor"
+    },
+    {
+      "name": "primers",
+      "from": {
+        "step": "design",
+        "port": "primers"
+      },
+      "target": "primers"
+    },
+    {
+      "name": "assay",
+      "from": {
+        "step": "assay",
+        "port": "assay"
+      },
+      "target": "assay"
+    },
+    {
+      "name": "identity_handoff",
+      "from": {
+        "step": "handoff",
+        "port": "handoff"
+      },
+      "target": "handoff"
+    }
+  ],
+  "library_ref": {
+    "name": "construct.prepare_pcr",
+    "version": "0.0.0",
+    "template_digest": "9c4b51706eaa7bdc2d901e2f3d3216a50f060f2c3b9151e68395628663aae412"
+  }
+}

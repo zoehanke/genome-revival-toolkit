@@ -1,0 +1,34 @@
+[
+  {
+    "target": "../../kits/cut-plasmid/README.md",
+    "exists": true
+  },
+  {
+    "target": "../../kits/construct/README.md",
+    "exists": true
+  },
+  {
+    "target": "../../kits/genome-identity/README.md",
+    "exists": true
+  },
+  {
+    "target": "../../kits/revival-evidence/README.md",
+    "exists": true
+  },
+  {
+    "target": "../../kits/cut-plasmid/kit.json",
+    "exists": true
+  },
+  {
+    "target": "../../kits/construct/kit.json",
+    "exists": true
+  },
+  {
+    "target": "../../kits/genome-identity/kit.json",
+    "exists": true
+  },
+  {
+    "target": "../../kits/revival-evidence/kit.json",
+    "exists": true
+  }
+]

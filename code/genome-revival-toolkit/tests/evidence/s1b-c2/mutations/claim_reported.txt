@@ -1,0 +1,18 @@
+test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) ... 
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='claim_reported', variant='fail') ... FAIL
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='claim_reported', variant='fail')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.claim_reported', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Claim reporting checked; its status need not assert success and its truth is not evaluated.', 'evidence': {'claim': 'functional_revival', 'pointer': '/claims', 'matches': 1, 'reported_status': None}, 'basis': ['ff6385e8f1b1edeebcea3d6adea8ecc64eaaaba72245b8ba26233f63b3bc660c', '44ebccebcd9f93589f20e536e20d01fd28f9b63849c562b879a4ffd43a4cae1f', '22c0fbbf2cdb078508a9f5cb0d3b8008c1e31d7b0f6a339e1000473bf624a243', 'a18cbbcdbf956cf354f5d82021f702cfcd1aaceec9386ceb7a4f3f3008a4ef39', '2e13b04b50b04a9c607898ae1844939cf15f7a07bba6884fabb9987c5e091913', 'c2c1cda067b6ade38e4d9715f8486e293f58331c4bcea14799a8b802aca76c6f', '3989ea818aa90d3bc9d72777be193c6b3472842c7790ea3a3add326566e3e752'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 1.741s
+
+FAILED (failures=1)

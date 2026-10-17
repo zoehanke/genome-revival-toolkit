@@ -1,0 +1,24 @@
+{
+  "schema_id": "pipeline-revision-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "pipeline-revision-v1",
+    "expected_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "trigger": {
+      "kind": "user_request",
+      "event_refs": [],
+      "quote": "Use a new synthetic input."
+    },
+    "reason": "Change requested before execution.",
+    "operations": [
+      {
+        "op": "set_outputs",
+        "outputs": []
+      }
+    ]
+  }
+}

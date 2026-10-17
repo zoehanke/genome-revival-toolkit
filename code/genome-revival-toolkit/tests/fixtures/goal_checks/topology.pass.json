@@ -1,0 +1,20 @@
+{
+  "check": "check.goal.topology",
+  "variant": "pass",
+  "expected": "PASS",
+  "params": {
+    "topology": "circular"
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AAACCC",
+    "topology": "circular",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "Topology is fixed by the synthetic construction: circular versus linear, never by a declaration or filename."
+  }
+}

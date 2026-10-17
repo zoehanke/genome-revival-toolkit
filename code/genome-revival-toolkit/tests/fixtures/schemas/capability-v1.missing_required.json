@@ -1,0 +1,56 @@
+{
+  "schema_id": "capability-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required id."
+  },
+  "data": {
+    "schema": "capability-v1",
+    "version": "0.0.0",
+    "role": "ACTION",
+    "summary": "Report length.",
+    "effects": [
+      "pure"
+    ],
+    "deterministic": true,
+    "requires_runtime": [],
+    "inputs": [
+      {
+        "name": "sequence",
+        "type": "value",
+        "required": true,
+        "constraints": {},
+        "description": "Synthetic input."
+      }
+    ],
+    "params": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputs": [
+      {
+        "name": "length",
+        "type": "value",
+        "output_role": "analysis"
+      }
+    ],
+    "step_checks": [],
+    "final_checks": [],
+    "does_not_establish": [
+      "Experimental result."
+    ],
+    "source": {
+      "algorithm_refs": [],
+      "implemented_in": "capabilities/length.py"
+    },
+    "owner": "kit:demo",
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    },
+    "granularity": "atomic"
+  }
+}

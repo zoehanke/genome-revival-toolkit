@@ -1,0 +1,25 @@
+{
+  "schema": "rule-v1",
+  "id": "word_count.minimum_words",
+  "name": "minimum_words",
+  "version": 1,
+  "status": "active",
+  "purpose": "interpretation",
+  "evaluator": "word_count.check_count",
+  "parameters": {"minimum_words": 3},
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "Tutorial example, not a scientific claim: at least three whitespace-separated words meet the example minimum.",
+    "locator": "README.md: Counting contract",
+    "retrieved_at": "2026-10-17",
+    "content_ref": null,
+    "archive_note": "The example contract is included in this template's README.md.",
+    "supports": ["This tutorial's minimum of three words."],
+    "does_not_support": ["Text quality, experimental outcomes or any scientific claim."],
+    "verification_status": "unverified"
+  },
+  "limits": ["This is a tutorial example, not any experimental or scientific claim."],
+  "review": "knowledge/review/minimum_words.review.json",
+  "authorship": {"kind": "ai", "tool_or_model": "Codex", "date": "2026-10-17"}
+}

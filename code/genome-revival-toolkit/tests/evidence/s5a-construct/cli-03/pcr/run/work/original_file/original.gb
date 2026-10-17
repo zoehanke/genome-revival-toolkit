@@ -1,0 +1,28 @@
+LOCUS       material                 300 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  material.
+ACCESSION   material
+VERSION     material
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+COMMENT     GRT-MATERIAL:
+            eyJtYXRlcmlhbCI6eyJlbmRzIjpudWxsLCJmZWF0dXJlcyI6W10sInNlcXVl
+            bmNlIjoiR0FUQ0FUR0NUVEFDQ0NHR1RDQUdDQUFHR1RHVFRDQ0dHR1RHVEdH
+            QUNDR1RUQUdHR0NHVFRBQ1RBR1RUR0NBQVRDR0FUQ0FDVENBVEFBQ1RUQUFD
+            R0FBQUNBQUFUVEdDR1RHVEFUVEdUR0FBVENDQ0NUR0FBQVRBR1RUQUNBVEdU
+            Q0NUQUdHVFRUR1RUVFRDR1RBVEdBQVRHR0dHVFRUVEdBQ0NHQUFUVEdDVEdB
+            VFRUVFRUR1RDVENBR0NUQ0NUR0NUVFRDVEdHVEdBVEdUVFRBQ1RBVEFUQVRU
+            R0NBQ1RUQVRBQ0NUR1RBQ1RHVEFHVENUR1RBQVRHVENBQ0FHVEFDVEdHR0NH
+            R0NHQUFBVEFDQ0NUVFRHQ1RBQUNBQUFUVEdHVENHQ0dUR0dDIiwic3RyYW5k
+            ZWRuZXNzIjoiZG91YmxlIiwidG9wb2xvZ3kiOiJsaW5lYXIifSwicHJvamVj
+            dGlvbiI6ImUzZjhkZTE3NWYzYTZmNGY5NmFiNDk0ODgzNGU4OTUxMmE5MjA0
+            YTk2YWRmYTcyZmY3OGEyZjhmNDdiNTU5ODUifQ==
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 gatcatgctt acccggtcag caaggtgttc cgggtgtgga ccgttagggc gttactagtt
+       61 gcaatcgatc actcataact taacgaaaca aattgcgtgt attgtgaatc ccctgaaata
+      121 gttacatgtc ctaggtttgt tttcgtatga atggggtttt gaccgaattg ctgatttttt
+      181 gtctcagctc ctgctttctg gtgatgttta ctatatattg cacttatacc tgtactgtag
+      241 tctgtaatgt cacagtactg ggcggcgaaa taccctttgc taacaaattg gtcgcgtggc
+//

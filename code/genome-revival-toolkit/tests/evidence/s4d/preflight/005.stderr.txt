@@ -1,0 +1,12 @@
+test_bundled_development_example_preserves_the_hand_answer_and_label (tests.integration.test_release_identity.ReleaseIdentityTests.test_bundled_development_example_preserves_the_hand_answer_and_label) ... ok
+test_development_seal_verifies_in_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_development_seal_verifies_in_an_installed_release) ... ok
+test_development_tree_still_records_dev_tree (tests.integration.test_release_identity.ReleaseIdentityTests.test_development_tree_still_records_dev_tree) ... ok
+test_installed_seal_verifies_portably_but_different_release_is_rejected (tests.integration.test_release_identity.ReleaseIdentityTests.test_installed_seal_verifies_portably_but_different_release_is_rejected) ... ok
+test_missing_manifest_and_changed_payload_never_fall_back (tests.integration.test_release_identity.ReleaseIdentityTests.test_missing_manifest_and_changed_payload_never_fall_back) ... ok
+test_package_records_manifest_digest_and_detects_one_byte_change (tests.integration.test_release_identity.ReleaseIdentityTests.test_package_records_manifest_digest_and_detects_one_byte_change) ... ok
+test_source_build_metadata_is_not_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_source_build_metadata_is_not_an_installed_release) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 50.343s
+
+OK

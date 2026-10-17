@@ -1,0 +1,49 @@
+{
+  "schema": "capability-v1",
+  "id": "check.biological_sanity",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Check nonempty DNA symbols and consistency of declared topology, strands and ends.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental viability, function, efficiency or host-specific performance.",
+    "Unknown physical properties or ambiguous base identities.",
+    "Empirical thresholds not supplied by sourced rule data."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D7 biological_sanity",
+      "kernel.material DNA value contract",
+      "biology.materials explicit duplex-end contract"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.content:biological_sanity"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/s1c/check.biological_sanity.pass.json",
+    "fail": "tests/fixtures/s1c/check.biological_sanity.fail.json"
+  }
+}

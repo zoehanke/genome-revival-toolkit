@@ -1,0 +1,12 @@
+{
+  "check": "identity.check_handoff",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Reference file bytes are unchanged after computing the handoff binding."
+  }
+}

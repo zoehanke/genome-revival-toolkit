@@ -1,0 +1,18 @@
+{
+  "schema": "rule-v1",
+  "id": "probe.missing-source",
+  "name": "Constructed rule with intentionally missing source",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {},
+  "applies_when": [],
+  "source": {
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/probe.missing-source.json"
+}

@@ -1,0 +1,31 @@
+{
+  "check": "check.primer_quality",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Hand count: five T bases exceed explicit limit four; selected synthetic limits are not universal scientific rules."
+  },
+  "data": {
+    "use": "primer.inspect_quality",
+    "inputs": {
+      "primer": {
+        "sequence": "ACGTACGA",
+        "topology": null,
+        "strandedness": "single",
+        "ends": null,
+        "features": []
+      }
+    },
+    "params": {},
+    "limits": {
+      "length_min": 8,
+      "length_max": 15,
+      "gc_min": "20",
+      "gc_max": "80",
+      "max_T_run": 4,
+      "max_3prime_dimer": 20,
+      "max_hairpin_stem": 20
+    }
+  }
+}

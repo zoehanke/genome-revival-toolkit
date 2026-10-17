@@ -1,0 +1,44 @@
+{
+  "schema": "capability-v1",
+  "id": "word_count.check_count",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Independently check retained counts and decisions against recorded text and the frozen rule.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "This is a tutorial example, not any experimental or scientific claim."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "README.md: Counting contract; knowledge/minimum_words.json"
+    ],
+    "implemented_in": "grt_kit_word_count.capabilities.check:check_count"
+  },
+  "owner": "kit:word-count",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  },
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/count.pass.json",
+    "fail": "capabilities/fixtures/count.fail.json"
+  }
+}

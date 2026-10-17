@@ -1,0 +1,9 @@
+{
+  "check": "check.replay",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Change the recorded length from four to ninety-nine."
+  }
+}

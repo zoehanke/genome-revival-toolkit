@@ -1,0 +1,1026 @@
+{
+  "files": [
+    {
+      "file": "genome-revival-toolkit/kits/construct/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 5,
+      "rule_records": 3,
+      "source_present": 3,
+      "source_missing": 0
+    },
+    {
+      "file": "genome-revival-toolkit/kits/crispr/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 6,
+      "rule_records": 4,
+      "source_present": 4,
+      "source_missing": 0
+    },
+    {
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 519,
+      "rule_records": 9,
+      "source_present": 9,
+      "source_missing": 0
+    },
+    {
+      "file": "genome-revival-toolkit/kits/evidence/rules/conclusions.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 33,
+      "rule_records": 2,
+      "source_present": 2,
+      "source_missing": 0
+    },
+    {
+      "file": "genome-revival-toolkit/kits/evidence/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 5,
+      "rule_records": 3,
+      "source_present": 3,
+      "source_missing": 0
+    },
+    {
+      "file": "genome-revival-toolkit/kits/identity/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "physical_lines": 8,
+      "rule_records": 3,
+      "source_present": 3,
+      "source_missing": 0
+    }
+  ],
+  "legacy_rows": [
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "sequence-direction",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_crispr; Core tools/grna.py:check_grna",
+      "original": {
+        "id": "sequence-direction",
+        "statement": "Sequence downstream of the promoter determines guide orientation and PAM; annotation conflicts remain warnings.",
+        "source": "scripts/workflow.py:run_crispr; Core tools/grna.py:check_grna"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "supplied-vector",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_crispr; Core tools/grna_evaluation.py:check_grna_vector",
+      "original": {
+        "id": "supplied-vector",
+        "statement": "Search the caller's actual supplied vector, with declared mismatch limit and PAM.",
+        "source": "scripts/workflow.py:run_crispr; Core tools/grna_evaluation.py:check_grna_vector"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "planned-not-performed",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_crispr laboratory_status/wet_lab",
+      "original": {
+        "id": "planned-not-performed",
+        "statement": "Independent sequence simulation is not physical PCR, DpnI or KLD.",
+        "source": "scripts/workflow.py:run_crispr laboratory_status/wet_lab"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "no-template-exemption",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_crispr Core delivery GateRejected handling",
+      "original": {
+        "id": "no-template-exemption",
+        "statement": "Inherited template errors retain original Core delivery rejection.",
+        "source": "scripts/workflow.py:run_crispr Core delivery GateRejected handling"
+      },
+      "disposition": "retire_conflicts_D7"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-amp",
+      "source_present": true,
+      "raw_source": {
+        "type": "manufacturer",
+        "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+        "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+        "host_sources": [
+          {
+            "host": "ecoli",
+            "source_type": "manufacturer",
+            "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+            "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-amp",
+        "name": "Conditional selection for amp",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "amp"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "amp",
+            "pattern": "ampr|ampicillin|bla(?:tem\\d*)?|beta-lactamase",
+            "hosts": {
+              "ecoli": [
+                "LB + ampicillin",
+                "NEB"
+              ]
+            },
+            "auxotrophy": null,
+            "sources": {
+              "NEB": {
+                "source_type": "manufacturer",
+                "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+                "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "manufacturer",
+          "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "host_sources": [
+            {
+              "host": "ecoli",
+              "source_type": "manufacturer",
+              "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+              "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-kan",
+      "source_present": true,
+      "raw_source": {
+        "type": "manufacturer",
+        "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+        "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+        "host_sources": [
+          {
+            "host": "ecoli",
+            "source_type": "manufacturer",
+            "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+            "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          },
+          {
+            "host": "yeast",
+            "source_type": "peer_reviewed_paper",
+            "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-kan",
+        "name": "Conditional selection for kan",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "kan"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "kan",
+            "pattern": "kanr|kanmx\\d*|kanamycin",
+            "hosts": {
+              "ecoli": [
+                "LB + kanamycin",
+                "NEB"
+              ],
+              "yeast": [
+                "G418 selection medium",
+                "pRS"
+              ]
+            },
+            "auxotrophy": null,
+            "sources": {
+              "NEB": {
+                "source_type": "manufacturer",
+                "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+                "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              },
+              "pRS": {
+                "source_type": "peer_reviewed_paper",
+                "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "manufacturer",
+          "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "host_sources": [
+            {
+              "host": "ecoli",
+              "source_type": "manufacturer",
+              "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+              "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            },
+            {
+              "host": "yeast",
+              "source_type": "peer_reviewed_paper",
+              "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-cat",
+      "source_present": true,
+      "raw_source": {
+        "type": "manufacturer",
+        "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+        "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+        "host_sources": [
+          {
+            "host": "ecoli",
+            "source_type": "manufacturer",
+            "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+            "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-cat",
+        "name": "Conditional selection for cat",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "cat"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "cat",
+            "pattern": "cmr|camr|cat|chloramphenicol",
+            "hosts": {
+              "ecoli": [
+                "LB + chloramphenicol",
+                "NEB"
+              ]
+            },
+            "auxotrophy": null,
+            "sources": {
+              "NEB": {
+                "source_type": "manufacturer",
+                "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+                "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "manufacturer",
+          "description": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "host_sources": [
+            {
+              "host": "ecoli",
+              "source_type": "manufacturer",
+              "name": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+              "url": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-hph",
+      "source_present": true,
+      "raw_source": {
+        "type": "peer_reviewed_paper",
+        "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "peer_reviewed_paper",
+            "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-hph",
+        "name": "Conditional selection for hph",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "hph"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "hph",
+            "pattern": "hygr|hygromycin|hph(?:nt\\d+|mx\\d*)?",
+            "hosts": {
+              "yeast": [
+                "Hygromycin B selection medium",
+                "pRS"
+              ]
+            },
+            "auxotrophy": null,
+            "sources": {
+              "pRS": {
+                "source_type": "peer_reviewed_paper",
+                "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "peer_reviewed_paper",
+          "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "peer_reviewed_paper",
+              "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-nat",
+      "source_present": true,
+      "raw_source": {
+        "type": "peer_reviewed_paper",
+        "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "peer_reviewed_paper",
+            "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-nat",
+        "name": "Conditional selection for nat",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "nat"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "nat",
+            "pattern": "natmx\\d*|nourseothricin",
+            "hosts": {
+              "yeast": [
+                "Nourseothricin selection medium",
+                "pRS"
+              ]
+            },
+            "auxotrophy": null,
+            "sources": {
+              "pRS": {
+                "source_type": "peer_reviewed_paper",
+                "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "peer_reviewed_paper",
+          "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "peer_reviewed_paper",
+              "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-ura3",
+      "source_present": true,
+      "raw_source": {
+        "type": "peer_reviewed_paper",
+        "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "peer_reviewed_paper",
+            "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-ura3",
+        "name": "Conditional selection for ura3",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "ura3"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "ura3",
+            "pattern": "ura3",
+            "hosts": {
+              "yeast": [
+                "Synthetic defined medium without uracil",
+                "pRS"
+              ]
+            },
+            "auxotrophy": "ura3",
+            "sources": {
+              "pRS": {
+                "source_type": "peer_reviewed_paper",
+                "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+                "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "peer_reviewed_paper",
+          "description": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "peer_reviewed_paper",
+              "name": "Chee and Haase, G3 2012, redesigned pRS vectors",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-his3",
+      "source_present": true,
+      "raw_source": {
+        "type": "curated_database",
+        "description": "SGD commonly used auxotrophic markers",
+        "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "curated_database",
+            "name": "SGD commonly used auxotrophic markers",
+            "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-his3",
+        "name": "Conditional selection for his3",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "his3"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "his3",
+            "pattern": "his3",
+            "hosts": {
+              "yeast": [
+                "Synthetic defined medium without histidine",
+                "SGD"
+              ]
+            },
+            "auxotrophy": "his3",
+            "sources": {
+              "SGD": {
+                "source_type": "curated_database",
+                "name": "SGD commonly used auxotrophic markers",
+                "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "curated_database",
+          "description": "SGD commonly used auxotrophic markers",
+          "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "curated_database",
+              "name": "SGD commonly used auxotrophic markers",
+              "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-leu2",
+      "source_present": true,
+      "raw_source": {
+        "type": "curated_database",
+        "description": "SGD commonly used auxotrophic markers",
+        "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "curated_database",
+            "name": "SGD commonly used auxotrophic markers",
+            "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-leu2",
+        "name": "Conditional selection for leu2",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "leu2"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "leu2",
+            "pattern": "leu2",
+            "hosts": {
+              "yeast": [
+                "Synthetic defined medium without leucine",
+                "SGD"
+              ]
+            },
+            "auxotrophy": "leu2",
+            "sources": {
+              "SGD": {
+                "source_type": "curated_database",
+                "name": "SGD commonly used auxotrophic markers",
+                "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "curated_database",
+          "description": "SGD commonly used auxotrophic markers",
+          "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "curated_database",
+              "name": "SGD commonly used auxotrophic markers",
+              "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "genome-revival-toolkit/kits/crispr/rules/selection.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "selection-trp1",
+      "source_present": true,
+      "raw_source": {
+        "type": "curated_database",
+        "description": "SGD commonly used auxotrophic markers",
+        "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+        "host_sources": [
+          {
+            "host": "yeast",
+            "source_type": "curated_database",
+            "name": "SGD commonly used auxotrophic markers",
+            "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+            "retrieved_at": "2026-10-14",
+            "verification_status": "verified"
+          }
+        ]
+      },
+      "original": {
+        "id": "selection-trp1",
+        "name": "Conditional selection for trp1",
+        "version": 1,
+        "status": "active",
+        "trigger": "before_culture_plan",
+        "scope": {
+          "type": "project",
+          "project_id": "genome-crispr"
+        },
+        "when": {
+          "field": "marker_id",
+          "operator": "eq",
+          "value": "trp1"
+        },
+        "action": {
+          "type": "set_default",
+          "field": "selection_mapping",
+          "value": {
+            "marker_id": "trp1",
+            "pattern": "trp1",
+            "hosts": {
+              "yeast": [
+                "Synthetic defined medium without tryptophan",
+                "SGD"
+              ]
+            },
+            "auxotrophy": "trp1",
+            "sources": {
+              "SGD": {
+                "source_type": "curated_database",
+                "name": "SGD commonly used auxotrophic markers",
+                "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+                "retrieved_at": "2026-10-14",
+                "verification_status": "verified"
+              }
+            }
+          }
+        },
+        "source": {
+          "type": "curated_database",
+          "description": "SGD commonly used auxotrophic markers",
+          "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "host_sources": [
+            {
+              "host": "yeast",
+              "source_type": "curated_database",
+              "name": "SGD commonly used auxotrophic markers",
+              "url": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+              "retrieved_at": "2026-10-14",
+              "verification_status": "verified"
+            }
+          ]
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "genome-revival-toolkit/kits/evidence/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "missing-is-unknown",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:_count and group normalisation",
+      "original": {
+        "id": "missing-is-unknown",
+        "statement": "Missing counts or denominators remain unknown, not zero.",
+        "source": "scripts/workflow.py:_count and group normalisation"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "genome-revival-toolkit/kits/evidence/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "controls-and-conflicts",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_evidence findings",
+      "original": {
+        "id": "controls-and-conflicts",
+        "statement": "Keep submitted controls and contradictory sample/reference records explicit.",
+        "source": "scripts/workflow.py:run_evidence findings"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "genome-revival-toolkit/kits/evidence/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "bounded-conclusions",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_evidence conclusions and checked_scope",
+      "original": {
+        "id": "bounded-conclusions",
+        "statement": "Local submitted observations do not prove whole-genome elimination or functional revival.",
+        "source": "scripts/workflow.py:run_evidence conclusions and checked_scope"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "genome-revival-toolkit/kits/evidence/rules/conclusions.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "functional-revival-scope",
+      "source_present": true,
+      "raw_source": {
+        "type": "project_contract",
+        "reference": "specs/genome-revival-toolkit.md: supported scope and evidence limits",
+        "description": "Existing bounded assessment policy. This table preserves the original conclusion truth table; it does not define sufficient experimental evidence or certify a mechanism."
+      },
+      "original": {
+        "id": "functional-revival-scope",
+        "claim": "Donor genome functional revival",
+        "status_by_state": [
+          "NOT_TESTED",
+          "INSUFFICIENT",
+          "INSUFFICIENT",
+          "INSUFFICIENT"
+        ],
+        "reason": "Colony growth and selected markers alone do not establish donor-dependent restoration, exclude recipient growth, or identify the causal route.",
+        "source": {
+          "type": "project_contract",
+          "reference": "specs/genome-revival-toolkit.md: supported scope and evidence limits",
+          "description": "Existing bounded assessment policy. This table preserves the original conclusion truth table; it does not define sufficient experimental evidence or certify a mechanism."
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "genome-revival-toolkit/kits/evidence/rules/conclusions.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "whole-genome-elimination-scope",
+      "source_present": true,
+      "raw_source": {
+        "type": "project_contract",
+        "reference": "specs/genome-revival-toolkit.md: local genetic assessment boundary",
+        "description": "Existing project scope contract, not a new biological model. A reported local assay cannot establish a whole-genome claim."
+      },
+      "original": {
+        "id": "whole-genome-elimination-scope",
+        "claim": "Complete host-genome elimination",
+        "status_by_state": [
+          "NOT_TESTED",
+          "NOT_TESTED",
+          "INSUFFICIENT",
+          "INSUFFICIENT"
+        ],
+        "reason": "Negative selected-region tests do not cover the complete genome.",
+        "source": {
+          "type": "project_contract",
+          "reference": "specs/genome-revival-toolkit.md: local genetic assessment boundary",
+          "description": "Existing project scope contract, not a new biological model. A reported local assay cannot establish a whole-genome claim."
+        }
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "construct",
+      "file": "genome-revival-toolkit/kits/construct/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "explicit-source-bounds",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_construct input guards and source-derived model",
+      "original": {
+        "id": "explicit-source-bounds",
+        "statement": "Use supplied target/cargo intervals and explicit arm length; do not infer a locus.",
+        "source": "scripts/workflow.py:run_construct input guards and source-derived model"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "construct",
+      "file": "genome-revival-toolkit/kits/construct/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "physical-route",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_construct; same-version Core workflow_delivery.py",
+      "original": {
+        "id": "physical-route",
+        "statement": "Actual computational preparation and complete oligos are required for a construct handoff.",
+        "source": "scripts/workflow.py:run_construct; same-version Core workflow_delivery.py"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "construct",
+      "file": "genome-revival-toolkit/kits/construct/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "donor-not-integration",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_construct checked_scope/not_checked",
+      "original": {
+        "id": "donor-not-integration",
+        "statement": "Donor interface checks do not establish genomic integration or revival.",
+        "source": "scripts/workflow.py:run_construct checked_scope/not_checked"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "genome-identity",
+      "file": "genome-revival-toolkit/kits/identity/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "supplied-region-scope",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_identity checked_scope; original given-region workflow contract",
+      "original": {
+        "id": "supplied-region-scope",
+        "statement": "Alignment and PCR conclusions cover only supplied selected records/regions.",
+        "source": "scripts/workflow.py:run_identity checked_scope; original given-region workflow contract"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "genome-identity",
+      "file": "genome-revival-toolkit/kits/identity/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "prediction-not-experiment",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_identity unverified; existing Toolkit scientific contract",
+      "original": {
+        "id": "prediction-not-experiment",
+        "statement": "Exact PCR predictions do not certify observed bands, genotype or genomic specificity.",
+        "source": "scripts/workflow.py:run_identity unverified; existing Toolkit scientific contract"
+      },
+      "disposition": "draft_unverified"
+    },
+    {
+      "kit": "genome-identity",
+      "file": "genome-revival-toolkit/kits/identity/rules/scope.json",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "id": "full-quality-and-resolution",
+      "source_present": true,
+      "raw_source": "scripts/workflow.py:run_identity and _discrimination; retained independent primer/region regression tests",
+      "original": {
+        "id": "full-quality-and-resolution",
+        "statement": "Full oligo quality and an explicit size-resolution condition remain separate from predicted product presence.",
+        "source": "scripts/workflow.py:run_identity and _discrimination; retained independent primer/region regression tests"
+      },
+      "disposition": "draft_unverified"
+    }
+  ],
+  "legacy_total": 24,
+  "legacy_source_present": 24,
+  "legacy_source_missing": []
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.model_replace",
+  "version": "0.1.0",
+  "role": "ACTION",
+  "summary": "Model replace.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": null
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "promoter_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "transcription_strand": {
+        "type": "integer",
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "spacer": {
+        "type": "string",
+        "pattern": "^[ACGT]{20}$"
+      }
+    },
+    "required": [
+      "promoter_end",
+      "transcription_strand",
+      "spacer"
+    ],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Experimental PCR, transformation or phenotype."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11 B2",
+      "MIGRATION-LOG.md S2"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.model:model_replace"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

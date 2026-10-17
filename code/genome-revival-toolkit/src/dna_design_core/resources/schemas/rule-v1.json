@@ -1,0 +1,267 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:rule-v1",
+  "title": "rule-v1",
+  "x-spec-ref": "D12; D20 RV-6; A9; A2/A9 optional authorship; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "rule-v1"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "active",
+        "retired"
+      ]
+    },
+    "purpose": {
+      "enum": [
+        "mandatory_check",
+        "interpretation",
+        "advisory"
+      ]
+    },
+    "evaluator": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+    },
+    "parameters": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "additionalProperties": false
+    },
+    "applies_when": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "op": {
+            "enum": [
+              "eq",
+              "in",
+              "gte",
+              "lte",
+              "between",
+              "exists"
+            ]
+          },
+          "value": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        "required": [
+          "field",
+          "op",
+          "value"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "source_class": {
+          "enum": [
+            "literature",
+            "official_method",
+            "project_contract",
+            "lab_protocol",
+            "database_record"
+          ]
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "locator": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "content_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "archive_note": {
+          "type": "string"
+        },
+        "supports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "does_not_support": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "verification_status": {
+          "enum": [
+            "unverified",
+            "verified"
+          ]
+        },
+        "verification_receipt": {
+          "type": "object",
+          "properties": {
+            "by": {
+              "type": "string"
+            },
+            "method": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "format": "date"
+            },
+            "scope": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "by",
+            "method",
+            "date",
+            "scope"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_class",
+        "citation",
+        "locator",
+        "retrieved_at",
+        "content_ref",
+        "archive_note",
+        "supports",
+        "does_not_support",
+        "verification_status"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "verification_status": {
+                "const": "verified"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "verification_receipt"
+            ]
+          }
+        }
+      ]
+    },
+    "limits": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "review": {
+      "type": "string"
+    },
+    "authorship": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "ai",
+            "human",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "tool_or_model": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "kind",
+        "tool_or_model",
+        "date"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema",
+    "id",
+    "name",
+    "version",
+    "status",
+    "purpose",
+    "evaluator",
+    "parameters",
+    "applies_when",
+    "source",
+    "limits",
+    "review"
+  ],
+  "additionalProperties": false
+}

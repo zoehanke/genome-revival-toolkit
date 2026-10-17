@@ -1,0 +1,17 @@
+test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata (test_release_engineering.ReleaseEngineeringTests.test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata) ... FAIL
+
+======================================================================
+FAIL: test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata (test_release_engineering.ReleaseEngineeringTests.test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 130, in test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata
+    self.assertEqual(checked["status"], "PASS", checked)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'status': 'FAIL', 'findings': ['File bytes differ: LICENSE', 'File bytes differ: README.md', 'File bytes differ: THIRD_PARTY.md', 'File bytes differ: VERSIONS.json', 'File bytes differ: pyproject.toml', 'File bytes differ: requirements.lock', 'File bytes differ: ship.json', 'File bytes differ: src/dna_design_core/__init__.py', 'File bytes differ: src/dna_design_core/resources/VERSIONS.json', 'File bytes differ: tools/build_release.py'], 'release_id': '336a517c45ca7598e4bc8357729338e3070a4b9a3c14e428e83d0a2789b2d4a9', 'archive_sha256': 'a989bee7737d57e0de0aa9a6b0b50f38e1475b067331cbb7f80e761ad999704b'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.916s
+
+FAILED (failures=1)

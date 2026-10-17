@@ -1,0 +1,38 @@
+{
+  "schema_id": "verdict.issued-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.dna_value_valid",
+        "version": "0.0.0"
+      },
+      "scope": "content_model",
+      "moment": "final",
+      "subject": {
+        "kind": "document",
+        "id": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "constraint_id": null,
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Synthetic structural example, not a runtime judgment.",
+      "evidence": {
+        "length": 4
+      },
+      "basis": [
+        "1111111111111111111111111111111111111111111111111111111111111111"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Wet laboratory evidence."
+      ]
+    }
+  }
+}

@@ -1,0 +1,363 @@
+test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) ... 
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.fail.json') ... ERROR
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.pass.json') ... ERROR
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.fail.json') ... ERROR
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.pass.json') ... ERROR
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.fail.json') ... ERROR
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.pass.json') ... ERROR
+test_all_migrated_host_rows_keep_sources_and_no_fabricated_receipts (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_migrated_host_rows_keep_sources_and_no_fabricated_receipts) ... ok
+test_annotation_disagreement_is_reported_without_overriding_sequence (tests.unit.test_cut_plasmid.CutPlasmidTests.test_annotation_disagreement_is_reported_without_overriding_sequence) ... ERROR
+test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer) ... ERROR
+test_b2_wrong_pam_is_computed_from_bases (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_wrong_pam_is_computed_from_bases) ... ERROR
+test_independent_model_matches_constructed_edit (tests.unit.test_cut_plasmid.CutPlasmidTests.test_independent_model_matches_constructed_edit) ... ERROR
+test_manifest_decorators_and_exported_contracts_match (tests.unit.test_cut_plasmid.CutPlasmidTests.test_manifest_decorators_and_exported_contracts_match) ... ok
+test_missing_genotype_is_unknown_and_has_no_plate_recommendation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_missing_genotype_is_unknown_and_has_no_plate_recommendation) ... ERROR
+test_reverse_insert_is_not_rescued_by_forward_annotation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_reverse_insert_is_not_rescued_by_forward_annotation) ... ERROR
+test_second_binding_site_blocks_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_second_binding_site_blocks_design_with_positive_control) ... ERROR
+test_source_labelled_mapping_requires_complete_declared_genotype (tests.unit.test_cut_plasmid.CutPlasmidTests.test_source_labelled_mapping_requires_complete_declared_genotype) ... ERROR
+test_spacer_marked_as_cds_is_identified_and_retired (tests.unit.test_cut_plasmid.CutPlasmidTests.test_spacer_marked_as_cds_is_identified_and_retired) ... ERROR
+test_tm_window_rejects_impossible_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_tm_window_rejects_impossible_design_with_positive_control) ... ERROR
+test_wrapping_origin_replacement_and_negative_transcription (tests.unit.test_cut_plasmid.CutPlasmidTests.test_wrapping_origin_replacement_and_negative_transcription) ... ERROR
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.fail.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.pass.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.fail.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.pass.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.fail.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.pass.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 61, in test_all_check_pass_and_fail_fixtures_actually_run
+    service, _ = self.run_action(case=case, folder=path.stem)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_annotation_disagreement_is_reported_without_overriding_sequence (tests.unit.test_cut_plasmid.CutPlasmidTests.test_annotation_disagreement_is_reported_without_overriding_sequence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 88, in test_annotation_disagreement_is_reported_without_overriding_sequence
+    service, result = self.run_action(case=case)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 104, in test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer
+    service, result = self.run_action("replace_spacer")
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_b2_wrong_pam_is_computed_from_bases (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_wrong_pam_is_computed_from_bases)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 68, in test_b2_wrong_pam_is_computed_from_bases
+    service, result = self.run_action()
+                      ^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_independent_model_matches_constructed_edit (tests.unit.test_cut_plasmid.CutPlasmidTests.test_independent_model_matches_constructed_edit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 123, in test_independent_model_matches_constructed_edit
+    _, result = self.run_action("model_replace")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_missing_genotype_is_unknown_and_has_no_plate_recommendation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_missing_genotype_is_unknown_and_has_no_plate_recommendation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 159, in test_missing_genotype_is_unknown_and_has_no_plate_recommendation
+    _, result = self.run_action("assess_selection")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_reverse_insert_is_not_rescued_by_forward_annotation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_reverse_insert_is_not_rescued_by_forward_annotation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 81, in test_reverse_insert_is_not_rescued_by_forward_annotation
+    service, result = self.run_action(case=case)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_second_binding_site_blocks_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_second_binding_site_blocks_design_with_positive_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 150, in test_second_binding_site_blocks_design_with_positive_control
+    self.run_action("replace_spacer", folder="positive")
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_source_labelled_mapping_requires_complete_declared_genotype (tests.unit.test_cut_plasmid.CutPlasmidTests.test_source_labelled_mapping_requires_complete_declared_genotype)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 174, in test_source_labelled_mapping_requires_complete_declared_genotype
+    _, result = self.run_action("assess_selection", case=case, parameters=parameters, folder=name)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_spacer_marked_as_cds_is_identified_and_retired (tests.unit.test_cut_plasmid.CutPlasmidTests.test_spacer_marked_as_cds_is_identified_and_retired)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 97, in test_spacer_marked_as_cds_is_identified_and_retired
+    _, inspection = self.run_action(case=case, folder="inspect")
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_tm_window_rejects_impossible_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_tm_window_rejects_impossible_design_with_positive_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 144, in test_tm_window_rejects_impossible_design_with_positive_control
+    self.run_action("replace_spacer", folder="positive")
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+======================================================================
+ERROR: test_wrapping_origin_replacement_and_negative_transcription (tests.unit.test_cut_plasmid.CutPlasmidTests.test_wrapping_origin_replacement_and_negative_transcription)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 139, in test_wrapping_origin_replacement_and_negative_transcription
+    _, result = self.run_action("replace_spacer", case=case, folder=str(negative))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_cut_plasmid.py", line 33, in run_action
+    service, result = run_case(self.directory / folder, case=case, operation=operation, parameters=parameters)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\cut_plasmid_runtime.py", line 63, in run_case
+    service.session.submit({"schema": "pipeline-v1", "version": 1, "goal_digest": declared["goal_digest"],
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 134, in submit
+    plan=self.admit(document)
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\src\dna_design_core\engine\session.py", line 127, in admit
+    if errors:raise ToolkitError('PLAN_SCHEMA_INVALID','Pipeline admission rejected.',{'problems':errors})
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+dna_design_core.kernel.errors.ToolkitError: Pipeline admission rejected.
+
+----------------------------------------------------------------------
+Ran 14 tests in 12.381s
+
+FAILED (errors=17)

@@ -1,0 +1,4 @@
+# Versions measured in this worktree .venv on 2026-10-16. No installation performed.
+jsonschema==4.26.0
+rfc8785==0.1.4
+biopython==1.88

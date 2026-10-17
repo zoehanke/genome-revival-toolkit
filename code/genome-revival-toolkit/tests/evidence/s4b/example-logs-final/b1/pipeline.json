@@ -1,0 +1,37 @@
+{
+  "schema": "pipeline-v1",
+  "version": 1,
+  "goal_digest": "83fa363a9fd7b852b370e4895cdead7d92c0aacbdce8b20a38d581042953eb2f",
+  "steps": [
+    {
+      "step_id": "reverse",
+      "use": "seq.reverse_complement",
+      "inputs": {
+        "sequence": {
+          "literal": "AGTCAGAA"
+        }
+      },
+      "params": {},
+      "why": "Reverse and complement a synthetic eight-base literal.",
+      "expects": {
+        "on": {
+          "step": "reverse",
+          "port": "result",
+          "pointer": "/sequence"
+        },
+        "op": "equals",
+        "value": "TTCTGACT"
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "from": {
+        "step": "reverse",
+        "port": "result"
+      },
+      "target": "t1"
+    }
+  ]
+}

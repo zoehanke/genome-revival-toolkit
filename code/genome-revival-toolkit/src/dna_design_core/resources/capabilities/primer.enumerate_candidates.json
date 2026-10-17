@@ -1,0 +1,103 @@
+{
+  "schema": "capability-v1",
+  "id": "primer.enumerate_candidates",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Enumerate explicitly bounded primer lengths; retain every exact binding site.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "template",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "template"
+    },
+    {
+      "name": "tail",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "tail"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "anchor": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "strand": {
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "lengths": {
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 2
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "sodium_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "magnesium_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "dntp_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "total_oligo_nM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      }
+    },
+    "required": [
+      "anchor",
+      "strand",
+      "lengths"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.primer.preparation:enumerate_candidates"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

@@ -1,0 +1,26 @@
+{
+  "schema_id": "goal-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "schema": "goal-v1",
+    "version": 1,
+    "parent_digest": null,
+    "original_request": "Report a synthetic length.",
+    "sources": [],
+    "declared_context": [],
+    "targets": [
+      {
+        "id": "t1",
+        "role": "analysis",
+        "required": true
+      }
+    ],
+    "constraints": [],
+    "intents": [],
+    "undeclared_field": true
+  }
+}

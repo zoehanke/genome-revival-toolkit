@@ -1,0 +1,34 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.control-outgrowth",
+  "name": "Retain inactivated-donor control outgrowth contradiction",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "role": "inactivated_donor_control",
+    "colonies_greater_than": 0,
+    "conclusion": "CONTRADICTED"
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:run_evidence control-colony branch",
+    "locator": "genome-revival-toolkit/kits/evidence/scripts/workflow.py@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "The legacy assessment policy flags a reported positive inactivated-donor control."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/evidence.control-outgrowth.json"
+}

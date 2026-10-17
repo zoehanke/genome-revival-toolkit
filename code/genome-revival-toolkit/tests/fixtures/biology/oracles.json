@@ -1,0 +1,350 @@
+{
+  "oracle": {
+    "kind": "construction",
+    "method": "Each registered calculation maps to an explicitly named independent hand/construction test; individual kinds and methods are retained in data."
+  },
+  "data": [
+    {
+      "symbol": "normalize_dna",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_normalization_is_strict",
+      "oracle_kind": "hand",
+      "method": "Literal alphabet and invalid-symbol examples."
+    },
+    {
+      "symbol": "interval_segments",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_hand_interval_segments",
+      "oracle_kind": "hand",
+      "method": "Ten-base circle with labelled boundary positions."
+    },
+    {
+      "symbol": "slice_sequence",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_hand_sequence_extraction_both_strands",
+      "oracle_kind": "hand",
+      "method": "GGGAAA and TTTCCC from labelled twelve-base source."
+    },
+    {
+      "symbol": "map_feature",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_feature_mapping_hand_forward_reverse_and_partial_cds",
+      "oracle_kind": "hand",
+      "method": "Clipped CDS codon offsets calculated modulo three."
+    },
+    {
+      "symbol": "slice_record",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_slice_record_retains_biological_order_and_qualifiers",
+      "oracle_kind": "hand",
+      "method": "Origin feature retains GGGAAA and qualifier literals."
+    },
+    {
+      "symbol": "rotate_record",
+      "test_id": "test_biology_sequence_formats.SequenceTests.test_rotation_of_compound_reverse_feature",
+      "oracle_kind": "hand",
+      "method": "Known circle rotation and negative-strand feature TTTCCC."
+    },
+    {
+      "symbol": "record_projection",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_genbank_independent_literal_answer_and_roundtrip",
+      "oracle_kind": "hand",
+      "method": "Literal dict of sequence, coordinates, strands and qualifiers."
+    },
+    {
+      "symbol": "read_genbank",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_genbank_independent_literal_answer_and_roundtrip",
+      "oracle_kind": "hand",
+      "method": "Handwritten GenBank record with origin-spanning feature."
+    },
+    {
+      "symbol": "write_genbank",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_genbank_independent_literal_answer_and_roundtrip",
+      "oracle_kind": "hand",
+      "method": "Read-back compared with separately written feature/content dict."
+    },
+    {
+      "symbol": "read_fasta",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_fasta_header_sequence_roundtrip_unknown_topology",
+      "oracle_kind": "hand",
+      "method": "Literal FASTA header and uppercase sequence; no topology inferred."
+    },
+    {
+      "symbol": "write_fasta",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_fasta_header_sequence_roundtrip_unknown_topology",
+      "oracle_kind": "hand",
+      "method": "Expected complete FASTA text written as literal."
+    },
+    {
+      "symbol": "read_dna",
+      "test_id": "test_biology_sequence_formats.FormatTests.test_native_binary_constructed_packet_answer",
+      "oracle_kind": "construction",
+      "method": "Binary TLV packets constructed from documented parser layout."
+    },
+    {
+      "symbol": "TmParameters",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_tm_invalid_inputs_and_explicit_concentrations",
+      "oracle_kind": "hand",
+      "method": "Explicit decimal concentration inputs and invalid values."
+    },
+    {
+      "symbol": "calculate_tm",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_tm_hand_sum_non_self_complementary",
+      "oracle_kind": "hand",
+      "method": "Seven literal NN stack sums and terminal/salt/concentration terms."
+    },
+    {
+      "symbol": "dimer_metrics",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_dimer_full_and_second_3prime_hand_alignment",
+      "oracle_kind": "hand",
+      "method": "Literal antiparallel full match and second-primer terminal alignment."
+    },
+    {
+      "symbol": "hairpin_metrics",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_hairpin_and_counts_hand_answer",
+      "oracle_kind": "hand",
+      "method": "GCG + AAA loop + CGC creates exactly three stem pairs."
+    },
+    {
+      "symbol": "primer_quality",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_hairpin_and_counts_hand_answer",
+      "oracle_kind": "hand",
+      "method": "Ten-base sequence has GC=4, five T bases and two terminal GC bases."
+    },
+    {
+      "symbol": "evaluate_primer_quality",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_quality_explicit_limits_pass_fail",
+      "oracle_kind": "construction",
+      "method": "Explicit synthetic-test limits, with five T bases exceeding limit four."
+    },
+    {
+      "symbol": "encode_boulder",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_boulder_codec_exact_answer_and_rejections",
+      "oracle_kind": "hand",
+      "method": "Whole expected request is a handwritten string."
+    },
+    {
+      "symbol": "parse_boulder",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_boulder_codec_exact_answer_and_rejections",
+      "oracle_kind": "hand",
+      "method": "Handwritten Boulder input with expected tag dictionary."
+    },
+    {
+      "symbol": "primer3_check_request",
+      "test_id": "test_biology_primer_pcr.PrimerTests.test_primer3_request_complete_oligos_and_parameters",
+      "oracle_kind": "hand",
+      "method": "Literal full primer/core-independent CLI parameter lines."
+    },
+    {
+      "symbol": "find_binding_sites",
+      "test_id": "test_biology_primer_pcr.PCRTests.test_binding_cross_origin_on_each_strand",
+      "oracle_kind": "hand",
+      "method": "GGAA crosses 10..14 of labelled twelve-base circle."
+    },
+    {
+      "symbol": "predict_pcr_products",
+      "test_id": "test_biology_primer_pcr.PCRTests.test_repeated_sites_enumerated_and_unique_simulator_rejects",
+      "oracle_kind": "construction",
+      "method": "Two ACGT copies generate separately specified full and short products."
+    },
+    {
+      "symbol": "simulate_pcr",
+      "test_id": "test_biology_primer_pcr.PCRTests.test_pcr_tails_hand_answer",
+      "oracle_kind": "hand",
+      "method": "TT + literal source + RC(GC) has explicitly written product."
+    },
+    {
+      "symbol": "simulate_pcr_record",
+      "test_id": "test_biology_primer_pcr.PCRTests.test_pcr_record_coordinate_mapping_and_no_mutation",
+      "oracle_kind": "hand",
+      "method": "Two new left-tail bases shift feature [5,9) to [7,11)."
+    },
+    {
+      "symbol": "enzyme_definition",
+      "test_id": "test_biology_restriction_assembly.RestrictionTests.test_database_definition_known_ecori_geometry",
+      "oracle_kind": "hand",
+      "method": "EcoRI recognition GAATTC cuts at 1 and 5 relative to motif."
+    },
+    {
+      "symbol": "scan_restriction_sites",
+      "test_id": "test_biology_restriction_assembly.RestrictionTests.test_ecori_pst_and_blunt_cut_coordinates_hand_answer",
+      "oracle_kind": "hand",
+      "method": "Known EcoRI, PstI and EcoRV cleavage diagrams mapped to source."
+    },
+    {
+      "symbol": "digest_sequence",
+      "test_id": "test_biology_restriction_assembly.RestrictionTests.test_digest_actual_top_bottom_strands_hand_answer",
+      "oracle_kind": "hand",
+      "method": "Both fragment strands of CCGAATTCTT enumerated explicitly."
+    },
+    {
+      "symbol": "compatible_ends",
+      "test_id": "test_biology_restriction_assembly.AssemblyTests.test_actual_extensions_must_be_reverse_complements",
+      "oracle_kind": "hand",
+      "method": "AGTC pairs with GACT, not with AGTC."
+    },
+    {
+      "symbol": "validate_duplex",
+      "test_id": "test_biology_restriction_assembly.AssemblyTests.test_linear_ligation_independent_original_sequence",
+      "oracle_kind": "hand",
+      "method": "Known cut fragments plus tampered-strand negative tests."
+    },
+    {
+      "symbol": "ligate_fragments",
+      "test_id": "test_biology_restriction_assembly.AssemblyTests.test_circular_ligation_including_nonpalindromic_stagger",
+      "oracle_kind": "construction",
+      "method": "Input circle defined before digest; expected rotated sequence literal."
+    },
+    {
+      "symbol": "gibson_assemble",
+      "test_id": "test_biology_restriction_assembly.AssemblyTests.test_gibson_hand_linear_and_circular_products",
+      "oracle_kind": "construction",
+      "method": "Unique blocks and overlaps define products before fragments."
+    },
+    {
+      "symbol": "inverse_pcr_circularize",
+      "test_id": "test_biology_restriction_assembly.AssemblyTests.test_inverse_pcr_intermediate_and_both_closure_models",
+      "oracle_kind": "hand",
+      "method": "Explicit full linear intermediate and circle after terminal overlap removal."
+    },
+    {
+      "symbol": "make_material",
+      "test_id": "test_biology_materials.MaterialTests.test_make_material_unknowns_and_content_identity",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "record_from_material",
+      "test_id": "test_biology_materials.MaterialTests.test_material_record_compound_feature_biological_order",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_from_record",
+      "test_id": "test_biology_materials.MaterialTests.test_material_record_compound_feature_biological_order",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_to_duplex",
+      "test_id": "test_biology_materials.MaterialTests.test_duplex_conversion_nonpalindromic_end_geometry",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_from_duplex",
+      "test_id": "test_biology_materials.MaterialTests.test_duplex_conversion_nonpalindromic_end_geometry",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_to_genbank",
+      "test_id": "test_biology_materials.MaterialTests.test_genbank_material_identity_roundtrip_and_tamper",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_from_genbank",
+      "test_id": "test_biology_materials.MaterialTests.test_genbank_material_identity_roundtrip_and_tamper",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "material_to_fasta",
+      "test_id": "test_biology_materials.MaterialTests.test_fasta_material_subset_only",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "slice_material",
+      "test_id": "test_biology_materials.MaterialTests.test_material_slice_and_rotation_follow_D9",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "rotate_material",
+      "test_id": "test_biology_materials.MaterialTests.test_material_slice_and_rotation_follow_D9",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "pcr_material",
+      "test_id": "test_biology_materials.MaterialTests.test_pcr_material_retains_blunt_intermediate",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "digest_material",
+      "test_id": "test_biology_materials.MaterialTests.test_digest_and_ligate_material_exact_known_circle",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "ligate_material",
+      "test_id": "test_biology_materials.MaterialTests.test_digest_and_ligate_material_exact_known_circle",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "gibson_material",
+      "test_id": "test_biology_materials.MaterialTests.test_gibson_material_preconstructed_answer",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "inverse_pcr_material",
+      "test_id": "test_biology_materials.MaterialTests.test_inverse_pcr_material_retains_both_topologies",
+      "oracle_kind": "hand",
+      "method": "Literal material fields, labelled coordinates and strand geometry; D9 identity calculated by existing kernel."
+    },
+    {
+      "symbol": "replace_material_region",
+      "test_id": "test_biology_round2_common.Round2CommonTests.test_region_edit_sequence_and_annotation_retirement",
+      "oracle_kind": "hand",
+      "method": "Explicit AAA + AT + GGGTTT construction and one retired overlapping CDS."
+    },
+    {
+      "symbol": "inspect_cds",
+      "test_id": "test_biology_round2_common.Round2CommonTests.test_cds_hand_translation_frame_and_partial_unknown",
+      "oracle_kind": "hand",
+      "method": "ATG AAA TAA encodes MK with terminal stop; ATG TAA TAA has an internal stop."
+    },
+    {
+      "symbol": "enumerate_primer_candidates",
+      "test_id": "test_biology_round2_common.Round2CommonTests.test_primer_candidates_core_tail_and_reverse_anchor",
+      "oracle_kind": "hand",
+      "method": "Boundary coordinates fix AAA/AAAC/GGG/GGAA before calculating parameters."
+    },
+    {
+      "symbol": "sequencing_read_coverage",
+      "test_id": "test_biology_round2_common.Round2CommonTests.test_coverage_first_usable_base_is_after_primer_plus_trim",
+      "oracle_kind": "hand",
+      "method": "Four-base primer [0,4), trim one, read length four covers exactly [5,8)."
+    },
+    {
+      "symbol": "reverse_complement",
+      "test_id": "test_capabilities.CapabilityTests.test_reverse_complement_has_hand_constructed_oracles",
+      "oracle_kind": "hand",
+      "method": "S1 B1 fixed hand answers AGTCAGAA -> TTCTGACT, NRY -> RYN, acgt -> ACGT; invalid IUPAC is rejected."
+    },
+    {
+      "symbol": "annotation_findings",
+      "test_id": "test_s1c_analyzers.AnalyzerTests.test_annotation_bounds_and_strand_from_construction",
+      "oracle_kind": "construction",
+      "method": "Nine-base annotation; strand 2 and end 10 explicitly violate coordinates."
+    },
+    {
+      "symbol": "cds_findings",
+      "test_id": "test_s1c_analyzers.AnalyzerTests.test_cds_literal_start_internal_and_final_codons",
+      "oracle_kind": "hand",
+      "method": "Literal ATG/TAA/TAA has one internal stop under the standard genetic code."
+    },
+    {
+      "symbol": "sanity_findings",
+      "test_id": "test_s1c_analyzers.AnalyzerTests.test_sanity_literal_alphabet_empty_and_end_conflict",
+      "oracle_kind": "construction",
+      "method": "Empty DNA, illegal X and circular material with linear-end declarations."
+    },
+    {
+      "symbol": "calculate_tm_explicit",
+      "test_id": "test_s1c_analyzers.AnalyzerTests.test_explicit_nn_concentrations_against_hand_sum",
+      "oracle_kind": "hand",
+      "method": "Explicit DNA_NN3 stack/init/terminal sums, method-5 salt entropy and dnac1-dnac2/2 concentration."
+    }
+  ]
+}

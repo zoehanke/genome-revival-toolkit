@@ -1,0 +1,11 @@
+{
+  "schema_id": "run.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required executed_steps."
+  },
+  "data": {
+    "pipeline_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}

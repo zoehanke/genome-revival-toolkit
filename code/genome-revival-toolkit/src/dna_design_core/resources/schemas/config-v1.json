@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:config-v1",
+  "title": "config-v1",
+  "x-spec-ref": "D17; A12",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "primer3_core": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string",
+      "default": "en"
+    },
+    "external_timeout_s": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 300
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

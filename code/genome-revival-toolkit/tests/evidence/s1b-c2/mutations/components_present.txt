@@ -1,0 +1,30 @@
+test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) ... 
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='components_present', variant='pass') ... FAIL
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='components_present', variant='fail') ... FAIL
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='components_present', variant='pass')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.components_absent', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'FAIL', 'issuer': 'check_capability', 'summary': 'Components checked against sequence on the explicit strand; labels do not establish presence or absence.', 'evidence': {'components': [{'material_id': '6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d', 'name': 'wanted', 'strand': 1, 'positions': [3], 'unresolved': False}]}, 'basis': ['d2c919ebeaa7940c4bd907575e41f8441fe4cd4af10cc47f340fe4d1a0c7b3a9', 'af65f84ee914f9ccee2122e00e88bca218b6bd23a483ac57b9f396f16eed4a54', '113e3f78a12940c6c54ecfe4c492ef8bff3a79b3d4d4ea3c065e31da697bee08', 'c4580c16bf24f83c15ce6951179be3aea18b89542073cee04c5bfba193327cfc', 'ea34edc41669854a2f98e44323d58ab77422da7f540aee769e9dadf669d29c02', 'f4df1831e02441f4903e0f888dce7cc97edc2badaaaf2105bc4a71f8f65ab173', 'dd34ce2e54eab3329f15d6a5f1b98f6a1b557c149fa882a6659ec9eb2ad81cff'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='components_present', variant='fail')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.components_absent', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Components checked against sequence on the explicit strand; labels do not establish presence or absence.', 'evidence': {'components': [{'material_id': 'b2d2edbf9fbfd4748f11c7742e8cc845b25516cb96d754844be9e876caaf8eff', 'name': 'wanted', 'strand': 1, 'positions': [], 'unresolved': False}]}, 'basis': ['354f61df75fcf0c359b3253e639641797324324aa85359c85fb32b46771af0fc', '9be46de2591a74eb6854ebd7afaeebedc6b38ba438df6b71e4ce89a557d3e9cf', 'a99084dd73fb0365a54d4e81774623f5fc498cf23f138d8a76997bc6c82aa445', 'fa2390c5d31c4dbc561851976b22a22e7182ba57d19a718e838f3865f04a7795', '3b8a498217c1b9883201627da8cdd34195a23e5efb82c5e805059a407b6d35b9', '313f3ce19c349b18b289f38e5dad03d43db8f5eec288216a5a8cf7830057bc75', '2ce71822fb7eec202127a62067d4d8c860a06467d7940edd2a347ebc443a7b74'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 1.998s
+
+FAILED (failures=2)

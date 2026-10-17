@@ -1,0 +1,174 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:receipt-v1",
+  "title": "receipt-v1",
+  "x-spec-ref": "D13; A12; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "run_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{16}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "state": {
+      "anyOf": [
+        {
+          "enum": [
+            "PLANNED",
+            "RUNNING",
+            "HALTED",
+            "COMPLETED",
+            "ABANDONED"
+          ]
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "event_range": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "from_seq": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "to_seq": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "from_seq",
+            "to_seq"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "result": {
+      "$ref": "#/$defs/value"
+    },
+    "problems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "category": {
+            "enum": [
+              "INVALID_INPUT",
+              "CAPABILITY_FAILURE",
+              "ENVIRONMENT",
+              "POLICY",
+              "INTEGRITY",
+              "INTERNAL"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          },
+          "recovery": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "category",
+          "message",
+          "location",
+          "recovery"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "next": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "labels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "run_id",
+    "state",
+    "event_range",
+    "result",
+    "problems",
+    "next",
+    "labels"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "run_id": {
+            "type": "null"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "state": {
+            "type": "null"
+          },
+          "event_range": {
+            "type": "null"
+          }
+        }
+      }
+    }
+  ]
+}

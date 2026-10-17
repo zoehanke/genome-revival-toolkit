@@ -1,0 +1,162 @@
+test_empty_runtime_tree_conforms (test_contract_tree.ContractTreeTests.test_empty_runtime_tree_conforms) ... FAIL
+test_positive_declaration_and_legal_imports (test_contract_tree.ContractTreeTests.test_positive_declaration_and_legal_imports) ... FAIL
+test_reject_CONTRACT (test_contract_tree.ContractTreeTests.test_reject_CONTRACT) ... ok
+test_reject_DEP_12 (test_contract_tree.ContractTreeTests.test_reject_DEP_12) ... ok
+test_reject_DEP_13 (test_contract_tree.ContractTreeTests.test_reject_DEP_13) ... ok
+test_reject_ERRORS (test_contract_tree.ContractTreeTests.test_reject_ERRORS) ... ok
+test_reject_INVENTORY (test_contract_tree.ContractTreeTests.test_reject_INVENTORY) ... ok
+test_reject_INV_C2 (test_contract_tree.ContractTreeTests.test_reject_INV_C2) ... ok
+test_reject_INV_C6 (test_contract_tree.ContractTreeTests.test_reject_INV_C6) ... ok
+test_reject_INV_C8 (test_contract_tree.ContractTreeTests.test_reject_INV_C8) ... ok
+test_reject_INV_D5 (test_contract_tree.ContractTreeTests.test_reject_INV_D5) ... ok
+test_reject_INV_F4 (test_contract_tree.ContractTreeTests.test_reject_INV_F4) ... ok
+test_reject_INV_F5 (test_contract_tree.ContractTreeTests.test_reject_INV_F5) ... ok
+test_reject_INV_I1 (test_contract_tree.ContractTreeTests.test_reject_INV_I1) ... ok
+test_reject_INV_K1 (test_contract_tree.ContractTreeTests.test_reject_INV_K1) ... ok
+test_reject_INV_K2 (test_contract_tree.ContractTreeTests.test_reject_INV_K2) ... ok
+test_reject_INV_K6 (test_contract_tree.ContractTreeTests.test_reject_INV_K6) ... ok
+test_reject_INV_K7 (test_contract_tree.ContractTreeTests.test_reject_INV_K7) ... ok
+test_reject_INV_L1 (test_contract_tree.ContractTreeTests.test_reject_INV_L1) ... ok
+test_reject_INV_L2 (test_contract_tree.ContractTreeTests.test_reject_INV_L2) ... ok
+test_reject_INV_L3 (test_contract_tree.ContractTreeTests.test_reject_INV_L3) ... ok
+test_reject_INV_N1 (test_contract_tree.ContractTreeTests.test_reject_INV_N1) ... ok
+test_reject_INV_P2 (test_contract_tree.ContractTreeTests.test_reject_INV_P2) ... ok
+test_reject_INV_Q3 (test_contract_tree.ContractTreeTests.test_reject_INV_Q3) ... ok
+test_reject_INV_Q4 (test_contract_tree.ContractTreeTests.test_reject_INV_Q4) ... ok
+test_reject_INV_T1 (test_contract_tree.ContractTreeTests.test_reject_INV_T1) ... ok
+test_reject_INV_V1 (test_contract_tree.ContractTreeTests.test_reject_INV_V1) ... ok
+test_reject_INV_V2 (test_contract_tree.ContractTreeTests.test_reject_INV_V2) ... ok
+test_reject_INV_V3 (test_contract_tree.ContractTreeTests.test_reject_INV_V3) ... ok
+test_reject_INV_W1 (test_contract_tree.ContractTreeTests.test_reject_INV_W1) ... ok
+test_reject_INV_W2 (test_contract_tree.ContractTreeTests.test_reject_INV_W2) ... ok
+test_reject_INV_X1 (test_contract_tree.ContractTreeTests.test_reject_INV_X1) ... ok
+test_reject_INV_X3 (test_contract_tree.ContractTreeTests.test_reject_INV_X3) ... ok
+test_reject_INV_X4 (test_contract_tree.ContractTreeTests.test_reject_INV_X4) ... ok
+test_reject_PROFILES (test_contract_tree.ContractTreeTests.test_reject_PROFILES) ... ok
+test_reject_SCHEMA (test_contract_tree.ContractTreeTests.test_reject_SCHEMA) ... ok
+test_reject_VOCAB (test_contract_tree.ContractTreeTests.test_reject_VOCAB) ... ok
+test_reject_INV_S1 (test_contract_tree.SpecScannerTests.test_reject_INV_S1) ... ok
+test_reject_INV_S2 (test_contract_tree.SpecScannerTests.test_reject_INV_S2) ... ok
+test_reject_INV_S4 (test_contract_tree.SpecScannerTests.test_reject_INV_S4) ... ok
+test_reject_INV_S5 (test_contract_tree.SpecScannerTests.test_reject_INV_S5) ... ok
+test_reject_INV_S6 (test_contract_tree.SpecScannerTests.test_reject_INV_S6) ... ok
+test_spec_baseline (test_contract_tree.SpecScannerTests.test_spec_baseline) ... FAIL
+test_a14_cause_field_cannot_be_added (test_schema_alignment.AlignmentTests.test_a14_cause_field_cannot_be_added) ... ok
+test_a14_profile_field_cannot_be_removed (test_schema_alignment.AlignmentTests.test_a14_profile_field_cannot_be_removed) ... ok
+test_actor_fields_are_read_from_a14 (test_schema_alignment.AlignmentTests.test_actor_fields_are_read_from_a14) ... ok
+test_appendix_field_cannot_be_removed (test_schema_alignment.AlignmentTests.test_appendix_field_cannot_be_removed) ... ok
+test_authorship_does_not_allow_new_children (test_schema_alignment.AlignmentTests.test_authorship_does_not_allow_new_children) ... ok
+test_baseline_matches_updated_appendix (test_schema_alignment.AlignmentTests.test_baseline_matches_updated_appendix) ... FAIL
+test_missing_nested_field_is_hard (test_schema_alignment.AlignmentTests.test_missing_nested_field_is_hard) ... ok
+test_new_spec_field_is_not_ignored (test_schema_alignment.AlignmentTests.test_new_spec_field_is_not_ignored) ... ok
+test_pipeline_revised_does_not_gain_diff (test_schema_alignment.AlignmentTests.test_pipeline_revised_does_not_gain_diff) ... ok
+test_unknown_schema_field_is_hard (test_schema_alignment.AlignmentTests.test_unknown_schema_field_is_hard) ... ok
+
+======================================================================
+FAIL: test_empty_runtime_tree_conforms (test_contract_tree.ContractTreeTests.test_empty_runtime_tree_conforms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\structure\test_contract_tree.py", line 91, in test_empty_runtime_tree_conforms
+    self.assertEqual(scan(ROOT),[])
+AssertionError: Lists differ: [{'id': 'INV-Q3', 'file': 'tests/fixtures/[77 chars]ry'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 'INV-Q3', 'file': 'tests/fixtures/biology/oracles.json', 'message': 'Fixture requires independent oracle category'}
+
++ []
+- [{'file': 'tests/fixtures/biology/oracles.json',
+-   'id': 'INV-Q3',
+-   'message': 'Fixture requires independent oracle category'}]
+
+======================================================================
+FAIL: test_positive_declaration_and_legal_imports (test_contract_tree.ContractTreeTests.test_positive_declaration_and_legal_imports)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\structure\test_contract_tree.py", line 100, in test_positive_declaration_and_legal_imports
+    self.assertEqual(scan(root),[])
+AssertionError: Lists differ: [{'id': 'INV-Q3', 'file': 'tests/fixtures/[77 chars]ry'}] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+{'id': 'INV-Q3', 'file': 'tests/fixtures/biology/oracles.json', 'message': 'Fixture requires independent oracle category'}
+
++ []
+- [{'file': 'tests/fixtures/biology/oracles.json',
+-   'id': 'INV-Q3',
+-   'message': 'Fixture requires independent oracle category'}]
+
+======================================================================
+FAIL: test_spec_baseline (test_contract_tree.SpecScannerTests.test_spec_baseline)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\structure\test_contract_tree.py", line 129, in test_spec_baseline
+    self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+AssertionError: 1 != 0 : == spec_lint on SPEC.md: 96193 chars ==
+Appendix field alignment: {'schemas_compared': 35, 'field_differences': 1, 'unresolved': 1}
+vocab counts: {'moments': 3, 'outcomes': 4, 'scopes': 4, 'capability roles': 2, 'issuers': 3}
+events in Appendix E: 19; events mentioned in body: 18
+INV defined: 119; referenced in body: 119
+
+HARD findings: 1
+  - A fields run.created-payload-v1:git_commit missing_from_schema (unresolved)
+
+SOFT findings: 17
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **不采用**：不设依赖契约、靠评审（旧系统已证明不可靠）；把 engine 与 assurance 合成一层（执行会影响判定）；让 engine 反向 import assurance 来出裁决（旧设计的缺口）；检查与
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **来源**：封闭动词、信封、文档生成、`doctor` 只给指引 C-D13；请求文件、宿主最低能力与指导模式、「退出码不是科学裁决」A-D13；`describe checks` 取代检查器目录、`review` 补
+  - S5 retired term 'INCONCLUSIVE' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-K7 | 清单模式没有档位、输出角色、接纳规则、交付类别之类的键 | FS | D11 |
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): - `outputs[]` 把步骤端口绑定到目标物（`target`）。**没有 `deliver_as`**：输出的角色由产出它的能力声明（D3），宿主不能自选。
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **来源**：计划格式、`why`、`expects`、模板 C-D4；四种引用、`index` 必给、局部诊断计划、接纳零计算 A-D4；接纳校验改为失败记录而非裁决、`outputs` 取消 `deliver_as`
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **A3 `pipeline-v1`**：`schema`、`version`、`goal_digest`、`steps[]{step_id, use(id 或 id@版本；存储时一律是 id@精确版本), inputs
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): | INV-P2 | `pipeline-v1` 模式 `additionalProperties:false`，且无法表达检查、门、必需范围、`deliver_as` | FS | D4 |
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **可信度的三个问题，各用一个词，互不混用**：规则或模板还在不在用？看 `status`。来源核验过吗？看 `verification_status`。人审过吗？看 `review`。没有「成熟」这个词；方法是否验证过
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): - RV-5 库里的模板显示为「已审核」当且仅当 `reviewed`；没有「成熟」一词。
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **来源**：审核记录与哈希绑定、四种状态、统一显示、流程规则 C-D20；人审与 AI 会话分离、承认程序验不了真人 A-D20；标注不阻断、去掉「成熟」一词 M。依据：[已读] 旧来源与核验回执；[设计] 其余。
+  - S5 retired term 'mature' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '`PLAN`' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+
+
+======================================================================
+FAIL: test_baseline_matches_updated_appendix (test_schema_alignment.AlignmentTests.test_baseline_matches_updated_appendix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\structure\test_schema_alignment.py", line 37, in test_baseline_matches_updated_appendix
+    self.assertEqual(result.returncode,0,result.stdout+result.stderr)
+AssertionError: 1 != 0 : == spec_lint on SPEC.md: 96193 chars ==
+Appendix field alignment: {'schemas_compared': 35, 'field_differences': 1, 'unresolved': 1}
+vocab counts: {'moments': 3, 'outcomes': 4, 'scopes': 4, 'capability roles': 2, 'issuers': 3}
+events in Appendix E: 19; events mentioned in body: 18
+INV defined: 119; referenced in body: 119
+
+HARD findings: 1
+  - A fields run.created-payload-v1:git_commit missing_from_schema (unresolved)
+
+SOFT findings: 17
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **不采用**：不设依赖契约、靠评审（旧系统已证明不可靠）；把 engine 与 assurance 合成一层（执行会影响判定）；让 engine 反向 import assurance 来出裁决（旧设计的缺口）；检查与
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **来源**：封闭动词、信封、文档生成、`doctor` 只给指引 C-D13；请求文件、宿主最低能力与指导模式、「退出码不是科学裁决」A-D13；`describe checks` 取代检查器目录、`review` 补
+  - S5 retired term 'INCONCLUSIVE' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-K7 | 清单模式没有档位、输出角色、接纳规则、交付类别之类的键 | FS | D11 |
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): - `outputs[]` 把步骤端口绑定到目标物（`target`）。**没有 `deliver_as`**：输出的角色由产出它的能力声明（D3），宿主不能自选。
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **来源**：计划格式、`why`、`expects`、模板 C-D4；四种引用、`index` 必给、局部诊断计划、接纳零计算 A-D4；接纳校验改为失败记录而非裁决、`outputs` 取消 `deliver_as`
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **A3 `pipeline-v1`**：`schema`、`version`、`goal_digest`、`steps[]{step_id, use(id 或 id@版本；存储时一律是 id@精确版本), inputs
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): | INV-P2 | `pipeline-v1` 模式 `additionalProperties:false`，且无法表达检查、门、必需范围、`deliver_as` | FS | D4 |
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **可信度的三个问题，各用一个词，互不混用**：规则或模板还在不在用？看 `status`。来源核验过吗？看 `verification_status`。人审过吗？看 `review`。没有「成熟」这个词；方法是否验证过
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): - RV-5 库里的模板显示为「已审核」当且仅当 `reviewed`；没有「成熟」一词。
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **来源**：审核记录与哈希绑定、四种状态、统一显示、流程规则 C-D20；人审与 AI 会话分离、承认程序验不了真人 A-D20；标注不阻断、去掉「成熟」一词 M。依据：[已读] 旧来源与核验回执；[设计] 其余。
+  - S5 retired term 'mature' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '`PLAN`' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+
+
+----------------------------------------------------------------------
+Ran 53 tests in 198.785s
+
+FAILED (failures=4)

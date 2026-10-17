@@ -1,0 +1,396 @@
+{
+  "schema": "capability-v1",
+  "id": "evidence.parse_observations",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Parse supplied observations; retain missing counts and record generated IDs.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "observations",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "UTF-8 CSV counts or JSON observations, genotype_results and functional_results."
+    },
+    {
+      "name": "predictions",
+      "type": "artifact",
+      "required": false,
+      "constraints": {},
+      "description": "S5b identity-expected-results.json; predictions remain separate from observations."
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "observation_origin": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "document",
+      "type": "document",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "observations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "group": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "colonies": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "plated_cells": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "plated_volume_uL": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "unit": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "role": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "group",
+                "colonies",
+                "plated_cells",
+                "plated_volume_uL",
+                "unit",
+                "role"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "genotype_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sample_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "assay_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "background_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "result": {
+                  "enum": [
+                    "positive",
+                    "negative",
+                    "indeterminate",
+                    "not_tested"
+                  ]
+                },
+                "control_status": {
+                  "enum": [
+                    "passed",
+                    "failed",
+                    "unknown"
+                  ]
+                },
+                "observed_band_bp": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 0
+                },
+                "band_tolerance_bp": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "sample_id",
+                "assay_id",
+                "background_id",
+                "result",
+                "control_status",
+                "observed_band_bp",
+                "band_tolerance_bp"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "functional_results": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "sample_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "result": {
+                  "enum": [
+                    "positive",
+                    "negative",
+                    "indeterminate",
+                    "not_tested"
+                  ]
+                }
+              },
+              "required": [
+                "sample_id",
+                "result"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "observation_origin": {
+            "type": "string",
+            "minLength": 1
+          },
+          "predictions": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "schema": {
+                    "const": "identity-expected-results-v1"
+                  },
+                  "assay_id": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "backgrounds": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "minLength": 1
+                        },
+                        "reference_sha256": {
+                          "type": "string",
+                          "pattern": "^[0-9a-f]{64}$"
+                        },
+                        "primer_pair": {
+                          "type": "array",
+                          "minItems": 2,
+                          "maxItems": 2,
+                          "items": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        },
+                        "expected": {
+                          "type": "object",
+                          "properties": {
+                            "status": {
+                              "enum": [
+                                "DISTINGUISHABLE",
+                                "NOT_DISTINGUISHABLE",
+                                "UNDETERMINED"
+                              ]
+                            },
+                            "product_count": {
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "product_bp": {
+                              "type": [
+                                "integer",
+                                "null"
+                              ],
+                              "minimum": 1
+                            }
+                          },
+                          "required": [
+                            "status",
+                            "product_count",
+                            "product_bp"
+                          ],
+                          "additionalProperties": false,
+                          "allOf": [
+                            {
+                              "if": {
+                                "properties": {
+                                  "product_count": {
+                                    "const": 1
+                                  }
+                                },
+                                "required": [
+                                  "product_count"
+                                ]
+                              },
+                              "then": {
+                                "properties": {
+                                  "product_bp": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                  }
+                                }
+                              },
+                              "else": {
+                                "properties": {
+                                  "product_bp": {
+                                    "type": "null"
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "reference_sha256",
+                        "primer_pair",
+                        "expected"
+                      ],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": [
+                  "schema",
+                  "assay_id",
+                  "backgrounds"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "generated_ids": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "row",
+                "id"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "input_files": {
+            "type": "object",
+            "properties": {
+              "observations_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "predictions_sha256": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            },
+            "required": [
+              "observations_sha256",
+              "predictions_sha256"
+            ],
+            "additionalProperties": false
+          },
+          "unverified": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "observations",
+          "genotype_results",
+          "functional_results",
+          "observation_origin",
+          "predictions",
+          "generated_ids",
+          "input_files",
+          "unverified"
+        ],
+        "additionalProperties": false
+      },
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "evidence.check_record_consistency"
+    }
+  ],
+  "does_not_establish": [
+    "Experimental success (实验已成功).",
+    "Functional revival (功能已复活).",
+    "Authenticity of submitted observations (观察本身真实)."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D11, D12, B3; prompts/s3-revival-evidence.md"
+    ],
+    "implemented_in": "grt_kit_revival_evidence.capabilities.evidence:parse_observations"
+  },
+  "owner": "kit:revival-evidence",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-16"
+  }
+}

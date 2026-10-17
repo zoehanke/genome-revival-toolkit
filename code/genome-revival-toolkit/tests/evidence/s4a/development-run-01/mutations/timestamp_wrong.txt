@@ -1,0 +1,17 @@
+test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata (test_release_engineering.ReleaseEngineeringTests.test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata) ... FAIL
+
+======================================================================
+FAIL: test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata (test_release_engineering.ReleaseEngineeringTests.test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 130, in test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata
+    self.assertEqual(checked["status"], "PASS", checked)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'status': 'FAIL', 'findings': ['Archive timestamp is not fixed: LICENSE', 'Archive timestamp is not fixed: README.md', 'Archive timestamp is not fixed: THIRD_PARTY.md', 'Archive timestamp is not fixed: VERSIONS.json', 'Archive timestamp is not fixed: pyproject.toml', 'Archive timestamp is not fixed: release-manifest.json', 'Archive timestamp is not fixed: requirements.lock', 'Archive timestamp is not fixed: ship.json', 'Archive timestamp is not fixed: src/dna_design_core/__init__.py', 'Archive timestamp is not fixed: src/dna_design_core/resources/VERSIONS.json', 'Archive timestamp is not fixed: tools/build_release.py'], 'release_id': '57250efba1718ebef4ce0dfed3622175888e7fe9c27f24e57528c2061cbd4bf9', 'archive_sha256': 'c9667b3239699ea02e1cdfa7bed4cfe8cd58b874b88c39f0ccfab711f91b576d'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.877s
+
+FAILED (failures=1)

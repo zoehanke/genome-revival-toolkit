@@ -1,0 +1,174 @@
+{
+  "spec_commit": "12c4274",
+  "oracle": "construction",
+  "groups": [
+    {
+      "schema": "capability-v1",
+      "shape": "granularity",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "capability-v1",
+      "shape": "optional_authorship",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "rule-v1",
+      "shape": "optional_authorship",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "pipeline-template-v1",
+      "shape": "optional_authorship",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "capability-v1",
+      "shape": "executable_probe",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "capability-v1",
+      "shape": "package_probe",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "failure-v1",
+      "shape": "cause_chain",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "manifest-v1",
+      "shape": "profile",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "receipt-v1",
+      "shape": "event_range",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "receipt-v1",
+      "shape": "no_run",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "run.created-payload-v1",
+      "shape": "packages",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "run.created-payload-v1",
+      "shape": "actor",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "run.abandoned-payload-v1",
+      "shape": "actor",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "goal.amended-payload-v1",
+      "shape": "actor",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "input.registered-payload-v1",
+      "shape": "actor",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "goal.amended-payload-v1",
+      "shape": "json_patch",
+      "positive": 1,
+      "negative": 5
+    },
+    {
+      "schema": "goal.amended-payload-v1",
+      "shape": "json_patch_operations",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.completed-payload-v1",
+      "shape": "materials",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.completed-payload-v1",
+      "shape": "documents",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.failed-payload-v1",
+      "shape": "retained_outputs",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.started-payload-v1",
+      "shape": "origin_source",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.started-payload-v1",
+      "shape": "origin_step",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.started-payload-v1",
+      "shape": "origin_artifact",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "step.started-payload-v1",
+      "shape": "origin_literal",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "judge.finished-payload-v1",
+      "shape": "unsatisfied",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "seal.rejected-payload-v1",
+      "shape": "unsatisfied",
+      "positive": 1,
+      "negative": 2
+    },
+    {
+      "schema": "pipeline-template-v1",
+      "shape": "placeholders",
+      "positive": 1,
+      "negative": 6
+    },
+    {
+      "schema": "event-v1",
+      "shape": "genesis",
+      "positive": 1,
+      "negative": 2
+    }
+  ]
+}

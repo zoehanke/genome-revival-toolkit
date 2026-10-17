@@ -1,0 +1,47 @@
+{
+  "schema": "rule-v1",
+  "id": "selection.trp1.yeast",
+  "name": "Conditional selection for trp1 / yeast",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "marker_id": "trp1",
+    "pattern": "trp1",
+    "host": "yeast",
+    "plate": "Synthetic defined medium without tryptophan",
+    "auxotrophy": "trp1"
+  },
+  "applies_when": [
+    {
+      "field": "marker_id",
+      "op": "eq",
+      "value": "trp1"
+    },
+    {
+      "field": "host",
+      "op": "eq",
+      "value": "yeast"
+    }
+  ],
+  "source": {
+    "source_class": "database_record",
+    "citation": "SGD commonly used auxotrophic markers",
+    "locator": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+    "retrieved_at": "2026-10-14",
+    "content_ref": null,
+    "archive_note": "Copied legacy citation, not fetched online. Old verified flags/receipts are not inherited.",
+    "supports": [
+      "yeast selection mapping for trp1"
+    ],
+    "does_not_support": [
+      "Resistance, expression or compatible selection measured in the user's strain."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/selection.trp1.yeast.json"
+}

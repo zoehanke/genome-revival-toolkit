@@ -1,0 +1,15 @@
+<SOURCE>\tools\check_schemas.py:7: DeprecationWarning: jsonschema.RefResolver is deprecated as of v4.18.0, in favor of the https://github.com/python-jsonschema/referencing library, which provides more compliant referencing behavior as well as more flexible APIs for customization. A future release will remove RefResolver. Please file a feature request (on referencing) if you are missing an API for the kind of customization you need.
+  from jsonschema import Draft202012Validator, FormatChecker, RefResolver
+test_action_matches_constructed_counts_and_decisions (tests.unit.test_kit_template.KitTemplateTests.test_action_matches_constructed_counts_and_decisions) ... ok
+test_all_template_contracts_sources_and_inline_schema_are_valid (tests.unit.test_kit_template.KitTemplateTests.test_all_template_contracts_sources_and_inline_schema_are_valid) ... ok
+test_capability_imports_use_only_public_interface_and_own_package (tests.unit.test_kit_template.KitTemplateTests.test_capability_imports_use_only_public_interface_and_own_package) ... ok
+test_count_and_threshold_source_mutants_are_rejected (tests.unit.test_kit_template.KitTemplateTests.test_count_and_threshold_source_mutants_are_rejected) ... ok
+test_disabled_check_comparison_is_caught_by_negative_control (tests.unit.test_kit_template.KitTemplateTests.test_disabled_check_comparison_is_caught_by_negative_control) ... ok
+test_missing_records_are_unknown (tests.unit.test_kit_template.KitTemplateTests.test_missing_records_are_unknown) ... ok
+test_positive_and_negative_controls_really_run_at_both_moments (tests.unit.test_kit_template.KitTemplateTests.test_positive_and_negative_controls_really_run_at_both_moments) ... ok
+test_template_is_explicit_only_and_contributions_match_declarations (tests.unit.test_kit_template.KitTemplateTests.test_template_is_explicit_only_and_contributions_match_declarations) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 7.476s
+
+OK

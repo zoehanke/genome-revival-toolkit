@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import json,sys,site,importlib.metadata as m; from pathlib import Path; p=Path(sys.prefix); print(json.dumps({\"prefix_differs_from_base\":sys.prefix!=sys.base_prefix,\"user_site_enabled\":site.ENABLE_USER_SITE,\"pyvenv_cfg\":(p/\"pyvenv.cfg\").read_text(encoding=\"utf-8\"),\"packages\":sorted([{\"name\":d.metadata[\"Name\"],\"version\":d.version,\"inside_environment\":Path(d.locate_file(\"\")).resolve().is_relative_to(p)} for d in m.distributions()],key=lambda r:r[\"name\"])}))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.203
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "--isolated",
+      "check"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.891
+  }
+]

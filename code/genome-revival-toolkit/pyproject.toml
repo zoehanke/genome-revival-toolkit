@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools==83.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "genome-revival-toolkit"
+dynamic = ["version"]
+description = "DNA Design Core minimal local runtime with Kit capability discovery"
+readme = "README.md"
+requires-python = ">=3.11"
+
+[project.scripts]
+grt = "dna_design_core.application.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "tools.build_release.VERSION"}
+
+[tool.setuptools.cmdclass]
+build_py = "tools.build_release.ReleaseBuild"
+
+[tool.setuptools.package-dir]
+"" = "src"
+tools = "tools"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dna_design_core = ["application/verbs.json", "resources/*.json", "resources/capabilities/*.json", "resources/schemas/*.json", "resources/schemas/events/*.json"]
+

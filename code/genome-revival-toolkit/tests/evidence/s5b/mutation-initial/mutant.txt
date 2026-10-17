@@ -1,0 +1,29 @@
+test_different_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_different_sizes) ... FAIL
+test_same_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_same_sizes) ... FAIL
+
+======================================================================
+FAIL: test_different_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_different_sizes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_genome_identity.py", line 53, in test_different_sizes
+    self.assert_case("different_sizes")
+  File "<SOURCE>\tests\unit\test_genome_identity.py", line 48, in assert_case
+    self.assertEqual(outcome.documents["expected_results"], case["expected"])
+AssertionError: {'sch[293 chars]s': 'NOT_DISTINGUISHABLE'}}, {'id': 'edited', [210 chars]'}}]} != {'sch[293 chars]s': 'DISTINGUISHABLE'}}, {'id': 'edited', 'ref[202 chars]'}}]}
+Diff is 1065 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_same_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_same_sizes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_genome_identity.py", line 56, in test_same_sizes
+    self.assert_case("same_sizes")
+  File "<SOURCE>\tests\unit\test_genome_identity.py", line 48, in assert_case
+    self.assertEqual(outcome.documents["expected_results"], case["expected"])
+AssertionError: {'sch[293 chars]s': 'DISTINGUISHABLE'}}, {'id': 'edited', 'ref[202 chars]'}}]} != {'sch[293 chars]s': 'NOT_DISTINGUISHABLE'}}, {'id': 'edited', [210 chars]'}}]}
+Diff is 1065 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.467s
+
+FAILED (failures=2)

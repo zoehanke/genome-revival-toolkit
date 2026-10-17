@@ -1,0 +1,19 @@
+{
+  "schema_id": "step.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required unverified."
+  },
+  "data": {
+    "step_id": "s1",
+    "outputs": {
+      "materials": {},
+      "documents": {},
+      "artifacts": []
+    },
+    "values": {},
+    "verdict_ids": [],
+    "duration_ms": 1
+  }
+}

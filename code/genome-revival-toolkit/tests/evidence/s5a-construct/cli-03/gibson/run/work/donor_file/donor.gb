@@ -1,0 +1,26 @@
+LOCUS       material                 190 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  material.
+ACCESSION   material
+VERSION     material
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+COMMENT     GRT-MATERIAL:
+            eyJtYXRlcmlhbCI6eyJlbmRzIjp7ImxlZnQiOnsia2luZCI6ImJsdW50Iiwi
+            b3ZlcmhhbmciOiIifSwicmlnaHQiOnsia2luZCI6ImJsdW50Iiwib3Zlcmhh
+            bmciOiIifX0sImZlYXR1cmVzIjpbXSwic2VxdWVuY2UiOiJHVFRBQ1RBR1RU
+            R0NBQVRDR0FUQ0FDVENBVEFBQ1RUQUFDR0FBQUNBQUFUVEdDR1RHVENUVEFU
+            R0dBQ0FBQVRUQUNDR0NHR0FDQVRHQUdHR0NDR1RUVENDQUFDR0FHQUFBQ0NB
+            Q0NHQUFDR1RDVEdUVFRDVFRUVFRUQVRDR0NDVEFDVFRDVENBQ0FDQ0dBQ0NH
+            QUFUVEdDVEdBVFRUVFRUR1RDVENBR0NUQ0NUR0NUVFRDVEdHVEdBVEdUVFRB
+            Iiwic3RyYW5kZWRuZXNzIjoiZG91YmxlIiwidG9wb2xvZ3kiOiJsaW5lYXIi
+            fSwicHJvamVjdGlvbiI6ImEyMWQzNWQzYWZiZjFmMThlZTdiMDFkOWU2MTVl
+            YjQ3ODY1YTk0ZDk4NDY0NjYwNDU5NDA0YTE2MTY0YmMyMGMifQ==
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 gttactagtt gcaatcgatc actcataact taacgaaaca aattgcgtgt cttatggaca
+       61 aattaccgcg gacatgaggg ccgtttccaa cgagaaacca ccgaacgtct gtttcttttt
+      121 tatcgcctac ttctcacacc gaccgaattg ctgatttttt gtctcagctc ctgctttctg
+      181 gtgatgttta
+//

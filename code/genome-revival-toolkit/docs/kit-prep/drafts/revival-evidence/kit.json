@@ -1,0 +1,39 @@
+{
+  "schema": "kit-v1",
+  "name": "revival-evidence",
+  "version": "0.0.0",
+  "title": "Revival Evidence",
+  "requires_core": {
+    "minimum": "0.0.0",
+    "maximum_exclusive": "1.0.0"
+  },
+  "contributes": {
+    "capabilities": [
+      "capabilities/parse_observations.json",
+      "capabilities/assess_observations.json",
+      "capabilities/check_record_consistency.json"
+    ],
+    "knowledge": [
+      "knowledge/evidence.missing-is-unknown.json",
+      "knowledge/evidence.controls-and-conflicts.json",
+      "knowledge/evidence.bounded-conclusions.json",
+      "knowledge/evidence.functional-revival-scope.json",
+      "knowledge/evidence.whole-genome-elimination-scope.json",
+      "knowledge/evidence.control-outgrowth.json"
+    ],
+    "templates": [
+      "templates/observations_only.json",
+      "templates/compare_predictions.json"
+    ],
+    "text": [
+      "text/en.json"
+    ]
+  },
+  "does_not_establish": [
+    "Experimental success",
+    "Functional revival",
+    "Authenticity of submitted observations",
+    "Whole-genome identity or elimination."
+  ],
+  "review": "knowledge/review/"
+}

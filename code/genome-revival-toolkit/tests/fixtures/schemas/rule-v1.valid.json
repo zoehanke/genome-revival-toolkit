@@ -1,0 +1,43 @@
+{
+  "schema_id": "rule-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "rule-v1",
+    "id": "demo.boundary",
+    "name": "Synthetic boundary",
+    "version": 1,
+    "status": "draft",
+    "purpose": "advisory",
+    "evaluator": "demo.length",
+    "parameters": {},
+    "applies_when": [],
+    "source": {
+      "source_class": "project_contract",
+      "citation": "Synthetic fixture construction",
+      "locator": "fixture",
+      "retrieved_at": "2026-01-01",
+      "content_ref": null,
+      "archive_note": "Synthetic; no external retrieval.",
+      "supports": [
+        "Schema validation."
+      ],
+      "does_not_support": [
+        "Biological facts."
+      ],
+      "verification_status": "unverified"
+    },
+    "limits": [
+      "Fixture only."
+    ],
+    "review": "knowledge/review/boundary.json",
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    }
+  }
+}

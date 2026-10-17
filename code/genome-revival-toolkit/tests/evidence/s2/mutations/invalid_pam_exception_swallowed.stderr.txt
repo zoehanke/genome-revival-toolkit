@@ -1,0 +1,18 @@
+test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) ... 
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.fail.json') ... FAIL
+
+======================================================================
+FAIL: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.fail.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<TEMP>\s2_mutation_yzfq4wq6\project\tests\unit\test_cut_plasmid.py", line 64, in test_all_check_pass_and_fail_fixtures_actually_run
+    self.assertEqual(verdict["outcome"], case["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'cut_plasmid.check_pam', 'version': '0.1.0'}, 'scope': 'content_model', 'moment': 'final', 'subject': {'kind': 'run', 'id': '11cea211ea743588'}, 'constraint_id': None, 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Recomputed exact supplied-sequence pam.', 'evidence': {'results': [{'step_id': 'test', 'vector_id': 'e39af364c24d1d71c69447e8b6b18e69ceb64dc94c5ee15bfc179d93afb565dc', 'target_id': 'a62c0df3a3af4a82041cbc2140af02e19d60bcb1adaa019c5cf3774c9252af07', 'outcome': 'PASS', 'direction_status': 'INVALID_PAM', 'valid_target_locus_count': 0, 'vector_self_target_count': 0, 'vector_max_mismatches': 3, 'vector_search_complete': True, 'annotation_findings': []}]}, 'basis': ['803a5d48b5479e81712dc4b209c8485c71169a143ad68849eb30dba0faaa1b32', 'ff5574c1c7e921d4c0e2457b436e821ffcd48de421a6f770ada79be83395fdbc', '282ad12d106d9a5a6ad2ef53461dc82fc07a878c707e6356cf410cbd86d20244', 'f0c14727aa7ecd16a6232fc84b639a50cdb045368bac57e48b0de0edc15e1ceb', '5cac2ac61b35c7b3690efe74938f072c8b46ed7520dd4515452db7158e3f2978', 'f92b702a86d52f7d3bf3552402e3dabe5f3453d4ca0b6e058c8acf70a278f5bb'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Cleavage activity', 'Editing efficiency', 'Genome-wide off-target safety']}
+
+----------------------------------------------------------------------
+Ran 1 test in 22.389s
+
+FAILED (failures=1)

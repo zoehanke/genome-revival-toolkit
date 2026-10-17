@@ -1,0 +1,32 @@
+{
+  "schema": "rule-v1",
+  "id": "identity.full-quality-and-resolution",
+  "name": "Full oligo quality and an explicit size-resolution condition remain separate from predicted product presence.",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "identity.analyze_assay",
+  "parameters": {
+    "statement": "Full oligo quality and an explicit size-resolution condition remain separate from predicted product presence."
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:run_identity and _discrimination; retained independent primer/region regression tests",
+    "locator": "genome-revival-toolkit/kits/identity/rules/scope.json@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "Full oligo quality and an explicit size-resolution condition remain separate from predicted product presence."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/identity.full-quality-and-resolution.json"
+}

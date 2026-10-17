@@ -1,0 +1,55 @@
+{
+  "cases": {
+    "different_sizes": {
+      "portable_package": "different_sizes/portable/ab29efb1fd32bbd3cac6516f57d1d745ef70069ad05c2d1f4507eeae52bf7875",
+      "verified": true,
+      "oracle": {
+        "checked_backgrounds": 2,
+        "product_counts": [
+          1,
+          1
+        ],
+        "product_bp": [
+          1000,
+          1300
+        ],
+        "status": "DISTINGUISHABLE",
+        "oracle": "independent standard-library window enumeration",
+        "laboratory_status": "NOT_PERFORMED"
+      },
+      "unverified": [
+        "Annealing temperature was not set; exact binding does not establish PCR performance.",
+        "Authentic genotype.",
+        "Biological correctness of feature names or strand/function claims.",
+        "Complete-CDS start/stop validation of explicitly partial or pseudogene annotations.",
+        "Empirical thresholds not supplied by sourced rule data.",
+        "Experimental function or correct transcription.",
+        "Experimental performance or correctness of a scientific conclusion.",
+        "Experimental viability, function, efficiency or host-specific performance.",
+        "Gene expression, protein activity, selectable phenotype or wet-laboratory function.",
+        "Laboratory PCR and genotype confirmation: NOT_PERFORMED; laboratory steps remain PLANNED.",
+        "No CDS feature was present in recorded material outputs.",
+        "Observed experimental products.",
+        "Primer specificity in an actual strain.",
+        "Primer thermodynamic quality and experimental band separation were not measured.",
+        "Programmed frameshifts, recoding or unannotated strain-specific genetic code differences.",
+        "Unknown physical properties or ambiguous base identities.",
+        "Wet-laboratory performance or biological function.",
+        "Whole-genome discrimination outside supplied references.",
+        "Whole-genome specificity alignment was not performed; only supplied reference sequences were searched."
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78"
+    },
+    "handoff_hash": {
+      "halted": true,
+      "failure_code": "SOURCE_CHANGED",
+      "seal_refused": true
+    }
+  },
+  "commands": 14,
+  "connection_attempts": 0,
+  "evidence_kind": "developer-assisted synthetic computational test",
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run",
+  "laboratory_status": "NOT_PERFORMED"
+}

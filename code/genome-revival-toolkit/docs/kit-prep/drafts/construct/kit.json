@@ -1,0 +1,38 @@
+{
+  "schema": "kit-v1",
+  "name": "construct",
+  "version": "0.0.0",
+  "title": "Construct",
+  "requires_core": {
+    "minimum": "0.0.0",
+    "maximum_exclusive": "1.0.0"
+  },
+  "contributes": {
+    "capabilities": [
+      "capabilities/model_donor.json",
+      "capabilities/design_donor.json",
+      "capabilities/design_junction_assay.json",
+      "capabilities/check_junction_assay.json",
+      "capabilities/export_handoff.json"
+    ],
+    "knowledge": [
+      "knowledge/construct.explicit-source-bounds.json",
+      "knowledge/construct.physical-route.json",
+      "knowledge/construct.donor-not-integration.json"
+    ],
+    "templates": [
+      "templates/prepare_gibson.json",
+      "templates/prepare_pcr.json"
+    ],
+    "text": [
+      "text/en.json"
+    ]
+  },
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival."
+  ],
+  "review": "knowledge/review/"
+}

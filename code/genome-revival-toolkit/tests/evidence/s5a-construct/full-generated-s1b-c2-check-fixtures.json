@@ -1,0 +1,602 @@
+[
+  {
+    "fixture": "topology.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "Topology is fixed by the synthetic construction: circular versus linear, never by a declaration or filename."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.topology",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Retained topology compared; unknown topology is not inferred.",
+      "evidence": {
+        "expected": "circular",
+        "actual": [
+          "circular"
+        ]
+      },
+      "basis": [
+        "f6ed62a603c31181e6d1380630e0cea30a0174d786d1b11231cdefd8cdb96b1e",
+        "53ced1121ac67d5350f95256b1de9d0e0611e52795ed0c783b37d1b6fa669e58",
+        "8c045b00aa72aa03b6f2e0ec483eba2efcbb55fa0436c326b7b9b9ffed7bc296",
+        "f031d833d9f1644e97eb4ef614ee30860f57b7b23bfd1c8022fabeb65aefc565",
+        "56df1f94e086e88c74556ef854894eba62009cb39f2fe5a79ce7bcc92fe0b0e8",
+        "f31553a062c1ea919cbb3bea0a6269d9418486802dcf5382539ed215aaaa6d6b",
+        "079aeebde1b00634586b667e22078e688db23e2e1a33308727b2ec4a93181273"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "topology.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "Topology is fixed by the synthetic construction: circular versus linear, never by a declaration or filename."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.topology",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Retained topology compared; unknown topology is not inferred.",
+      "evidence": {
+        "expected": "circular",
+        "actual": [
+          "linear"
+        ]
+      },
+      "basis": [
+        "853d1fa963314718ef36e3af5b0c23fe3bbb98c736562465267192d4ddba38ab",
+        "6fd2393b96013540b4f732a63f93936b74f57e865b35d4fb597e833e635b8964",
+        "90195f3de6faa58a8d99cd27f487c1b3ab7f2f1c46c3be9bf78c1c90c89b594d",
+        "b350dcb756b5ffe8836c7a8776629bcc6304ab47b9a2d20f6c8dcb8ca647f48c",
+        "4aa44214bb5cadf69a8d3feb97766bc50a0ccbba35c85931d00a1d5f4b064e93",
+        "f51a3e36b489286c5336563d349f228c27a2faceb65c296966ad1b903e52dad6",
+        "ac4fd1da02e2edcd81cbbc3780852b2500555a6597a5681a42617453dda6c362"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "exact_sequence.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "The hand-written last base is A versus T; no rotation equivalence or code-generated answer."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.exact_sequence",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Complete uppercase sequences compared without rotation or reverse-complement equivalence.",
+      "evidence": {
+        "targets": [
+          {
+            "material_id": "fcb745586e65c28a3186e92d1cf4a5c44c098d3821e0061df8ca5c04b50fdf9e",
+            "matches": true
+          }
+        ]
+      },
+      "basis": [
+        "2e9396b99c9aceb13d639fa3718837000754d2d75edddcff693cc78dbe5647c0",
+        "b2137753280e3074f57d60908799caabc127607b57e27c990e3789c45989a7b5",
+        "9ba6b2fa23a5aa5755d11d17c9d71f218775f973462392eebd5857d63462cc87",
+        "dbe46f8b02c0e15a67394b9a39ebc8d0de52fd7c43edd174b66e98d9e72b6db9",
+        "40320c0c8831bdf808c5ea735a1221c75d4d9c4c268474ec1bf4a45186c187a5",
+        "ba3f8b6a6b5fda537ec1e0dabd05c0b01ce768dae9daee038ceaf58bedba8b83",
+        "cf144535e94e0434fe15c5f27438e413c6c64974cb9d1566a40384e742e04ac7"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "exact_sequence.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "The hand-written last base is A versus T; no rotation equivalence or code-generated answer."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.exact_sequence",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Complete uppercase sequences compared without rotation or reverse-complement equivalence.",
+      "evidence": {
+        "targets": [
+          {
+            "material_id": "856ca73a95f2e61623376698284e6d146e54db6b61bd9bf59ee050e4655e2355",
+            "matches": false
+          }
+        ]
+      },
+      "basis": [
+        "829b2aa1938e10df409604ea7a5c249ef15e5410c39c46deaf5797fa8101eab9",
+        "53dcb32237cd15b5da2b97f809a7b2763571e85dd2362f5feaa1d9d0a651d527",
+        "61a988bda765dba3c59571de35420124568aec450a7cf935e23450be3e5676b1",
+        "1f5e16d92e1fec8f7fd42738694d63553855aa3bc358f621cf7dc7ac6c471674",
+        "117ce6cc6c4510106d61b5f05d6cf74a58f7f38fa2392d7c9a52c5934340709b",
+        "c1ce38051c3c8c2a646bd9342a7ed053cbf591cb7aa7473c252fac34c494cfef",
+        "12adddca4a464f244565021366e9394df790d7d1701f4dae651132d3ff56140a"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "components_present.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "CCCG occupies [3,7) in the positive. The negative has only A/T but an intentionally misleading annotation."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.components_present",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Components checked against sequence on the explicit strand; labels do not establish presence or absence.",
+      "evidence": {
+        "components": [
+          {
+            "material_id": "6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d",
+            "name": "wanted",
+            "strand": 1,
+            "positions": [
+              3
+            ],
+            "unresolved": false
+          }
+        ]
+      },
+      "basis": [
+        "8cce0d1cbe2f46b1ef333d0559ca3a09a45b1611dfdc25ffce3e867bf5d340e0",
+        "a5c1dc4de836e3113049ca1992a0ac16014b9c5b2e71b4cbf1d7fd118e2df91d",
+        "056d8a9163f9d2a3cd3b69cf122870f83e559c4923c84100da79f10fbb5ab6d0",
+        "d59a4258ac40a1e3cd281935b17a32dadfa5980ac33a1dfe17383f7ca4e20be3",
+        "a023dd2d010ed6688dcc2b0f4cfb7af767d995b26c0c93448d98e332a12e2fb9",
+        "a488b94070edbec6c72c91a7af9e86cecf54552ccf4fbbc24995ade36263f1fa",
+        "40961c5444b94b15d6d8e93c32861a5a89f7533c6f04fde8dae930e1712a98b5"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "components_present.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "CCCG occupies [3,7) in the positive. The negative has only A/T but an intentionally misleading annotation."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.components_present",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Components checked against sequence on the explicit strand; labels do not establish presence or absence.",
+      "evidence": {
+        "components": [
+          {
+            "material_id": "b2d2edbf9fbfd4748f11c7742e8cc845b25516cb96d754844be9e876caaf8eff",
+            "name": "wanted",
+            "strand": 1,
+            "positions": [],
+            "unresolved": false
+          }
+        ]
+      },
+      "basis": [
+        "fd5b0804e6ddbce32a82238edbbc70d3a928b2843f31f2b926632161bf475ac8",
+        "e1221da5bc3d9b31db3f6f69726112e8b80974b4e93362b47c997b071e9e5c2b",
+        "8e83315169d0c8ed630c7684347f0971487755b1cd054963299a3ef67cc030fe",
+        "04c8d6c50148d58bfb06a7272d30c8c6503eea44191d785acc1717e36b05f2ef",
+        "e011c5fc5037e146461ada95ecb202191490971a0d63f5091b7372976e6eeea0",
+        "bd7162abb37e47cea3ef39157cf1a417c6d1ccf37f573a4c3d692e8e5b369811",
+        "b28355e396e8909707002b4bad1970410b1fd9733b4ddbd2a20ecaa267de8b94"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "components_absent.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "Only A/T in the positive cannot contain CCCG; the negative contains literal CCCG at [3,7)."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.components_absent",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Components checked against sequence on the explicit strand; labels do not establish presence or absence.",
+      "evidence": {
+        "components": [
+          {
+            "material_id": "4b61ba88bc816e92f012115047eb9d1c73a17eced161ae352338103b97b8057e",
+            "name": "forbidden",
+            "strand": 1,
+            "positions": [],
+            "unresolved": false
+          }
+        ]
+      },
+      "basis": [
+        "fa5f6ba104300b6edf23c2df57f2d3bb3a9b7cb23c8713a190235a5d4040ba33",
+        "1ad653199cbcdf672a9659c1abfd05105ae78bcb73ddf15fee78e4a17e3c5817",
+        "459566851f580449a0f04459ea9e1f1e110b773a1ab7ed368df9ad753da1e8fc",
+        "75cae8c1e4868107c34051391cae3a16617804be6a5640aa0561bfe5c9649dca",
+        "43510052d3b781b2870029bde8021f4416d2916fe2e3cd596f4ea97f7f9a7a27",
+        "f1003ee8fcd8649b8149a1f75586bcb0080b112df68fb89dfce96dc6201d885f",
+        "ad19363dbb18e331380e23cd4ba4e2386223e5743396fc01800d87fc7a3a7a29"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "components_absent.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "Only A/T in the positive cannot contain CCCG; the negative contains literal CCCG at [3,7)."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.components_absent",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Components checked against sequence on the explicit strand; labels do not establish presence or absence.",
+      "evidence": {
+        "components": [
+          {
+            "material_id": "6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d",
+            "name": "forbidden",
+            "strand": 1,
+            "positions": [
+              3
+            ],
+            "unresolved": false
+          }
+        ]
+      },
+      "basis": [
+        "3879a6f23726ce40b375ef1e5aef1ef6734e7bb1962747201a6944fedb262337",
+        "f257821b59651679c53965e9847b6f5043b1efddf89997b840773b4b898f41b5",
+        "4e686f7aa87a8c46a91ca12db5649c280f99b445c8ffe21a3e33de98f96de81a",
+        "b97db746bf1259af2289c2856222e5dc0a268b78efe1756069324ec9dc4861e6",
+        "7c77f0f9e0738ae81bdca36109f8682155a6a10481752f53a1ad104f9a480209",
+        "69cf53afc2f28fc3bb3abccfba77c48124440936b9ebb6b0e05ad1f3fff30952",
+        "bbd5d32535d0596c3443108be5659d4781052d7562aaf394dbe795d5bf5e26eb"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "regions_unchanged.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "CCC [3,6) is replaced by AT. AAA maps [0,3) to [0,3), GGGTTT maps [6,12) to [5,11); the negative changes the protected second base."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.regions_unchanged",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Explicit reference/target intervals compared; annotation inheritance is outside this check.",
+      "evidence": {
+        "reference_material_id": "6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d",
+        "comparisons": [
+          {
+            "material_id": "9d56264c16e49de5bfa7736a3aea4921b1803c92848db1f0b76703ac6505043d",
+            "region": {
+              "source_start": 0,
+              "source_end": 3,
+              "target_start": 0,
+              "target_end": 3
+            },
+            "matches": true
+          },
+          {
+            "material_id": "9d56264c16e49de5bfa7736a3aea4921b1803c92848db1f0b76703ac6505043d",
+            "region": {
+              "source_start": 6,
+              "source_end": 12,
+              "target_start": 5,
+              "target_end": 11
+            },
+            "matches": true
+          }
+        ]
+      },
+      "basis": [
+        "b7b2ec877f5840f9a9dc83303e797d92131e9a360fd9dd037aa23c9148b0e00a",
+        "1f9d94b52104c6316365faf5465ff892b02e285b7ef37fa9fc027473e1286b3e",
+        "e6bd3325b13f863d8ed0f84cf9909d6a01a0faa7e261f3d38139a35540a22bbb",
+        "41994fa14a2c54d2eac5ff8855ff7942feaf04da37cabeec62e5d23654fa7065",
+        "8eacb1c924f05fd7d13f00dd4137230e8af9bd10d67e47536de2cb799cea6547",
+        "e862c5140c3e5850de764f87645ab7324a147554347a40f80217b58b71ce80ba",
+        "73fd28ed1a666195f26258eaf7dc091d2b9835a3e64996a65d1bd54a6b5f9d7b",
+        "3e71f6006da2f363d08a202ae94fb10060f6ae312a1fb7356d3e560c9deee449",
+        "c5b00c3320c778828b3202adac67832a4e719bbacbb82f30130099da00a5353b",
+        "27229426ff0530a2e957b11e865a96b055dd15e0fba223790ad1a99fce9dc45e"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "regions_unchanged.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "CCC [3,6) is replaced by AT. AAA maps [0,3) to [0,3), GGGTTT maps [6,12) to [5,11); the negative changes the protected second base."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.regions_unchanged",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Explicit reference/target intervals compared; annotation inheritance is outside this check.",
+      "evidence": {
+        "reference_material_id": "6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d",
+        "comparisons": [
+          {
+            "material_id": "505bacadc889a4bcfa679d05a1029044ca887fa697a90d06492b7e26a385c434",
+            "region": {
+              "source_start": 0,
+              "source_end": 3,
+              "target_start": 0,
+              "target_end": 3
+            },
+            "matches": false
+          },
+          {
+            "material_id": "505bacadc889a4bcfa679d05a1029044ca887fa697a90d06492b7e26a385c434",
+            "region": {
+              "source_start": 6,
+              "source_end": 12,
+              "target_start": 5,
+              "target_end": 11
+            },
+            "matches": true
+          }
+        ]
+      },
+      "basis": [
+        "4dca3c1207d8f1dd86b3e4d3b4029184f51cb4537745ab9b40a7a263e0001557",
+        "cc00008a7ea7562d3796ed4bb0e193dbc19893a29ec3de0fb3bb03b90a19de19",
+        "8b437a1f8d258219ae380e234d691f79a7e5e753335fb933d762861f3eb59cce",
+        "7bf15c8aee1a48a05d39f31a2f364a609640f9466f2fd396ad75c29d4e1e4f22",
+        "2173a6e4a829efa8da13cb6546ff4b8f173343e957782000e57735f77f0a525b",
+        "505ebbe39024f8697253102b595ae50e9cf4101cb7c6abf90c0c1083e6c7fad0",
+        "ab38a9a14bdc062e79f496a850157dbd8bbf5996c13be262fd75a7f7cee6324a",
+        "f7f1007bdf3c8ac338b385f76d8c7e23412f1bc67334cd456c63ddfd2aad400d",
+        "2b87a85510dd90727455c401be3e4be0930e866b4f2e9e325b40e3ac2e92dbcf",
+        "26f2593d9695ac94bd12840835b1d2a86aca75225eb9fe9c2329c1f3d998298c"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "claim_reported.pass",
+    "oracle": {
+      "kind": "construction",
+      "reason": "A named structured claim with INSUFFICIENT is reported; the negative deliberately omits its status. No biological success is implied."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.claim_reported",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "PASS",
+      "issuer": "check_capability",
+      "summary": "Claim reporting checked; its status need not assert success and its truth is not evaluated.",
+      "evidence": {
+        "claim": "functional_revival",
+        "pointer": "/claims",
+        "matches": 1,
+        "reported_status": "INSUFFICIENT"
+      },
+      "basis": [
+        "259d68e07f903e63eebd86628477a3a2415f43083f12934a8394c7f392aed22c",
+        "3193e26f0b96f230df438c6ea6e4e86acedb361358588ce201b38f7af37607ff",
+        "da7ede4118295b05407cd9bcba61d66284336d3db6a8a20f4ff465e081ed30f1",
+        "f9df42b8f4b712adf78adeb370b0a29319b0482b5ab9f9c3ab0d44204466d20b",
+        "c86429c7b2dd886c8f0872d33669c1821a559d0e057aa3c63187ba46eea37238",
+        "e74ae0dd113a9b4853411d903c030a25c80ba30d35a12159268ad4329efd8963",
+        "822a912747ac909b893bf2a232df0297aed98c735d94e5e1b95d662772a4d75b"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  },
+  {
+    "fixture": "claim_reported.fail",
+    "oracle": {
+      "kind": "construction",
+      "reason": "A named structured claim with INSUFFICIENT is reported; the negative deliberately omits its status. No biological success is implied."
+    },
+    "verdict": {
+      "schema": "verdict-v1",
+      "check": {
+        "id": "check.goal.claim_reported",
+        "version": "0.0.0"
+      },
+      "scope": "user_goal",
+      "moment": "final",
+      "subject": {
+        "kind": "run",
+        "id": "aaaaaaaaaaaaaaaa"
+      },
+      "constraint_id": "c2",
+      "outcome": "FAIL",
+      "issuer": "check_capability",
+      "summary": "Claim reporting checked; its status need not assert success and its truth is not evaluated.",
+      "evidence": {
+        "claim": "functional_revival",
+        "pointer": "/claims",
+        "matches": 1,
+        "reported_status": null
+      },
+      "basis": [
+        "ec32eef182657f487ed62b4986f824387d37ecddc046be4f3c59c4bdd99db27c",
+        "644eeed42da767b69e2819d5b59c61a73f3d28ba85900024ed74491d7212c5a2",
+        "2e73899cad328c837ed4694892273f4e07d323f986d11ff80867e89016773570",
+        "637398f0c6baf20bda308e65031689c89ef21dea97f41967077b9729bfb0ca0c",
+        "25b5af4f1dfe47765d3e4cdd81702573a9aa4d2bde9e96ed2957a471bc4575b7",
+        "8dfb406da5dc5ca04f247ceda8d30f413ed590a237b34b2cc15bffd1a9003626",
+        "bb2ad7128fe49f691c109f33699695a7c8e810c056cd4751b21a24dd07e70e4d"
+      ],
+      "applicability": null,
+      "rule_refs": [],
+      "does_not_establish": [
+        "Experimental success, biological function or truth of a reported claim."
+      ]
+    }
+  }
+]

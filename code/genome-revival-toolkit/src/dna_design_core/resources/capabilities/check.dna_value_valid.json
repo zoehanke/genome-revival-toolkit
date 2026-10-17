@@ -1,0 +1,37 @@
+{
+  "schema": "capability-v1",
+  "id": "check.dna_value_valid",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Check DNA-valued document outputs against the IUPAC DNA alphabet.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.checks:dna_value_valid"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/checks/check.dna_value_valid.pass.json",
+    "fail": "tests/fixtures/checks/check.dna_value_valid.fail.json"
+  }
+}

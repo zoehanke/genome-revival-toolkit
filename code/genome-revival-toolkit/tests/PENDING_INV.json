@@ -1,0 +1,163 @@
+[
+  {
+    "id": "INV-Q1",
+    "stage": "S4",
+    "reason": "No CI published; local job ordering cannot prove a hosted CI prerequisite.",
+    "spec_ref": "D18",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-E3",
+    "stage": "S1",
+    "reason": "S1c night addendum 3 implements synchronous Python write observation (including module loading, exceptions, and nested calls) plus protected input/store/artifact/candidate hash readback. Real public CLI controls and a disabled-decision mutant are detected. Arbitrary reads and native/child-process I/O outside known paths are not globally observed; complete ctx-only interaction remains pending, not OS confinement.",
+    "spec_ref": "D6",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-I2",
+    "stage": "S1",
+    "reason": "Golden vectors run on the provided Windows Python environment only. Linux and other Python versions were not run; no hosted CI or installation was authorized.",
+    "spec_ref": "D9",
+    "check_type": "RT（CI 矩阵）"
+  },
+  {
+    "id": "INV-K3",
+    "stage": "S2",
+    "reason": "Requires actual FS behavior for D11; empty placeholders do not establish it.",
+    "spec_ref": "D11",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-N2",
+    "stage": "S2",
+    "reason": "No analyzers or threshold allow-list yet; adding one without algorithms would be speculative.",
+    "spec_ref": "D12",
+    "check_type": "AST"
+  },
+  {
+    "id": "INV-N3",
+    "stage": "S2",
+    "reason": "No review-sign implementation or write API yet; no review directory was written.",
+    "spec_ref": "D12",
+    "check_type": "AST"
+  },
+  {
+    "id": "INV-N4",
+    "stage": "S2",
+    "reason": "Requires actual RT behavior for D12; empty placeholders do not establish it.",
+    "spec_ref": "D12",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-N5",
+    "stage": "S2",
+    "reason": "Requires actual RT behavior for D12; empty placeholders do not establish it.",
+    "spec_ref": "D12",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-RV1",
+    "stage": "S3",
+    "reason": "Requires actual RT behavior for D20; empty placeholders do not establish it.",
+    "spec_ref": "D20",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-RV2",
+    "stage": "S3",
+    "reason": "Requires actual RT behavior for D20; empty placeholders do not establish it.",
+    "spec_ref": "D20",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-RV3",
+    "stage": "S3",
+    "reason": "Requires actual RT behavior for D20; empty placeholders do not establish it.",
+    "spec_ref": "D20",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-RV4",
+    "stage": "S3",
+    "reason": "No review-sign implementation or write API yet; no review directory was written.",
+    "spec_ref": "D20",
+    "check_type": "AST"
+  },
+  {
+    "id": "INV-H5",
+    "stage": "S3",
+    "reason": "Skill documents are empty placeholders, so no real handwritten/generated boundary can be assessed.",
+    "spec_ref": "D13",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-F1",
+    "stage": "S4",
+    "reason": "No ship manifest or release assembled in S0.",
+    "spec_ref": "D15",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-F3",
+    "stage": "S4",
+    "reason": "Schema fixtures are synthetic metadata; no sequence fixture release manifest exists yet.",
+    "spec_ref": "D15",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-F6",
+    "stage": "S4",
+    "reason": "No active algorithms or sequence fixture identity registry; S1 must inspect actual runtime code.",
+    "spec_ref": "D15",
+    "check_type": "AST+FS"
+  },
+  {
+    "id": "INV-F7",
+    "stage": "S4",
+    "reason": "Contract hashes must be approved in a human decision record; developer must not supply human approval.",
+    "spec_ref": "D15",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-F8",
+    "stage": "S4",
+    "reason": "Only empty runtime is present; migration source citations must remain in dev evidence and full repository rule needs those exceptions.",
+    "spec_ref": "D15",
+    "check_type": "AST+文本"
+  },
+  {
+    "id": "INV-F9",
+    "stage": "S4",
+    "reason": "S0 item 9 explicitly uses MIGRATION-LOG instead of protected spec/MIGRATION-MAP; actual port registration tested separately.",
+    "spec_ref": "D15",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-W3",
+    "stage": "S4",
+    "reason": "S4a built the same synthetic source fixture twice with equal archive bytes/release ids and fixed timestamps. The actual project build is intentionally blocked until its disclosure and Kit placeholders are resolved.",
+    "spec_ref": "D16",
+    "check_type": "RT"
+  },
+  {
+    "id": "INV-W4",
+    "stage": "S4",
+    "reason": "No release/seal records exist.",
+    "spec_ref": "D16",
+    "check_type": "FS"
+  },
+  {
+    "id": "INV-Q5",
+    "stage": "S4",
+    "reason": "No runtime repeat-run evidence yet; process ownership/deadline cannot be established by an empty registry.",
+    "spec_ref": "D18",
+    "check_type": "FS+流程"
+  },
+  {
+    "id": "INV-F10",
+    "stage": "S4",
+    "reason": "S4a implements and exercises tools/check_release.py with positive and actual negative controls. The real release tree reports INCOMPLETE for five disclosure/Kit placeholders; complete release acceptance remains pending.",
+    "spec_ref": "D16",
+    "check_type": "FS"
+  }
+]

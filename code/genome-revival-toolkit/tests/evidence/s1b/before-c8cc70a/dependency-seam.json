@@ -1,0 +1,26 @@
+{
+  "base_commit": "54bace6",
+  "files": [
+    {
+      "path": "src/dna_design_core/kernel/material.py",
+      "bytes": 0
+    },
+    {
+      "path": "src/dna_design_core/kernel/public.py",
+      "bytes": 0
+    },
+    {
+      "path": "src/dna_design_core/kernel/ports.py",
+      "bytes": 0
+    },
+    {
+      "path": "src/dna_design_core/kernel/ids.py",
+      "bytes": 0
+    },
+    {
+      "path": "src/dna_design_core/kernel/verdict.py",
+      "bytes": 0
+    }
+  ],
+  "consequence": "Material/Outcome/decorator/verdict/hash/external-runner adapters await S1. No substitute kernel or capability registry created."
+}

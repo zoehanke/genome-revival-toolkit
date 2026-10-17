@@ -1,0 +1,542 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:capability-v1",
+  "title": "capability-v1",
+  "x-spec-ref": "D3; D20 RV-6; A2; A2/A9 optional authorship; A14 (12c4274); D3 inline document schemas (96db7d0)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "capability-v1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$"
+    },
+    "role": {
+      "enum": [
+        "ACTION",
+        "CHECK"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "maxLength": 200
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "pure",
+          "reads_files",
+          "writes_files",
+          "external_process"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "deterministic": {
+      "type": "boolean"
+    },
+    "requires_runtime": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "kind": {
+            "enum": [
+              "python_package",
+              "executable"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "probe": {
+            "anyOf": [
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "kind",
+          "name",
+          "probe"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "kind": {
+                  "const": "python_package"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "probe": {
+                  "type": "null"
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "probe": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "minItems": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "material",
+              "materials",
+              "document",
+              "artifact",
+              "value"
+            ]
+          },
+          "required": {
+            "type": "boolean"
+          },
+          "constraints": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": {
+            "type": "string"
+          },
+          "schema_ref": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Inline Draft 2020-12 JSON Schema, validated separately without network resolution."
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "required",
+          "constraints",
+          "description"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "document"
+                }
+              }
+            },
+            "then": {
+              "oneOf": [
+                {
+                  "required": [
+                    "schema_ref"
+                  ],
+                  "not": {
+                    "required": [
+                      "schema"
+                    ]
+                  }
+                },
+                {
+                  "required": [
+                    "schema"
+                  ],
+                  "not": {
+                    "required": [
+                      "schema_ref"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "params": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ],
+      "description": "Embedded JSON Schema; checked separately against Draft 2020-12 meta-schema (S0 structural checker)."
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "material",
+              "materials",
+              "document",
+              "artifact",
+              "value"
+            ]
+          },
+          "schema_ref": {
+            "type": "string"
+          },
+          "output_role": {
+            "anyOf": [
+              {
+                "enum": [
+                  "construct",
+                  "component",
+                  "primer_set",
+                  "analysis"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "schema": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "additionalProperties": false,
+            "description": "Inline Draft 2020-12 JSON Schema, validated separately without network resolution."
+          }
+        },
+        "required": [
+          "name",
+          "type",
+          "output_role"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "type": {
+                  "const": "document"
+                }
+              }
+            },
+            "then": {
+              "oneOf": [
+                {
+                  "required": [
+                    "schema_ref"
+                  ],
+                  "not": {
+                    "required": [
+                      "schema"
+                    ]
+                  }
+                },
+                {
+                  "required": [
+                    "schema"
+                  ],
+                  "not": {
+                    "required": [
+                      "schema_ref"
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "step_checks": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+      }
+    },
+    "final_checks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+          },
+          "params": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "check"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "model": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+    },
+    "does_not_establish": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "algorithm_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "implemented_in": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "algorithm_refs",
+        "implemented_in"
+      ],
+      "additionalProperties": false
+    },
+    "owner": {
+      "type": "string",
+      "pattern": "^(core|kit:[a-z][a-z0-9_-]*)$"
+    },
+    "scope": {
+      "enum": [
+        "content_model",
+        "preparation_model",
+        "file",
+        "user_goal"
+      ]
+    },
+    "evaluates_constraint": {
+      "type": "boolean"
+    },
+    "fixtures": {
+      "type": "object",
+      "properties": {
+        "pass": {
+          "type": "string"
+        },
+        "fail": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "pass",
+        "fail"
+      ],
+      "additionalProperties": false
+    },
+    "offline": {
+      "type": "boolean"
+    },
+    "authorship": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "ai",
+            "human",
+            "mixed",
+            "unknown"
+          ]
+        },
+        "tool_or_model": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": [
+        "kind",
+        "tool_or_model",
+        "date"
+      ],
+      "additionalProperties": false
+    },
+    "granularity": {
+      "enum": [
+        "atomic",
+        "composite"
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "id",
+    "version",
+    "role",
+    "summary",
+    "effects",
+    "deterministic",
+    "requires_runtime",
+    "inputs",
+    "params",
+    "outputs",
+    "step_checks",
+    "final_checks",
+    "does_not_establish",
+    "source",
+    "owner",
+    "granularity"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "role": {
+            "const": "CHECK"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "scope",
+          "evaluates_constraint",
+          "fixtures",
+          "offline"
+        ],
+        "properties": {
+          "effects": {
+            "type": "array",
+            "items": {
+              "enum": [
+                "pure",
+                "reads_files"
+              ]
+            },
+            "uniqueItems": true
+          }
+        }
+      },
+      "else": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "scope"
+              ]
+            },
+            {
+              "required": [
+                "evaluates_constraint"
+              ]
+            },
+            {
+              "required": [
+                "fixtures"
+              ]
+            },
+            {
+              "required": [
+                "offline"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

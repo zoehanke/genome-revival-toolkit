@@ -1,0 +1,34 @@
+{
+  "observations": [],
+  "genotype_results": [
+    {
+      "sample_id": "sample_absent",
+      "assay_id": "counts_assay",
+      "background_id": "absent",
+      "reference_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "result": "negative",
+      "control_status": "passed",
+      "observed_band_bp": null
+    },
+    {
+      "sample_id": "sample_single",
+      "assay_id": "counts_assay",
+      "background_id": "single",
+      "reference_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "result": "positive",
+      "control_status": "passed",
+      "observed_band_bp": 1000
+    },
+    {
+      "sample_id": "sample_multiple",
+      "assay_id": "counts_assay",
+      "background_id": "multiple",
+      "reference_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "result": "negative",
+      "control_status": "passed",
+      "observed_band_bp": null
+    }
+  ],
+  "functional_results": [],
+  "observation_origin": "SYNTHETIC_EXAMPLE"
+}

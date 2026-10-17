@@ -1,0 +1,11 @@
+{
+  "goal_digest": "365ff4a6e676acbb9dd652c986f2f3e1d8e5ddfb3951e9c5ac4267bc7c288812",
+  "source_id": "observations",
+  "observation_origin": "SYNTHETIC_EXAMPLE",
+  "comparisons": [
+    {
+      "experiment_group": "fusion",
+      "control_group": "control"
+    }
+  ]
+}

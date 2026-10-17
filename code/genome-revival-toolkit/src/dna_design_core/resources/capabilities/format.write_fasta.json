@@ -1,0 +1,66 @@
+{
+  "schema": "capability-v1",
+  "id": "format.write_fasta",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Write the FASTA-representable material subset; refuse silent metadata loss.",
+  "effects": [
+    "writes_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "check.format_roundtrip"
+    }
+  ],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.format.operations:write_fasta_file"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

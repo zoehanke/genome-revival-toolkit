@@ -1,0 +1,4 @@
+# Retained command output keeps exact line endings and whitespace, like chain-story evidence.
+* -text whitespace=cr-at-eol
+# stdout/stderr include intentional trailing spaces; archive them as output, not source formatting.
+*.txt -whitespace

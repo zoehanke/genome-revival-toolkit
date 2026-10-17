@@ -1,0 +1,32 @@
+{
+  "schema": "identity-expected-results-v1",
+  "assay_id": "synthetic_identity",
+  "backgrounds": [
+    {
+      "id": "original",
+      "reference_sha256": "513027977659bd2c9263a650c9130349b55d468066ed3efe5736622458f16efc",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_count": 1,
+        "product_bp": 1000,
+        "status": "DISTINGUISHABLE"
+      }
+    },
+    {
+      "id": "edited",
+      "reference_sha256": "a0046fc3b3f40981110ed12fb76620d8f23a72c63e4e6f83dfe4ca64f7756100",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_count": 1,
+        "product_bp": 1300,
+        "status": "DISTINGUISHABLE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pip",
+      "--isolated",
+      "wheel",
+      "--disable-pip-version-check",
+      "--no-deps",
+      "--no-build-isolation",
+      "--no-index",
+      "--wheel-dir",
+      "<WORK>\\wheels-02",
+      "<SOURCE>"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 6.562
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pip",
+      "--isolated",
+      "install",
+      "--disable-pip-version-check",
+      "--no-deps",
+      "--no-index",
+      "--report",
+      "<WORK>\\product-install.json",
+      "<WORK>\\wheels-02\\genome_revival_toolkit-0.0.0-py3-none-any.whl"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 2.078
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import json,sys,pathlib,dna_design_core; from dna_design_core.kernel.release import release_id; p=pathlib.Path(dna_design_core.__file__).resolve().parent; assert p.is_relative_to(pathlib.Path(sys.prefix).resolve()); assert sys.prefix!=sys.base_prefix; print(json.dumps({'package':str(p),'prefix':sys.prefix,'release_id':release_id()}))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.563
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\examples\\sealed\\b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 5.687
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<SOURCE>\\examples\\sealed\\b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt",
+    "exit_code": 0,
+    "seconds": 4.563
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt",
+    "exit_code": 0,
+    "seconds": 5.0
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "007.stdout.txt",
+    "stderr": "007.stderr.txt",
+    "exit_code": 0,
+    "seconds": 5.156
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\one-byte-corruption\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "008.stdout.txt",
+    "stderr": "008.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.296
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\one-byte-corruption\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "009.stdout.txt",
+    "stderr": "009.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.907
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<SOURCE>\\tests\\evidence\\s4d\\legacy-b1\\c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "010.stdout.txt",
+    "stderr": "010.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.297
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<SOURCE>\\tests\\evidence\\s4d\\legacy-b1\\c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "011.stdout.txt",
+    "stderr": "011.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.906
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\examples\\run_example.py",
+      "--python",
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "--out",
+      "<WORK>\\release-bound-example"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "012.stdout.txt",
+    "stderr": "012.stderr.txt",
+    "exit_code": 0,
+    "seconds": 18.406
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "013.stdout.txt",
+    "stderr": "013.stderr.txt",
+    "exit_code": 0,
+    "seconds": 4.781
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "014.stdout.txt",
+    "stderr": "014.stderr.txt",
+    "exit_code": 0,
+    "seconds": 4.297
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import json,sys,pathlib,dna_design_core; from dna_design_core.kernel.release import release_id; p=pathlib.Path(dna_design_core.__file__).resolve().parent; assert p.is_relative_to(pathlib.Path(sys.prefix).resolve()); assert sys.prefix!=sys.base_prefix; print(json.dumps({'package':str(p),'prefix':sys.prefix,'release_id':release_id()}))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "015.stdout.txt",
+    "stderr": "015.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.625
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "016.stdout.txt",
+    "stderr": "016.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.297
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "017.stdout.txt",
+    "stderr": "017.stderr.txt",
+    "exit_code": 0,
+    "seconds": 4.453
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "018.stdout.txt",
+    "stderr": "018.stderr.txt",
+    "exit_code": 0,
+    "seconds": 4.438
+  }
+]

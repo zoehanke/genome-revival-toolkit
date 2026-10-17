@@ -1,0 +1,16 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tests/evidence/s4d/check-record-bytes.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.11
+  }
+]

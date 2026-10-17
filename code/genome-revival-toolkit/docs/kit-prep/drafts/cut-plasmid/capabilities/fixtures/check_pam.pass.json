@@ -1,0 +1,12 @@
+{
+  "check": "cut_plasmid.check_pam",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Exact selected protospacer is followed by TGG."
+  }
+}

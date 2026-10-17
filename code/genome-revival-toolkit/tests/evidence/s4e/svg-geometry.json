@@ -1,0 +1,25 @@
+{
+  "result": {
+    "type": "object",
+    "value": {
+      "boxes": [
+        "capabilities",
+        "knowledge",
+        "templates",
+        "text",
+        "core",
+        "admission",
+        "step",
+        "final"
+      ],
+      "externalResources": [],
+      "findings": [],
+      "fonts": [
+        "\"Instrument Serif\", Georgia, serif",
+        "Geist, system-ui, sans-serif",
+        "\"Geist Mono\", ui-monospace, monospace"
+      ],
+      "texts": 36
+    }
+  }
+}

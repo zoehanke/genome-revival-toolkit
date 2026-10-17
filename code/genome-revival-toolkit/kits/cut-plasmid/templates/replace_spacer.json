@@ -1,0 +1,169 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string"
+      },
+      "vector_source": {
+        "type": "string"
+      },
+      "target_source": {
+        "type": "string"
+      },
+      "promoter_end": {
+        "type": "integer"
+      },
+      "transcription_strand": {
+        "type": "integer",
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "scaffold_sequence": {
+        "type": "string"
+      },
+      "analysis_target": {
+        "type": "string"
+      },
+      "spacer": {
+        "type": "string"
+      },
+      "construct_target": {
+        "type": "string"
+      },
+      "primer_target": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "goal_digest",
+      "vector_source",
+      "target_source",
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence",
+      "analysis_target",
+      "spacer",
+      "construct_target",
+      "primer_target"
+    ],
+    "additionalProperties": false
+  },
+  "steps": [
+    {
+      "step_id": "read_vector",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "{{vector_source}}"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic GenBank source with explicit duplex status."
+    },
+    {
+      "step_id": "read_target",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "{{target_source}}"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic GenBank source with explicit duplex status."
+    },
+    {
+      "step_id": "replace",
+      "use": "cut_plasmid.replace_spacer",
+      "inputs": {
+        "vector": {
+          "step": "read_vector",
+          "port": "material"
+        },
+        "target": {
+          "step": "read_target",
+          "port": "material"
+        }
+      },
+      "params": {
+        "promoter_end": "{{promoter_end}}",
+        "transcription_strand": "{{transcription_strand}}",
+        "scaffold_sequence": "{{scaffold_sequence}}",
+        "spacer": "{{spacer}}"
+      },
+      "why": "Replace the user-selected spacer and independently simulate the preparation."
+    },
+    {
+      "step_id": "inspect",
+      "use": "cut_plasmid.inspect_guide",
+      "inputs": {
+        "vector": {
+          "step": "replace",
+          "port": "product"
+        },
+        "target": {
+          "step": "read_target",
+          "port": "material"
+        }
+      },
+      "params": {
+        "promoter_end": "{{promoter_end}}",
+        "transcription_strand": "{{transcription_strand}}",
+        "scaffold_sequence": "{{scaffold_sequence}}"
+      },
+      "why": "Inspect the replaced cassette from its sequence."
+    },
+    {
+      "step_id": "selection",
+      "use": "cut_plasmid.assess_selection",
+      "inputs": {
+        "vector": {
+          "step": "replace",
+          "port": "product"
+        }
+      },
+      "params": {},
+      "why": "Retain selection UNKNOWN without an explicitly supplied genotype."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "construct",
+      "from": {
+        "step": "replace",
+        "port": "product"
+      },
+      "target": "{{construct_target}}"
+    },
+    {
+      "name": "primers",
+      "from": {
+        "step": "replace",
+        "port": "primers"
+      },
+      "target": "{{primer_target}}"
+    },
+    {
+      "name": "selection",
+      "from": {
+        "step": "selection",
+        "port": "selection"
+      },
+      "target": "{{analysis_target}}"
+    }
+  ],
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

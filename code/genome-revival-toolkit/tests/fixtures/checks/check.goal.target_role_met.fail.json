@@ -1,0 +1,9 @@
+{
+  "check": "check.goal.target_role_met",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Require construct while the producer declares analysis."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "staged_files": 668,
+  "staged_bytes": 8824562,
+  "scope_only_owned_paths": true,
+  "text_utf8": true,
+  "findings": [],
+  "staged_canonical_manifest_hashes": {
+    "code/genome-revival-toolkit/tests/evidence/s4b/payload-final/source-wheel-manifest.json": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107",
+    "code/genome-revival-toolkit/tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107",
+    "code/genome-revival-toolkit/tests/evidence/s4b/payload/source-wheel-manifest.json": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78"
+  },
+  "compiled_artifacts": 0
+}

@@ -1,0 +1,85 @@
+{
+  "schema": "capability-v1",
+  "id": "seq.make_material",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Construct a kernel material with explicit physical properties or unknowns.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "sequence",
+      "type": "value",
+      "required": true,
+      "constraints": {
+        "type": "string",
+        "pattern": "^[ACGTRYSWKMBDHVNacgtryswkmbdhvn]+$"
+      },
+      "description": "sequence"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "topology": {
+        "enum": [
+          null,
+          "linear",
+          "circular"
+        ]
+      },
+      "strandedness": {
+        "enum": [
+          null,
+          "single",
+          "double"
+        ]
+      },
+      "ends": {
+        "type": [
+          "object",
+          "null"
+        ]
+      },
+      "features": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "output_role": "component"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.seq.operations:create_material"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

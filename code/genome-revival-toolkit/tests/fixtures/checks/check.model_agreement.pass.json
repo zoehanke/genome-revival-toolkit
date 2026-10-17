@@ -1,0 +1,9 @@
+{
+  "check": "check.model_agreement",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Both paths return constructed ACGT with linear topology and null ends. Different annotations alone must not fail. Named offset=2 is recorded; unused=13 must not reach model."
+  }
+}

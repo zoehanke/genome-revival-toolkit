@@ -1,0 +1,25 @@
+{
+  "check": "check.format_roundtrip",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "The literal source circle is defined before serialization; fail changes the last visible base while leaving the supplement unchanged."
+  },
+  "data": {
+    "use": "format.write_genbank",
+    "inputs": {
+      "material": {
+        "sequence": "AAACCCTTTGGG",
+        "topology": "circular",
+        "strandedness": "double",
+        "ends": null,
+        "features": []
+      }
+    },
+    "params": {
+      "name": "product.gb"
+    },
+    "corrupt": null
+  }
+}

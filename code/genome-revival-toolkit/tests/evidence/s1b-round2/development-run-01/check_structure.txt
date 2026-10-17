@@ -1,0 +1,9 @@
+{
+  "findings": [
+    {
+      "id": "INV-V1",
+      "file": "src/dna_design_core/biology/primer/preparation.py",
+      "message": "Unknown scope literal"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "observations": [
+    {
+      "id": "fusion1",
+      "group": "fusion",
+      "colonies": 8,
+      "unit": "colony",
+      "plated_volume_uL": "100"
+    },
+    {
+      "id": "control1",
+      "group": "control",
+      "colonies": 30,
+      "unit": "colony",
+      "plated_volume_uL": "100"
+    }
+  ],
+  "genotype_results": [
+    {
+      "sample_id": "synthetic_original",
+      "assay_id": "flanking",
+      "background_id": "original",
+      "reference_sha256": "42be2429d4e1503a3b67f2560ee0e6d1d62150d395d9b5ff95d75df5fc6ad905",
+      "result": "positive",
+      "control_status": "passed",
+      "observed_band_bp": 260,
+      "band_tolerance_bp": 0
+    },
+    {
+      "sample_id": "synthetic_edited",
+      "assay_id": "flanking",
+      "background_id": "edited",
+      "reference_sha256": "b8e12544a35e7c423213b1df3c2878233e8cc7f11724a62c046d5a896d6a2c08",
+      "result": "positive",
+      "control_status": "passed",
+      "observed_band_bp": 236,
+      "band_tolerance_bp": 0
+    }
+  ],
+  "functional_results": [],
+  "observation_origin": "SYNTHETIC_NOT_EXPERIMENTAL"
+}

@@ -1,0 +1,1181 @@
+{
+  "commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+  "source_files_match_cited_commit": true,
+  "old_source_file_count": 13,
+  "rows": [
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "normalize_dna",
+      "old_path": "snapgene-dna-design/core/tools/snapgene_io.py",
+      "old_symbol": "_normalise_dna",
+      "old_span": [
+        38,
+        48
+      ],
+      "old_selected_lines": 11,
+      "old_whole_file_lines": 914,
+      "new_span": [
+        18,
+        26
+      ],
+      "new_selected_lines": 9,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.molecule_codec",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "interval_segments",
+      "old_path": "snapgene-dna-design/core/interval.py",
+      "old_symbol": "validate_interval",
+      "old_span": [
+        34,
+        140
+      ],
+      "old_selected_lines": 107,
+      "old_whole_file_lines": 203,
+      "new_span": [
+        29,
+        47
+      ],
+      "new_selected_lines": 19,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.errors"
+      ]
+    },
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "slice_sequence",
+      "old_path": "snapgene-dna-design/core/interval.py",
+      "old_symbol": "extract_interval",
+      "old_span": [
+        143,
+        169
+      ],
+      "old_selected_lines": 27,
+      "old_whole_file_lines": 203,
+      "new_span": [
+        50,
+        60
+      ],
+      "new_selected_lines": 11,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.errors"
+      ]
+    },
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "map_feature",
+      "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+      "old_symbol": "_clip_feature_to_intervals",
+      "old_span": [
+        333,
+        444
+      ],
+      "old_selected_lines": 112,
+      "old_whole_file_lines": 724,
+      "new_span": [
+        63,
+        138
+      ],
+      "new_selected_lines": 76,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.interval",
+        "core.io.primer_annotation",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "slice_record",
+      "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+      "old_symbol": "slice_record_interval",
+      "old_span": [
+        447,
+        493
+      ],
+      "old_selected_lines": 47,
+      "old_whole_file_lines": 724,
+      "new_span": [
+        141,
+        165
+      ],
+      "new_selected_lines": 25,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.interval",
+        "core.io.primer_annotation",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/sequence/operations.py",
+      "new_symbol": "rotate_record",
+      "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+      "old_symbol": "rotate_sequence",
+      "old_span": [
+        496,
+        504
+      ],
+      "old_selected_lines": 9,
+      "old_whole_file_lines": 724,
+      "new_span": [
+        168,
+        182
+      ],
+      "new_selected_lines": 15,
+      "new_whole_file_lines": 182,
+      "old_project_import_modules": [
+        "core.interval",
+        "core.io.primer_annotation",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "record_projection",
+      "old_path": "snapgene-dna-design/core/io/molecule_codec.py",
+      "old_symbol": "visible_fingerprint",
+      "old_span": [
+        87,
+        96
+      ],
+      "old_selected_lines": 10,
+      "old_whole_file_lines": 196,
+      "new_span": [
+        20,
+        30
+      ],
+      "new_selected_lines": 11,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "read_genbank",
+      "old_path": "snapgene-dna-design/core/io/input_resolution.py",
+      "old_symbol": "_read_record_from_file",
+      "old_span": [
+        26,
+        51
+      ],
+      "old_selected_lines": 26,
+      "old_whole_file_lines": 176,
+      "new_span": [
+        33,
+        43
+      ],
+      "new_selected_lines": 11,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.molecule_codec",
+        "core.models.molecule",
+        "core.tools.snapgene_io"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "write_genbank",
+      "old_path": "snapgene-dna-design/core/io/molecule_codec.py",
+      "old_symbol": "genbank_record",
+      "old_span": [
+        124,
+        149
+      ],
+      "old_selected_lines": 26,
+      "old_whole_file_lines": 196,
+      "new_span": [
+        46,
+        60
+      ],
+      "new_selected_lines": 15,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "read_fasta",
+      "old_path": "snapgene-dna-design/core/io/input_resolution.py",
+      "old_symbol": "_read_record_from_file",
+      "old_span": [
+        26,
+        51
+      ],
+      "old_selected_lines": 26,
+      "old_whole_file_lines": 176,
+      "new_span": [
+        63,
+        73
+      ],
+      "new_selected_lines": 11,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.molecule_codec",
+        "core.models.molecule",
+        "core.tools.snapgene_io"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "write_fasta",
+      "old_path": "snapgene-dna-design/core/tools/snapgene_io.py",
+      "old_symbol": "export_snapgene",
+      "old_span": [
+        820,
+        878
+      ],
+      "old_selected_lines": 59,
+      "old_whole_file_lines": 914,
+      "new_span": [
+        76,
+        91
+      ],
+      "new_selected_lines": 16,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.molecule_codec",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/formats/records.py",
+      "new_symbol": "read_dna",
+      "old_path": "snapgene-dna-design/core/tools/snapgene_io.py",
+      "old_symbol": "_read_native_data",
+      "old_span": [
+        749,
+        765
+      ],
+      "old_selected_lines": 17,
+      "old_whole_file_lines": 914,
+      "new_span": [
+        94,
+        104
+      ],
+      "new_selected_lines": 11,
+      "new_whole_file_lines": 104,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.molecule_codec",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/primer/thermodynamics.py",
+      "new_symbol": "TmParameters",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "calc_primer_tm",
+      "old_span": [
+        346,
+        414
+      ],
+      "old_selected_lines": 69,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        15,
+        41
+      ],
+      "new_selected_lines": 27,
+      "new_whole_file_lines": 71,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/primer/thermodynamics.py",
+      "new_symbol": "calculate_tm",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "calc_primer_tm",
+      "old_span": [
+        346,
+        414
+      ],
+      "old_selected_lines": 69,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        44,
+        71
+      ],
+      "new_selected_lines": 28,
+      "new_whole_file_lines": 71,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/primer/quality.py",
+      "new_symbol": "dimer_metrics",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "check_primer_dimers",
+      "old_span": [
+        895,
+        962
+      ],
+      "old_selected_lines": 68,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        14,
+        35
+      ],
+      "new_selected_lines": 22,
+      "new_whole_file_lines": 113,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/primer/quality.py",
+      "new_symbol": "hairpin_metrics",
+      "old_path": "snapgene-dna-design/scripts/primer_qc.py",
+      "old_symbol": "score_hairpin",
+      "old_span": [
+        31,
+        55
+      ],
+      "old_selected_lines": 25,
+      "old_whole_file_lines": 150,
+      "new_span": [
+        38,
+        55
+      ],
+      "new_selected_lines": 18,
+      "new_whole_file_lines": 113,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/primer/quality.py",
+      "new_symbol": "primer_quality",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "calc_primer_tm",
+      "old_span": [
+        346,
+        414
+      ],
+      "old_selected_lines": 69,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        58,
+        72
+      ],
+      "new_selected_lines": 15,
+      "new_whole_file_lines": 113,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/primer/quality.py",
+      "new_symbol": "evaluate_primer_quality",
+      "old_path": "snapgene-dna-design/scripts/primer_qc.py",
+      "old_symbol": "flag_risks",
+      "old_span": [
+        136,
+        150
+      ],
+      "old_selected_lines": 15,
+      "old_whole_file_lines": 150,
+      "new_span": [
+        75,
+        113
+      ],
+      "new_selected_lines": 39,
+      "new_whole_file_lines": 113,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/primer/primer3.py",
+      "new_symbol": "encode_boulder",
+      "old_path": "snapgene-dna-design/core/tools/primer3_backend.py",
+      "old_symbol": "encode_boulder",
+      "old_span": [
+        300,
+        312
+      ],
+      "old_selected_lines": 13,
+      "old_whole_file_lines": 616,
+      "new_span": [
+        16,
+        27
+      ],
+      "new_selected_lines": 12,
+      "new_whole_file_lines": 93,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/primer/primer3.py",
+      "new_symbol": "parse_boulder",
+      "old_path": "snapgene-dna-design/core/tools/primer3_backend.py",
+      "old_symbol": "parse_boulder",
+      "old_span": [
+        315,
+        326
+      ],
+      "old_selected_lines": 12,
+      "old_whole_file_lines": 616,
+      "new_span": [
+        30,
+        55
+      ],
+      "new_selected_lines": 26,
+      "new_whole_file_lines": 93,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/primer/primer3.py",
+      "new_symbol": "primer3_check_request",
+      "old_path": "snapgene-dna-design/core/tools/primer3_backend.py",
+      "old_symbol": "check_complete_oligo_pair",
+      "old_span": [
+        27,
+        92
+      ],
+      "old_selected_lines": 66,
+      "old_whole_file_lines": 616,
+      "new_span": [
+        58,
+        93
+      ],
+      "new_selected_lines": 36,
+      "new_whole_file_lines": 93,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/pcr/prediction.py",
+      "new_symbol": "find_binding_sites",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "_find_primer_binding",
+      "old_span": [
+        20,
+        112
+      ],
+      "old_selected_lines": 93,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        13,
+        46
+      ],
+      "new_selected_lines": 34,
+      "new_whole_file_lines": 122,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/pcr/prediction.py",
+      "new_symbol": "predict_pcr_products",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "simulate_pcr",
+      "old_span": [
+        139,
+        343
+      ],
+      "old_selected_lines": 205,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        49,
+        76
+      ],
+      "new_selected_lines": 28,
+      "new_whole_file_lines": 122,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/pcr/prediction.py",
+      "new_symbol": "simulate_pcr",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "simulate_pcr",
+      "old_span": [
+        139,
+        343
+      ],
+      "old_selected_lines": 205,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        79,
+        90
+      ],
+      "new_selected_lines": 12,
+      "new_whole_file_lines": 122,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/pcr/prediction.py",
+      "new_symbol": "simulate_pcr_record",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "simulate_pcr",
+      "old_span": [
+        139,
+        343
+      ],
+      "old_selected_lines": 205,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        93,
+        122
+      ],
+      "new_selected_lines": 30,
+      "new_whole_file_lines": 122,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/restriction/digestion.py",
+      "new_symbol": "enzyme_definition",
+      "old_path": "snapgene-dna-design/core/tools/restriction.py",
+      "old_symbol": "get_enzyme",
+      "old_span": [
+        36,
+        54
+      ],
+      "old_selected_lines": 19,
+      "old_whole_file_lines": 503,
+      "new_span": [
+        17,
+        30
+      ],
+      "new_selected_lines": 14,
+      "new_whole_file_lines": 146,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/restriction/digestion.py",
+      "new_symbol": "scan_restriction_sites",
+      "old_path": "snapgene-dna-design/core/tools/restriction.py",
+      "old_symbol": "restriction_hits",
+      "old_span": [
+        71,
+        153
+      ],
+      "old_selected_lines": 83,
+      "old_whole_file_lines": 503,
+      "new_span": [
+        33,
+        74
+      ],
+      "new_selected_lines": 42,
+      "new_whole_file_lines": 146,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/restriction/digestion.py",
+      "new_symbol": "digest_sequence",
+      "old_path": "snapgene-dna-design/core/tools/restriction.py",
+      "old_symbol": "digest_sequence",
+      "old_span": [
+        336,
+        380
+      ],
+      "old_selected_lines": 45,
+      "old_whole_file_lines": 503,
+      "new_span": [
+        77,
+        146
+      ],
+      "new_selected_lines": 70,
+      "new_whole_file_lines": 146,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/assembly/simulation.py",
+      "new_symbol": "compatible_ends",
+      "old_path": "snapgene-dna-design/core/models/assembly_model.py",
+      "old_symbol": "compatible_sticky",
+      "old_span": [
+        305,
+        318
+      ],
+      "old_selected_lines": 14,
+      "old_whole_file_lines": 341,
+      "new_span": [
+        19,
+        33
+      ],
+      "new_selected_lines": 15,
+      "new_whole_file_lines": 155,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/assembly/simulation.py",
+      "new_symbol": "validate_duplex",
+      "old_path": "snapgene-dna-design/core/models/assembly_model.py",
+      "old_symbol": "_validate",
+      "old_span": [
+        82,
+        89
+      ],
+      "old_selected_lines": 8,
+      "old_whole_file_lines": 341,
+      "new_span": [
+        36,
+        68
+      ],
+      "new_selected_lines": 33,
+      "new_whole_file_lines": 155,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/assembly/simulation.py",
+      "new_symbol": "ligate_fragments",
+      "old_path": "snapgene-dna-design/core/tools/assembly.py",
+      "old_symbol": "ligate_fragments",
+      "old_span": [
+        33,
+        81
+      ],
+      "old_selected_lines": 49,
+      "old_whole_file_lines": 947,
+      "new_span": [
+        71,
+        98
+      ],
+      "new_selected_lines": 28,
+      "new_whole_file_lines": 155,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.feature_ops",
+        "core.tools.inspection",
+        "core.tools.restriction",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/assembly/simulation.py",
+      "new_symbol": "gibson_assemble",
+      "old_path": "snapgene-dna-design/core/models/assembly_model.py",
+      "old_symbol": "join_by_homology",
+      "old_span": [
+        285,
+        298
+      ],
+      "old_selected_lines": 14,
+      "old_whole_file_lines": 341,
+      "new_span": [
+        101,
+        130
+      ],
+      "new_selected_lines": 30,
+      "new_whole_file_lines": 155,
+      "old_project_import_modules": []
+    },
+    {
+      "new_module": "biology/assembly/simulation.py",
+      "new_symbol": "inverse_pcr_circularize",
+      "old_path": "snapgene-dna-design/core/recipes/mutagenesis.py",
+      "old_symbol": "recipe_site_directed_mutagenesis",
+      "old_span": [
+        177,
+        527
+      ],
+      "old_selected_lines": 351,
+      "old_whole_file_lines": 527,
+      "new_span": [
+        133,
+        155
+      ],
+      "new_selected_lines": 23,
+      "new_whole_file_lines": 155,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.recipes.contract",
+        "core.tools",
+        "core.tools.amplification",
+        "core.tools.inspection",
+        "core.tools.sequence_ops",
+        "core.tools.translation"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "make_material",
+      "old_path": "snapgene-dna-design/core/models/molecule.py",
+      "old_symbol": "__init__",
+      "old_span": [
+        108,
+        154
+      ],
+      "old_selected_lines": 47,
+      "old_whole_file_lines": 243,
+      "new_span": [
+        21,
+        50
+      ],
+      "new_selected_lines": 30,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.primer_annotation",
+        "core.models.assembly_model",
+        "core.models.construct_model"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "record_from_material",
+      "old_path": "snapgene-dna-design/core/models/molecule.py",
+      "old_symbol": "as_molecule",
+      "old_span": [
+        204,
+        228
+      ],
+      "old_selected_lines": 25,
+      "old_whole_file_lines": 243,
+      "new_span": [
+        53,
+        82
+      ],
+      "new_selected_lines": 30,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.primer_annotation",
+        "core.models.assembly_model",
+        "core.models.construct_model"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_from_record",
+      "old_path": "snapgene-dna-design/core/models/molecule.py",
+      "old_symbol": "to_dict",
+      "old_span": [
+        182,
+        198
+      ],
+      "old_selected_lines": 17,
+      "old_whole_file_lines": 243,
+      "new_span": [
+        85,
+        101
+      ],
+      "new_selected_lines": 17,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.primer_annotation",
+        "core.models.assembly_model",
+        "core.models.construct_model"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_to_duplex",
+      "old_path": "snapgene-dna-design/core/models/molecule.py",
+      "old_symbol": "__init__",
+      "old_span": [
+        108,
+        154
+      ],
+      "old_selected_lines": 47,
+      "old_whole_file_lines": 243,
+      "new_span": [
+        104,
+        129
+      ],
+      "new_selected_lines": 26,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.primer_annotation",
+        "core.models.assembly_model",
+        "core.models.construct_model"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_from_duplex",
+      "old_path": "snapgene-dna-design/core/models/molecule.py",
+      "old_symbol": "as_molecule",
+      "old_span": [
+        204,
+        228
+      ],
+      "old_selected_lines": 25,
+      "old_whole_file_lines": 243,
+      "new_span": [
+        132,
+        136
+      ],
+      "new_selected_lines": 5,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.primer_annotation",
+        "core.models.assembly_model",
+        "core.models.construct_model"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_to_genbank",
+      "old_path": "snapgene-dna-design/core/io/molecule_codec.py",
+      "old_symbol": "genbank_record",
+      "old_span": [
+        124,
+        149
+      ],
+      "old_selected_lines": 26,
+      "old_whole_file_lines": 196,
+      "new_span": [
+        139,
+        150
+      ],
+      "new_selected_lines": 12,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_from_genbank",
+      "old_path": "snapgene-dna-design/core/io/molecule_codec.py",
+      "old_symbol": "restore_file_metadata",
+      "old_span": [
+        152,
+        196
+      ],
+      "old_selected_lines": 45,
+      "old_whole_file_lines": 196,
+      "new_span": [
+        153,
+        165
+      ],
+      "new_selected_lines": 13,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule"
+      ]
+    },
+    {
+      "new_module": "biology/materials.py",
+      "new_symbol": "material_to_fasta",
+      "old_path": "snapgene-dna-design/core/tools/snapgene_io.py",
+      "old_symbol": "export_snapgene",
+      "old_span": [
+        820,
+        878
+      ],
+      "old_selected_lines": 59,
+      "old_whole_file_lines": 914,
+      "new_span": [
+        168,
+        173
+      ],
+      "new_selected_lines": 6,
+      "new_whole_file_lines": 173,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.io.molecule_codec",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "slice_material",
+      "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+      "old_symbol": "extract_subsequence",
+      "old_span": [
+        507,
+        553
+      ],
+      "old_selected_lines": 47,
+      "old_whole_file_lines": 724,
+      "new_span": [
+        16,
+        18
+      ],
+      "new_selected_lines": 3,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.interval",
+        "core.io.primer_annotation",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "rotate_material",
+      "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+      "old_symbol": "rotate_sequence",
+      "old_span": [
+        496,
+        504
+      ],
+      "old_selected_lines": 9,
+      "old_whole_file_lines": 724,
+      "new_span": [
+        21,
+        25
+      ],
+      "new_selected_lines": 5,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.interval",
+        "core.io.primer_annotation",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "pcr_material",
+      "old_path": "snapgene-dna-design/core/tools/amplification.py",
+      "old_symbol": "simulate_pcr",
+      "old_span": [
+        139,
+        343
+      ],
+      "old_selected_lines": 205,
+      "old_whole_file_lines": 1012,
+      "new_span": [
+        28,
+        34
+      ],
+      "new_selected_lines": 7,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.primer3_backend",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "digest_material",
+      "old_path": "snapgene-dna-design/core/tools/restriction.py",
+      "old_symbol": "digest_sequence",
+      "old_span": [
+        336,
+        380
+      ],
+      "old_selected_lines": 45,
+      "old_whole_file_lines": 503,
+      "new_span": [
+        37,
+        60
+      ],
+      "new_selected_lines": 24,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.molecule",
+        "core.tools.inspection",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "ligate_material",
+      "old_path": "snapgene-dna-design/core/tools/assembly.py",
+      "old_symbol": "ligate_fragments",
+      "old_span": [
+        33,
+        81
+      ],
+      "old_selected_lines": 49,
+      "old_whole_file_lines": 947,
+      "new_span": [
+        63,
+        75
+      ],
+      "new_selected_lines": 13,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.feature_ops",
+        "core.tools.inspection",
+        "core.tools.restriction",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "gibson_material",
+      "old_path": "snapgene-dna-design/core/tools/assembly.py",
+      "old_symbol": "simulate_overlap_assembly",
+      "old_span": [
+        90,
+        209
+      ],
+      "old_selected_lines": 120,
+      "old_whole_file_lines": 947,
+      "new_span": [
+        78,
+        93
+      ],
+      "new_selected_lines": 16,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.assembly_model",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.tools.feature_ops",
+        "core.tools.inspection",
+        "core.tools.restriction",
+        "core.tools.result",
+        "core.tools.sequence_ops"
+      ]
+    },
+    {
+      "new_module": "biology/material_operations.py",
+      "new_symbol": "inverse_pcr_material",
+      "old_path": "snapgene-dna-design/core/recipes/mutagenesis.py",
+      "old_symbol": "recipe_site_directed_mutagenesis",
+      "old_span": [
+        177,
+        527
+      ],
+      "old_selected_lines": 351,
+      "old_whole_file_lines": 527,
+      "new_span": [
+        96,
+        109
+      ],
+      "new_selected_lines": 14,
+      "new_whole_file_lines": 109,
+      "old_project_import_modules": [
+        "core.io.input_resolution",
+        "core.models.construct_model",
+        "core.models.molecule",
+        "core.recipes.contract",
+        "core.tools",
+        "core.tools.amplification",
+        "core.tools.inspection",
+        "core.tools.sequence_ops",
+        "core.tools.translation"
+      ]
+    }
+  ]
+}

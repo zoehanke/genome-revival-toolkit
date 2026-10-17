@@ -1,0 +1,18 @@
+{
+  "schema_id": "input.registered-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Actor needs kind and name; version is optional."
+  },
+  "data": {
+    "source_id": "input1",
+    "file_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "size": 4,
+    "run_path": "inputs/synthetic.txt",
+    "input_origin": "user_file",
+    "declared_by": {
+      "kind": "unknown"
+    }
+  }
+}

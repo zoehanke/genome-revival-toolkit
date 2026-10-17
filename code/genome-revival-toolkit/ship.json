@@ -1,0 +1,12 @@
+{
+  "include": [
+    "src/**", "kits/**", "skill/**", "examples/**", "tests/**", "tools/**",
+    "docs/judges/**", "docs/developers/**", "README.md", "LICENSE", "THIRD_PARTY.md",
+    "VERSIONS.json", "pyproject.toml", "ship.json", "requirements*.lock", "requirements*.txt", ".gitlab-ci.yml"
+  ],
+  "exclude": [
+    "**/__pycache__/**", "**/*.pyc", "**/*.pyo", ".venv/**", "dist/**", "build/**", "dev/**",
+    "**/*.egg-info/**", "docs/decisions/**", "tests/evidence/**",
+    "tests/oracles/prepare_kit_drafts.py", "tests/oracles/migration_inventory.py"
+  ]
+}

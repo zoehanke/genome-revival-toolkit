@@ -1,0 +1,25 @@
+{
+  "schema_id": "goal-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "goal-v1",
+    "version": 1,
+    "parent_digest": null,
+    "original_request": "Report a synthetic length.",
+    "sources": [],
+    "declared_context": [],
+    "targets": [
+      {
+        "id": "t1",
+        "role": "analysis",
+        "required": true
+      }
+    ],
+    "constraints": [],
+    "intents": []
+  }
+}

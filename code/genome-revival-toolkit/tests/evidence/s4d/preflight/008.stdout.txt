@@ -1,0 +1,10 @@
+usage: prepare_cut_plasmid.py [-h] --legacy-repo LEGACY_REPO
+
+Developer-only declaration/data export and construction of synthetic S2
+fixtures.
+
+options:
+  -h, --help            show this help message and exit
+  --legacy-repo LEGACY_REPO
+                        Local source repository containing the pinned legacy
+                        rule commit; no network access.

@@ -1,0 +1,86 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.analyze_assay",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for identity.analyze_assay; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "references",
+      "type": "materials",
+      "required": true,
+      "constraints": {},
+      "description": "references"
+    },
+    {
+      "name": "forward",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "forward"
+    },
+    {
+      "name": "reverse",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reverse"
+    },
+    {
+      "name": "handoff",
+      "type": "document",
+      "required": false,
+      "constraints": {},
+      "description": "handoff",
+      "schema_ref": "identity-handoff-v1"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "assay_id": {
+        "type": "string"
+      },
+      "size_resolution_bp": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      }
+    },
+    "required": [
+      "assay_id"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "expected_results",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "identity-expected-results-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primer specificity in an actual strain",
+    "Observed experimental products",
+    "Authentic genotype",
+    "Whole-genome discrimination."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:analyze_assay"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

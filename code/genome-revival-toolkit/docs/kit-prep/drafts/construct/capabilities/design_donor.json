@@ -1,0 +1,119 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.design_donor",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for construct.design_donor; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "reference",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reference"
+    },
+    {
+      "name": "cargo",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "cargo"
+    },
+    {
+      "name": "donor_template",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "donor template"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "arm_length": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "cargo_start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cargo_end": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "preparation_method": {
+        "enum": [
+          "gibson",
+          "pcr"
+        ]
+      },
+      "overlap": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "required": [
+      "start",
+      "end",
+      "arm_length",
+      "cargo_start",
+      "cargo_end",
+      "preparation_method"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "construct"
+    },
+    {
+      "name": "primers",
+      "type": "document",
+      "output_role": "primer_set",
+      "schema_ref": "primer-set-v1"
+    },
+    {
+      "name": "route",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "route-plan-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "construct.check_junction_assay"
+    }
+  ],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_construct.capabilities.operations:design_donor"
+  },
+  "owner": "kit:construct",
+  "granularity": "composite",
+  "model": "construct.model_donor"
+}

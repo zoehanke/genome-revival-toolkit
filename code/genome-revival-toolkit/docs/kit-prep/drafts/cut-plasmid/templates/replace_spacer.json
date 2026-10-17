@@ -1,0 +1,120 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "vector",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "{{vector_source}}"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "target",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{target_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "replace",
+      "use": "cut_plasmid.replace_spacer",
+      "inputs": {
+        "vector": {
+          "step": "vector",
+          "port": "material"
+        },
+        "target": {
+          "step": "target",
+          "port": "material"
+        }
+      },
+      "params": {
+        "promoter_end": "{{promoter_end}}",
+        "transcription_strand": "{{transcription_strand}}",
+        "scaffold_sequence": "{{scaffold_sequence}}",
+        "spacer": "{{spacer}}",
+        "target_tm": "{{target_tm}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "from": {
+        "step": "replace",
+        "port": "product"
+      },
+      "target": "{{target_id}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "Explicit caller-provided goal digest; no inferred source or scientific threshold.",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "target_id": {
+        "type": "string",
+        "description": "Explicit caller-provided target id; no inferred source or scientific threshold."
+      },
+      "vector_source": {
+        "type": "string",
+        "description": "Explicit caller-provided vector source; no inferred source or scientific threshold."
+      },
+      "target_source": {
+        "type": "string",
+        "description": "Explicit caller-provided target source; no inferred source or scientific threshold."
+      },
+      "promoter_end": {
+        "type": "integer",
+        "description": "Explicit caller-provided promoter end; no inferred source or scientific threshold."
+      },
+      "transcription_strand": {
+        "type": "integer",
+        "description": "Explicit caller-provided transcription strand; no inferred source or scientific threshold."
+      },
+      "scaffold_sequence": {
+        "type": "string",
+        "description": "Explicit caller-provided scaffold sequence; no inferred source or scientific threshold."
+      },
+      "spacer": {
+        "type": "string",
+        "description": "Explicit caller-provided spacer; no inferred source or scientific threshold."
+      },
+      "target_tm": {
+        "type": "string",
+        "description": "Explicit caller-provided target tm; no inferred source or scientific threshold."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "target_id",
+      "vector_source",
+      "target_source",
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence",
+      "spacer",
+      "target_tm"
+    ],
+    "additionalProperties": false
+  }
+}

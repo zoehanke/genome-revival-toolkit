@@ -1,0 +1,20 @@
+{
+  "schema_id": "goal.amended-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Constructed from the named A14 shape."
+  },
+  "data": {
+    "goal_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "version": 2,
+    "previous_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "diff": [],
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic"
+    },
+    "reason": "Synthetic amendment.",
+    "amended_after_start": false
+  }
+}

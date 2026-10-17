@@ -1,0 +1,37 @@
+{
+  "schema": "capability-v1",
+  "id": "check.inputs_unchanged",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Compare input copies with the registered file hashes.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.checks:inputs_unchanged"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "file",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/checks/check.inputs_unchanged.pass.json",
+    "fail": "tests/fixtures/checks/check.inputs_unchanged.fail.json"
+  }
+}

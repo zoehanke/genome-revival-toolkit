@@ -1,0 +1,30 @@
+{
+  "schema_id": "run.created-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "D16/A14 e621b5c optional git_commit has exactly 40 lowercase hex characters."
+  },
+  "data": {
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "schema_versions": {
+      "event": 1
+    },
+    "created_by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "environment": {
+      "python": "3.12",
+      "platform": "synthetic",
+      "packages": {},
+      "external_tools": [],
+      "config_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "catalog_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "catalog_ref": "store/catalog.json",
+    "kits": [],
+    "git_commit": "1111111111111111111111111111111111111111"
+  }
+}

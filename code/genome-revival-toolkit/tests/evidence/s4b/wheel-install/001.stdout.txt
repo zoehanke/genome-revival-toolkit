@@ -1,0 +1,3 @@
+Processing <WORK>\wheels-02\genome_revival_toolkit-0.0.0-py3-none-any.whl
+Installing collected packages: genome-revival-toolkit
+Successfully installed genome-revival-toolkit-0.0.0

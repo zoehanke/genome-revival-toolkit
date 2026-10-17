@@ -1,0 +1,18 @@
+test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) ... 
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='regions_unchanged', variant='pass') ... FAIL
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='regions_unchanged', variant='pass')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.regions_unchanged', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'FAIL', 'issuer': 'check_capability', 'summary': 'Explicit reference/target intervals compared; annotation inheritance is outside this check.', 'evidence': {'reference_material_id': '6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d', 'comparisons': [{'material_id': '9d56264c16e49de5bfa7736a3aea4921b1803c92848db1f0b76703ac6505043d', 'region': {'source_start': 0, 'source_end': 3, 'target_start': 0, 'target_end': 3}, 'matches': False}, {'material_id': '9d56264c16e49de5bfa7736a3aea4921b1803c92848db1f0b76703ac6505043d', 'region': {'source_start': 6, 'source_end': 12, 'target_start': 5, 'target_end': 11}, 'matches': False}]}, 'basis': ['e7dca469816791b6aeda259ba109ab2da7562b1004f65b28f5057c95b7ef5e18', 'bca49d6f701b24975c6815303b81191f05e5ae55ba27e4a46636300c7479164e', '2127ff5d8d577f6092f2eac867635fe01f55c2469efa5e24bf31e9351b1e31fc', 'cdba416d3c60398521673730ce7d88fc6568c62541b8734a2ddffa5053d8d4cb', '3fbbac21ddb7cf5c6f68985e2eb0216aeecf864f1ee05e1ca8cfe608e799c518', '591d270f413da58c30f29822890f9f542539ed43eda59f50ed6ae224718a3706', '874346fb5b49a2370ea33c703311e9c23a1713db038ab238cf7d25c4ac1b9821', 'd753a1c235a6c760424ada3ccc67202e636e5335b378e09acb982c03fa6b57be', '4d84c30c3cc493641ca31be3394666539e75ad48f414d66c9f024cd6792bf143', '8c3d359d99c9532ea72966f1d20888a391042e4df1a6678e309888fc36696eeb'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 2.329s
+
+FAILED (failures=1)

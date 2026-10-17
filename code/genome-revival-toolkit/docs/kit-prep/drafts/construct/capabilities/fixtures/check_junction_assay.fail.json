@@ -1,0 +1,12 @@
+{
+  "check": "construct.check_junction_assay",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Both primers lie inside retained donor arms, so the residual donor gives the same band."
+  }
+}

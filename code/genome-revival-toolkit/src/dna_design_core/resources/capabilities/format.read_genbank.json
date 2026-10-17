@@ -1,0 +1,70 @@
+{
+  "schema": "capability-v1",
+  "id": "format.read_genbank",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Read GenBank content into a kernel material.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "file"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "topology": {
+        "enum": [
+          null,
+          "linear",
+          "circular"
+        ]
+      },
+      "strandedness": {
+        "enum": [
+          null,
+          "single",
+          "double"
+        ]
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "output_role": "component"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.format.operations:read_genbank_file"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

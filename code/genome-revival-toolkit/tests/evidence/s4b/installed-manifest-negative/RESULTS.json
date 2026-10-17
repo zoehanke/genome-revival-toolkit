@@ -1,0 +1,12 @@
+{
+  "changed_bytes": 1,
+  "byte_offset": 13,
+  "create_refused": true,
+  "verify_refused": true,
+  "original_manifest_sha256": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+  "modified_manifest_sha256": "0f3c90be4aece4cd1511a3d66c2893a63b25d7377614a88e400403da4e9610e3",
+  "manifest_restored_exactly": true,
+  "verify_after_restoration": true,
+  "sealed_files_unchanged": 44,
+  "development_fallback": false
+}

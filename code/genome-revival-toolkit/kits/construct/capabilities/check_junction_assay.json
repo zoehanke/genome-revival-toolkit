@@ -1,0 +1,50 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.check_junction_assay",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Recompute junction products and reject residual donor bands or ambiguous binding.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival"
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11",
+      "MIGRATION-LOG.md: S5a"
+    ],
+    "implemented_in": "construct.capabilities.checks:check_junction_assay"
+  },
+  "owner": "kit:construct",
+  "granularity": "atomic",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/construct.check_junction_assay.pass.json",
+    "fail": "capabilities/fixtures/construct.check_junction_assay.fail.json"
+  }
+}

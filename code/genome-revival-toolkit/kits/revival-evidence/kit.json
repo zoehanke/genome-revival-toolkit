@@ -1,0 +1,37 @@
+{
+  "schema": "kit-v1",
+  "name": "revival-evidence",
+  "version": "0.0.0",
+  "title": "Revival Evidence",
+  "requires_core": {
+    "minimum": "0.0.0",
+    "maximum_exclusive": "1.0.0"
+  },
+  "contributes": {
+    "capabilities": [
+      "capabilities/parse_observations.json",
+      "capabilities/assess_observations.json",
+      "capabilities/check_record_consistency.json"
+    ],
+    "knowledge": [
+      "knowledge/functional_revival.json",
+      "knowledge/genome_elimination.json",
+      "knowledge/control_absence.json",
+      "knowledge/local_prediction.json",
+      "knowledge/fusion_plate_outgrowth.json"
+    ],
+    "templates": [
+      "templates/assess_observations.json",
+      "templates/assess_predictions.json"
+    ],
+    "text": [
+      "text/en.json"
+    ]
+  },
+  "does_not_establish": [
+    "Experimental success (实验已成功).",
+    "Functional revival (功能已复活).",
+    "Authenticity of submitted observations (观察本身真实)."
+  ],
+  "review": "knowledge/review/"
+}

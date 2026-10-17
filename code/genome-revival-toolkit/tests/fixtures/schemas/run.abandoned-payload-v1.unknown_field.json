@@ -1,0 +1,17 @@
+{
+  "schema_id": "run.abandoned-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "reason": "Synthetic stop.",
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "undeclared_field": true
+  }
+}

@@ -1,0 +1,5 @@
+jsonschema==4.26.0
+referencing==0.37.0
+setuptools==83.0.0
+biopython==1.88
+

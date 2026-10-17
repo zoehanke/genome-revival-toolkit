@@ -1,0 +1,8 @@
+{
+  "SUPPORTED": "Supports only the stated local record-level claim.",
+  "INSUFFICIENT": "Supplied evidence is insufficient for this claim.",
+  "CONTRADICTED": "Supplied records contradict the stated local claim.",
+  "NOT_TESTED": "Required observations were not supplied.",
+  "missing_count": "A missing count remains unknown, not zero.",
+  "boundary": "File integrity and record consistency do not authenticate an experiment."
+}

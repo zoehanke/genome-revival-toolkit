@@ -1,0 +1,37 @@
+{
+  "implemented_shared": {
+    "replace_material_region": [
+      "cut-plasmid",
+      "construct"
+    ],
+    "inspect_cds": [
+      "cut-plasmid",
+      "construct"
+    ],
+    "enumerate_primer_candidates": [
+      "cut-plasmid",
+      "construct",
+      "genome-identity"
+    ],
+    "sequencing_read_coverage": [
+      "cut-plasmid",
+      "construct"
+    ]
+  },
+  "kit_only": {
+    "cut-plasmid": [
+      "Promoter/scaffold location, sequence-derived guide direction, PAM and supplied-vector self-target checks (S2 only).",
+      "Guide-specific inverse-PCR layout and selection interpretation; no candidate-guide enumeration."
+    ],
+    "construct": [
+      "Independent donor model, homology-arm selection and cargo layout.",
+      "Junction-assay selection outside homology arms and donor carry-over warning; Construct-to-Identity serialization."
+    ],
+    "genome-identity": [
+      "Regional alignment, assay discrimination and identity handoff parsing/output, only this Kit requires their domain decisions."
+    ],
+    "revival-evidence": [
+      "CSV ID completion, unknown counts, finite rule evaluation, observation/prediction matching and bounded conclusions; no biology calculations."
+    ]
+  }
+}

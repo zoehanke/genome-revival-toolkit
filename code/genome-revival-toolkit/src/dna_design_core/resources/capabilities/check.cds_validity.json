@@ -1,0 +1,49 @@
+{
+  "schema": "capability-v1",
+  "id": "check.cds_validity",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Check annotated coding frames, starts/stops and internal stops with inherited-finding witnesses.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Gene expression, protein activity, selectable phenotype or wet-laboratory function.",
+    "Complete-CDS start/stop validation of explicitly partial or pseudogene annotations.",
+    "Programmed frameshifts, recoding or unannotated strain-specific genetic code differences."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D7; INV-A10; D8",
+      "Biopython SeqFeature exact local location contract",
+      "https://www.ncbi.nlm.nih.gov/Taxonomy/Utils/wprintgc.cgi#SG1"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.content:cds_validity"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/s1c/check.cds_validity.pass.json",
+    "fail": "tests/fixtures/s1c/check.cds_validity.fail.json"
+  }
+}

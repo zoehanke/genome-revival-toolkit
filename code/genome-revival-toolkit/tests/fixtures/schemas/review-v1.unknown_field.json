@@ -1,0 +1,26 @@
+{
+  "schema_id": "review-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "schema": "review-v1",
+    "object": {
+      "kind": "rule",
+      "id": "demo.boundary",
+      "path": "knowledge/boundary.json",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "reviewer": {
+      "name": "",
+      "role": ""
+    },
+    "date": "",
+    "scope": "",
+    "decision": "changes_requested",
+    "notes": "Unsigned schema fixture; not a review record.",
+    "undeclared_field": true
+  }
+}

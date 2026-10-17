@@ -1,0 +1,16 @@
+"""Ports shared by execution and assurance; no implementation dependencies."""
+from typing import Protocol
+
+
+class Invoker(Protocol):
+    def invoke(self,use,inputs,params,*,parent,view=None): ...
+
+
+class View(Protocol):
+    candidate: dict
+    goal: dict
+    pipeline: dict
+    def steps(self): ...
+    def events(self,filter=None): ...
+    def material(self,identity): ...
+    def document(self,identity): ...

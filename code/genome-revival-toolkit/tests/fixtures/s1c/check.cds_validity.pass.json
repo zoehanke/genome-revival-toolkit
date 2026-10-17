@@ -1,0 +1,8 @@
+{
+  "check": "check.cds_validity",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "ATG AAA TAA is a complete 9 nt standard-code CDS without internal stops. Input ATG TAA TAA copied unchanged, or uniquely rotated with unchanged feature bases, retains exactly one inherited internal stop and is explicitly labelled."
+  }
+}

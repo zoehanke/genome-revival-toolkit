@@ -1,0 +1,26 @@
+{
+  "old_path": "genome-revival-toolkit/revival/construct.py",
+  "old_commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+  "old_source_lines": 205,
+  "old_project_imports": [
+    "revival.bootstrap",
+    "revival.context",
+    "core",
+    "core.runtime_gate",
+    "core.tools",
+    "core.tools.result",
+    "core.workflow",
+    "core.workflow_delivery",
+    "evidence_trace.runtime"
+  ],
+  "new_source_lines": {
+    "assay.py": 108,
+    "checks.py": 75,
+    "contracts.py": 79,
+    "design.py": 98,
+    "handoff.py": 30,
+    "model.py": 25
+  },
+  "new_total": 415,
+  "approach": "source-bounded rewrite, no legacy imports"
+}

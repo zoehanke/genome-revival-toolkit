@@ -1,0 +1,30 @@
+test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) ... 
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='topology', variant='pass') ... FAIL
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='topology', variant='fail') ... FAIL
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='topology', variant='pass')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.topology', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'FAIL', 'issuer': 'check_capability', 'summary': 'Retained topology compared; unknown topology is not inferred.', 'evidence': {'expected': 'circular', 'actual': ['circular']}, 'basis': ['0d984b8b66cbc4ee1ce5c10f4ce5544e497127a40c2e993c0923ed437fa89320', '90f34364f23e1cc6261ccf44e376397308f3ae1ca60fd91631fdc730ae94c776', 'a2623b020640145765cacf0442bc56ff6d52e0c30f661ab7498c7bd89384a01e', '299b383926c233c369e26b9862213888cdcbbe16a9a3e2c147791c0c7eeb48e0', '24422888033a143fdaeb19bf673c277050dd77878cf546011f06f8735b70c12e', '64625d99fd7e619b52a22fb003c1d91ba8c41b45381ebd36e1e17d6428163dc8', '013cba0845c85e8627c37f4236614a73e4ef0b52cc4b8755c2fd6a4d1c651b60'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='topology', variant='fail')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.topology', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Retained topology compared; unknown topology is not inferred.', 'evidence': {'expected': 'circular', 'actual': ['linear']}, 'basis': ['7bb1c44e1075dca159fdf5ee89ac27557bacb489bc85998ede4a7893f91d240b', 'c1a9048fd83521d7df60a0928077150fcaf3fa8c5d5e1584d5fcfe1d6a28442f', '414a6e7611ac210faffd9ee2fc38115cb0c82e16eaa484871c66ce1dd622ce83', '3866c5e4ba8d6ba01e5b585987b2ec9254e8b1b621fc4756417a0b953df92d93', '8104f0b2700e389a0ca0502edfa0f51bbd94e85dea33eb45f7bba81cae5325c8', '41c5de1140dfcbe2a255204c24af96e9439d054bc69982e680979838da709043', 'a5d076c6d0c699b21eb6f574b696d8e66b87a14c7433f1734d33582aa721bf0f'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 4.568s
+
+FAILED (failures=2)

@@ -1,0 +1,32 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.missing-is-unknown",
+  "name": "Missing counts or denominators remain unknown, not zero.",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "statement": "Missing counts or denominators remain unknown, not zero."
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:_count and group normalisation",
+    "locator": "genome-revival-toolkit/kits/evidence/rules/scope.json@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "Missing counts or denominators remain unknown, not zero."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/evidence.missing-is-unknown.json"
+}

@@ -1,0 +1,12 @@
+{
+  "check": "evidence.check_record_consistency",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Submit both positive and negative results for one sample/reference under reported passing controls."
+  }
+}

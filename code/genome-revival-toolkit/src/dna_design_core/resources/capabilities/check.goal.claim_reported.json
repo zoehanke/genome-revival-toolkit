@@ -1,0 +1,54 @@
+{
+  "schema": "capability-v1",
+  "id": "check.goal.claim_reported",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Require a unique explicitly named claim with a nonempty status in target JSON reports.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "claim": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "\\S"
+      },
+      "pointer": {
+        "type": "string",
+        "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+      }
+    },
+    "required": [
+      "claim"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental performance, functional identity or truth of a reported claim.",
+    "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D2 GOL-4/GOL-6",
+      "SPEC D9 retained content identities"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.goal:claim_reported"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "user_goal",
+  "evaluates_constraint": true,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/goal_checks/claim_reported.pass.json",
+    "fail": "tests/fixtures/goal_checks/claim_reported.fail.json"
+  }
+}

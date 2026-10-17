@@ -1,0 +1,20 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "create",
+      "<WORK>\\source-after-build"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.312
+  }
+]

@@ -1,0 +1,21 @@
+test_placeholders_are_counted_and_block_the_build (test_release_engineering.ReleaseEngineeringTests.test_placeholders_are_counted_and_block_the_build) ... FAIL
+
+======================================================================
+FAIL: test_placeholders_are_counted_and_block_the_build (test_release_engineering.ReleaseEngineeringTests.test_placeholders_are_counted_and_block_the_build)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 107, in test_placeholders_are_counted_and_block_the_build
+    self.assertEqual((result["status"], result["placeholder_count"]), ("INCOMPLETE", 2))
+AssertionError: Tuples differ: ('PASS', 0) != ('INCOMPLETE', 2)
+
+First differing element 0:
+'PASS'
+'INCOMPLETE'
+
+- ('PASS', 0)
++ ('INCOMPLETE', 2)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.600s
+
+FAILED (failures=1)

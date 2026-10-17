@@ -1,0 +1,13 @@
+{
+  "schema_id": "journal.recovered-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "discarded_bytes": 12,
+    "reason": "Incomplete last line.",
+    "undeclared_field": true
+  }
+}

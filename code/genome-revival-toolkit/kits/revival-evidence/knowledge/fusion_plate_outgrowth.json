@@ -1,0 +1,75 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.fusion_plate_outgrowth",
+  "name": "fusion_plate_outgrowth",
+  "version": 1,
+  "status": "active",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "claim": "fusion_plate_outgrowth",
+    "context": "comparison",
+    "truth_table": [
+      {
+        "when": [{"field": "count_known", "op": "eq", "value": false}],
+        "status": "NOT_TESTED",
+        "reason": "融合平板计数缺失；缺失不是零",
+        "source_ref": "evidence.fusion_plate_outgrowth"
+      },
+      {
+        "when": [
+          {"field": "count_known", "op": "eq", "value": true},
+          {"field": "count_positive", "op": "eq", "value": false}
+        ],
+        "status": "CONTRADICTED",
+        "reason": "融合平板报告没有菌落，所谓\"生长\"不成立",
+        "source_ref": "evidence.fusion_plate_outgrowth"
+      },
+      {
+        "when": [
+          {"field": "count_positive", "op": "eq", "value": true},
+          {"field": "control_count_known", "op": "eq", "value": false}
+        ],
+        "status": "INSUFFICIENT",
+        "reason": "融合平板有菌落，但对照计数缺失，无法判断生长是否与对照不同",
+        "source_ref": "evidence.fusion_plate_outgrowth"
+      },
+      {
+        "when": [
+          {"field": "count_positive", "op": "eq", "value": true},
+          {"field": "control_count_positive", "op": "eq", "value": true}
+        ],
+        "status": "INSUFFICIENT",
+        "reason": "对照也出了菌落，无法把融合平板的生长归因于所报告的处理（对照的矛盾另由 control_no_outgrowth 单独报告）",
+        "source_ref": "evidence.fusion_plate_outgrowth"
+      },
+      {
+        "when": [
+          {"field": "count_positive", "op": "eq", "value": true},
+          {"field": "control_count_known", "op": "eq", "value": true},
+          {"field": "control_count_positive", "op": "eq", "value": false}
+        ],
+        "status": "SUPPORTED",
+        "reason": "融合平板有菌落而指定的无生长对照没有；这不证明功能复活，也不证明对照细胞已死",
+        "source_ref": "evidence.fusion_plate_outgrowth"
+      }
+    ]
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "Genome Revival Toolkit SPEC D12 与附录 B3；用户 2026-10-17 的决定（方案 B）",
+    "locator": "spec/SPEC.md D12; B3; prompts/s3b-scoped-supported-conclusion.md",
+    "retrieved_at": "2026-10-17",
+    "content_ref": null,
+    "archive_note": "Project files and user decision retained in repository history.",
+    "supports": [
+      "融合平板有菌落而指定的无生长对照没有；这不证明功能复活，也不证明对照细胞已死"
+    ],
+    "does_not_support": ["功能复活、遗传学恢复、供体来源、对照细胞死亡、记录的真实性"],
+    "verification_status": "unverified"
+  },
+  "limits": ["Only reported counts for the explicitly selected experiment_group and control_group; no biological mechanism is inferred."],
+  "review": "knowledge/review/fusion_plate_outgrowth.review.json",
+  "authorship": {"kind": "ai", "tool_or_model": "Codex", "date": "2026-10-17"}
+}

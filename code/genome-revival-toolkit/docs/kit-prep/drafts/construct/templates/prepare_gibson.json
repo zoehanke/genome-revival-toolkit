@@ -1,0 +1,289 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "reference",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{reference_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "cargo",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "{{cargo_source}}"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "model",
+      "use": "construct.model_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}",
+        "arm_length": "{{arm_length}}",
+        "cargo_start": "{{cargo_start}}",
+        "cargo_end": "{{cargo_end}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "build",
+      "use": "construct.design_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}",
+        "arm_length": "{{arm_length}}",
+        "cargo_start": "{{cargo_start}}",
+        "cargo_end": "{{cargo_end}}",
+        "preparation_method": "gibson",
+        "overlap": "{{overlap}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "cargo_region",
+      "use": "seq.slice",
+      "inputs": {
+        "material": {
+          "step": "cargo",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{cargo_start}}",
+        "end": "{{cargo_end}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "edited",
+      "use": "seq.replace_region",
+      "inputs": {
+        "material": {
+          "step": "reference",
+          "port": "material"
+        },
+        "insert": {
+          "step": "cargo_region",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "qc",
+      "use": "construct.design_junction_assay",
+      "inputs": {
+        "original": {
+          "step": "reference",
+          "port": "material"
+        },
+        "edited": {
+          "step": "edited",
+          "port": "product"
+        },
+        "donor": {
+          "step": "build",
+          "port": "product"
+        }
+      },
+      "params": {
+        "left_arm": "{{left_arm}}",
+        "right_arm": "{{right_arm}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "edited_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "edited",
+          "port": "product"
+        }
+      },
+      "params": {
+        "name": "edited-reference.gb"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "handoff",
+      "use": "construct.export_handoff",
+      "inputs": {
+        "original_file": {
+          "source": "{{reference_source}}"
+        },
+        "edited_file": {
+          "step": "edited_file",
+          "port": "file"
+        },
+        "primers": {
+          "step": "qc",
+          "port": "primers"
+        }
+      },
+      "params": {
+        "name": "identity-handoff.json"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "from": {
+        "step": "build",
+        "port": "product"
+      },
+      "target": "{{target_id}}"
+    },
+    {
+      "name": "junction_primers",
+      "from": {
+        "step": "qc",
+        "port": "primers"
+      },
+      "target": "{{primers_target}}"
+    },
+    {
+      "name": "identity_handoff",
+      "from": {
+        "step": "handoff",
+        "port": "handoff"
+      },
+      "target": "{{handoff_target}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "Explicit caller-provided goal digest; no inferred source or scientific threshold.",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "target_id": {
+        "type": "string",
+        "description": "Explicit caller-provided target id; no inferred source or scientific threshold."
+      },
+      "reference_source": {
+        "type": "string",
+        "description": "Explicit caller-provided reference source; no inferred source or scientific threshold."
+      },
+      "cargo_source": {
+        "type": "string",
+        "description": "Explicit caller-provided cargo source; no inferred source or scientific threshold."
+      },
+      "start": {
+        "type": "integer",
+        "description": "Explicit caller-provided start; no inferred source or scientific threshold."
+      },
+      "end": {
+        "type": "integer",
+        "description": "Explicit caller-provided end; no inferred source or scientific threshold."
+      },
+      "arm_length": {
+        "type": "integer",
+        "description": "Explicit caller-provided arm length; no inferred source or scientific threshold."
+      },
+      "cargo_start": {
+        "type": "integer",
+        "description": "Explicit caller-provided cargo start; no inferred source or scientific threshold."
+      },
+      "cargo_end": {
+        "type": "integer",
+        "description": "Explicit caller-provided cargo end; no inferred source or scientific threshold."
+      },
+      "overlap": {
+        "type": "integer",
+        "description": "Explicit caller-provided overlap; no inferred source or scientific threshold."
+      },
+      "left_arm": {
+        "type": "array",
+        "description": "Explicit caller-provided left arm; no inferred source or scientific threshold.",
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "right_arm": {
+        "type": "array",
+        "description": "Explicit caller-provided right arm; no inferred source or scientific threshold.",
+        "items": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "minItems": 2,
+        "maxItems": 2
+      },
+      "primers_target": {
+        "type": "string",
+        "description": "Explicit caller-provided primers target; no inferred source or scientific threshold."
+      },
+      "handoff_target": {
+        "type": "string",
+        "description": "Explicit caller-provided handoff target; no inferred source or scientific threshold."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "target_id",
+      "reference_source",
+      "cargo_source",
+      "start",
+      "end",
+      "arm_length",
+      "cargo_start",
+      "cargo_end",
+      "overlap",
+      "left_arm",
+      "right_arm",
+      "primers_target",
+      "handoff_target"
+    ],
+    "additionalProperties": false
+  }
+}

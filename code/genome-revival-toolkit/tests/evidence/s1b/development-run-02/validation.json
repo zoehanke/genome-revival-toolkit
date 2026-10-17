@@ -1,0 +1,101 @@
+{
+  "check_structure": {
+    "command": [
+      "<SOURCE>\\tools\\check_structure.py"
+    ],
+    "exit_code": 0,
+    "output": "check_structure.txt"
+  },
+  "check_schemas": {
+    "command": [
+      "<SOURCE>\\tools\\check_schemas.py"
+    ],
+    "exit_code": 0,
+    "output": "check_schemas.txt"
+  },
+  "structure": {
+    "tests": 53,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "structure.txt"
+  },
+  "spec_lint": {
+    "command": [
+      "<REPOSITORY>\\tools\\spec_lint.py"
+    ],
+    "exit_code": 1,
+    "output": "spec_lint.txt"
+  },
+  "contract": {
+    "tests": 8,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "contract.txt"
+  },
+  "unit": {
+    "tests": 78,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "unit.txt"
+  },
+  "integration": {
+    "tests": 14,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "integration.txt"
+  },
+  "e2e": {
+    "tests": 0,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "e2e.txt"
+  },
+  "primer3_reference": {
+    "command": [
+      "<SOURCE>\\tests\\oracles\\primer3_reference.py",
+      "--executable",
+      "<WORK>\\.primer3-artifacts\\wheel\\primer3\\src\\libprimer3\\primer3_core.exe",
+      "--output",
+      "<SOURCE>\\tests\\evidence\\s1b\\primer3"
+    ],
+    "exit_code": 0,
+    "output": "primer3_reference.txt"
+  },
+  "mutations": {
+    "command": [
+      "<SOURCE>\\tests\\oracles\\biology_mutations.py"
+    ],
+    "exit_code": 0,
+    "output": "mutations.txt"
+  },
+  "primer3_comparison": {
+    "case_count": 7,
+    "max_abs_tm_delta_degC": "0.00041349"
+  },
+  "structure_green": false,
+  "environment": {
+    "PYTHONPATH": "src",
+    "GRT_PRIMER3_CORE_configured": true
+  },
+  "capability_contract_tests": 3,
+  "new_capabilities": 22,
+  "check_fixtures_executed": 8,
+  "runtime_material_integration": "PASS",
+  "overall_outcome": "FAIL",
+  "scope": "S1b developer verification only; S1 and S1b stage gates remain with the specification owner. No wet-laboratory or Kit acceptance."
+}

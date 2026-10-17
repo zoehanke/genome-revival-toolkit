@@ -1,0 +1,1 @@
+{"module": "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\__init__.py", "prefix": "<WORK>\\venv", "from_environment": true, "manifest_sha256": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78", "build_id": "f3b3792d490e94209030e135adea8ecfa67c31e5", "files": 829}

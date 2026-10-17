@@ -1,0 +1,12 @@
+{
+  "schema_id": "goal.declared-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required document."
+  },
+  "data": {
+    "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "version": 1
+  }
+}

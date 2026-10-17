@@ -1,0 +1,78 @@
+[
+  {
+    "function": "replace_material_region",
+    "new_module": "biology/sequence/preparation.py",
+    "old_path": "snapgene-dna-design/core/models/construct_model.py",
+    "old_function": "replace",
+    "old_commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+    "old_span": [
+      236,
+      239
+    ],
+    "old_lines": 4,
+    "old_file_lines": 362,
+    "new_span": [
+      15,
+      61
+    ],
+    "new_lines": 47,
+    "new_file_lines": 88
+  },
+  {
+    "function": "inspect_cds",
+    "new_module": "biology/sequence/preparation.py",
+    "old_path": "snapgene-dna-design/core/tools/sequence_ops.py",
+    "old_function": "validate_cds_feature",
+    "old_commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+    "old_span": [
+      146,
+      324
+    ],
+    "old_lines": 179,
+    "old_file_lines": 724,
+    "new_span": [
+      64,
+      88
+    ],
+    "new_lines": 25,
+    "new_file_lines": 88
+  },
+  {
+    "function": "enumerate_primer_candidates",
+    "new_module": "biology/primer/preparation.py",
+    "old_path": "snapgene-dna-design/core/recipes/verification.py",
+    "old_function": "_verification_candidates",
+    "old_commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+    "old_span": [
+      54,
+      123
+    ],
+    "old_lines": 70,
+    "old_file_lines": 556,
+    "new_span": [
+      13,
+      43
+    ],
+    "new_lines": 31,
+    "new_file_lines": 81
+  },
+  {
+    "function": "sequencing_read_coverage",
+    "new_module": "biology/primer/preparation.py",
+    "old_path": "snapgene-dna-design/core/recipes/verification.py",
+    "old_function": "sequencing_coverage",
+    "old_commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+    "old_span": [
+      225,
+      256
+    ],
+    "old_lines": 32,
+    "old_file_lines": 556,
+    "new_span": [
+      46,
+      81
+    ],
+    "new_lines": 36,
+    "new_file_lines": 81
+  }
+]

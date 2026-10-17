@@ -1,0 +1,1040 @@
+{
+  "draft_documents": 58,
+  "by_schema": {
+    "kit-v1": 4,
+    "capability-v1": 19,
+    "rule-v1": 26,
+    "pipeline-template-v1": 9
+  },
+  "schema_invalid_documents": 3,
+  "a14_invalid_documents": 1,
+  "expected_invalid_probe_documents": 2,
+  "question_ids": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6"
+  ],
+  "records": [
+    {
+      "kit": "construct",
+      "file": "drafts/construct/kit.json",
+      "schema": "kit-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/capabilities/check_junction_assay.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/capabilities/design_donor.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/capabilities/design_junction_assay.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/capabilities/export_handoff.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/capabilities/model_donor.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/knowledge/construct.donor-not-integration.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/knowledge/construct.explicit-source-bounds.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/knowledge/construct.physical-route.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/templates/prepare_gibson.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "construct",
+      "file": "drafts/construct/templates/prepare_pcr.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/kit.json",
+      "schema": "kit-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/assess_selection.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/check_direction.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/check_pam.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/check_vector_self_target.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/inspect_guide.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/model_replace.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/capabilities/replace_spacer.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/crispr.planned-not-performed.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/crispr.sequence-direction.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/crispr.supplied-vector.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.amp.ecoli.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.cat.ecoli.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.his3.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.hph.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.kan.ecoli.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.kan.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.leu2.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.nat.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.trp1.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/knowledge/selection.ura3.yeast.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/templates/inspect_only.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "cut-plasmid",
+      "file": "drafts/cut-plasmid/templates/replace_spacer.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/kit.json",
+      "schema": "kit-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/capabilities/analyze_assay.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/capabilities/check_handoff.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/capabilities/compare_regions.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/capabilities/read_handoff.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/knowledge/identity.full-quality-and-resolution.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/knowledge/identity.prediction-not-experiment.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/knowledge/identity.supplied-region-scope.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/templates/from_handoff.json",
+      "schema": "pipeline-template-v1",
+      "valid": false,
+      "expected_invalid_probe": false,
+      "schema_errors": [
+        {
+          "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not valid under any of the given schemas",
+          "instance_path": [
+            "steps",
+            5,
+            "inputs",
+            "references"
+          ],
+          "schema_path": [
+            "properties",
+            "steps",
+            "items",
+            "properties",
+            "inputs",
+            "patternProperties",
+            "^.*$",
+            "oneOf"
+          ],
+          "validator": "oneOf",
+          "context": [
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                5,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                0,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                5,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                1,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                5,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                2,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                5,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                3,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            }
+          ]
+        }
+      ],
+      "a14_errors": []
+    },
+    {
+      "kit": "genome-identity",
+      "file": "drafts/genome-identity/templates/from_references.json",
+      "schema": "pipeline-template-v1",
+      "valid": false,
+      "expected_invalid_probe": false,
+      "schema_errors": [
+        {
+          "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not valid under any of the given schemas",
+          "instance_path": [
+            "steps",
+            4,
+            "inputs",
+            "references"
+          ],
+          "schema_path": [
+            "properties",
+            "steps",
+            "items",
+            "properties",
+            "inputs",
+            "patternProperties",
+            "^.*$",
+            "oneOf"
+          ],
+          "validator": "oneOf",
+          "context": [
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                4,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                0,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                4,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                1,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                4,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                2,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            },
+            {
+              "message": "[{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not of type 'object'",
+              "instance_path": [
+                "steps",
+                4,
+                "inputs",
+                "references"
+              ],
+              "schema_path": [
+                "properties",
+                "steps",
+                "items",
+                "properties",
+                "inputs",
+                "patternProperties",
+                "^.*$",
+                "oneOf",
+                3,
+                "type"
+              ],
+              "validator": "type",
+              "context": []
+            }
+          ]
+        }
+      ],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/kit.json",
+      "schema": "kit-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/capabilities/assess_observations.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/capabilities/check_record_consistency.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/capabilities/parse_observations.json",
+      "schema": "capability-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.bounded-conclusions.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.control-outgrowth.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.controls-and-conflicts.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.functional-revival-scope.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.missing-is-unknown.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/knowledge/evidence.whole-genome-elimination-scope.json",
+      "schema": "rule-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/templates/compare_predictions.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/templates/observations_only.json",
+      "schema": "pipeline-template-v1",
+      "valid": true,
+      "expected_invalid_probe": false,
+      "schema_errors": [],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/probes/source-missing.json",
+      "schema": "rule-v1",
+      "valid": false,
+      "expected_invalid_probe": true,
+      "schema_errors": [
+        {
+          "message": "'source_class' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'citation' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'locator' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'retrieved_at' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'content_ref' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'archive_note' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'supports' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        },
+        {
+          "message": "'does_not_support' is a required property",
+          "instance_path": [
+            "source"
+          ],
+          "schema_path": [
+            "properties",
+            "source",
+            "required"
+          ],
+          "validator": "required",
+          "context": []
+        }
+      ],
+      "a14_errors": []
+    },
+    {
+      "kit": "revival-evidence",
+      "file": "drafts/revival-evidence/probes/partial-placeholder.json",
+      "schema": "pipeline-template-v1",
+      "valid": false,
+      "expected_invalid_probe": true,
+      "schema_errors": [],
+      "a14_errors": [
+        {
+          "message": "A14 requires a whole-string placeholder with a valid lowercase name.",
+          "instance_path": [],
+          "schema_path": [],
+          "validator": null,
+          "context": []
+        }
+      ]
+    }
+  ],
+  "semantic_findings": [
+    {
+      "kit": "construct",
+      "issue": "K1",
+      "file": "drafts/construct/capabilities/design_donor.json",
+      "message": "schema_ref is not in the existing local schema registry: primer-set-v1"
+    },
+    {
+      "kit": "construct",
+      "issue": "K1",
+      "file": "drafts/construct/capabilities/design_donor.json",
+      "message": "schema_ref is not in the existing local schema registry: route-plan-v1"
+    },
+    {
+      "kit": "construct",
+      "issue": "K1",
+      "file": "drafts/construct/capabilities/design_junction_assay.json",
+      "message": "schema_ref is not in the existing local schema registry: primer-set-v1"
+    },
+    {
+      "kit": "construct",
+      "issue": "K1",
+      "file": "drafts/construct/capabilities/export_handoff.json",
+      "message": "schema_ref is not in the existing local schema registry: primer-set-v1"
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K1",
+      "file": "drafts/cut-plasmid/capabilities/assess_selection.json",
+      "message": "schema_ref is not in the existing local schema registry: selection-assessment-v1"
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K1",
+      "file": "drafts/cut-plasmid/capabilities/inspect_guide.json",
+      "message": "schema_ref is not in the existing local schema registry: guide-inspection-v1"
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K1",
+      "file": "drafts/cut-plasmid/capabilities/replace_spacer.json",
+      "message": "schema_ref is not in the existing local schema registry: primer-set-v1"
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K1",
+      "file": "drafts/cut-plasmid/capabilities/replace_spacer.json",
+      "message": "schema_ref is not in the existing local schema registry: route-plan-v1"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K1",
+      "file": "drafts/genome-identity/capabilities/analyze_assay.json",
+      "message": "schema_ref is not in the existing local schema registry: identity-handoff-v1"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K1",
+      "file": "drafts/genome-identity/capabilities/analyze_assay.json",
+      "message": "schema_ref is not in the existing local schema registry: identity-expected-results-v1"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K1",
+      "file": "drafts/genome-identity/capabilities/compare_regions.json",
+      "message": "schema_ref is not in the existing local schema registry: region-comparison-v1"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K1",
+      "file": "drafts/genome-identity/capabilities/read_handoff.json",
+      "message": "schema_ref is not in the existing local schema registry: identity-handoff-v1"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K3",
+      "file": "drafts/genome-identity/templates/from_handoff.json",
+      "message": "A3 permits one source/step/artifact/literal reference, not an ordered array of material references: assay.references"
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K3",
+      "file": "drafts/genome-identity/templates/from_references.json",
+      "message": "A3 permits one source/step/artifact/literal reference, not an ordered array of material references: assay.references"
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K1",
+      "file": "drafts/revival-evidence/capabilities/assess_observations.json",
+      "message": "schema_ref is not in the existing local schema registry: observation-table-v1"
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K1",
+      "file": "drafts/revival-evidence/capabilities/assess_observations.json",
+      "message": "schema_ref is not in the existing local schema registry: revival-assessment-v1"
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K1",
+      "file": "drafts/revival-evidence/capabilities/parse_observations.json",
+      "message": "schema_ref is not in the existing local schema registry: observation-table-v1"
+    },
+    {
+      "kit": "construct",
+      "issue": "K4",
+      "file": "drafts/construct/capabilities/design_donor.json",
+      "message": "D3 supplies a model capability id but no target-output/argument binding contract. Producer and model differ: {\"producer_inputs\": [\"reference\", \"cargo\", \"donor_template\"], \"model_inputs\": [\"reference\", \"cargo\"], \"producer_outputs\": [\"product\", \"primers\", \"route\"], \"model_outputs\": [\"product\"]}"
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K6",
+      "file": "drafts/cut-plasmid/capabilities/assess_selection.json",
+      "message": "D12 permits an ACTION evaluator to consume frozen knowledge, but D3 exposes knowledge(pack) only on CHECK ctx.view; no ACTION frozen-knowledge access contract is specified."
+    },
+    {
+      "kit": "cut-plasmid",
+      "issue": "K4",
+      "file": "drafts/cut-plasmid/capabilities/replace_spacer.json",
+      "message": "D3 supplies a model capability id but no target-output/argument binding contract. Producer and model differ: {\"producer_inputs\": [\"vector\", \"target\"], \"model_inputs\": [\"vector\", \"target\"], \"producer_outputs\": [\"product\", \"primers\", \"route\"], \"model_outputs\": [\"product\"]}"
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K6",
+      "file": "drafts/revival-evidence/capabilities/assess_observations.json",
+      "message": "D12 permits an ACTION evaluator to consume frozen knowledge, but D3 exposes knowledge(pack) only on CHECK ctx.view; no ACTION frozen-knowledge access contract is specified."
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K2",
+      "file": "drafts/revival-evidence/probes/source-missing.json",
+      "message": "Draft/unverified does not waive mandatory source fields. Missing-source rows need an explicitly quarantined delivery policy, not invented citations or a loadable knowledge claim."
+    },
+    {
+      "kit": "construct",
+      "issue": "K5",
+      "file": "prompts/s5b-genome-identity.md",
+      "message": "The new handoff describes primer_pair without its internal type and does not distinguish no product from unresolved multiple products when product_bp is null. Old schema_version/references-dict/rows files are a different protocol."
+    },
+    {
+      "kit": "genome-identity",
+      "issue": "K5",
+      "file": "prompts/s5b-genome-identity.md",
+      "message": "The new handoff describes primer_pair without its internal type and does not distinguish no product from unresolved multiple products when product_bp is null. Old schema_version/references-dict/rows files are a different protocol."
+    },
+    {
+      "kit": "revival-evidence",
+      "issue": "K5",
+      "file": "prompts/s5b-genome-identity.md",
+      "message": "The new handoff describes primer_pair without its internal type and does not distinguish no product from unresolved multiple products when product_bp is null. Old schema_version/references-dict/rows files are a different protocol."
+    }
+  ],
+  "scope": "Schema/A14 and explicit contract rehearsal only. No Kit code imported, no draft is loadable or scientifically accepted."
+}

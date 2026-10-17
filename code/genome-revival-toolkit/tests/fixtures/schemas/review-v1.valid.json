@@ -1,0 +1,25 @@
+{
+  "schema_id": "review-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "review-v1",
+    "object": {
+      "kind": "rule",
+      "id": "demo.boundary",
+      "path": "knowledge/boundary.json",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "reviewer": {
+      "name": "",
+      "role": ""
+    },
+    "date": "",
+    "scope": "",
+    "decision": "changes_requested",
+    "notes": "Unsigned schema fixture; not a review record."
+  }
+}

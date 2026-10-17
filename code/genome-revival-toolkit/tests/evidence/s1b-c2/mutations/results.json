@@ -1,0 +1,50 @@
+[
+  {
+    "check": "check.goal.topology",
+    "before": "value != topology for value in actual",
+    "after": "value == topology for value in actual",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "topology.txt"
+  },
+  {
+    "check": "check.goal.exact_sequence",
+    "before": "[\"sequence\"] == sequence.upper()",
+    "after": "[\"sequence\"] != sequence.upper()",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "exact_sequence.txt"
+  },
+  {
+    "check": "check.goal.components_present",
+    "before": "_components(ctx, components, False)",
+    "after": "_components(ctx, components, True)",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "components_present.txt"
+  },
+  {
+    "check": "check.goal.components_absent",
+    "before": "_components(ctx, components, True)",
+    "after": "_components(ctx, components, False)",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "components_absent.txt"
+  },
+  {
+    "check": "check.goal.regions_unchanged",
+    "before": "expected == target[c:d]",
+    "after": "expected != target[c:d]",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "regions_unchanged.txt"
+  },
+  {
+    "check": "check.goal.claim_reported",
+    "before": "passed = len(matches) == 1 and isinstance(matches[0].get(\"status\"), str) and bool(matches[0][\"status\"].strip())",
+    "after": "passed = True",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "claim_reported.txt"
+  }
+]

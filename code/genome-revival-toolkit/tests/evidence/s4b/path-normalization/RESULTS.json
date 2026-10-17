@@ -1,0 +1,10 @@
+{
+  "changed_text_files": [],
+  "remaining_machine_path_candidates": [],
+  "canonical_manifests_unchanged": {
+    "payload/source-wheel-manifest.json": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+    "payload-final/source-wheel-manifest.json": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107",
+    "payload-post-suite/source-wheel-manifest.json": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107"
+  },
+  "normalization": "Path spelling only, including repeated JSON/repr escapes; outcomes are not rewritten."
+}

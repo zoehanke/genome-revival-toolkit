@@ -1,0 +1,21 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\examples\\run_example.py",
+      "--out",
+      "<WORK>\\b1",
+      "--python",
+      "<WORK>\\venv\\Scripts\\python.exe"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 16.922
+  }
+]

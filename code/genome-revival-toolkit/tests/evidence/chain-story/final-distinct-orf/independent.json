@@ -1,0 +1,31 @@
+{
+  "donor_bp": 196,
+  "bands": {
+    "original": [
+      260
+    ],
+    "edited": [
+      236
+    ]
+  },
+  "local_agreement": "SUPPORTED",
+  "foreign_background": "INSUFFICIENT",
+  "functional_revival": "INSUFFICIENT",
+  "hash_links": [
+    {
+      "source": "Construct",
+      "target": "Genome Identity",
+      "basis": "hash_equal",
+      "sha256": "5875d8447477d88b95ea6792abd12a64f5eec3dfdb9a0443fba35bb585c1a6bc"
+    },
+    {
+      "source": "Genome Identity",
+      "target": "Revival Evidence",
+      "basis": "hash_equal",
+      "sha256": "7aa76da0f4f5de894da495ad867bdd6ea10e74e21b29df6aeb280c85846bac2f"
+    }
+  ],
+  "mismatch_has_solid_link": false,
+  "connections": 0,
+  "scope": "developer-assisted synthetic computational evidence; laboratory NOT_PERFORMED"
+}

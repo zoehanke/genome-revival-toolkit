@@ -1,0 +1,26 @@
+== spec_lint on SPEC.md: 98977 chars ==
+Appendix field alignment: {'schemas_compared': 35, 'field_differences': 0, 'unresolved': 0}
+vocab counts: {'moments': 3, 'outcomes': 4, 'scopes': 4, 'capability roles': 2, 'issuers': 3}
+events in Appendix E: 19; events mentioned in body: 18
+INV defined: 119; referenced in body: 119
+
+HARD findings: 0
+
+SOFT findings: 17
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **不采用**：不设依赖契约、靠评审（旧系统已证明不可靠）；把 engine 与 assurance 合成一层（执行会影响判定）；让 engine 反向 import assurance 来出裁决（旧设计的缺口）；检查与
+  - S5 retired term '检查器' in a negating/legacy context (ok to eyeball): **来源**：封闭动词、信封、文档生成、`doctor` 只给指引 C-D13；请求文件、宿主最低能力与指导模式、「退出码不是科学裁决」A-D13；`describe checks` 取代检查器目录、`review` 补
+  - S5 retired term 'INCONCLUSIVE' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-K7 | 清单模式没有档位、输出角色、接纳规则、交付类别之类的键 | FS | D11 |
+  - S5 retired term '交付类别' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): - `outputs[]` 把步骤端口绑定到目标物（`target`）。**没有 `deliver_as`**：输出的角色由产出它的能力声明（D3），宿主不能自选。
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **来源**：计划格式、`why`、`expects`、模板 C-D4；四种引用、`index` 必给、局部诊断计划、接纳零计算 A-D4；接纳校验改为失败记录而非裁决、`outputs` 取消 `deliver_as`
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): **A3 `pipeline-v1`**：`schema`、`version`、`goal_digest`、`steps[]{step_id, use(id 或 id@版本；存储时一律是 id@精确版本), inputs
+  - S5 retired term 'deliver_as' in a negating/legacy context (ok to eyeball): | INV-P2 | `pipeline-v1` 模式 `additionalProperties:false`，且无法表达检查、门、必需范围、`deliver_as` | FS | D4 |
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **可信度的三个问题，各用一个词，互不混用**：规则或模板还在不在用？看 `status`。来源核验过吗？看 `verification_status`。人审过吗？看 `review`。没有「成熟」这个词；方法是否验证过
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): - RV-5 库里的模板显示为「已审核」当且仅当 `reviewed`；没有「成熟」一词。
+  - S5 retired term '成熟' in a negating/legacy context (ok to eyeball): **来源**：审核记录与哈希绑定、四种状态、统一显示、流程规则 C-D20；人审与 AI 会话分离、承认程序验不了真人 A-D20；标注不阻断、去掉「成熟」一词 M。依据：[已读] 旧来源与核验回执；[设计] 其余。
+  - S5 retired term 'mature' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，
+  - S5 retired term '`PLAN`' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): - 术语约定：本稿只使用 §1 的词表。旧设计的词（如五个检查阶段、评估器目录、交付类别、`PLAN` 与 `DOMAIN` 范围）已全部退役，只在 `MERGE-LEDGER.md` 的「旧词对照」里出现。
+  - S5 retired term 'DOMAIN' in a negating/legacy context (ok to eyeball): | INV-S5 | 退役词（旧检查阶段名、评估器目录、交付类别、`PLAN/DOMAIN` 范围、`INCONCLUSIVE`、`mature` 等）不得被肯定地使用（只允许出现在「不采用」「取代」「没有」「旧」语境，

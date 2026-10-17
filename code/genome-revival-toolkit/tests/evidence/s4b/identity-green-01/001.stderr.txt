@@ -1,0 +1,8 @@
+test_development_tree_still_records_dev_tree (tests.integration.test_release_identity.ReleaseIdentityTests.test_development_tree_still_records_dev_tree) ... ok
+test_package_records_manifest_digest_and_detects_one_byte_change (tests.integration.test_release_identity.ReleaseIdentityTests.test_package_records_manifest_digest_and_detects_one_byte_change) ... ok
+test_actual_backend_reads_a_changed_single_version_source (tests.integration.test_release_metadata.ReleaseMetadataTests.test_actual_backend_reads_a_changed_single_version_source) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.620s
+
+OK

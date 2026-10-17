@@ -1,0 +1,467 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.replace_spacer",
+  "version": "0.1.0",
+  "role": "ACTION",
+  "summary": "Replace spacer.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    },
+    {
+      "name": "target",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "target"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "construct"
+    },
+    {
+      "name": "primers",
+      "type": "document",
+      "output_role": "primer_set",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "primer-set-v1"
+          },
+          "template_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "primers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "sequence": {
+                  "type": "string",
+                  "pattern": "^[ACGT]+$"
+                },
+                "binding_core": {
+                  "type": "string",
+                  "pattern": "^[ACGT]+$"
+                },
+                "tail_5prime": {
+                  "type": "string"
+                },
+                "core_length": {
+                  "type": "integer"
+                },
+                "length": {
+                  "type": "integer"
+                },
+                "strand": {
+                  "type": "integer"
+                },
+                "reference_start": {
+                  "type": "integer"
+                },
+                "reference_end_unwrapped": {
+                  "type": "integer"
+                },
+                "binding_site_count": {
+                  "type": "integer"
+                },
+                "tm_degC": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "sequence",
+                "binding_core",
+                "tail_5prime",
+                "core_length",
+                "length",
+                "strand",
+                "reference_start",
+                "reference_end_unwrapped",
+                "binding_site_count",
+                "tm_degC"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "length_min": {
+            "type": "integer"
+          },
+          "length_max": {
+            "type": "integer"
+          },
+          "tm_min": {
+            "type": "string"
+          },
+          "tm_max": {
+            "type": "string"
+          },
+          "tm_parameters": {
+            "type": "object",
+            "properties": {
+              "dnac1_nM": {
+                "type": "string"
+              },
+              "dnac2_nM": {
+                "type": "string"
+              },
+              "Na_mM": {
+                "type": "string"
+              },
+              "K_mM": {
+                "type": "string"
+              },
+              "Tris_mM": {
+                "type": "string"
+              },
+              "Mg_mM": {
+                "type": "string"
+              },
+              "dNTPs_mM": {
+                "type": "string"
+              },
+              "nn_table": {
+                "const": "DNA_NN3"
+              },
+              "saltcorr": {
+                "const": 5
+              },
+              "selfcomp": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "dnac1_nM",
+              "dnac2_nM",
+              "Na_mM",
+              "K_mM",
+              "Tris_mM",
+              "Mg_mM",
+              "dNTPs_mM",
+              "nn_table",
+              "saltcorr",
+              "selfcomp"
+            ],
+            "additionalProperties": false
+          },
+          "quality_notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "template_id",
+          "primers",
+          "length_min",
+          "length_max",
+          "tm_min",
+          "tm_max",
+          "tm_parameters",
+          "quality_notes"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "route",
+      "type": "document",
+      "output_role": null,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "route-plan-v1"
+          },
+          "method": {
+            "const": "inverse_pcr"
+          },
+          "template_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "product_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "spacer_parts": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "transcription_strand": {
+            "type": "integer"
+          },
+          "reference_insert": {
+            "type": "string",
+            "pattern": "^[ACGT]{20}$"
+          },
+          "forward_primer_id": {
+            "type": "string"
+          },
+          "reverse_primer_id": {
+            "type": "string"
+          },
+          "closing_overlap": {
+            "const": 0
+          },
+          "rotation_to_template_origin": {
+            "type": "integer"
+          },
+          "simulation": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "const": "PASS"
+              },
+              "linear_sequence": {
+                "type": "string",
+                "pattern": "^[ACGT]+$"
+              },
+              "product_length": {
+                "type": "integer"
+              },
+              "circular_sequence_matches": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "status",
+              "linear_sequence",
+              "product_length",
+              "circular_sequence_matches"
+            ],
+            "additionalProperties": false
+          },
+          "annotation_changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "index",
+                "type",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "laboratory_steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step": {
+                  "type": "string"
+                },
+                "status": {
+                  "const": "PLANNED"
+                },
+                "performed": {
+                  "const": "NOT_PERFORMED"
+                }
+              },
+              "required": [
+                "step",
+                "status",
+                "performed"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "method",
+          "template_id",
+          "product_id",
+          "spacer_parts",
+          "transcription_strand",
+          "reference_insert",
+          "forward_primer_id",
+          "reverse_primer_id",
+          "closing_overlap",
+          "rotation_to_template_origin",
+          "simulation",
+          "annotation_changes",
+          "laboratory_steps"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "promoter_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "transcription_strand": {
+        "type": "integer",
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "scaffold_sequence": {
+        "type": "string",
+        "pattern": "^[ACGT]{3,200}$"
+      },
+      "spacer": {
+        "type": "string",
+        "pattern": "^[ACGT]{20}$"
+      },
+      "length_min": {
+        "type": "integer",
+        "minimum": 2
+      },
+      "length_max": {
+        "type": "integer",
+        "minimum": 2
+      },
+      "tm_min": {
+        "type": "string"
+      },
+      "tm_max": {
+        "type": "string"
+      },
+      "tm_parameters": {
+        "type": "object",
+        "properties": {
+          "dnac1_nM": {
+            "type": "string"
+          },
+          "dnac2_nM": {
+            "type": "string"
+          },
+          "Na_mM": {
+            "type": "string"
+          },
+          "K_mM": {
+            "type": "string"
+          },
+          "Tris_mM": {
+            "type": "string"
+          },
+          "Mg_mM": {
+            "type": "string"
+          },
+          "dNTPs_mM": {
+            "type": "string"
+          },
+          "nn_table": {
+            "const": "DNA_NN3"
+          },
+          "saltcorr": {
+            "const": 5
+          },
+          "selfcomp": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "dnac1_nM",
+          "dnac2_nM",
+          "Na_mM",
+          "K_mM",
+          "Tris_mM",
+          "Mg_mM",
+          "dNTPs_mM",
+          "nn_table",
+          "saltcorr",
+          "selfcomp"
+        ],
+        "additionalProperties": false
+      },
+      "vector_max_mismatches": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3
+      }
+    },
+    "required": [
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence",
+      "spacer"
+    ],
+    "additionalProperties": false
+  },
+  "step_checks": [
+    "check.primer_quality"
+  ],
+  "final_checks": [
+    {
+      "check": "cut_plasmid.check_direction"
+    },
+    {
+      "check": "cut_plasmid.check_pam"
+    },
+    {
+      "check": "cut_plasmid.check_vector_self_target"
+    }
+  ],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Experimental PCR, transformation or phenotype."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11 B2",
+      "MIGRATION-LOG.md S2"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.preparation:replace_spacer"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "composite",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  },
+  "model": "cut_plasmid.model_replace"
+}

@@ -1,0 +1,6 @@
+{
+  "oracle": {"kind": "construction", "reason": "Four literal tokens red, green, blue, gold. The submitted count of five is deliberately wrong."},
+  "text": "red green blue gold",
+  "report": {"text": "red green blue gold", "word_count": 5, "minimum_words": 3, "meets_minimum": true, "rule_id": "word_count.minimum_words"},
+  "expected": "FAIL"
+}

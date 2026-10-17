@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 123, in <module>
+    print(json.dumps(run(parser.parse_args().out), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 71, in run
+    declared = command(folder, "goal", "declare", "--run", directory, "--request", write(request_path, goal))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 46, in command
+    assert completed.returncode == expected, receipts[-1]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'arguments': ['goal', 'declare', '--run', '<TEMP>\\s5b-public-cli-20261017-015945\\different_sizes\\run', '--request', '<TEMP>\\s5b-public-cli-20261017-015945\\different_sizes\\request.json'], 'exit_code': 1, 'receipt': {'run_id': '9c79a738d8827dae', 'state': None, 'event_range': None, 'result': {'failure': {'code': 'PLAN_SCHEMA_INVALID', 'category': 'INVALID_INPUT', 'message': 'Document violates its declared schema.', 'details': {'findings': [{'location': '/constraints/0/check', 'rule': 'pattern'}]}, 'recovery': 'Correct the request against goal-v1 and submit the goal again.', 'retryable': False, 'cause_chain': []}}, 'problems': [{'code': 'PLAN_SCHEMA_INVALID', 'category': 'INVALID_INPUT', 'message': 'Document violates its declared schema.', 'recovery': 'Correct the request against goal-v1 and submit the goal again.', 'location': ''}], 'next': [], 'labels': ['Unsealed', 'reviewed 0 / stale 0 / none 0']}}

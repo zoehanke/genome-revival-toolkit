@@ -1,0 +1,55 @@
+{
+  "schema_id": "pipeline-template-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Referenced name must be declared."
+  },
+  "data": {
+    "schema": "pipeline-template-v1",
+    "version": 1,
+    "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "steps": [
+      {
+        "step_id": "s1",
+        "use": "demo.length@0.0.0",
+        "inputs": {
+          "sequence": {
+            "literal": "{{missing}}"
+          }
+        },
+        "params": {},
+        "why": "Count four constructed symbols."
+      }
+    ],
+    "outputs": [
+      {
+        "name": "length",
+        "from": {
+          "step": "s1",
+          "port": "length"
+        },
+        "target": "t1"
+      }
+    ],
+    "library_ref": null,
+    "params_schema": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "string",
+          "description": "Synthetic sequence parameter."
+        }
+      },
+      "required": [
+        "sequence"
+      ],
+      "additionalProperties": false
+    },
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    }
+  }
+}

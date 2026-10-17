@@ -1,0 +1,13 @@
+test_declarations_match_full_typed_signatures (contract.test_biology_capability_contract.BiologyCapabilityContractTests.test_declarations_match_full_typed_signatures) ... ok
+test_each_capability_has_independent_answer_or_executed_check_fixtures (contract.test_biology_capability_contract.BiologyCapabilityContractTests.test_each_capability_has_independent_answer_or_executed_check_fixtures) ... ok
+test_exported_json_matches_decorator_and_schema (contract.test_biology_capability_contract.BiologyCapabilityContractTests.test_exported_json_matches_decorator_and_schema) ... ok
+test_7_cli_tm_references_with_fixed_print_rounding_tolerance (contract.test_biology_contract.BiologyContractTests.test_7_cli_tm_references_with_fixed_print_rounding_tolerance) ... ok
+test_boulder_parser_against_independent_cli_text (contract.test_biology_contract.BiologyContractTests.test_boulder_parser_against_independent_cli_text) ... ok
+test_every_public_calculation_has_independent_answer_registration (contract.test_biology_contract.BiologyContractTests.test_every_public_calculation_has_independent_answer_registration) ... ok
+test_in_memory_algorithms_need_no_files_or_processes (contract.test_biology_contract.BiologyContractTests.test_in_memory_algorithms_need_no_files_or_processes) ... ok
+test_public_signatures_are_typed (contract.test_biology_contract.BiologyContractTests.test_public_signatures_are_typed) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.632s
+
+OK

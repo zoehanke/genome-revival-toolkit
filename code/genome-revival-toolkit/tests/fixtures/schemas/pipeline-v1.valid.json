@@ -1,0 +1,37 @@
+{
+  "schema_id": "pipeline-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "pipeline-v1",
+    "version": 1,
+    "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "steps": [
+      {
+        "step_id": "s1",
+        "use": "demo.length@0.0.0",
+        "inputs": {
+          "sequence": {
+            "literal": "ACGT"
+          }
+        },
+        "params": {},
+        "why": "Count four constructed symbols."
+      }
+    ],
+    "outputs": [
+      {
+        "name": "length",
+        "from": {
+          "step": "s1",
+          "port": "length"
+        },
+        "target": "t1"
+      }
+    ],
+    "library_ref": null
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.read_reference",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Read a supplied FASTA, GenBank or native DNA reference without rewriting its bytes.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "file"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "output_role": null
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "topology": {
+        "enum": [
+          "linear",
+          "circular"
+        ]
+      }
+    },
+    "required": [
+      "topology"
+    ],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primer specificity in an actual strain.",
+    "Observed experimental products.",
+    "Authentic genotype.",
+    "Whole-genome discrimination outside supplied references."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D11",
+      "MIGRATION-LOG.md S5b"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:read_reference"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

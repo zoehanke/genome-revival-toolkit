@@ -1,0 +1,21 @@
+{
+  "schema_id": "step.failed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required retained_outputs."
+  },
+  "data": {
+    "step_id": "s1",
+    "failure": {
+      "code": "PLAN_SCHEMA_INVALID",
+      "category": "INVALID_INPUT",
+      "message": "Constructed failure.",
+      "details": {},
+      "recovery": "Correct request.",
+      "retryable": false,
+      "cause_chain": []
+    },
+    "superseded_by": null
+  }
+}

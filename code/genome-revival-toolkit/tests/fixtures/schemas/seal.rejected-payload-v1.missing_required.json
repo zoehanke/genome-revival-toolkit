@@ -1,0 +1,11 @@
+{
+  "schema_id": "seal.rejected-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required unsatisfied."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}

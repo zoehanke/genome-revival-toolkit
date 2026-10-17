@@ -1,0 +1,7 @@
+test_different_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_different_sizes) ... ok
+test_same_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_same_sizes) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.499s
+
+OK

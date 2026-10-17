@@ -1,0 +1,321 @@
+{
+  "scope": "S0 static controls, S1/S1.2 and S1c constructed/runtime evidence. Coverage is not human stage acceptance or general scientific Kit validation.",
+  "ids": [
+    "INV-A1",
+    "INV-A10",
+    "INV-A2",
+    "INV-A3",
+    "INV-A4",
+    "INV-A5",
+    "INV-A6",
+    "INV-A7",
+    "INV-A8",
+    "INV-A9",
+    "INV-C1",
+    "INV-C2",
+    "INV-C3",
+    "INV-C4",
+    "INV-C5",
+    "INV-C6",
+    "INV-C7",
+    "INV-C8",
+    "INV-D1",
+    "INV-D2",
+    "INV-D3",
+    "INV-D4",
+    "INV-D5",
+    "INV-D6",
+    "INV-D7",
+    "INV-E1",
+    "INV-E2",
+    "INV-E4",
+    "INV-E5",
+    "INV-E6",
+    "INV-F4",
+    "INV-F5",
+    "INV-G1",
+    "INV-G2",
+    "INV-G3",
+    "INV-G4",
+    "INV-G5",
+    "INV-H1",
+    "INV-H2",
+    "INV-H3",
+    "INV-H4",
+    "INV-H6",
+    "INV-I1",
+    "INV-I3",
+    "INV-I4",
+    "INV-I5",
+    "INV-I6",
+    "INV-I7",
+    "INV-K1",
+    "INV-K2",
+    "INV-K4",
+    "INV-K5",
+    "INV-K6",
+    "INV-K7",
+    "INV-L1",
+    "INV-L2",
+    "INV-L3",
+    "INV-L4",
+    "INV-L5",
+    "INV-N1",
+    "INV-P1",
+    "INV-P2",
+    "INV-P3",
+    "INV-P4",
+    "INV-P5",
+    "INV-P6",
+    "INV-Q3",
+    "INV-Q4",
+    "INV-R1",
+    "INV-R2",
+    "INV-R3",
+    "INV-R4",
+    "INV-R5",
+    "INV-R6",
+    "INV-S1",
+    "INV-S2",
+    "INV-S3",
+    "INV-S4",
+    "INV-S5",
+    "INV-S6",
+    "INV-T1",
+    "INV-T2",
+    "INV-T3",
+    "INV-T4",
+    "INV-T5",
+    "INV-T6",
+    "INV-V1",
+    "INV-V2",
+    "INV-V3",
+    "INV-V4",
+    "INV-W1",
+    "INV-W2",
+    "INV-X1",
+    "INV-X2",
+    "INV-X3",
+    "INV-X4"
+  ],
+  "evidence": {
+    "INV-L4": [
+      "tests/unit/test_application.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-R4": [
+      "tests/unit/test_application.py"
+    ],
+    "INV-D1": [
+      "tests/unit/test_application.py"
+    ],
+    "INV-D7": [
+      "tests/unit/test_application.py"
+    ],
+    "INV-H1": [
+      "tests/unit/test_application.py"
+    ],
+    "INV-A4": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-A5": [
+      "tests/unit/test_assurance.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-A6": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-A7": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-A9": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-D6": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-E6": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-G4": [
+      "tests/unit/test_assurance.py"
+    ],
+    "INV-P1": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-P3": [
+      "tests/unit/test_engine.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-P4": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-P5": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-P6": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-R1": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-R2": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-R3": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-R5": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-R6": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-G2": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-G3": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-G5": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-E2": [
+      "tests/unit/test_engine.py"
+    ],
+    "INV-E1": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-A1": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-A2": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-L5": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-G1": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-C3": [
+      "tests/structure/test_runtime_contracts.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-D3": [
+      "tests/structure/test_runtime_contracts.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-D4": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-S3": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-V4": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-H2": [
+      "tests/structure/test_runtime_contracts.py"
+    ],
+    "INV-C1": [
+      "tests/unit/test_capabilities.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-C7": [
+      "tests/unit/test_capabilities.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-K5": [
+      "tests/unit/test_capabilities.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-C5": [
+      "tests/unit/test_catalog.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-K4": [
+      "tests/unit/test_catalog.py",
+      "tests/unit/test_s1_followup2.py",
+      "tests/e2e/test_s1_followup2.py"
+    ],
+    "INV-H4": [
+      "tests/unit/test_catalog.py"
+    ],
+    "INV-E5": [
+      "tests/integration/test_crash_recovery.py"
+    ],
+    "INV-H3": [
+      "tests/integration/test_cli.py"
+    ],
+    "INV-H6": [
+      "tests/integration/test_cli.py"
+    ],
+    "INV-A8": [
+      "tests/unit/test_kernel.py"
+    ],
+    "INV-I4": [
+      "tests/unit/test_kernel.py"
+    ],
+    "INV-I6": [
+      "tests/unit/test_kernel.py"
+    ],
+    "INV-D2": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-I3": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-I5": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-I7": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-E4": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-X2": [
+      "tests/e2e/test_examples.py"
+    ],
+    "INV-T2": [
+      "tests/unit/test_record.py"
+    ],
+    "INV-T3": [
+      "tests/unit/test_record.py"
+    ],
+    "INV-T4": [
+      "tests/unit/test_record.py"
+    ],
+    "INV-T5": [
+      "tests/unit/test_record.py"
+    ],
+    "INV-T6": [
+      "tests/unit/test_record.py"
+    ],
+    "INV-A3": [
+      "tools/run_s1_mutations.py"
+    ],
+    "INV-A10": [
+      "tests/integration/test_s1c_content.py",
+      "tests/integration/test_s1c_cds.py",
+      "tools/run_s1c_mutations.py"
+    ],
+    "INV-C4": [
+      "tools/check_structure.py",
+      "tests/structure/test_contract_tree.py",
+      "tests/integration/test_postcall_io.py",
+      "tests/e2e/run_postcall_io.py",
+      "tools/run_s1c_mutations.py"
+    ]
+  }
+}

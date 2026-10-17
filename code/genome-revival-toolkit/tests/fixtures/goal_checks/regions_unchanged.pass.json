@@ -1,0 +1,41 @@
+{
+  "check": "check.goal.regions_unchanged",
+  "variant": "pass",
+  "expected": "PASS",
+  "params": {
+    "reference_material_id": "6e55abd9e6965ca38c30d771bed2934dfaee05f667da76f929eda9307b51b36d",
+    "regions": [
+      {
+        "source_start": 0,
+        "source_end": 3,
+        "target_start": 0,
+        "target_end": 3
+      },
+      {
+        "source_start": 6,
+        "source_end": 12,
+        "target_start": 5,
+        "target_end": 11
+      }
+    ]
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AAAATGGGTTT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "CCC [3,6) is replaced by AT. AAA maps [0,3) to [0,3), GGGTTT maps [6,12) to [5,11); the negative changes the protected second base."
+  },
+  "reference": {
+    "sequence": "AAACCCGGGTTT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  }
+}

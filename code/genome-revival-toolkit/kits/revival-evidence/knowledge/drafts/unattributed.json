@@ -1,0 +1,24 @@
+{
+  "candidates": [
+    {
+      "schema": "rule-v1",
+      "id": "legacy.unmodelled_genotype_support",
+      "status": "draft",
+      "source": null,
+      "verification_status": "unverified",
+      "legacy_locator": "genome-revival-toolkit/kits/evidence/scripts/workflow.py@e8534135adb98f5a294eb17134a4c22a65def7ac genotype assessment",
+      "proposed_behavior": "Treat a submitted positive or negative result with reported passed controls as supported even without a prediction.",
+      "decision_needed": "Team must identify an actual project_contract or lab_protocol; candidate is excluded from loading."
+    },
+    {
+      "schema": "rule-v1",
+      "id": "legacy.primer_quality_prerequisite",
+      "status": "draft",
+      "source": null,
+      "verification_status": "unverified",
+      "legacy_locator": "genome-revival-toolkit/kits/evidence/scripts/predictions.py@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4 _assessment",
+      "proposed_behavior": "Require primer_quality_status=PASSED to interpret the supplied prediction.",
+      "decision_needed": "S5b handoff has no primer quality field; team must source and decide this prerequisite."
+    }
+  ]
+}

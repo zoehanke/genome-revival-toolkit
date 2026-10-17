@@ -1,0 +1,12 @@
+{
+  "check": "evidence.check_record_consistency",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Unique sample ids, known count 9 and explicit control zero, no contradictory genotype rows."
+  }
+}

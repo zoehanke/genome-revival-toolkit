@@ -1,0 +1,16 @@
+{
+  "schema_id": "receipt-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required result."
+  },
+  "data": {
+    "run_id": null,
+    "state": null,
+    "event_range": null,
+    "problems": [],
+    "next": [],
+    "labels": []
+  }
+}

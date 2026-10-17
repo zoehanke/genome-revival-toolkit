@@ -1,0 +1,9 @@
+Processing <SOURCE>
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: genome-revival-toolkit
+  Building wheel for genome-revival-toolkit (pyproject.toml): started
+  Building wheel for genome-revival-toolkit (pyproject.toml): finished with status 'done'
+  Created wheel for genome-revival-toolkit: filename=genome_revival_toolkit-0.0.0-py3-none-any.whl size=987414 sha256=5d2bd3177ef1f60b8741ce085f2bf9c69e8d6c7a9c85fa6b7cdae7bbc29956fa
+  Stored in directory: <USER>\appdata\local\pip\cache\wheels\0f\97\49\6253e68671157775c3c5512c4b138f0b009d14a84a405615b3
+Successfully built genome-revival-toolkit

@@ -1,0 +1,37 @@
+{
+  "schema": "capability-v1",
+  "id": "check.journal_chain",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Validate each recorded event and its hash-chain predecessor.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.checks:journal_chain"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "file",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/checks/check.journal_chain.pass.json",
+    "fail": "tests/fixtures/checks/check.journal_chain.fail.json"
+  }
+}

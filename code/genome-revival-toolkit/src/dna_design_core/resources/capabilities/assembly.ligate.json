@@ -1,0 +1,70 @@
+{
+  "schema": "capability-v1",
+  "id": "assembly.ligate",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Ligate one or two explicit linear duplexes after checking actual strand geometry.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "left",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "left"
+    },
+    {
+      "name": "right",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "right"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "circular": {
+        "type": "boolean"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "component"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "check.assembly_product"
+    }
+  ],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.assembly.operations:ligate"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

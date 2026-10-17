@@ -1,0 +1,72 @@
+[
+  {
+    "removed": "Purpose",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: Purpose"
+      }
+    ]
+  },
+  {
+    "removed": "Audience",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: Audience"
+      }
+    ]
+  },
+  {
+    "removed": "Installation and running",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: Installation and running"
+      }
+    ]
+  },
+  {
+    "removed": "Reproduce the main results",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: Reproduce the main results"
+      }
+    ]
+  },
+  {
+    "removed": "AI use disclosure",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: AI use disclosure"
+      }
+    ]
+  },
+  {
+    "removed": "License",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: License"
+      }
+    ]
+  },
+  {
+    "removed": "CI status",
+    "actual": "FAIL",
+    "findings": [
+      {
+        "check": "readme",
+        "message": "Missing required README section: CI status"
+      }
+    ]
+  }
+]

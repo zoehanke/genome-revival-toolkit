@@ -1,0 +1,54 @@
+{
+  "cases": {
+    "different_sizes": {
+      "sealed": false,
+      "verified": false,
+      "oracle": {
+        "checked_backgrounds": 2,
+        "product_counts": [
+          1,
+          1
+        ],
+        "product_bp": [
+          1000,
+          1300
+        ],
+        "status": "DISTINGUISHABLE",
+        "oracle": "independent standard-library window enumeration",
+        "laboratory_status": "NOT_PERFORMED"
+      },
+      "blocked_by_shared_checks": [
+        {
+          "check": "check.annotation_integrity",
+          "outcome": "UNKNOWN",
+          "verdict_id": "98396663ca74df6f8a6ce18050f7b4e440e927c210c1ab116b87ed1d39fb2404",
+          "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+        },
+        {
+          "check": "check.cds_validity",
+          "outcome": "UNKNOWN",
+          "verdict_id": "9234585866f3b096d7cab5c7585f4b5b5535b064114c19e5c28192f405d41bac",
+          "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+        },
+        {
+          "check": "check.biological_sanity",
+          "outcome": "UNKNOWN",
+          "verdict_id": "9b2cb655736272bdc3b012dd6fe490addb974388549f3ef8fb00b9a232ff87e3",
+          "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+        }
+      ],
+      "candidate": "different_sizes/run/candidate/1"
+    },
+    "handoff_hash": {
+      "halted": true,
+      "failure_code": "SOURCE_CHANGED",
+      "seal_refused": true
+    }
+  },
+  "commands": 12,
+  "connection_attempts": 0,
+  "evidence_kind": "developer-assisted synthetic computational test",
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run",
+  "laboratory_status": "NOT_PERFORMED"
+}

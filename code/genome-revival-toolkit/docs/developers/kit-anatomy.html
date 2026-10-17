@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit anatomy</title>
+<style>
+  body { margin: 0; background: #f5f5f5; color: #2d3142; }
+  .diagram-container { width: 100%; overflow-x: auto; }
+  svg { width: 100%; min-width: 1280px; display: block; }
+  .title { font: 400 40px 'Instrument Serif', Georgia, serif; fill: #2d3142; }
+  .name { font: 600 16px Geist, system-ui, sans-serif; fill: #2d3142; }
+  .sub { font: 400 12px 'Geist Mono', ui-monospace, monospace; fill: #4f5d75; }
+  .tag { font: 500 12px Geist, system-ui, sans-serif; letter-spacing: 1px; fill: #5a6580; }
+  .body { font: 400 16px Geist, system-ui, sans-serif; fill: #4f5d75; }
+  .box { fill: #f5f5f5; stroke: #bfc0c0; stroke-width: 1; }
+  .accent { fill: #f0e7e4; stroke: #bf4520; stroke-width: 1.2; }
+  .zone { fill: #ececec; fill-opacity: .35; stroke: #bfc0c0; stroke-width: .8; }
+  .arrow { fill: none; stroke: #4f5d75; stroke-width: 1.4; }
+  .rule { stroke: #bfc0c0; stroke-width: .8; }
+  @media print { .diagram-container { overflow-x: visible; } svg { min-width: 0; } }
+</style>
+<div class="diagram-container">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" role="img" aria-labelledby="kit-anatomy-title kit-anatomy-desc">
+  <title id="kit-anatomy-title">Kit anatomy</title>
+  <desc id="kit-anatomy-desc">Four declared Kit contributions join the existing Core contracts, with admission, step and final checks and the current text-rendering limitation.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="8" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 8 4 L 0 8 Z" fill="#4f5d75"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#f5f5f5"/>
+  <text class="title" x="40" y="60">Kit anatomy</text>
+  <text class="body" x="40" y="92">One folder contributes to the same Core revision. The manifest declares every contribution.</text>
+
+  <rect class="zone" x="40" y="120" width="408" height="416" rx="8"/>
+  <text class="tag" x="64" y="148">EXPLICIT KIT FOLDER</text>
+  <text class="tag" x="536" y="148">CORE CONTRIBUTION POINTS</text>
+  <text class="tag" x="944" y="148">THREE CHECK MOMENTS</text>
+
+  <!-- Routes precede opaque nodes. All connectors are horizontal. -->
+  <path class="arrow" d="M 424 192 H 512" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 424 272 H 512" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 424 352 H 512" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 424 432 H 512" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 864 192 H 944" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 864 312 H 944" marker-end="url(#arrow)"/>
+  <path class="arrow" d="M 864 432 H 944" marker-end="url(#arrow)"/>
+
+  <g data-box="capabilities">
+    <rect class="box" x="64" y="160" width="360" height="64" rx="6"/>
+    <text class="name" x="80" y="188">capabilities/</text>
+    <text class="sub" x="80" y="208">*.json declarations + *.py functions</text>
+  </g>
+  <g data-box="knowledge">
+    <rect class="box" x="64" y="240" width="360" height="64" rx="6"/>
+    <text class="name" x="80" y="268">knowledge/</text>
+    <text class="sub" x="80" y="288">Rule rows + explicit sources</text>
+  </g>
+  <g data-box="templates">
+    <rect class="box" x="64" y="320" width="360" height="64" rx="6"/>
+    <text class="name" x="80" y="348">templates/</text>
+    <text class="sub" x="80" y="368">Plan + typed placeholders</text>
+  </g>
+  <g data-box="text">
+    <rect class="box" x="64" y="400" width="360" height="64" rx="6"/>
+    <text class="name" x="80" y="428">text/</text>
+    <text class="sub" x="80" y="448">en.json declared in the manifest</text>
+  </g>
+  <text class="sub" x="64" y="492">kit.json · README.md · SKILL.md</text>
+  <text class="sub" x="64" y="516">examples/ + capabilities/fixtures/</text>
+
+  <g data-box="core">
+    <rect class="accent" x="512" y="160" width="352" height="320" rx="6"/>
+    <path class="rule" d="M 536 240 H 840 M 536 320 H 840 M 536 400 H 840"/>
+    <text class="name" x="536" y="188">Capabilities</text>
+    <text class="sub" x="536" y="212">Catalog + single Invoker</text>
+    <text class="name" x="536" y="268">Frozen rule snapshots</text>
+    <text class="sub" x="536" y="292">Owner-scoped ctx.knowledge(...)</text>
+    <text class="name" x="536" y="348">Pipeline templates</text>
+    <text class="sub" x="536" y="372">template instantiate → result.draft</text>
+    <text class="name" x="536" y="428">Declared file check</text>
+    <text class="sub" x="536" y="452">Text rendering is not connected</text>
+  </g>
+
+  <g data-box="admission">
+    <rect class="box" x="944" y="160" width="296" height="80" rx="6"/>
+    <text class="name" x="960" y="184">Admission</text>
+    <text class="sub" x="960" y="204">Contracts + goal bindings</text>
+    <text class="sub" x="960" y="224">Before capability execution</text>
+  </g>
+  <g data-box="step">
+    <rect class="box" x="944" y="280" width="296" height="80" rx="6"/>
+    <text class="name" x="960" y="304">Step</text>
+    <text class="sub" x="960" y="324">step_checks → retained outputs</text>
+    <text class="sub" x="960" y="344">Tool self-report</text>
+  </g>
+  <g data-box="final">
+    <rect class="box" x="944" y="400" width="296" height="80" rx="6"/>
+    <text class="name" x="960" y="424">Final</text>
+    <text class="sub" x="960" y="444">final_checks → judge / seal</text>
+    <text class="sub" x="960" y="464">Offline verify reruns CHECK</text>
+  </g>
+
+  <text class="body" x="40" y="580">The example ACTION counts words. Its CHECK independently verifies counts and the sourced threshold.</text>
+  <text class="body" x="40" y="608">Admission is controlled by Core; step_checks and final_checks are declared by the capability.</text>
+  <path class="rule" d="M 40 640 H 1240"/>
+  <path class="arrow" d="M 40 672 H 72" marker-end="url(#arrow)"/>
+  <text class="sub" x="88" y="676">Implemented contribution / check route</text>
+  <text class="sub" x="528" y="676">Human review pending; signing is deferred.</text>
+</svg>
+</div>
+</html>

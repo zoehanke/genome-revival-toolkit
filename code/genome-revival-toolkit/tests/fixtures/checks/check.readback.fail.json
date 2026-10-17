@@ -1,0 +1,9 @@
+{
+  "check": "check.readback",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Delete the exported JSON file."
+  }
+}

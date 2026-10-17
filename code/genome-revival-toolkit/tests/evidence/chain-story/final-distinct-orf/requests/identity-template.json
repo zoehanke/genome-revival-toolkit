@@ -1,0 +1,14 @@
+{
+  "goal_digest": "ac0f944fc2357053635068d0fd7a346ec67e0405b43f5b4d251efd8a1db44f6e",
+  "original_source": "original",
+  "edited_source": "edited",
+  "forward_source": "forward",
+  "reverse_source": "reverse",
+  "handoff_source": "handoff",
+  "original_topology": "linear",
+  "edited_topology": "linear",
+  "target": "table",
+  "assay_id": "flanking",
+  "forward_id": "left_forward",
+  "reverse_id": "right_reverse"
+}

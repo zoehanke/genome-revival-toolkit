@@ -1,0 +1,12 @@
+{
+  "check": "construct.check_junction_assay",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "One primer lies outside the donor's retained homology arm, giving no residual-donor product."
+  }
+}

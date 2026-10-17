@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-17",
+  "scope": "Windows developer-run regression, not an isolated-user evaluation or release approval",
+  "full_suite": {
+    "command": "python -X utf8 -B -m unittest discover -s tests",
+    "tests": 421,
+    "passed": 421,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "seconds": 1593.16,
+    "local_primer3_configured": true
+  },
+  "static_checks": {
+    "schemas": 35,
+    "schema_fixtures": 242,
+    "schema_findings": 0,
+    "structure_findings": 0,
+    "generated_document_differences": 0,
+    "spec_hard_findings": 0,
+    "spec_soft_findings": 17,
+    "broken_local_entry_links": 0
+  },
+  "known_regression": {
+    "unmodified_template_chain": true,
+    "portable_sealed_runs": 3,
+    "original_delivery_files_byte_equal": 4,
+    "added_reference_delivery_files": 2,
+    "identity_expected_file_byte_equal": true,
+    "independent_construct_checks": 42
+  },
+  "independent_synthetic_inputs": {
+    "handoff_literal_geometry_bp": [
+      1000,
+      1300
+    ],
+    "evidence_report_oracles": 10,
+    "complete_boolean_fact_combinations": 64,
+    "prior_scientific_expectations_changed": false,
+    "prior_independent_checkers_changed": false
+  },
+  "assistance": {
+    "developer_run": true,
+    "manual_template_edits_in_primary_chain": 0,
+    "primer_files_created_in_primary_chain": false,
+    "independent_agent_success_claimed": false
+  },
+  "focused_test_counts_overlap": true,
+  "focused_passes": {
+    "handoff_units": 30,
+    "handoff_integrations_and_evidence_contracts": 26,
+    "B1": 5,
+    "B2_with_B1": 7,
+    "B4": 38,
+    "B5_with_B4": 46
+  },
+  "network_guard": {
+    "scope": "listed A/B command groups; excludes documentation-only commands and full-suite commands",
+    "guarded_commands": 228,
+    "connection_attempts": 0
+  },
+  "not_performed": [
+    "wet laboratory",
+    "human first-use evaluation",
+    "Linux test run",
+    "GitHub CI",
+    "official GitLab CI",
+    "push",
+    "merge",
+    "release approval"
+  ]
+}

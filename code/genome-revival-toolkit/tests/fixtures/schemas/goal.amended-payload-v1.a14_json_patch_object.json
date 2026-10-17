@@ -1,0 +1,24 @@
+{
+  "schema_id": "goal.amended-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: RFC 6902 is an operation array, not a wrapper."
+  },
+  "data": {
+    "goal_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "version": 2,
+    "previous_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "diff": {
+      "operations": [],
+      "new_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "reason": "Synthetic amendment.",
+    "amended_after_start": false
+  }
+}

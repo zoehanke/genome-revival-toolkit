@@ -1,0 +1,30 @@
+{
+  "schema_id": "step.failed-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "step_id": "s1",
+    "failure": {
+      "code": "PLAN_SCHEMA_INVALID",
+      "category": "INVALID_INPUT",
+      "message": "Constructed failure.",
+      "details": {},
+      "recovery": "Correct request.",
+      "retryable": false,
+      "cause_chain": []
+    },
+    "retained_outputs": {
+      "outputs": {
+        "materials": {},
+        "documents": {},
+        "artifacts": []
+      },
+      "values": {},
+      "unverified": []
+    },
+    "superseded_by": null
+  }
+}

@@ -1,0 +1,30 @@
+test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) ... 
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='exact_sequence', variant='pass') ... FAIL
+  test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='exact_sequence', variant='fail') ... FAIL
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='exact_sequence', variant='pass')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.exact_sequence', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'FAIL', 'issuer': 'check_capability', 'summary': 'Complete uppercase sequences compared without rotation or reverse-complement equivalence.', 'evidence': {'targets': [{'material_id': 'fcb745586e65c28a3186e92d1cf4a5c44c098d3821e0061df8ca5c04b50fdf9e', 'matches': False}]}, 'basis': ['19eb9b55cb713f57ae273d4ac853c0ee9febfe5adeeb6299e6d7d20dfa22abd8', 'e9d75fd0adf2eeaa12bfb659e6ee9d79f7b149584297d045424dab58fa387515', '854941b0d7aa712f2510d85285f9ad64e0bfb10e95200b04e5135256e92b58c7', 'ee478b8944e41c7373ef13b9f3ba1764047f2574a4713f1fc588b89340981aac', 'beea99ac77a763b63f41667144de97621dd0eeac333aff6c92e7c63352db422f', 'c61d71454a5232e1b55079c4fd3214638c5f825f231cdf408e345b3819bd7c03', '86347eaaa6008fe7050b0e4fd1d3e254504d5b7e8dce52df459a5018bfb83a14'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+======================================================================
+FAIL: test_all_twelve_literal_fixtures_execute_and_preserve_bytes (test_goal_constraints.GoalConstraintTests.test_all_twelve_literal_fixtures_execute_and_preserve_bytes) (check='exact_sequence', variant='fail')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_goal_constraints.py", line 59, in test_all_twelve_literal_fixtures_execute_and_preserve_bytes
+    self.assertEqual(verdict["outcome"], control["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'check.goal.exact_sequence', 'version': '0.0.0'}, 'scope': 'user_goal', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'aaaaaaaaaaaaaaaa'}, 'constraint_id': 'c2', 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Complete uppercase sequences compared without rotation or reverse-complement equivalence.', 'evidence': {'targets': [{'material_id': '856ca73a95f2e61623376698284e6d146e54db6b61bd9bf59ee050e4655e2355', 'matches': True}]}, 'basis': ['3010320258bd63c8227f782d2e30c340448b9e8265b99c38d16b08034b0a054a', '2dc8999f541f7b879bf96bff74602c453fe06eee4a2b427f6449cc8fd7d8e200', '75087f362a8908fae5b76ca141b550667a51ad71c417ec207474292b1b127fbd', '89e1111ce33b66fb0b3a6a1836a03893bdf343ddad44c8e54a31b519a351f2fd', '7162a9d475846c1782b2d8351c1f8071754c7d81225f07d21e32103ac67600f1', '3c6899490cda5a9db0811bde16c130fef7d2f75e5bdd63281dd70c17bd5fd80c', '637c4b46d986eb02dc8e231d7eacc3c7331f10375123a7ffed8f21bf8ff658aa'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Experimental success, biological function or truth of a reported claim.']}
+
+----------------------------------------------------------------------
+Ran 1 test in 2.085s
+
+FAILED (failures=2)

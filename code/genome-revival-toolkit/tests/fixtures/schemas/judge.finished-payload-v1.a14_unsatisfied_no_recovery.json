@@ -1,0 +1,20 @@
+{
+  "schema_id": "judge.finished-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Unsatisfied item includes recovery."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "obligation_ids": [],
+    "verdict_ids": [],
+    "unsatisfied": [
+      {
+        "check": "check.readback",
+        "outcome": "UNKNOWN",
+        "verdict_id": "1111111111111111111111111111111111111111111111111111111111111111"
+      }
+    ]
+  }
+}

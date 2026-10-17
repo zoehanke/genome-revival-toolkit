@@ -1,0 +1,48 @@
+{
+  "schema": "capability-v1",
+  "id": "check.order_table",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Compare complete planned-order primer sequences, including tails, with recorded primer uses.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primers were ordered, synthesized, purified or delivered by a supplier.",
+    "Thermodynamic suitability, efficiency or actual laboratory PCR."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D7 order_table",
+      "S1c C7: existing primer-set-v1 complete-sequence fields"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.preparation:order_table"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/s1c/check.order_table.pass.json",
+    "fail": "tests/fixtures/s1c/check.order_table.fail.json"
+  }
+}

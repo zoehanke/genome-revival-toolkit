@@ -1,0 +1,47 @@
+[
+  {
+    "id": "license_bypass",
+    "before": "actual != APACHE_SHA256",
+    "after": "False",
+    "test": "test_license_missing_and_one_byte_changed_both_reject",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "license_bypass.txt"
+  },
+  {
+    "id": "size_bypass",
+    "before": "size >= LIMIT",
+    "after": "False",
+    "test": "test_actual_tracked_size_over_fifty_megabytes_rejects",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "size_bypass.txt"
+  },
+  {
+    "id": "placeholder_bypass",
+    "before": "count = sum(placeholders.values())",
+    "after": "count = 0",
+    "test": "test_placeholders_are_counted_and_block_the_build",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "placeholder_bypass.txt"
+  },
+  {
+    "id": "manifest_hash_wrong",
+    "before": "\"sha256\": digest(data)",
+    "after": "\"sha256\": \"0\" * 64",
+    "test": "test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "manifest_hash_wrong.txt"
+  },
+  {
+    "id": "timestamp_wrong",
+    "before": "STAMP = (1980, 1, 1, 0, 0, 0)",
+    "after": "STAMP = (2000, 1, 1, 0, 0, 0)",
+    "test": "test_two_actual_builds_have_same_bytes_ids_and_fixed_zip_metadata",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "timestamp_wrong.txt"
+  }
+]

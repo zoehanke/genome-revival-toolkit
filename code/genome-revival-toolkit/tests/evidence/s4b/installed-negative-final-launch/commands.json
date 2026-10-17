@@ -1,0 +1,21 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "<SOURCE>\\tests\\evidence\\s4b\\check-installed-manifest.py",
+      "--work",
+      "<WORK>",
+      "--evidence",
+      "<SOURCE>\\tests\\evidence\\s4b\\installed-manifest-final"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 39.016
+  }
+]

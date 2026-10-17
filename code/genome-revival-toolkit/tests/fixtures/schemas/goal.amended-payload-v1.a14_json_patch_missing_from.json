@@ -1,0 +1,26 @@
+{
+  "schema_id": "goal.amended-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: move requires from."
+  },
+  "data": {
+    "goal_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "version": 2,
+    "previous_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "diff": [
+      {
+        "op": "move",
+        "path": "/targets/0"
+      }
+    ],
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "reason": "Synthetic amendment.",
+    "amended_after_start": false
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "INTERRUPTED",
+  "reason": "Correct build payload to read frozen THIRD_PARTY source bytes rather than regenerate installed metadata. Partial full-suite log retained; not counted as a completed run.",
+  "completed_checks": [
+    "structure",
+    "schemas",
+    "spec_lint",
+    "generated_docs"
+  ]
+}

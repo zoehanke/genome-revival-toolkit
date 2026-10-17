@@ -1,0 +1,9 @@
+{
+  "check": "check.dna_value_valid",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Replace a constructed DNA string with INVALID."
+  }
+}

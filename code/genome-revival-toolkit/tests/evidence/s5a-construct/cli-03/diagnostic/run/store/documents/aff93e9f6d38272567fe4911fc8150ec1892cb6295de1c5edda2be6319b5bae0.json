@@ -1,0 +1,1 @@
+{"pairs":[{"forward":"donor_forward","id":"donor","reverse":"donor_reverse"}],"primers":[{"core_length":20,"id":"donor_forward","purpose":"preparation","sequence":"GTTACTAGTTGCAATCGATC"},{"core_length":20,"id":"donor_reverse","purpose":"preparation","sequence":"TAAACATCACCAGAAAGCAG"}],"schema":"primer-set-v1"}

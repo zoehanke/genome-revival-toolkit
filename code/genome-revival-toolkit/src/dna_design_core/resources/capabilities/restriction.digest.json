@@ -1,0 +1,77 @@
+{
+  "schema": "capability-v1",
+  "id": "restriction.digest",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Produce annotated kernel fragments with actual cohesive end sequences.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "enzymes": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      }
+    },
+    "required": [
+      "enzymes"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "fragments",
+      "type": "materials",
+      "output_role": "component"
+    },
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "check.assembly_product"
+    }
+  ],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.restriction.operations:digest"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

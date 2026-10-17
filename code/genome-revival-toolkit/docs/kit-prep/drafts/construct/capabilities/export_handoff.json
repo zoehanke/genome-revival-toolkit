@@ -1,0 +1,72 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.export_handoff",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for construct.export_handoff; no Kit implementation exists.",
+  "effects": [
+    "reads_files",
+    "writes_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "original_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "original file"
+    },
+    {
+      "name": "edited_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "edited file"
+    },
+    {
+      "name": "primers",
+      "type": "document",
+      "required": true,
+      "constraints": {},
+      "description": "primers",
+      "schema_ref": "primer-set-v1"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "handoff",
+      "type": "artifact",
+      "output_role": "analysis"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_construct.capabilities.operations:export_handoff"
+  },
+  "owner": "kit:construct",
+  "granularity": "atomic"
+}

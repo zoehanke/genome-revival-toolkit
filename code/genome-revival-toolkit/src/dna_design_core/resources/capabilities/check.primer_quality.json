@@ -1,0 +1,106 @@
+{
+  "schema": "capability-v1",
+  "id": "check.primer_quality",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Discover marked preparation primers and assess explicit criteria; retain the explicit-limits API.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "material_ids": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "minItems": 1,
+        "maxItems": 2
+      },
+      "limits": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "length_min": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "length_max": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_T_run": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_3prime_dimer": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "max_hairpin_stem": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "gc_min": {
+            "type": "string"
+          },
+          "gc_max": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "length_min",
+          "length_max",
+          "gc_min",
+          "gc_max",
+          "max_T_run",
+          "max_3prime_dimer",
+          "max_hairpin_stem"
+        ]
+      },
+      "min_loop": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_primer_quality"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/biology/checks/check.primer_quality.pass.json",
+    "fail": "tests/fixtures/biology/checks/check.primer_quality.fail.json"
+  }
+}

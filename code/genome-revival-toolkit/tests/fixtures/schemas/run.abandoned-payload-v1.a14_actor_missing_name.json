@@ -1,0 +1,14 @@
+{
+  "schema_id": "run.abandoned-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Actor needs kind and name; version is optional."
+  },
+  "data": {
+    "reason": "Synthetic stop.",
+    "by": {
+      "kind": "unknown"
+    }
+  }
+}

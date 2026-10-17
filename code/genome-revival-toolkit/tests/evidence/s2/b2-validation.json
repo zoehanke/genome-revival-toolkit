@@ -1,0 +1,38 @@
+{
+  "order": {
+    "failed_seq": 15,
+    "revision_seq": 19,
+    "replacement_started_seq": 20
+  },
+  "original_goal_preserved": true,
+  "final_verdicts": {
+    "check.readback": "PASS",
+    "check.manifest": "PASS",
+    "check.journal_chain": "PASS",
+    "check.store_hashes": "PASS",
+    "check.inputs_unchanged": "PASS",
+    "check.goal.nonempty": "PASS",
+    "check.goal.target_role_met": "PASS",
+    "check.replay": "PASS",
+    "check.lineage": "PASS",
+    "check.annotation_integrity": "UNKNOWN",
+    "check.cds_validity": "UNKNOWN",
+    "check.biological_sanity": "UNKNOWN",
+    "check.reaction_chain": "UNKNOWN",
+    "check.primer_quality": "UNKNOWN",
+    "check.order_table": "UNKNOWN",
+    "check.goal.components_present": "PASS",
+    "check.goal.regions_unchanged": "PASS",
+    "check.goal.claim_reported": "PASS",
+    "check.assembly_product": "NOT_APPLICABLE",
+    "cut_plasmid.check_direction": "PASS",
+    "cut_plasmid.check_pam": "PASS",
+    "cut_plasmid.check_vector_self_target": "PASS",
+    "check.model_agreement": "PASS",
+    "check.format_roundtrip": "PASS"
+  },
+  "report_has_selection_unknown": true,
+  "report_has_not_performed": true,
+  "card_three_columns": true,
+  "primer3_reference_input_identical_to_current_candidate": true
+}

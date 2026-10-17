@@ -1,0 +1,107 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.replace_spacer",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for cut_plasmid.replace_spacer; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    },
+    {
+      "name": "target",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "target"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "promoter_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "transcription_strand": {
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "scaffold_sequence": {
+        "type": "string"
+      },
+      "spacer": {
+        "type": "string",
+        "pattern": "^[ACGT]{20}$"
+      },
+      "target_tm": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence",
+      "spacer",
+      "target_tm"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "construct"
+    },
+    {
+      "name": "primers",
+      "type": "document",
+      "output_role": "primer_set",
+      "schema_ref": "primer-set-v1"
+    },
+    {
+      "name": "route",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "route-plan-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "cut_plasmid.check_direction"
+    },
+    {
+      "check": "cut_plasmid.check_pam"
+    },
+    {
+      "check": "cut_plasmid.check_vector_self_target"
+    }
+  ],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Wet-laboratory PCR, DpnI, KLD or transformation."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.operations:replace_spacer"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "composite",
+  "model": "cut_plasmid.model_replace"
+}

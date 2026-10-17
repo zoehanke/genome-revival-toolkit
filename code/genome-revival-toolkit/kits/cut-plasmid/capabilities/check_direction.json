@@ -1,0 +1,55 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.check_direction",
+  "version": "0.1.0",
+  "role": "CHECK",
+  "summary": "Check direction.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "outputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Experimental PCR, transformation or phenotype."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11 B2",
+      "MIGRATION-LOG.md S2"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.checks:check_direction"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  },
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/check_direction.pass.json",
+    "fail": "capabilities/fixtures/check_direction.fail.json"
+  }
+}

@@ -1,0 +1,36 @@
+STEP_BEGIN=01-copy
+WORK_DIRECTORY=<TEMP>\grt-add-a-kit-6a3e5934f0cb45b593a8410cda1e9556
+Copied phrase-counter; shell helpers ready.
+STEP_END=01-copy
+STEP_BEGIN=02-manifest
+name=phrase-counter owner=kit:phrase-counter namespace=phrase_counter
+STEP_END=02-manifest
+STEP_BEGIN=03-action
+ACTION written; two declarations exported.
+STEP_END=03-action
+STEP_BEGIN=04-rule
+minimum=3 source=project_contract verification=unverified
+STEP_END=04-rule
+STEP_BEGIN=05-template
+template=phrase-counter.count output=phrase-counter target=t1
+STEP_END=05-template
+STEP_BEGIN=06-check
+CHECK written; controls will run in step 9.
+STEP_END=06-check
+STEP_BEGIN=07-describe
+explicit=phrase-counter action=ACTION check=CHECK
+STEP_END=07-describe
+STEP_BEGIN=08-lifecycle
+count=4 minimum=3 decision=True sealed=True portable=True tamper_exit=1
+STEP_END=08-lifecycle
+STEP_BEGIN=09-checks
+{
+  "findings": []
+}
+{
+  "counts": {
+    "schemas": 35,
+    "fixtures": 242
+  },
+  "findings": []
+}

@@ -1,0 +1,12 @@
+{
+  "check": "identity.check_handoff",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Append one byte after computing the original handoff binding; recomputed hash differs."
+  }
+}

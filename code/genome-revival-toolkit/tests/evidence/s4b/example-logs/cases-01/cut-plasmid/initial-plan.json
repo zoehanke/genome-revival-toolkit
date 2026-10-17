@@ -1,0 +1,63 @@
+{
+  "schema": "pipeline-v1",
+  "version": 1,
+  "goal_digest": "5e4211f01afb8df9b3c3b6a61d19e44f7748864398c1b7fdfea2e6b311e1b265",
+  "steps": [
+    {
+      "step_id": "read_vector",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "vector"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic GenBank source."
+    },
+    {
+      "step_id": "read_target",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "target"
+        }
+      },
+      "params": {
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic GenBank source."
+    },
+    {
+      "step_id": "s1",
+      "use": "cut_plasmid.inspect_guide",
+      "inputs": {
+        "vector": {
+          "step": "read_vector",
+          "port": "material"
+        },
+        "target": {
+          "step": "read_target",
+          "port": "material"
+        }
+      },
+      "params": {
+        "promoter_end": 130,
+        "transcription_strand": 1,
+        "scaffold_sequence": "GTTGCTGTGATCACTTGAGTACG"
+      },
+      "why": "Inspect the user-supplied spacer before any replacement.",
+      "expects": {
+        "on": {
+          "step": "s1",
+          "port": "guide",
+          "pointer": "/pam_valid"
+        },
+        "op": "equals",
+        "value": true
+      }
+    }
+  ],
+  "outputs": []
+}

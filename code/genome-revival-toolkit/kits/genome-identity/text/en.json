@@ -1,0 +1,8 @@
+{
+  "identity.scope": "Exact PCR predictions on supplied reference sequences only.",
+  "identity.DISTINGUISHABLE": "Predicted count or exact size differs between the supplied backgrounds.",
+  "identity.NOT_DISTINGUISHABLE": "The supplied backgrounds have the same predicted count and exact size.",
+  "identity.UNDETERMINED": "Multiple products prevent a certain scalar size comparison.",
+  "identity.laboratory_status": "PLANNED",
+  "identity.wet_lab": "NOT_PERFORMED"
+}

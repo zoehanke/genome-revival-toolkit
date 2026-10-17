@@ -1,0 +1,28 @@
+{
+  "schema_id": "kit-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "kit-v1",
+    "name": "demo",
+    "version": "0.0.0",
+    "title": "Synthetic fixture",
+    "requires_core": {
+      "minimum": "0.0.0",
+      "maximum_exclusive": "1.0.0"
+    },
+    "contributes": {
+      "capabilities": [],
+      "knowledge": [],
+      "templates": [],
+      "text": []
+    },
+    "does_not_establish": [
+      "Installed Kit."
+    ],
+    "review": "knowledge/review/"
+  }
+}

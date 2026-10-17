@@ -1,0 +1,20 @@
+test_actual_tracked_size_over_fifty_megabytes_rejects (test_release_engineering.ReleaseEngineeringTests.test_actual_tracked_size_over_fifty_megabytes_rejects) ... FAIL
+
+======================================================================
+FAIL: test_actual_tracked_size_over_fifty_megabytes_rejects (test_release_engineering.ReleaseEngineeringTests.test_actual_tracked_size_over_fifty_megabytes_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 90, in test_actual_tracked_size_over_fifty_megabytes_rejects
+    result = self.assert_fails("tracked_size")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 29, in assert_fails
+    self.assertEqual(result["status"], "FAIL", result)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'status': 'PASS', 'findings': [], 'placeholder_count': 0, 'placeholder_files': {}, 'tracked_bytes': 50020263, 'tracked_limit_bytes': 50000000, 'tracked_files': 9, 'selected_files': 10, 'license_sha256': 'cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30', 'dependencies': {'rfc8785': '0.1.4'}, 'scope': 'INV-F10 source inventory and payload hygiene; not S4 approval or scientific acceptance.'}
+
+----------------------------------------------------------------------
+Ran 1 test in 1.712s
+
+FAILED (failures=1)

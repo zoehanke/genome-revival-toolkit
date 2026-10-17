@@ -1,0 +1,18 @@
+test_binding_cross_origin_on_each_strand (test_biology_primer_pcr.PCRTests.test_binding_cross_origin_on_each_strand) ... ok
+test_circular_pcr_literal_cross_origin_product (test_biology_primer_pcr.PCRTests.test_circular_pcr_literal_cross_origin_product) ... ok
+test_pcr_record_coordinate_mapping_and_no_mutation (test_biology_primer_pcr.PCRTests.test_pcr_record_coordinate_mapping_and_no_mutation) ... ok
+test_pcr_tails_hand_answer (test_biology_primer_pcr.PCRTests.test_pcr_tails_hand_answer) ... ok
+test_repeated_sites_enumerated_and_unique_simulator_rejects (test_biology_primer_pcr.PCRTests.test_repeated_sites_enumerated_and_unique_simulator_rejects) ... ok
+test_boulder_codec_exact_answer_and_rejections (test_biology_primer_pcr.PrimerTests.test_boulder_codec_exact_answer_and_rejections) ... ok
+test_dimer_full_and_second_3prime_hand_alignment (test_biology_primer_pcr.PrimerTests.test_dimer_full_and_second_3prime_hand_alignment) ... ok
+test_hairpin_and_counts_hand_answer (test_biology_primer_pcr.PrimerTests.test_hairpin_and_counts_hand_answer) ... ok
+test_primer3_request_complete_oligos_and_parameters (test_biology_primer_pcr.PrimerTests.test_primer3_request_complete_oligos_and_parameters) ... ok
+test_quality_explicit_limits_pass_fail (test_biology_primer_pcr.PrimerTests.test_quality_explicit_limits_pass_fail) ... ok
+test_tm_hand_sum_non_self_complementary (test_biology_primer_pcr.PrimerTests.test_tm_hand_sum_non_self_complementary) ... ok
+test_tm_hand_symmetry_and_magnesium_conversion (test_biology_primer_pcr.PrimerTests.test_tm_hand_symmetry_and_magnesium_conversion) ... ok
+test_tm_invalid_inputs_and_explicit_concentrations (test_biology_primer_pcr.PrimerTests.test_tm_invalid_inputs_and_explicit_concentrations) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.003s
+
+OK

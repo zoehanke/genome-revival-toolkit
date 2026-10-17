@@ -1,0 +1,13 @@
+{
+  "scope": "All discovered contract/unit/integration/e2e tests. The 62 structure tests were run first, separately.",
+  "tests_run": 196,
+  "failures": [
+    "tests.e2e.test_genome_identity.GenomeIdentityCliTests.test_public_cli_and_copied_seal"
+  ],
+  "errors": [],
+  "skipped": [],
+  "seconds": 862.671,
+  "primer3_configured": true,
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run"
+}

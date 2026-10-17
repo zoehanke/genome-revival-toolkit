@@ -1,0 +1,313 @@
+{
+  "reference_program": {
+    "version": "2.6.1",
+    "sha256": "19a546a0166fd979c41317e45696de1b383ab5fa21ec362bcc5053b2068b6e5f"
+  },
+  "tm_print_rounding_tolerance_degC": "0.00050001",
+  "max_abs_tm_delta_degC": "0.00041349",
+  "difference_reason": "Primer3 prints Tm to three decimals. Exact complementarity omits mismatches, bulges, loop energies, salt and terminal stacking; Primer3 thermodynamic structure Tm is a separate measurement.",
+  "cases": [
+    {
+      "id": "hand_8nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "11.74530033",
+      "primer3_tm_degC": "11.745",
+      "delta_degC": "0.00030033",
+      "exact_complementarity": {
+        "length": 8,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 1,
+        "longest_T_run_nt": 1,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 6,
+          "max_3prime_bp": 1
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 1,
+          "max_3prime_stem_bp": 1,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "21.31",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "0.00"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "symmetry_8nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": true,
+        "dnac1_nM": "50",
+        "dnac2_nM": "50",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "14.39497559",
+      "primer3_tm_degC": "14.395",
+      "delta_degC": "-0.00002441",
+      "exact_complementarity": {
+        "length": 8,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 1,
+        "longest_T_run_nt": 1,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 8,
+          "max_3prime_bp": 8
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 2,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "16.27",
+        "PRIMER_LEFT_0_SELF_END_TH": "16.27",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "0.00"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "ordinary_20nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "52.73139724",
+      "primer3_tm_degC": "52.731",
+      "delta_degC": "0.00039724",
+      "exact_complementarity": {
+        "length": 20,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 1,
+        "longest_T_run_nt": 1,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 6,
+          "max_3prime_bp": 6
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 4,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "20.97",
+        "PRIMER_LEFT_0_SELF_END_TH": "10.62",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "39.63"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "magnesium_20nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "2",
+        "dntp_mM": "0.5",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "59.32596224",
+      "primer3_tm_degC": "59.326",
+      "delta_degC": "-0.00003776",
+      "exact_complementarity": {
+        "length": 20,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 1,
+        "longest_T_run_nt": 1,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 6,
+          "max_3prime_bp": 6
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 4,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "26.16",
+        "PRIMER_LEFT_0_SELF_END_TH": "15.24",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "44.94"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "hairpin_20nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "53.20758949",
+      "primer3_tm_degC": "53.208",
+      "delta_degC": "-0.00041051",
+      "exact_complementarity": {
+        "length": 20,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 3,
+        "longest_T_run_nt": 2,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 4,
+          "max_3prime_bp": 2
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 3,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "6.30",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "46.38"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "polyT_20nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "45.48458651",
+      "primer3_tm_degC": "45.485",
+      "delta_degC": "-0.00041349",
+      "exact_complementarity": {
+        "length": 20,
+        "gc_percent": "30.00000000",
+        "longest_run_nt": 8,
+        "longest_T_run_nt": 8,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 6,
+          "max_3prime_bp": 6
+        },
+        "heterodimer": null,
+        "hairpin": {
+          "max_stem_bp": 4,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "1.38",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "38.42"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    },
+    {
+      "id": "pair_20nt",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50",
+        "nn_table": "DNA_NN3",
+        "salt_correction_method": 5,
+        "self_complementary": false,
+        "dnac1_nM": "25",
+        "dnac2_nM": "25",
+        "gas_constant_cal_per_K_mol": "1.987"
+      },
+      "calculated_tm_degC": "52.73139724",
+      "primer3_tm_degC": "52.731",
+      "delta_degC": "0.00039724",
+      "exact_complementarity": {
+        "length": 20,
+        "gc_percent": "50.00000000",
+        "longest_run_nt": 1,
+        "longest_T_run_nt": 1,
+        "gc_in_last_5nt": 2,
+        "homodimer": {
+          "max_contiguous_bp": 6,
+          "max_3prime_bp": 6
+        },
+        "heterodimer": {
+          "max_contiguous_bp": 7,
+          "max_3prime_bp": 4
+        },
+        "hairpin": {
+          "max_stem_bp": 4,
+          "max_3prime_stem_bp": 2,
+          "min_loop_nt": 3
+        },
+        "method": "exact_ungapped_complementarity"
+      },
+      "primer3_thermodynamic_metrics_degC": {
+        "PRIMER_LEFT_0_SELF_ANY_TH": "20.97",
+        "PRIMER_RIGHT_0_SELF_ANY_TH": "14.28",
+        "PRIMER_LEFT_0_SELF_END_TH": "10.62",
+        "PRIMER_RIGHT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "39.63",
+        "PRIMER_RIGHT_0_HAIRPIN_TH": "42.11",
+        "PRIMER_PAIR_0_COMPL_ANY_TH": "16.70",
+        "PRIMER_PAIR_0_COMPL_END_TH": "20.55"
+      },
+      "comparison_scope": "Tm has matching parameters. Contiguous bp and thermodynamic degC are different metrics and cannot be subtracted."
+    }
+  ]
+}

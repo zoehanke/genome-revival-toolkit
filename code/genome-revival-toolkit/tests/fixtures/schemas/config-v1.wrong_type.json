@@ -1,0 +1,12 @@
+{
+  "schema_id": "config-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Timeout is a string instead of integer seconds."
+  },
+  "data": {
+    "lang": "en",
+    "external_timeout_s": "unbounded"
+  }
+}

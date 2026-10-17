@@ -1,0 +1,58 @@
+[
+  {
+    "check": "check.assembly_product",
+    "fixture": "tests/fixtures/biology/checks/check.assembly_product.pass.json",
+    "expected": "PASS",
+    "actual": "PASS",
+    "invoker_used": true
+  },
+  {
+    "check": "check.assembly_product",
+    "fixture": "tests/fixtures/biology/checks/check.assembly_product.fail.json",
+    "expected": "FAIL",
+    "actual": "FAIL",
+    "invoker_used": true
+  },
+  {
+    "check": "check.format_roundtrip",
+    "fixture": "tests/fixtures/biology/checks/check.format_roundtrip.pass.json",
+    "expected": "PASS",
+    "actual": "PASS",
+    "invoker_used": true
+  },
+  {
+    "check": "check.format_roundtrip",
+    "fixture": "tests/fixtures/biology/checks/check.format_roundtrip.fail.json",
+    "expected": "FAIL",
+    "actual": "FAIL",
+    "invoker_used": true
+  },
+  {
+    "check": "check.pcr_product",
+    "fixture": "tests/fixtures/biology/checks/check.pcr_product.pass.json",
+    "expected": "PASS",
+    "actual": "PASS",
+    "invoker_used": true
+  },
+  {
+    "check": "check.pcr_product",
+    "fixture": "tests/fixtures/biology/checks/check.pcr_product.fail.json",
+    "expected": "FAIL",
+    "actual": "FAIL",
+    "invoker_used": true
+  },
+  {
+    "check": "check.primer_quality",
+    "fixture": "tests/fixtures/biology/checks/check.primer_quality.pass.json",
+    "expected": "PASS",
+    "actual": "PASS",
+    "invoker_used": true
+  },
+  {
+    "check": "check.primer_quality",
+    "fixture": "tests/fixtures/biology/checks/check.primer_quality.fail.json",
+    "expected": "FAIL",
+    "actual": "FAIL",
+    "invoker_used": true
+  }
+]

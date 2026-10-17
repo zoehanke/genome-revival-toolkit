@@ -1,0 +1,13 @@
+{
+  "schema_id": "run.halted-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "reason": "step_failed",
+    "step_id": "s1",
+    "undeclared_field": true
+  }
+}

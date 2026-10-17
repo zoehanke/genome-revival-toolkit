@@ -1,0 +1,15 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Report the word count of red green blue gold and the tutorial minimum decision.",
+  "sources": [],
+  "declared_context": [],
+  "targets": [{"id": "t1", "role": "analysis", "required": true}],
+  "constraints": [{
+    "id": "c1", "check": "check.goal.output_present@0.0.0",
+    "params": {"fields": ["word_count", "minimum_words", "meets_minimum"]},
+    "target": "t1", "source_quote": "Report the word count", "status": "active"
+  }],
+  "intents": []
+}

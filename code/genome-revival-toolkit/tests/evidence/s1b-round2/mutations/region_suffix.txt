@@ -1,0 +1,17 @@
+F
+======================================================================
+FAIL: test_region_edit_sequence_and_annotation_retirement (test_biology_round2_common.Round2CommonTests.test_region_edit_sequence_and_annotation_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_round2_common.py", line 11, in test_region_edit_sequence_and_annotation_retirement
+    self.assertEqual(plain_product["sequence"], "AAAATGGGTTT")
+AssertionError: 'AAAATGGTTT' != 'AAAATGGGTTT'
+- AAAATGGTTT
++ AAAATGGGTTT
+?        +
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

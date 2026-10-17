@@ -1,0 +1,18 @@
+{
+  "scope": "Public goal/submit/execute/judge; no seal claim.",
+  "expected_basis": "Literal CCC deletion, retained AAA/GGGTTT, exact edited string and a report lacking a claim/status.",
+  "actual": {
+    "topology": "PASS",
+    "exact_sequence": "PASS",
+    "components_present": "PASS",
+    "components_absent": "PASS",
+    "regions_unchanged": "PASS",
+    "claim_reported": "FAIL"
+  },
+  "unsatisfied_checks": [
+    "check.annotation_integrity",
+    "check.cds_validity",
+    "check.biological_sanity",
+    "check.goal.claim_reported"
+  ]
+}

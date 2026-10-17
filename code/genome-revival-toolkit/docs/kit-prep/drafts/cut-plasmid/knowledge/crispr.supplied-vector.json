@@ -1,0 +1,32 @@
+{
+  "schema": "rule-v1",
+  "id": "crispr.supplied-vector",
+  "name": "Search the caller's actual supplied vector, with declared mismatch limit and PAM.",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "statement": "Search the caller's actual supplied vector, with declared mismatch limit and PAM."
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:run_crispr; Core tools/grna_evaluation.py:check_grna_vector",
+    "locator": "genome-revival-toolkit/kits/crispr/rules/scope.json@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "Search the caller's actual supplied vector, with declared mismatch limit and PAM."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/crispr.supplied-vector.json"
+}

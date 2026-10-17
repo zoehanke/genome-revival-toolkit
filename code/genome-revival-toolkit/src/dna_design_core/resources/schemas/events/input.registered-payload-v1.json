@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:input.registered-payload-v1",
+  "title": "input.registered-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E: input.registered; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "source_id": {
+      "type": "string"
+    },
+    "file_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "size": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "run_path": {
+      "type": "string"
+    },
+    "input_origin": {
+      "enum": [
+        "user_file",
+        "researcher_observation"
+      ]
+    },
+    "declared_by": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "program",
+            "ai_host",
+            "human",
+            "unknown"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "name"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "source_id",
+    "file_sha256",
+    "size",
+    "run_path",
+    "input_origin",
+    "declared_by"
+  ],
+  "additionalProperties": false
+}

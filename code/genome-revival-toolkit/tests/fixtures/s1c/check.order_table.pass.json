@@ -1,0 +1,5 @@
+{
+  "check": "check.order_table",
+  "expected": "PASS",
+  "oracle": {"kind":"construction","reason":"Order rows exactly list complete AACT/GATC oligos used by the actual recorded PCR; ids are distinct."}
+}

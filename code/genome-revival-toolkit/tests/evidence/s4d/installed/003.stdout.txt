@@ -1,0 +1,1 @@
+{"package": "<WORK>\\venv\\Lib\\site-packages\\dna_design_core", "prefix": "<WORK>\\venv", "release_id": "cc49c2418248e0aaeb2c95a77f4a0dc02e1dc3fcbfbdccabdc9ef1061ff59ee4"}

@@ -1,0 +1,25 @@
+{
+  "schema_id": "call.recorded-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 945d702 requires actual parameter object and 64-hex JCS digest. Valid digest independently hashes the literal ASCII canonical JSON shown in test construction."
+  },
+  "data": {
+    "parent": "s1",
+    "capability": {
+      "id": "demo.length",
+      "version": "0.0.0",
+      "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "code_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "input_ids": {},
+    "outputs": {},
+    "duration_ms": 1,
+    "params": {
+      "forward_core_length": 4,
+      "reverse_core_length": 4
+    },
+    "params_digest": "62f04d45647a2d0d270971a00936e5e8b7c401a23b7f0ecacd061b314bc56d40"
+  }
+}

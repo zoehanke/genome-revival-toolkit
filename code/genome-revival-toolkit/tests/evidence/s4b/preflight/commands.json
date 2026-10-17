@@ -1,0 +1,62 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_structure.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.375
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_schemas.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.5
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/docgen.py",
+      "--check"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.094
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "<REPOSITORY>\\tools\\spec_lint.py",
+      "<REPOSITORY>\\spec\\SPEC.md",
+      "--fields-report",
+      "tests/evidence/s4b/preflight/spec-fields.json"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.109
+  }
+]

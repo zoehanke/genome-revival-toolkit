@@ -1,0 +1,45 @@
+{
+  "schema": "identity-expected-results-v1",
+  "assay_id": "counts_assay",
+  "backgrounds": [
+    {
+      "id": "absent",
+      "reference_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_count": 0,
+        "product_bp": null,
+        "status": "DISTINGUISHABLE"
+      }
+    },
+    {
+      "id": "single",
+      "reference_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_count": 1,
+        "product_bp": 1000,
+        "status": "DISTINGUISHABLE"
+      }
+    },
+    {
+      "id": "multiple",
+      "reference_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_count": 2,
+        "product_bp": null,
+        "status": "DISTINGUISHABLE"
+      }
+    }
+  ]
+}

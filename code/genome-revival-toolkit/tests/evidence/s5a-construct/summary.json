@@ -1,0 +1,27 @@
+{
+  "scope": "Local Windows development tree; contract, e2e, integration, structure and unit tests; synthetic inputs only",
+  "tests": 243,
+  "passed": 242,
+  "errors": 1,
+  "failures": 0,
+  "skipped": 0,
+  "elapsed_seconds": "1202.706",
+  "elapsed_hours": "0.334",
+  "test_command_exit_code": 1,
+  "error_tests": [
+    "test_all_check_controls_are_readonly (unit.test_assurance.AssuranceTests.test_all_check_controls_are_readonly)"
+  ],
+  "construct_focused": {
+    "tests": 15,
+    "passed": 15,
+    "elapsed_hours": "0.048"
+  },
+  "independent_output_checks": {
+    "gibson": 42,
+    "pcr": 34
+  },
+  "seal_acceptance_completed": false,
+  "copied_sealed_package_verify": "NOT_PERFORMED",
+  "official_gitlab_ci": "NOT_PERFORMED",
+  "github_ci": "NOT_PERFORMED"
+}

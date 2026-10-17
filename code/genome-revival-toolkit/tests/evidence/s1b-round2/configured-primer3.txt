@@ -1,0 +1,6 @@
+test_primer3_real_ctx_external_calls_and_recorded_fingerprint (test_biology_capabilities.CapabilityTests.test_primer3_real_ctx_external_calls_and_recorded_fingerprint) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.972s
+
+OK

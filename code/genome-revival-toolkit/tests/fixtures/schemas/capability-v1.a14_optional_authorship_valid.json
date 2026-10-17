@@ -1,0 +1,52 @@
+{
+  "schema_id": "capability-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Constructed from the named A14 shape."
+  },
+  "data": {
+    "schema": "capability-v1",
+    "id": "demo.length",
+    "version": "0.0.0",
+    "role": "ACTION",
+    "summary": "Report length.",
+    "effects": [
+      "pure"
+    ],
+    "deterministic": true,
+    "requires_runtime": [],
+    "inputs": [
+      {
+        "name": "sequence",
+        "type": "value",
+        "required": true,
+        "constraints": {},
+        "description": "Synthetic input."
+      }
+    ],
+    "params": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputs": [
+      {
+        "name": "length",
+        "type": "value",
+        "output_role": "analysis"
+      }
+    ],
+    "step_checks": [],
+    "final_checks": [],
+    "does_not_establish": [
+      "Experimental result."
+    ],
+    "source": {
+      "algorithm_refs": [],
+      "implemented_in": "capabilities/length.py"
+    },
+    "owner": "kit:demo",
+    "granularity": "atomic"
+  }
+}

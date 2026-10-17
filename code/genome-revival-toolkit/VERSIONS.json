@@ -1,0 +1,25 @@
+{
+  "toolkit": "0.0.0",
+  "core": "0.0.0",
+  "kits": {
+    "construct": "0.0.0",
+    "genome-identity": "0.0.0",
+    "revival-evidence": "0.0.0",
+    "cut-plasmid": "0.0.0"
+  },
+  "schemas": {
+    "goal": 1,
+    "pipeline": 1,
+    "pipeline-revision": 1,
+    "capability": 1,
+    "verdict": 1,
+    "event": 1,
+    "failure": 1,
+    "kit": 1,
+    "rule": 1,
+    "review": 1,
+    "manifest": 1,
+    "catalog": 1,
+    "config": 1
+  }
+}

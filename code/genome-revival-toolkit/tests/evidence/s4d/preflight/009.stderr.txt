@@ -1,0 +1,2 @@
+usage: prepare_cut_plasmid.py [-h] --legacy-repo LEGACY_REPO
+prepare_cut_plasmid.py: error: the following arguments are required: --legacy-repo

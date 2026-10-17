@@ -1,0 +1,1 @@
+{"prefix": "<WORK>\\venv", "base_prefix": "<USER>\\AppData\\Local\\Programs\\Python\\Python312", "pip_bootstrap_wheel": "pip-24.0-py3-none-any.whl", "bootstrap_sha256": "ba0d021a166865d2265246961bec0152ff124de910c5cc39f1156ce3fa7c69dc", "system_site_packages": false}

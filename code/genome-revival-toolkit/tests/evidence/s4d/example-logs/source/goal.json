@@ -1,0 +1,30 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Report the reverse complement of AGTCAGAA.",
+  "sources": [],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "t1",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c1",
+      "check": "check.goal.output_present@0.0.0",
+      "params": {
+        "fields": [
+          "sequence"
+        ]
+      },
+      "target": "t1",
+      "source_quote": "Report the reverse complement",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

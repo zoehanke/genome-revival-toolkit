@@ -1,0 +1,17 @@
+{
+  "schema_id": "receipt-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Constructed from the named A14 shape."
+  },
+  "data": {
+    "run_id": null,
+    "state": null,
+    "event_range": null,
+    "result": {},
+    "problems": [],
+    "next": [],
+    "labels": []
+  }
+}

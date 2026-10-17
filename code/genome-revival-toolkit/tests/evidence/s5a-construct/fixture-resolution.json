@@ -1,0 +1,7 @@
+{
+  "check": "construct.check_junction_assay",
+  "declared_fixture": "capabilities/fixtures/construct.check_junction_assay.pass.json",
+  "core_root_resolution_exists": false,
+  "kit_root_resolution_exists": true,
+  "source_test": "tests/unit/test_assurance.py:test_all_check_controls_are_readonly"
+}

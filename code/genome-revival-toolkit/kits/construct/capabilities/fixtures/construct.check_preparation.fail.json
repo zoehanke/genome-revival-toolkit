@@ -1,0 +1,10 @@
+{
+  "check": "construct.check_preparation",
+  "expected": "FAIL",
+  "params": {},
+  "scenario": "mutated_preparation_product",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Predetermined template edit or both QC primers inside retained donor arms."
+  }
+}

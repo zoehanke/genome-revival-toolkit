@@ -1,0 +1,18 @@
+{
+  "schema_id": "failure-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "code": "PLAN_SCHEMA_INVALID",
+    "category": "INVALID_INPUT",
+    "message": "Constructed failure.",
+    "details": {},
+    "recovery": "Correct request.",
+    "retryable": false,
+    "cause_chain": [],
+    "undeclared_field": true
+  }
+}

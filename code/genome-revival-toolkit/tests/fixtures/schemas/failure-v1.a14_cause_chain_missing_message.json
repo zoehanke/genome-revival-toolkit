@@ -1,0 +1,21 @@
+{
+  "schema_id": "failure-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Cause needs code and message."
+  },
+  "data": {
+    "code": "PLAN_SCHEMA_INVALID",
+    "category": "INVALID_INPUT",
+    "message": "Constructed failure.",
+    "details": {},
+    "recovery": "Correct request.",
+    "retryable": false,
+    "cause_chain": [
+      {
+        "code": "CAPABILITY_INTERNAL"
+      }
+    ]
+  }
+}

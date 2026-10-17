@@ -1,0 +1,14 @@
+{
+  "schema_id": "seal.created-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required journal_head."
+  },
+  "data": {
+    "seal_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "manifest_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "labels": {}
+  }
+}

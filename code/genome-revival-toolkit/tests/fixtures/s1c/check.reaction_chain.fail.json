@@ -1,0 +1,5 @@
+{
+  "check": "check.reaction_chain",
+  "expected": "FAIL",
+  "oracle": {"kind": "construction", "reason": "Change only the candidate first base after the PCR returns. Recomputing from the original template/primers must disagree; model_agreement must also fail. Parameter digest tamper is a separate failure control."}
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "S1B-PRIMER3-OPTIONAL",
+    "test": "integration.test_biology_capabilities.CapabilityTests.test_primer3_real_ctx_external_calls_and_recorded_fingerprint",
+    "reason": "Primer3 executable configuration is absent; actual external-program numerical verification was not performed.",
+    "condition": "GRT_PRIMER3_CORE is unset or empty",
+    "owner": "iGEM Tianjin 2026 / S1b",
+    "expires": "2026-11-16"
+  }
+]

@@ -1,0 +1,32 @@
+test_build_reads_frozen_notices_without_installed_metadata_generation (test_release_engineering.ReleaseEngineeringTests.test_build_reads_frozen_notices_without_installed_metadata_generation) ... FAIL
+
+======================================================================
+FAIL: test_build_reads_frozen_notices_without_installed_metadata_generation (test_release_engineering.ReleaseEngineeringTests.test_build_reads_frozen_notices_without_installed_metadata_generation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 143, in test_build_reads_frozen_notices_without_installed_metadata_generation
+    built = build(self.root, self.root.parent / "frozen-notices", "fixed")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s4a_mutation_g5rasy58\tools\build_release.py", line 120, in build
+    report = inspect_tree(root)
+             ^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s4a_mutation_g5rasy58\tools\check_release.py", line 74, in inspect_tree
+    files = payload(root)
+            ^^^^^^^^^^^^^
+  File "<TEMP>\s4a_mutation_g5rasy58\tools\build_release.py", line 105, in payload
+    files['THIRD_PARTY.md'] = third_party(root)
+                              ^^^^^^^^^^^^^^^^^
+  File "<USER>\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1134, in __call__
+    return self._mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER>\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1138, in _mock_call
+    return self._execute_mock_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<USER>\AppData\Local\Programs\Python\Python312\Lib\unittest\mock.py", line 1193, in _execute_mock_call
+    raise effect
+AssertionError: build must not depend on installed distribution metadata
+
+----------------------------------------------------------------------
+Ran 1 test in 1.216s
+
+FAILED (failures=1)

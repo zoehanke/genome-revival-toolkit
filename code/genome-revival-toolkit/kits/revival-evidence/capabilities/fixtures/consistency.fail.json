@@ -1,0 +1,15 @@
+{
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fusion=9, control=31 gives 9-31=-22; +22 is deliberately wrong."
+  },
+  "observations": "examples/b3.csv",
+  "comparisons": [
+    {
+      "experiment_group": "fusion",
+      "control_group": "control"
+    }
+  ],
+  "reported_difference": 22,
+  "expected": "FAIL"
+}

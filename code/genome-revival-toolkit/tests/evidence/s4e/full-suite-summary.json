@@ -1,0 +1,13 @@
+{
+  "primer3_configured": "<WORK>\\.primer3-artifacts\\wheel\\primer3\\src\\libprimer3\\primer3_core.exe",
+  "exit_code": 0,
+  "elapsed_seconds": 1806.184657,
+  "command": ".venv/Scripts/python.exe -X utf8 -B -m unittest discover -s tests -v",
+  "tests_run": 440,
+  "passed": 440,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "test_runner_seconds": 1804.989,
+  "scope": "All tests discovered from tests/, with local Primer3 configured; source checkout, not CI or scientific acceptance."
+}

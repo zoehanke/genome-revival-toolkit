@@ -1,0 +1,15 @@
+{
+  "schema": "kit-v1",
+  "name": "word-count",
+  "version": "0.0.0",
+  "title": "Tutorial Word Count",
+  "requires_core": {"minimum": "0.0.0", "maximum_exclusive": "0.0.1"},
+  "contributes": {
+    "capabilities": ["capabilities/count_words.json", "capabilities/check_count.json"],
+    "knowledge": ["knowledge/minimum_words.json"],
+    "templates": ["templates/count.json"],
+    "text": ["text/en.json"]
+  },
+  "does_not_establish": ["This is a tutorial example, not any experimental or scientific claim."],
+  "review": "knowledge/review/"
+}

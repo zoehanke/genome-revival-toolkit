@@ -1,0 +1,69 @@
+{
+  "schema_id": "capability-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "D3 96db7d0: a document port requires exactly one Core schema reference or inline JSON Schema object; malformed schema is rejected."
+  },
+  "data": {
+    "schema": "capability-v1",
+    "id": "demo.length",
+    "version": "0.0.0",
+    "role": "ACTION",
+    "summary": "Report length.",
+    "effects": [
+      "pure"
+    ],
+    "deterministic": true,
+    "requires_runtime": [],
+    "inputs": [
+      {
+        "name": "document",
+        "type": "document",
+        "required": true,
+        "constraints": {},
+        "description": "Constructed document.",
+        "schema": {
+          "type": "not_a_json_schema_type",
+          "properties": {
+            "count": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "count"
+          ],
+          "additionalProperties": false
+        }
+      }
+    ],
+    "params": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputs": [
+      {
+        "name": "length",
+        "type": "value",
+        "output_role": "analysis"
+      }
+    ],
+    "step_checks": [],
+    "final_checks": [],
+    "does_not_establish": [
+      "Experimental result."
+    ],
+    "source": {
+      "algorithm_refs": [],
+      "implemented_in": "capabilities/length.py"
+    },
+    "owner": "kit:demo",
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    },
+    "granularity": "atomic"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "check_structure": {
+    "command": [
+      "<SOURCE>\\tools\\check_structure.py"
+    ],
+    "exit_code": 0,
+    "output": "check_structure.txt"
+  },
+  "check_schemas": {
+    "command": [
+      "<SOURCE>\\tools\\check_schemas.py"
+    ],
+    "exit_code": 0,
+    "output": "check_schemas.txt"
+  },
+  "structure": {
+    "tests": 53,
+    "failures": 2,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [
+      "test_contract_tree.SpecScannerTests.test_spec_baseline",
+      "test_schema_alignment.AlignmentTests.test_baseline_matches_updated_appendix"
+    ],
+    "exit_code": 1,
+    "output": "structure.txt"
+  },
+  "spec_lint": {
+    "command": [
+      "<REPOSITORY>\\tools\\spec_lint.py"
+    ],
+    "exit_code": 1,
+    "output": "spec_lint.txt"
+  },
+  "contract": {
+    "tests": 5,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "contract.txt"
+  },
+  "unit": {
+    "tests": 39,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "failed_tests": [],
+    "exit_code": 0,
+    "output": "unit.txt"
+  },
+  "primer3_comparison": {
+    "case_count": 7,
+    "max_abs_tm_delta_degC": "0.00041349"
+  },
+  "structure_green": false,
+  "capability_contract_tests": 0,
+  "runtime_material_integration": "NOT_PERFORMED",
+  "overall_outcome": "UNKNOWN",
+  "reason": "S1B-Q1 runtime interfaces empty; capability/material integration unavailable. S1B-Q4 baseline spec/schema mismatch remains. Pure-layer tests are development evidence, not gate closure."
+}

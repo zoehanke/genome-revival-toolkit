@@ -1,0 +1,103 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "venv",
+      "<WORK>\\venv"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 8.765
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import json,sys,ensurepip,pathlib,hashlib; p=next((pathlib.Path(ensurepip.__file__).parent/'_bundled').glob('pip-*.whl')); print(json.dumps({'prefix':sys.prefix,'base_prefix':sys.base_prefix,'pip_bootstrap_wheel':p.name,'bootstrap_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'system_site_packages':False}))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.125
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pip",
+      "--isolated",
+      "install",
+      "--disable-pip-version-check",
+      "--index-url",
+      "https://pypi.org/simple",
+      "--only-binary=:all:",
+      "--no-deps",
+      "--report",
+      "<WORK>\\pip-report.json",
+      "-r",
+      "<SOURCE>\\requirements-release.lock",
+      "-r",
+      "<SOURCE>\\requirements.lock"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 36.219
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "--isolated",
+      "check"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.766
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-m",
+      "pip",
+      "--isolated",
+      "list",
+      "--format=json",
+      "--disable-pip-version-check"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.718
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-c",
+      "import importlib.metadata,json; print(json.dumps(importlib.metadata.version('setuptools')))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.141
+  }
+]

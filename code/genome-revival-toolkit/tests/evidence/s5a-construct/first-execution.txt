@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "<SOURCE>\tests\construct_runtime.py", line 47, in create
+    goal = required(invoke("goal declare", request={"schema": "goal-v1", "version": 1, "parent_digest": None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\construct_runtime.py", line 16, in required
+    raise AssertionError(receipt)
+AssertionError: {'run_id': '59604db6ccbcf1aa', 'state': None, 'event_range': None, 'result': {'failure': {'code': 'PLAN_SCHEMA_INVALID', 'category': 'INVALID_INPUT', 'message': 'Document violates its declared schema.', 'details': {'findings': [{'location': '/constraints/0/check', 'rule': 'pattern'}]}, 'recovery': 'Correct the request against goal-v1 and submit the goal again.', 'retryable': False, 'cause_chain': []}}, 'problems': [{'code': 'PLAN_SCHEMA_INVALID', 'category': 'INVALID_INPUT', 'message': 'Document violates its declared schema.', 'recovery': 'Correct the request against goal-v1 and submit the goal again.', 'location': ''}], 'next': [], 'labels': ['Unsealed', 'reviewed 0 / stale 0 / none 0']}

@@ -1,0 +1,47 @@
+{
+  "schema": "rule-v1",
+  "id": "selection.leu2.yeast",
+  "name": "Conditional selection for leu2 / yeast",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "marker_id": "leu2",
+    "pattern": "leu2",
+    "host": "yeast",
+    "plate": "Synthetic defined medium without leucine",
+    "auxotrophy": "leu2"
+  },
+  "applies_when": [
+    {
+      "field": "marker_id",
+      "op": "eq",
+      "value": "leu2"
+    },
+    {
+      "field": "host",
+      "op": "eq",
+      "value": "yeast"
+    }
+  ],
+  "source": {
+    "source_class": "database_record",
+    "citation": "SGD commonly used auxotrophic markers",
+    "locator": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+    "retrieved_at": "2026-10-14",
+    "content_ref": null,
+    "archive_note": "Copied legacy citation, not fetched online. Old verified flags/receipts are not inherited.",
+    "supports": [
+      "yeast selection mapping for leu2"
+    ],
+    "does_not_support": [
+      "Resistance, expression or compatible selection measured in the user's strain."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/selection.leu2.yeast.json"
+}

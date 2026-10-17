@@ -1,0 +1,348 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "create",
+      "<OUTPUT>\\construct\\gibson\\run",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.89
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "goal",
+      "declare",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run",
+      "--request",
+      "<OUTPUT>\\construct\\gibson\\request-1.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.094
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "template",
+      "instantiate",
+      "construct.prepare_gibson",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run",
+      "--request",
+      "<OUTPUT>\\construct\\gibson\\request-2.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.078
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "pipeline",
+      "submit",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run",
+      "--request",
+      "<OUTPUT>\\construct\\gibson\\request-3.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.281
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "execute",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt",
+    "exit_code": 0,
+    "seconds": 6.797
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "judge",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt",
+    "exit_code": 0,
+    "seconds": 25.5
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "seal",
+      "--run",
+      "<OUTPUT>\\construct\\gibson\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "007.stdout.txt",
+    "stderr": "007.stderr.txt",
+    "exit_code": 0,
+    "seconds": 44.063
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<OUTPUT>\\construct\\gibson\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "008.stdout.txt",
+    "stderr": "008.stderr.txt",
+    "exit_code": 0,
+    "seconds": 41.812
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<OUTPUT>\\construct\\gibson\\portable\\eb9f6f429bb13f51b104b52056a469b0fd581a228d70c9a5c2273f32509f37fd"
+    ],
+    "cwd": "<OUTPUT>\\construct\\gibson",
+    "stdout": "009.stdout.txt",
+    "stderr": "009.stderr.txt",
+    "exit_code": 0,
+    "seconds": 32.765
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "create",
+      "<OUTPUT>\\construct\\pcr\\run",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "010.stdout.txt",
+    "stderr": "010.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.891
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "goal",
+      "declare",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run",
+      "--request",
+      "<OUTPUT>\\construct\\pcr\\request-10.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "011.stdout.txt",
+    "stderr": "011.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.125
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "template",
+      "instantiate",
+      "construct.prepare_pcr",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run",
+      "--request",
+      "<OUTPUT>\\construct\\pcr\\request-11.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "012.stdout.txt",
+    "stderr": "012.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.969
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "pipeline",
+      "submit",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run",
+      "--request",
+      "<OUTPUT>\\construct\\pcr\\request-12.json"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "013.stdout.txt",
+    "stderr": "013.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.297
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "execute",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "014.stdout.txt",
+    "stderr": "014.stderr.txt",
+    "exit_code": 0,
+    "seconds": 5.734
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "judge",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "015.stdout.txt",
+    "stderr": "015.stderr.txt",
+    "exit_code": 0,
+    "seconds": 13.953
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "seal",
+      "--run",
+      "<OUTPUT>\\construct\\pcr\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "016.stdout.txt",
+    "stderr": "016.stderr.txt",
+    "exit_code": 0,
+    "seconds": 28.531
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<OUTPUT>\\construct\\pcr\\run"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "017.stdout.txt",
+    "stderr": "017.stderr.txt",
+    "exit_code": 0,
+    "seconds": 33.875
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<OUTPUT>\\construct\\pcr\\portable\\c6fe464b29fba40bb09114682cb11019fcbf5fd4863be9e2825f1782807a7342"
+    ],
+    "cwd": "<OUTPUT>\\construct\\pcr",
+    "stdout": "018.stdout.txt",
+    "stderr": "018.stderr.txt",
+    "exit_code": 0,
+    "seconds": 19.203
+  }
+]

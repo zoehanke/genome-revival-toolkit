@@ -1,0 +1,89 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "s1",
+      "use": "evidence.parse_observations",
+      "inputs": {
+        "observations": {
+          "source": "{{source_id}}"
+        },
+        "predictions": {
+          "source": "{{predictions_source}}"
+        }
+      },
+      "params": {
+        "observation_origin": "{{observation_origin}}"
+      },
+      "why": "Parse submitted observation records and retain missingness and source identity."
+    },
+    {
+      "step_id": "s2",
+      "use": "evidence.assess_observations",
+      "inputs": {
+        "document": {
+          "step": "s1",
+          "port": "document"
+        }
+      },
+      "params": {
+        "comparisons": "{{comparisons}}"
+      },
+      "why": "Apply sourced evidence boundaries and report tests that were not performed."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "assessment",
+      "from": {
+        "step": "s2",
+        "port": "assessment"
+      },
+      "target": "t1"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "goal_digest",
+      "source_id",
+      "observation_origin",
+      "comparisons",
+      "predictions_source"
+    ],
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "Current declared goal digest."
+      },
+      "source_id": {
+        "type": "string",
+        "description": "Registered observations artifact source."
+      },
+      "observation_origin": {
+        "type": "string",
+        "description": "Submitted source declaration, e.g. SYNTHETIC_EXAMPLE."
+      },
+      "comparisons": {
+        "type": "array",
+        "description": "Explicit experiment_group and control_group comparisons.",
+        "items": {
+          "type": "object"
+        }
+      },
+      "predictions_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered Identity expected-results artifact source; imported without rewriting."
+      }
+    }
+  },
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-16"
+  }
+}

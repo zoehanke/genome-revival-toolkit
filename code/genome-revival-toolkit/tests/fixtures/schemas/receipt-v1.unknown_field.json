@@ -1,0 +1,18 @@
+{
+  "schema_id": "receipt-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "run_id": null,
+    "state": null,
+    "event_range": null,
+    "result": {},
+    "problems": [],
+    "next": [],
+    "labels": [],
+    "undeclared_field": true
+  }
+}

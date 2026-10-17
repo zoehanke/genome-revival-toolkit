@@ -1,0 +1,321 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.analyze_assay",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Predict exact PCR products on two file-bound references and export D11 expectations.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "reference_original",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reference original"
+    },
+    {
+      "name": "reference_edited",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reference edited"
+    },
+    {
+      "name": "forward",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "forward"
+    },
+    {
+      "name": "reverse",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "reverse"
+    },
+    {
+      "name": "reference_original_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "reference original file"
+    },
+    {
+      "name": "reference_edited_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "reference edited file"
+    },
+    {
+      "name": "handoff",
+      "type": "document",
+      "required": false,
+      "constraints": {},
+      "description": "handoff",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "identity-handoff-v1"
+          },
+          "references": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "role": {
+                  "enum": [
+                    "original",
+                    "edited"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "sha256",
+                "role"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "reference_id",
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "primers": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sequence": {
+                  "type": "string",
+                  "pattern": "^[ACGTacgt]+$"
+                }
+              },
+              "required": [
+                "id",
+                "sequence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "references",
+          "regions",
+          "primers"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "outputs": [
+    {
+      "name": "expected_results",
+      "type": "document",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "identity-expected-results-v1"
+          },
+          "assay_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "backgrounds": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference_sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "primer_pair": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "expected": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "enum": [
+                        "DISTINGUISHABLE",
+                        "NOT_DISTINGUISHABLE",
+                        "UNDETERMINED"
+                      ]
+                    },
+                    "product_count": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "product_bp": {
+                      "type": [
+                        "integer",
+                        "null"
+                      ],
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "status",
+                    "product_count",
+                    "product_bp"
+                  ],
+                  "additionalProperties": false,
+                  "allOf": [
+                    {
+                      "if": {
+                        "properties": {
+                          "product_count": {
+                            "const": 1
+                          }
+                        }
+                      },
+                      "then": {
+                        "properties": {
+                          "product_bp": {
+                            "type": "integer",
+                            "minimum": 1
+                          }
+                        }
+                      },
+                      "else": {
+                        "properties": {
+                          "product_bp": {
+                            "type": "null"
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "reference_sha256",
+                "primer_pair",
+                "expected"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "assay_id",
+          "backgrounds"
+        ],
+        "additionalProperties": false
+      },
+      "output_role": "analysis"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "assay_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "forward_id": {
+        "type": "string",
+        "minLength": 1
+      },
+      "reverse_id": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "assay_id",
+      "forward_id",
+      "reverse_id"
+    ],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primer specificity in an actual strain.",
+    "Observed experimental products.",
+    "Authentic genotype.",
+    "Whole-genome discrimination outside supplied references."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D11",
+      "MIGRATION-LOG.md S5b"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:analyze_assay"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

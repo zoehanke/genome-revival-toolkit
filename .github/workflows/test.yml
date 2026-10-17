@@ -1,0 +1,95 @@
+name: Tests
+
+on:
+  push:
+    branches: [main, s4c]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        # pyproject.toml requires Python >=3.11.
+        python: ['3.11', '3.12']
+    defaults:
+      run:
+        shell: pwsh
+        working-directory: code/genome-revival-toolkit
+    env:
+      PYTHONPATH: src
+      PYTHONDONTWRITEBYTECODE: '1'
+
+    steps:
+      - name: Preserve checkout bytes and enable Windows long paths
+        working-directory: ${{ github.workspace }}
+        run: |
+          git config --global core.autocrlf false
+          git config --global core.eol lf
+          if ($IsWindows) {
+            git config --global core.longpaths true
+          }
+
+      - name: Check out the triggering commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install locked Python dependencies
+        id: dependencies
+        run: |
+          New-Item -ItemType Directory -Force ci-logs | Out-Null
+          git rev-parse HEAD | Tee-Object -FilePath ci-logs/environment.txt
+          python --version 2>&1 | Tee-Object -FilePath ci-logs/environment.txt -Append
+          python -m pip install --disable-pip-version-check --only-binary=:all: -c requirements-release.lock -r requirements-dev.txt -r requirements.lock 2>&1 |
+            Tee-Object -FilePath ci-logs/dependencies.txt
+          exit $LASTEXITCODE
+
+      - name: Run unit and integration tests
+        run: |
+          python -X utf8 -B -m unittest discover -s tests 2>&1 |
+            Tee-Object -FilePath ci-logs/tests.txt
+          exit $LASTEXITCODE
+
+      - name: Check structure
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        run: |
+          python -X utf8 -B tools/check_structure.py 2>&1 |
+            Tee-Object -FilePath ci-logs/structure.txt
+          exit $LASTEXITCODE
+
+      - name: Check schemas
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        run: |
+          python -X utf8 -B tools/check_schemas.py 2>&1 |
+            Tee-Object -FilePath ci-logs/schemas.txt
+          exit $LASTEXITCODE
+
+      - name: Check specification consistency
+        if: ${{ !cancelled() && steps.dependencies.outcome == 'success' }}
+        run: |
+          python -X utf8 -B tools/spec_lint.py 2>&1 |
+            Tee-Object -FilePath ci-logs/spec-lint.txt
+          exit $LASTEXITCODE
+
+      - name: Save test output
+        if: ${{ always() }}
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
+        with:
+          name: tests-${{ matrix.os }}-python-${{ matrix.python }}-${{ github.sha }}
+          path: code/genome-revival-toolkit/ci-logs/
+          if-no-files-found: warn

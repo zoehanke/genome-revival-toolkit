@@ -1,0 +1,26 @@
+{
+  "scope": "Windows local integration-1 development tree; all five discovered test groups.",
+  "total": 258,
+  "passed": 257,
+  "failures": [
+    "tests.e2e.test_genome_identity.GenomeIdentityCliTests.test_public_cli_and_copied_seal"
+  ],
+  "errors": [],
+  "skipped": [],
+  "own_task": {
+    "total": 30,
+    "passed": 29,
+    "failed": [
+      "tests.e2e.test_genome_identity.GenomeIdentityCliTests.test_public_cli_and_copied_seal"
+    ]
+  },
+  "measured_hours": 0.277255,
+  "seal": "blocked by three missing shared checks",
+  "portable_verification": "not executed",
+  "oracle": "actual candidate independently checked at 1000/1300 bp and all constructed assay cases",
+  "mutation_caught": true,
+  "spec_lint_hard_findings": 0,
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run",
+  "laboratory_status": "NOT_PERFORMED"
+}

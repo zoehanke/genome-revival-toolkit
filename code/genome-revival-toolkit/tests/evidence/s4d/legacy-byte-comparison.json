@@ -1,0 +1,80 @@
+[
+  {
+    "path": "catalog-snapshots.json",
+    "sha256": "63240968e029bd57fec6045c217afd899598f7594b362d67ae2447cd70f7c8ca",
+    "bytes": 60513,
+    "same_as_s4b": true
+  },
+  {
+    "path": "goal.json",
+    "sha256": "83fa363a9fd7b852b370e4895cdead7d92c0aacbdce8b20a38d581042953eb2f",
+    "bytes": 428,
+    "same_as_s4b": true
+  },
+  {
+    "path": "journal-until-seal.ndjson",
+    "sha256": "4aba3f6642621f0576375341966dfb56f68cf0867692628333f83d444773af70",
+    "bytes": 59266,
+    "same_as_s4b": true
+  },
+  {
+    "path": "manifest.json",
+    "sha256": "c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658",
+    "bytes": 5200,
+    "same_as_s4b": true
+  },
+  {
+    "path": "pipeline-final.json",
+    "sha256": "5e5ac2df5dee743ec3763d4ac8291ad39b51d36c0ab490e9230d918c781bceef",
+    "bytes": 499,
+    "same_as_s4b": true
+  },
+  {
+    "path": "result.json",
+    "sha256": "80e74c9e7bef4f556b00195dedd6d5e863234d7d227c1e8d5e7dc96f237597f2",
+    "bytes": 23,
+    "same_as_s4b": true
+  },
+  {
+    "path": "run.json",
+    "sha256": "0ebed2f69688e22c9c30277b72f108804008959d0614958ea03293072497c062",
+    "bytes": 93,
+    "same_as_s4b": true
+  },
+  {
+    "path": "store/documents/63240968e029bd57fec6045c217afd899598f7594b362d67ae2447cd70f7c8ca.json",
+    "sha256": "63240968e029bd57fec6045c217afd899598f7594b362d67ae2447cd70f7c8ca",
+    "bytes": 60513,
+    "same_as_s4b": true
+  },
+  {
+    "path": "store/documents/80e74c9e7bef4f556b00195dedd6d5e863234d7d227c1e8d5e7dc96f237597f2.json",
+    "sha256": "80e74c9e7bef4f556b00195dedd6d5e863234d7d227c1e8d5e7dc96f237597f2",
+    "bytes": 23,
+    "same_as_s4b": true
+  },
+  {
+    "path": "store/documents/83fa363a9fd7b852b370e4895cdead7d92c0aacbdce8b20a38d581042953eb2f.json",
+    "sha256": "83fa363a9fd7b852b370e4895cdead7d92c0aacbdce8b20a38d581042953eb2f",
+    "bytes": 428,
+    "same_as_s4b": true
+  },
+  {
+    "path": "verdicts.json",
+    "sha256": "0b4b773b073dccafa863e1a5f4b5072b10511c599efd3856f0495ee19018d894",
+    "bytes": 26824,
+    "same_as_s4b": true
+  },
+  {
+    "path": "views/report.md",
+    "sha256": "b2f421e4941b396a2e2c452cc4a047208bfe3c7677eaf55b2aabeed0f93ffaaa",
+    "bytes": 5445,
+    "same_as_s4b": true
+  },
+  {
+    "path": "views/runcard.html",
+    "sha256": "546b0ac9337eda00fe450847117b7e8f7ac005b80d71851d909d11d39f0cd700",
+    "bytes": 74176,
+    "same_as_s4b": true
+  }
+]

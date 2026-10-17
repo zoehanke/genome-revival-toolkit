@@ -1,0 +1,10 @@
+{
+  "check": "construct.check_junction_assay",
+  "expected": "FAIL",
+  "params": {},
+  "scenario": "donor_carryover",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Predetermined template edit or both QC primers inside retained donor arms."
+  }
+}

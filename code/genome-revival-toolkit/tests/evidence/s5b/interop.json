@@ -1,0 +1,18 @@
+{
+  "basis": "Read-only working-copy declaration snapshots, not a cross-Kit runtime or team approval.",
+  "construct_output_declaration": "<SOURCE>\\kits\\construct\\capabilities\\export_handoff.json",
+  "revival_evidence_input_declaration": "<SOURCE>\\kits\\revival-evidence\\capabilities\\assess_observations.json",
+  "construct_handoff_accepts_s5b_synthetic_handoff": true,
+  "revival_evidence_accepts_s5b_synthetic_expectations": true,
+  "schema_errors": [],
+  "schema_literals": [
+    "identity-handoff-v1",
+    "identity-expected-results-v1"
+  ],
+  "primer_pair": [
+    "forward",
+    "reverse"
+  ],
+  "product_count": true,
+  "cross_kit_runtime": "not executed"
+}

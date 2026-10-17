@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_cds_hand_translation_frame_and_partial_unknown (test_biology_round2_common.Round2CommonTests.test_cds_hand_translation_frame_and_partial_unknown)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_round2_common.py", line 29, in test_cds_hand_translation_frame_and_partial_unknown
+    self.assertFalse(biology.inspect_cds("ATGTAATAA", 1)["complete_cds_consistent"])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

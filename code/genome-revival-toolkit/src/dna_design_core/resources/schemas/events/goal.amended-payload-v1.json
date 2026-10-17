@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:goal.amended-payload-v1",
+  "title": "goal.amended-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E: goal.amended; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "goal_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "previous_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "diff": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "enum": [
+                  "add",
+                  "replace",
+                  "test"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+              },
+              "value": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "required": [
+              "op",
+              "path",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "const": "remove"
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+              }
+            },
+            "required": [
+              "op",
+              "path"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "op": {
+                "enum": [
+                  "move",
+                  "copy"
+                ]
+              },
+              "path": {
+                "type": "string",
+                "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+              },
+              "from": {
+                "type": "string",
+                "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+              }
+            },
+            "required": [
+              "op",
+              "path",
+              "from"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "x-spec-ref": "A14 (12c4274); RFC 6902; RFC 6901; A closed protocol objects"
+    },
+    "by": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "program",
+            "ai_host",
+            "human",
+            "unknown"
+          ]
+        },
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "reason": {
+      "type": "string"
+    },
+    "amended_after_start": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "goal_digest",
+    "version",
+    "previous_digest",
+    "diff",
+    "by",
+    "reason",
+    "amended_after_start"
+  ],
+  "additionalProperties": false
+}

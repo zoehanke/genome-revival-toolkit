@@ -1,0 +1,12 @@
+{
+  "check": "cut_plasmid.check_direction",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Use the nonpalindromic spacer reverse complement in the vector while leaving forward annotation."
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.compare_regions",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for identity.compare_regions; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "references",
+      "type": "materials",
+      "required": true,
+      "constraints": {},
+      "description": "references"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "regions": {
+        "type": "array",
+        "items": {
+          "type": "object"
+        }
+      }
+    },
+    "required": [
+      "regions"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "comparison",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "region-comparison-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primer specificity in an actual strain",
+    "Observed experimental products",
+    "Authentic genotype",
+    "Whole-genome discrimination."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:compare_regions"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

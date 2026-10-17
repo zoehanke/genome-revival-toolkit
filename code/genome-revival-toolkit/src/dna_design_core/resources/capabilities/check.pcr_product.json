@@ -1,0 +1,48 @@
+{
+  "schema": "capability-v1",
+  "id": "check.pcr_product",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Recompute direct and nested PCR from actual recorded inputs and parameters.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_pcr_product"
+  },
+  "owner": "core",
+  "granularity": "composite",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/biology/checks/check.pcr_product.pass.json",
+    "fail": "tests/fixtures/biology/checks/check.pcr_product.fail.json"
+  }
+}

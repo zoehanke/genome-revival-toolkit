@@ -1,0 +1,32 @@
+{
+  "existing_outputs": [
+    {
+      "file": "assay.json",
+      "byte_equal": true
+    },
+    {
+      "file": "donor.json",
+      "byte_equal": true
+    },
+    {
+      "file": "identity_handoff.json",
+      "byte_equal": true
+    },
+    {
+      "file": "primers.json",
+      "byte_equal": true
+    }
+  ],
+  "added_delivery_files": [
+    "identity_edited.gb",
+    "identity_original.gb"
+  ],
+  "construction_oracle_checks": 42,
+  "public_commands": 24,
+  "sealed_and_portable_verified_runs": 3,
+  "connection_attempts": 0,
+  "developer_run": true,
+  "independent_agent_success_claimed": false,
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run"
+}

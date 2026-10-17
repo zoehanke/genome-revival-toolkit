@@ -1,0 +1,26 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pip",
+      "--isolated",
+      "wheel",
+      "--disable-pip-version-check",
+      "--no-deps",
+      "--no-build-isolation",
+      "--no-index",
+      "--wheel-dir",
+      "<WORK>\\wheels-02",
+      "<SOURCE>"
+    ],
+    "cwd": "<WORK>\\build-02",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 7.297
+  }
+]

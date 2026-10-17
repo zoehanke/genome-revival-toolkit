@@ -1,0 +1,15 @@
+{
+  "outcome": "PASS",
+  "template_bp": 360,
+  "product_bp": 360,
+  "outside_spacer_unchanged": true,
+  "exact_NGG_target_count": 1,
+  "primer_binding_site_counts": [
+    1,
+    1
+  ],
+  "linear_intermediate_matches": true,
+  "inverse_pcr_circularization_matches": true,
+  "candidate_sealed": false,
+  "scope": "Synthetic sequence and reaction models only; physical experiments NOT_PERFORMED."
+}

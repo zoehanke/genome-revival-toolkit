@@ -1,0 +1,19 @@
+{
+  "schema_id": "pipeline-revision-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required trigger."
+  },
+  "data": {
+    "schema": "pipeline-revision-v1",
+    "expected_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "reason": "Change requested before execution.",
+    "operations": [
+      {
+        "op": "set_outputs",
+        "outputs": []
+      }
+    ]
+  }
+}

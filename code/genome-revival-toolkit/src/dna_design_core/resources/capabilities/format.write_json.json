@@ -1,0 +1,52 @@
+{
+  "schema": "capability-v1",
+  "id": "format.write_json",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Write a canonical UTF-8 JSON document.",
+  "effects": [
+    "writes_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "data",
+      "type": "value",
+      "required": true,
+      "constraints": {},
+      "description": "JSON content to export."
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.format_json:write_json"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

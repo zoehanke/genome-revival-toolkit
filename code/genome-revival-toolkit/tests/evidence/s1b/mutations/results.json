@@ -1,0 +1,42 @@
+[
+  {
+    "id": "pcr_ambiguity",
+    "module": "pcr/prediction.py",
+    "before": "if len(products) != 1:",
+    "after": "if not products:",
+    "test": "test_biology_primer_pcr.PCRTests.test_repeated_sites_enumerated_and_unique_simulator_rejects",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "pcr_ambiguity.txt"
+  },
+  {
+    "id": "overhang_labels",
+    "module": "assembly/simulation.py",
+    "before": "first[\"overhang\"] == str(Seq(second[\"overhang\"]).reverse_complement())",
+    "after": "first[\"overhang\"] == second[\"overhang\"]",
+    "test": "test_biology_restriction_assembly.AssemblyTests.test_actual_extensions_must_be_reverse_complements",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "overhang_labels.txt"
+  },
+  {
+    "id": "nn_salt_term",
+    "module": "primer/thermodynamics.py",
+    "before": "saltcorr=5,",
+    "after": "saltcorr=0,",
+    "test": "test_biology_primer_pcr.PrimerTests.test_tm_hand_sum_non_self_complementary",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "nn_salt_term.txt"
+  },
+  {
+    "id": "feature_start",
+    "module": "sequence/operations.py",
+    "before": "lo - seg_left + offset, hi - seg_left + offset",
+    "after": "lo - seg_left + offset + 1, hi - seg_left + offset",
+    "test": "test_biology_sequence_formats.SequenceTests.test_feature_mapping_hand_forward_reverse_and_partial_cds",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "feature_start.txt"
+  }
+]

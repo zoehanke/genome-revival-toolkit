@@ -1,0 +1,113 @@
+{
+  "checks": {
+    "structure": {
+      "command": [
+        "tools/check_structure.py"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "structure.txt"
+    },
+    "schemas": {
+      "command": [
+        "tools/check_schemas.py"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "schemas.txt"
+    },
+    "spec_lint": {
+      "command": [
+        "<REPOSITORY>\\tools\\spec_lint.py",
+        "<REPOSITORY>\\spec\\SPEC.md"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "spec_lint.txt"
+    },
+    "generated_docs": {
+      "command": [
+        "tools/docgen.py",
+        "--check"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "generated_docs.txt"
+    },
+    "all-tests": {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "all-tests.txt",
+      "tests": 246,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 245
+    },
+    "configured-primer3": {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/integration",
+        "-p",
+        "test_biology_capabilities.py",
+        "-k",
+        "test_primer3_real_ctx_external_calls_and_recorded_fingerprint",
+        "-v"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 0,
+      "expected_exit": 0,
+      "met_expectation": true,
+      "output": "configured-primer3.txt",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 1
+    },
+    "actual-release-tree": {
+      "command": [
+        "tools/check_release.py",
+        "--report",
+        "<SOURCE>\\tests\\evidence\\s4a\\release-check.json"
+      ],
+      "PYTHONPATH": "src",
+      "exit_code": 2,
+      "expected_exit": 2,
+      "met_expectation": true,
+      "output": "actual-release-tree.txt"
+    }
+  },
+  "mutations": {
+    "executed_separately": true,
+    "total": 6,
+    "caught": 6
+  },
+  "engineering_tests": "PASS",
+  "release_ready": false,
+  "fresh_environment_installation": "NOT_PERFORMED; separate authorization required",
+  "official_gitlab_ci": "未执行",
+  "github_ci": "未运行",
+  "scope": "Existing local environment only; F10 controls, deterministic synthetic source builds, offline build metadata and source-mode example. Not S4 approval."
+}

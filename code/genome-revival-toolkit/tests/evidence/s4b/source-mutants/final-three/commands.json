@@ -1,0 +1,56 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import sys,unittest; sys.path.insert(0,sys.argv[1]); from tests.integration import test_release_identity as t; from pathlib import Path; t.ROOT=Path(sys.argv[2]); r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite([t.ReleaseIdentityTests(sys.argv[3])])); sys.exit(not r.wasSuccessful())",
+      "<SOURCE>",
+      "<MUTANTS>\\create_reverts_to_dev_tree",
+      "test_package_records_manifest_digest_and_detects_one_byte_change"
+    ],
+    "cwd": "<MUTANTS>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.297
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import sys,unittest; sys.path.insert(0,sys.argv[1]); from tests.integration import test_release_identity as t; from pathlib import Path; t.ROOT=Path(sys.argv[2]); r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite([t.ReleaseIdentityTests(sys.argv[3])])); sys.exit(not r.wasSuccessful())",
+      "<SOURCE>",
+      "<MUTANTS>\\verify_ignores_different_release",
+      "test_installed_seal_verifies_portably_but_different_release_is_rejected"
+    ],
+    "cwd": "<MUTANTS>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 1,
+    "seconds": 10.688
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import sys,unittest; sys.path.insert(0,sys.argv[1]); from tests.integration import test_release_identity as t; from pathlib import Path; t.ROOT=Path(sys.argv[2]); r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite([t.ReleaseIdentityTests(sys.argv[3])])); sys.exit(not r.wasSuccessful())",
+      "<SOURCE>",
+      "<MUTANTS>\\source_metadata_is_mistaken_for_installation",
+      "test_source_build_metadata_is_not_an_installed_release"
+    ],
+    "cwd": "<MUTANTS>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.937
+  }
+]

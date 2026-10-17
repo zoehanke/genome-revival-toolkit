@@ -1,0 +1,9 @@
+{
+  "check": "check.readback",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fixed four-symbol input, length four, exact UTF-8 JSON bytes; valid bindings and hashes. DNA-specific control uses a constructed valid eight-base string."
+  }
+}

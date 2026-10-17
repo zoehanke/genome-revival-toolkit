@@ -1,0 +1,74 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "parse",
+      "use": "evidence.parse_observations",
+      "inputs": {
+        "file": {
+          "source": "{{observations_source}}"
+        }
+      },
+      "params": {
+        "id_prefix": "obs"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "assess",
+      "use": "evidence.assess_observations",
+      "inputs": {
+        "observations": {
+          "step": "parse",
+          "port": "observations"
+        },
+        "expected_results": {
+          "source": "{{expected_source}}"
+        }
+      },
+      "params": {},
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "from": {
+        "step": "assess",
+        "port": "assessment"
+      },
+      "target": "{{target_id}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "Explicit caller-provided goal digest; no inferred source or scientific threshold.",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "target_id": {
+        "type": "string",
+        "description": "Explicit caller-provided target id; no inferred source or scientific threshold."
+      },
+      "observations_source": {
+        "type": "string",
+        "description": "Explicit caller-provided observations source; no inferred source or scientific threshold."
+      },
+      "expected_source": {
+        "type": "string",
+        "description": "Explicit caller-provided expected source; no inferred source or scientific threshold."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "target_id",
+      "observations_source",
+      "expected_source"
+    ],
+    "additionalProperties": false
+  }
+}

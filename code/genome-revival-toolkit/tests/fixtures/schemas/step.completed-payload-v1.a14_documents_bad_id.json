@@ -1,0 +1,24 @@
+{
+  "schema_id": "step.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Ids are 64 lowercase hex characters."
+  },
+  "data": {
+    "step_id": "s1",
+    "outputs": {
+      "materials": {},
+      "documents": {
+        "product": [
+          "not-a-digest"
+        ]
+      },
+      "artifacts": []
+    },
+    "values": {},
+    "unverified": [],
+    "verdict_ids": [],
+    "duration_ms": 1
+  }
+}

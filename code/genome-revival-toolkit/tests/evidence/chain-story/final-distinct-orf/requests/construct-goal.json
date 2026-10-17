@@ -1,0 +1,58 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Synthetic computational chain; laboratory steps PLANNED / NOT_PERFORMED.",
+  "sources": [
+    {
+      "source_id": "input_reference",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\reference.fasta",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "input_cargo",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\marker.fasta",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    }
+  ],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "donor",
+      "role": "construct",
+      "required": true
+    },
+    {
+      "id": "primers",
+      "role": "primer_set",
+      "required": true
+    },
+    {
+      "id": "assay",
+      "role": "analysis",
+      "required": true
+    },
+    {
+      "id": "handoff",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exact",
+      "check": "check.goal.exact_sequence@0.0.0",
+      "params": {
+        "sequence": "ACAACAGTATGGTTGGCGATTCTTTGAGGCAAAGCGCGCACCACTGTTTCATGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATAAGGAGCACGCCAACCAGCCGTTCAGTAGCTATTTGATAAAAGGATTTTTGT"
+      },
+      "target": "donor",
+      "source_quote": "constructed donor with two 50 bp arms",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

@@ -1,0 +1,11 @@
+{
+  "historical_files_unchanged": 13,
+  "historical_negative": "JOURNAL_CHAIN_BROKEN",
+  "current_package": "examples/sealed/b1/cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+  "release_id": "dev-tree",
+  "expected": {
+    "sequence": "TTCTGACT"
+  },
+  "source_verified": true,
+  "original_run_moved_away": true
+}

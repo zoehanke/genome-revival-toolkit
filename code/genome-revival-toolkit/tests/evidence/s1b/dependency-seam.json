@@ -1,0 +1,26 @@
+{
+  "base_commit": "c8cc70a",
+  "files": [
+    {
+      "path": "src/dna_design_core/kernel/material.py",
+      "bytes": 1439
+    },
+    {
+      "path": "src/dna_design_core/kernel/public.py",
+      "bytes": 1326
+    },
+    {
+      "path": "src/dna_design_core/kernel/ports.py",
+      "bytes": 446
+    },
+    {
+      "path": "src/dna_design_core/kernel/ids.py",
+      "bytes": 711
+    },
+    {
+      "path": "src/dna_design_core/kernel/verdict.py",
+      "bytes": 773
+    }
+  ],
+  "disposition": "User merged S1 interfaces; adapters now consume kernel public interfaces directly. Historical empty-file snapshot retained under before-c8cc70a."
+}

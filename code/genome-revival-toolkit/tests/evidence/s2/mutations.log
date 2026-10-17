@@ -1,0 +1,22 @@
+{
+  "mutations": [
+    {
+      "mutation": "direction_comparison_flipped",
+      "before": "else \"PASS\" if report[\"direction_correct\"] else \"FAIL\"",
+      "after": "else \"PASS\" if not report[\"direction_correct\"] else \"FAIL\"",
+      "exit_code": 1,
+      "caught_by_assertion": true,
+      "test": "tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run"
+    },
+    {
+      "mutation": "invalid_pam_exception_swallowed",
+      "before": "                outcome = \"PASS\" if report[\"pam_valid\"] else \"FAIL\"",
+      "after": "                try:\n                    if not report[\"pam_valid\"]:\n                        raise ValueError(\"INVALID_PAM\")\n                    outcome = \"PASS\"\n                except ValueError:\n                    outcome = \"PASS\"",
+      "exit_code": 1,
+      "caught_by_assertion": true,
+      "test": "tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run"
+    }
+  ],
+  "caught": 2,
+  "total": 2
+}

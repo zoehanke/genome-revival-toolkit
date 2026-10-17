@@ -1,0 +1,46 @@
+test_actual_pcr_template_mismatch_is_caught_by_model (tests.integration.test_construct.ConstructTests.test_actual_pcr_template_mismatch_is_caught_by_model) ... ok
+test_artifact_sealing_remains_explicitly_blocked (tests.integration.test_construct.ConstructTests.test_artifact_sealing_remains_explicitly_blocked) ... ok
+test_bad_arm_bounds_halt_before_any_preparation (tests.integration.test_construct.ConstructTests.test_bad_arm_bounds_halt_before_any_preparation) ... ok
+test_both_actual_preparation_routes_match_construction (tests.integration.test_construct.ConstructTests.test_both_actual_preparation_routes_match_construction) ... ok
+test_both_model_paths_one_base_source_mutations_are_detected (tests.integration.test_construct.ConstructTests.test_both_model_paths_one_base_source_mutations_are_detected) ... ok
+test_declarations_are_exported_from_functions_and_models_are_independent (tests.integration.test_construct.ConstructTests.test_declarations_are_exported_from_functions_and_models_are_independent) ... FAIL
+test_deletion_without_cargo_is_prepared_and_flanking_sizes_differ (tests.integration.test_construct.ConstructTests.test_deletion_without_cargo_is_prepared_and_flanking_sizes_differ) ... ok
+test_diagnostic_judge_retains_missing_core_obligations (tests.integration.test_construct.ConstructTests.test_diagnostic_judge_retains_missing_core_obligations) ... ok
+test_external_junctions_are_90_bp_only_on_edited_reference (tests.integration.test_construct.ConstructTests.test_external_junctions_are_90_bp_only_on_edited_reference) ... ok
+test_handoff_schema_and_executor_file_hash (tests.integration.test_construct.ConstructTests.test_handoff_schema_and_executor_file_hash) ... ok
+test_independent_output_file_oracle_for_both_routes (tests.integration.test_construct.ConstructTests.test_independent_output_file_oracle_for_both_routes) ... ok
+test_inside_arm_primers_warn_and_fail (tests.integration.test_construct.ConstructTests.test_inside_arm_primers_warn_and_fail) ... ok
+test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified (tests.integration.test_construct.ConstructTests.test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified) ... 
+  test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified (tests.integration.test_construct.ConstructTests.test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified) (broken=False) ... FAIL
+  test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified (tests.integration.test_construct.ConstructTests.test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified) (broken=True) ... FAIL
+test_repeated_preparation_site_halts_with_registered_error (tests.integration.test_construct.ConstructTests.test_repeated_preparation_site_halts_with_registered_error) ... ok
+test_repeated_site_is_not_hidden_by_one_product (tests.integration.test_construct.ConstructTests.test_repeated_site_is_not_hidden_by_one_product) ... ok
+
+======================================================================
+FAIL: test_declarations_are_exported_from_functions_and_models_are_independent (tests.integration.test_construct.ConstructTests.test_declarations_are_exported_from_functions_and_models_are_independent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_construct.py", line 49, in test_declarations_are_exported_from_functions_and_models_are_independent
+    self.assertFalse(any(word in item for word in forbidden for item in imports), imports)
+AssertionError: True is not false : ['from dna_design_core.kernel.public import Outcome, ToolkitError, capability, normalize_material', 'from .contracts import BOUNDS, declaration, port']
+
+======================================================================
+FAIL: test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified (tests.integration.test_construct.ConstructTests.test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified) (broken=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_construct.py", line 195, in test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified
+    product = retained(service)["materials"]["product"][0]
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified (tests.integration.test_construct.ConstructTests.test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified) (broken=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_construct.py", line 195, in test_linear_gibson_preserves_labelled_cargo_and_invalid_orf_is_not_certified
+    product = retained(service)["materials"]["product"][0]
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 15 tests in 230.440s
+
+FAILED (failures=3)

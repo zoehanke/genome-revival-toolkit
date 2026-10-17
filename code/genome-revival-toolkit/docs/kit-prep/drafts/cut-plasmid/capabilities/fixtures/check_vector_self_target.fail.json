@@ -1,0 +1,12 @@
+{
+  "check": "cut_plasmid.check_vector_self_target",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Future Kit fixture: select a paired synthetic construction from the migration report; not executed in this rehearsal."
+  },
+  "data": {
+    "construction": "Append an extra exact spacer+TGG copy to the same supplied vector."
+  }
+}

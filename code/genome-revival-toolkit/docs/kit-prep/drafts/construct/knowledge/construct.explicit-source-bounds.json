@@ -1,0 +1,32 @@
+{
+  "schema": "rule-v1",
+  "id": "construct.explicit-source-bounds",
+  "name": "Use supplied target/cargo intervals and explicit arm length; do not infer a locus.",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "construct.design_donor",
+  "parameters": {
+    "statement": "Use supplied target/cargo intervals and explicit arm length; do not infer a locus."
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:run_construct input guards and source-derived model",
+    "locator": "genome-revival-toolkit/kits/construct/rules/scope.json@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "Use supplied target/cargo intervals and explicit arm length; do not infer a locus."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/construct.explicit-source-bounds.json"
+}

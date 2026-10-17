@@ -1,0 +1,49 @@
+{
+  "schema": "capability-v1",
+  "id": "check.reaction_chain",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Recompute recorded direct/nested reactions before comparing delivered material.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Laboratory reactions actually occurred.",
+    "DpnI removal, phosphorylation, ligation yield, transformation or biological function.",
+    "Independence or correctness of the shared simulation algorithms."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D7 preparation_model; D8",
+      "Existing pcr.simulate, assembly and seq.rotate capability contracts"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.preparation:reaction_chain"
+  },
+  "owner": "core",
+  "granularity": "composite",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/s1c/check.reaction_chain.pass.json",
+    "fail": "tests/fixtures/s1c/check.reaction_chain.fail.json"
+  }
+}

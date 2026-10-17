@@ -1,0 +1,25 @@
+{
+  "check": "check.goal.components_absent",
+  "variant": "fail",
+  "expected": "FAIL",
+  "params": {
+    "components": [
+      {
+        "name": "forbidden",
+        "sequence": "CCCG"
+      }
+    ]
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AAACCCGGGTTT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "Only A/T in the positive cannot contain CCCG; the negative contains literal CCCG at [3,7)."
+  }
+}

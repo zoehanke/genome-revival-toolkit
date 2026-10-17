@@ -1,0 +1,110 @@
+{
+  "checks": {
+    "structure": {
+      "command": [
+        "tools/check_structure.py"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": false,
+      "exit_code": 0,
+      "output": "structure.txt"
+    },
+    "schemas": {
+      "command": [
+        "tools/check_schemas.py"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": false,
+      "exit_code": 0,
+      "output": "schemas.txt"
+    },
+    "generated_docs": {
+      "command": [
+        "tools/docgen.py",
+        "--check"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": false,
+      "exit_code": 0,
+      "output": "generated_docs.txt"
+    },
+    "spec_lint": {
+      "command": [
+        "<REPOSITORY>\\tools\\spec_lint.py",
+        "<REPOSITORY>\\spec\\SPEC.md"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": false,
+      "exit_code": 0,
+      "output": "spec_lint.txt"
+    },
+    "all_tests_without_primer3": {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": false,
+      "exit_code": 0,
+      "output": "all_tests_without_primer3.txt",
+      "tests": 200,
+      "passed": 199,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0
+    },
+    "configured_primer3": {
+      "command": [
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests/integration",
+        "-p",
+        "test_biology_capabilities.py",
+        "-k",
+        "test_primer3_real_ctx_external_calls_and_recorded_fingerprint",
+        "-v"
+      ],
+      "PYTHONPATH": "src",
+      "primer3_configured": true,
+      "exit_code": 0,
+      "output": "configured_primer3.txt",
+      "tests": 1,
+      "passed": 1,
+      "skipped": 0,
+      "failures": 0,
+      "errors": 0
+    }
+  },
+  "source_mutations": {
+    "output": "mutations/results.json",
+    "mutations": 6,
+    "caught": 6,
+    "execution": "Separate goal_mutations.py command; not rerun by this runner."
+  },
+  "scope": "Merged S1/S1b tests and six target-bound D2 checks. No new Kit implementation, full scientific seal acceptance, wet experiment or CI.",
+  "implementation_checks": "PASS",
+  "supplemental_public_api": {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/integration",
+      "-p",
+      "test_goal_constraints_api.py",
+      "-v"
+    ],
+    "PYTHONPATH": "src",
+    "tests": 1,
+    "passed": 1,
+    "exit_code": 0,
+    "evidence": "public-api.json",
+    "execution": "Separate targeted test added after 200-test discovery; recorded separately."
+  }
+}

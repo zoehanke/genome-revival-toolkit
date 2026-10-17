@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_tm_hand_sum_non_self_complementary (test_biology_primer_pcr.PrimerTests.test_tm_hand_sum_non_self_complementary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_primer_pcr.py", line 19, in test_tm_hand_sum_non_self_complementary
+    self.assertAlmostEqual(float(result["tm"]), expected, places=7)
+AssertionError: 23.13324111 != 11.745300327362088 within 7 places (11.387940782637912 difference)
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

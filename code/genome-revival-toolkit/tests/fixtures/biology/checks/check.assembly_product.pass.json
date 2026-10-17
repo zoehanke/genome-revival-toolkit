@@ -1,0 +1,33 @@
+{
+  "check": "check.assembly_product",
+  "variant": "pass",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Predefined blocks AAA + CCC overlap + TTT give AAACCCTTT; fail changes a unique contributed base."
+  },
+  "data": {
+    "use": "assembly.gibson",
+    "inputs": {
+      "left": {
+        "sequence": "AAACCC",
+        "topology": "linear",
+        "strandedness": "double",
+        "ends": null,
+        "features": []
+      },
+      "right": {
+        "sequence": "CCCTTT",
+        "topology": "linear",
+        "strandedness": "double",
+        "ends": null,
+        "features": []
+      }
+    },
+    "params": {
+      "overlap": 3
+    },
+    "corrupt": null,
+    "wrong_sequence": "AAACCCATT"
+  }
+}

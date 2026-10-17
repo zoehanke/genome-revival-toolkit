@@ -1,0 +1,594 @@
+{
+  "schema": "rule-v1",
+  "id": "cut_plasmid.selection_markers",
+  "name": "Source-labelled selection marker collection",
+  "version": 1,
+  "status": "active",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "rows": [
+      {
+        "schema": "rule-v1",
+        "id": "selection.amp.ecoli",
+        "name": "Conditional selection for amp in ecoli",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "amp",
+          "pattern": "ampr|ampicillin|bla(?:tem\\d*)?|beta-lactamase",
+          "host": "ecoli",
+          "plate": "LB + ampicillin",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-amp",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "amp"
+          }
+        ],
+        "source": {
+          "source_class": "official_method",
+          "citation": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "locator": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "ecoli selection mapping for amp"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.amp.ecoli.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.kan.ecoli",
+        "name": "Conditional selection for kan in ecoli",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "kan",
+          "pattern": "kanr|kanmx\\d*|kanamycin",
+          "host": "ecoli",
+          "plate": "LB + kanamycin",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-kan",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "kan"
+          }
+        ],
+        "source": {
+          "source_class": "official_method",
+          "citation": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "locator": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "ecoli selection mapping for kan"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.kan.ecoli.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.kan.yeast",
+        "name": "Conditional selection for kan in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "kan",
+          "pattern": "kanr|kanmx\\d*|kanamycin",
+          "host": "yeast",
+          "plate": "G418 selection medium",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-kan",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "kan"
+          }
+        ],
+        "source": {
+          "source_class": "literature",
+          "citation": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for kan"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.kan.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.cat.ecoli",
+        "name": "Conditional selection for cat in ecoli",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "cat",
+          "pattern": "cmr|camr|cat|chloramphenicol",
+          "host": "ecoli",
+          "plate": "LB + chloramphenicol",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-cat",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "cat"
+          }
+        ],
+        "source": {
+          "source_class": "official_method",
+          "citation": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+          "locator": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "ecoli selection mapping for cat"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.cat.ecoli.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.hph.yeast",
+        "name": "Conditional selection for hph in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "hph",
+          "pattern": "hygr|hygromycin|hph(?:nt\\d+|mx\\d*)?",
+          "host": "yeast",
+          "plate": "Hygromycin B selection medium",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-hph",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "hph"
+          }
+        ],
+        "source": {
+          "source_class": "literature",
+          "citation": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for hph"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.hph.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.nat.yeast",
+        "name": "Conditional selection for nat in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "nat",
+          "pattern": "natmx\\d*|nourseothricin",
+          "host": "yeast",
+          "plate": "Nourseothricin selection medium",
+          "auxotrophy": null,
+          "legacy_rule_id": "selection-nat",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "nat"
+          }
+        ],
+        "source": {
+          "source_class": "literature",
+          "citation": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for nat"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.nat.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.ura3.yeast",
+        "name": "Conditional selection for ura3 in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "ura3",
+          "pattern": "ura3",
+          "host": "yeast",
+          "plate": "Synthetic defined medium without uracil",
+          "auxotrophy": "ura3",
+          "legacy_rule_id": "selection-ura3",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "ura3"
+          }
+        ],
+        "source": {
+          "source_class": "literature",
+          "citation": "Chee and Haase, G3 2012, redesigned pRS vectors",
+          "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for ura3"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.ura3.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.his3.yeast",
+        "name": "Conditional selection for his3 in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "his3",
+          "pattern": "his3",
+          "host": "yeast",
+          "plate": "Synthetic defined medium without histidine",
+          "auxotrophy": "his3",
+          "legacy_rule_id": "selection-his3",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "his3"
+          }
+        ],
+        "source": {
+          "source_class": "database_record",
+          "citation": "SGD commonly used auxotrophic markers",
+          "locator": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for his3"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.his3.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.leu2.yeast",
+        "name": "Conditional selection for leu2 in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "leu2",
+          "pattern": "leu2",
+          "host": "yeast",
+          "plate": "Synthetic defined medium without leucine",
+          "auxotrophy": "leu2",
+          "legacy_rule_id": "selection-leu2",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "leu2"
+          }
+        ],
+        "source": {
+          "source_class": "database_record",
+          "citation": "SGD commonly used auxotrophic markers",
+          "locator": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for leu2"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.leu2.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.trp1.yeast",
+        "name": "Conditional selection for trp1 in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "trp1",
+          "pattern": "trp1",
+          "host": "yeast",
+          "plate": "Synthetic defined medium without tryptophan",
+          "auxotrophy": "trp1",
+          "legacy_rule_id": "selection-trp1",
+          "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4"
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "trp1"
+          }
+        ],
+        "source": {
+          "source_class": "database_record",
+          "citation": "SGD commonly used auxotrophic markers",
+          "locator": "https://wiki.yeastgenome.org/index.php/Commonly_used_auxotrophic_markers",
+          "retrieved_at": "2026-10-14",
+          "content_ref": null,
+          "archive_note": "Migrated citation only; no archived page or new human verification receipt.",
+          "supports": [
+            "yeast selection mapping for trp1"
+          ],
+          "does_not_support": [
+            "Expression, resistance or selection measured in the user's strain."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.trp1.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex; legacy authorship unknown",
+          "date": "2026-10-17"
+        }
+      },
+      {
+        "schema": "rule-v1",
+        "id": "selection.ble.yeast",
+        "name": "Conditional selection for ble in yeast",
+        "version": 1,
+        "status": "active",
+        "purpose": "interpretation",
+        "evaluator": "cut_plasmid.assess_selection",
+        "parameters": {
+          "marker_id": "ble",
+          "pattern": "\\b(?:ble|bler|bleor|sh\\s+ble|zeocin|phleomycin|bleomycin)\\b",
+          "host": "yeast",
+          "plate": "YPD or minimal medium + Zeocin (reported working range 50–300 µg/mL; the lowest effective dose depends on strain, pH and ionic strength, so determine it with a kill curve; test medium pH 6.5–8). Electroporated cells: YPD + 1 M sorbitol. Do not plate spheroplasts directly onto Zeocin medium.",
+          "auxotrophy": null,
+          "supplementary_sources": [
+            {
+              "source_class": "literature",
+              "citation": "Drocourt D, Calmels T, Reynes JP, Baron M, Tiraby G. Cassettes of the Streptoalloteichus hindustanus ble gene for transformation of lower and higher eukaryotes to phleomycin resistance. Nucleic Acids Research 18(13):4009 (1990). PMID 1695734; doi 10.1093/nar/18.13.4009; PMC331125",
+              "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC331125/",
+              "retrieved_at": "2026-10-17",
+              "content_ref": null,
+              "archive_note": "Task reports that the specification owner confirmed bibliographic existence and title only, without reading the full text. No archived copy or human verification receipt.",
+              "supports": [
+                "The Sh ble gene can serve as a dominant resistance marker in lower and higher eukaryotes, including yeast."
+              ],
+              "does_not_support": [
+                "Specific Zeocin concentrations, the effective concentration in a particular strain, transformation efficiency or direct use in spheroplast fusion experiments."
+              ],
+              "verification_status": "unverified"
+            }
+          ]
+        },
+        "applies_when": [
+          {
+            "field": "marker_id",
+            "op": "eq",
+            "value": "ble"
+          }
+        ],
+        "source": {
+          "source_class": "official_method",
+          "citation": "Thermo Fisher Scientific (formerly Invitrogen). Zeocin™ manual, 25-0078, Version J, 2002-08-22",
+          "locator": "https://www.thermofisher.com/sa/en/home/references/protocols/cloning/transformation-protocol/zeocin.html",
+          "retrieved_at": "2026-10-17",
+          "content_ref": null,
+          "archive_note": "Task-supplied manual details; not fetched or independently checked here. No archived copy or human verification receipt.",
+          "supports": [
+            "Yeast plasmids carrying ble can be selected on Zeocin medium; reported working range 50–300 µg/mL, depending on strain, pH and ionic strength."
+          ],
+          "does_not_support": [
+            "The effective concentration in a specific strain.",
+            "Transformation efficiency.",
+            "Direct use in spheroplast fusion experiments."
+          ],
+          "verification_status": "unverified"
+        },
+        "limits": [
+          "Requires explicitly declared strain genotype; missing genotype yields UNKNOWN."
+        ],
+        "review": "knowledge/review/selection.ble.yeast.review.json",
+        "authorship": {
+          "kind": "ai",
+          "tool_or_model": "Codex",
+          "date": "2026-10-17"
+        }
+      }
+    ]
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "SPEC D11/D12 and MIGRATION-MAP section 6",
+    "locator": "spec/MIGRATION-MAP.md#6",
+    "retrieved_at": "2026-10-17",
+    "content_ref": null,
+    "archive_note": "Local project contract; biological source citations reside on each row.",
+    "supports": [
+      "Collection format and conditional interpretation policy."
+    ],
+    "does_not_support": [
+      "Biological truth of the nested mappings or measured selectable phenotype."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "AI migrated, without human review or source verification."
+  ],
+  "review": "knowledge/review/selection_markers.review.json",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

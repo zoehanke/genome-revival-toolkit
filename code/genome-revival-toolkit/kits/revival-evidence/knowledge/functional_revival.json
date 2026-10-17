@@ -1,0 +1,64 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.functional_revival",
+  "name": "functional_revival",
+  "version": 1,
+  "status": "active",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "claim": "functional_revival",
+    "context": "summary",
+    "truth_table": [
+      {
+        "when": [
+          {
+            "field": "any_tested",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "status": "NOT_TESTED",
+        "reason": "No counts, genotype assays or functional observations were supplied.",
+        "source_ref": "evidence.functional_revival"
+      },
+      {
+        "when": [
+          {
+            "field": "any_tested",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "status": "INSUFFICIENT",
+        "reason": "Reported colony growth and selected assays do not establish donor-dependent functional revival.",
+        "source_ref": "evidence.functional_revival"
+      }
+    ]
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "Genome Revival Toolkit SPEC D12 and Appendix B3 (2026-10-16)",
+    "locator": "spec/SPEC.md D12; B3; prompts/s3-revival-evidence.md",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Project files retained in repository history.",
+    "supports": [
+      "Adopt a bounded conclusion; observations alone cannot certify functional revival."
+    ],
+    "does_not_support": [
+      "Biological proof of revival, elimination, causality or record authenticity."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Project interpretation boundary; not an experimentally established biological sufficiency rule."
+  ],
+  "review": "knowledge/review/functional_revival.review.json",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-16"
+  }
+}

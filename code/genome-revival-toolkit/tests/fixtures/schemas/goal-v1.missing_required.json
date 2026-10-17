@@ -1,0 +1,24 @@
+{
+  "schema_id": "goal-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required version."
+  },
+  "data": {
+    "schema": "goal-v1",
+    "parent_digest": null,
+    "original_request": "Report a synthetic length.",
+    "sources": [],
+    "declared_context": [],
+    "targets": [
+      {
+        "id": "t1",
+        "role": "analysis",
+        "required": true
+      }
+    ],
+    "constraints": [],
+    "intents": []
+  }
+}

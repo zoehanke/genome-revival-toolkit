@@ -1,0 +1,20 @@
+{
+  "check": "check.goal.exact_sequence",
+  "variant": "fail",
+  "expected": "FAIL",
+  "params": {
+    "sequence": "AGTCAGAA"
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AGTCAGAT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "The hand-written last base is A versus T; no rotation equivalence or code-generated answer."
+  }
+}

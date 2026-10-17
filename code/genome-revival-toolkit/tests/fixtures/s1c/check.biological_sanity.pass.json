@@ -1,0 +1,8 @@
+{
+  "check": "check.biological_sanity",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "A nonempty circular duplex has no linear ends. A nonempty IUPAC DNA value retains ambiguous symbols and unspecified ends without claiming their physical identities."
+  }
+}

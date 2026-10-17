@@ -1,0 +1,41 @@
+{
+  "check": "check.pcr_product",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Hand answer TT + ACGTAACCGGTTGATC + GC; fail records GA instead of the terminal GC."
+  },
+  "data": {
+    "use": "pcr.simulate",
+    "inputs": {
+      "template": {
+        "sequence": "ACGTAACCGGTTGATC",
+        "topology": "linear",
+        "strandedness": "double",
+        "ends": null,
+        "features": []
+      },
+      "forward": {
+        "sequence": "TTACGTA",
+        "topology": null,
+        "strandedness": "single",
+        "ends": null,
+        "features": []
+      },
+      "reverse": {
+        "sequence": "GCGATC",
+        "topology": null,
+        "strandedness": "single",
+        "ends": null,
+        "features": []
+      }
+    },
+    "params": {
+      "forward_core_length": 5,
+      "reverse_core_length": 4
+    },
+    "corrupt": "recorded_product",
+    "wrong_sequence": "TTACGTAACCGGTTGATCGA"
+  }
+}

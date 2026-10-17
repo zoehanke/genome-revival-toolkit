@@ -1,0 +1,32 @@
+{
+  "schema": "rule-v1",
+  "id": "construct.donor-not-integration",
+  "name": "Donor interface checks do not establish genomic integration or revival.",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "construct.design_donor",
+  "parameters": {
+    "statement": "Donor interface checks do not establish genomic integration or revival."
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "scripts/workflow.py:run_construct checked_scope/not_checked",
+    "locator": "genome-revival-toolkit/kits/construct/rules/scope.json@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Local legacy source inspected; this is an implemented scope contract, not biological validation.",
+    "supports": [
+      "Donor interface checks do not establish genomic integration or revival."
+    ],
+    "does_not_support": [
+      "Experimental success or biological function."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/construct.donor-not-integration.json"
+}

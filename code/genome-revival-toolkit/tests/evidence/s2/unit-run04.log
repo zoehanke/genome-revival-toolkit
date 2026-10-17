@@ -1,0 +1,19 @@
+test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) ... ok
+test_all_migrated_host_rows_keep_sources_and_no_fabricated_receipts (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_migrated_host_rows_keep_sources_and_no_fabricated_receipts) ... ok
+test_annotation_disagreement_is_reported_without_overriding_sequence (tests.unit.test_cut_plasmid.CutPlasmidTests.test_annotation_disagreement_is_reported_without_overriding_sequence) ... ok
+test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer) ... ok
+test_b2_wrong_pam_is_computed_from_bases (tests.unit.test_cut_plasmid.CutPlasmidTests.test_b2_wrong_pam_is_computed_from_bases) ... ok
+test_independent_model_matches_constructed_edit (tests.unit.test_cut_plasmid.CutPlasmidTests.test_independent_model_matches_constructed_edit) ... ok
+test_manifest_decorators_and_exported_contracts_match (tests.unit.test_cut_plasmid.CutPlasmidTests.test_manifest_decorators_and_exported_contracts_match) ... ok
+test_missing_genotype_is_unknown_and_has_no_plate_recommendation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_missing_genotype_is_unknown_and_has_no_plate_recommendation) ... ok
+test_reverse_insert_is_not_rescued_by_forward_annotation (tests.unit.test_cut_plasmid.CutPlasmidTests.test_reverse_insert_is_not_rescued_by_forward_annotation) ... ok
+test_second_binding_site_blocks_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_second_binding_site_blocks_design_with_positive_control) ... ok
+test_source_labelled_mapping_requires_complete_declared_genotype (tests.unit.test_cut_plasmid.CutPlasmidTests.test_source_labelled_mapping_requires_complete_declared_genotype) ... ok
+test_spacer_marked_as_cds_is_identified_and_retired (tests.unit.test_cut_plasmid.CutPlasmidTests.test_spacer_marked_as_cds_is_identified_and_retired) ... ok
+test_tm_window_rejects_impossible_design_with_positive_control (tests.unit.test_cut_plasmid.CutPlasmidTests.test_tm_window_rejects_impossible_design_with_positive_control) ... ok
+test_wrapping_origin_replacement_and_negative_transcription (tests.unit.test_cut_plasmid.CutPlasmidTests.test_wrapping_origin_replacement_and_negative_transcription) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 85.573s
+
+OK

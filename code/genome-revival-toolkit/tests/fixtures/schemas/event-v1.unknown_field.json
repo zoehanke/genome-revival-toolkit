@@ -1,0 +1,44 @@
+{
+  "schema_id": "event-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "seq": 1,
+    "time": "2026-01-01T00:00:00.000Z",
+    "run_id": "aaaaaaaaaaaaaaaa",
+    "type": "run.created",
+    "actor": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "payload": {
+      "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+      "schema_versions": {
+        "event": 1
+      },
+      "created_by": {
+        "kind": "unknown",
+        "name": "synthetic",
+        "version": "0.0.0"
+      },
+      "environment": {
+        "python": "3.12",
+        "platform": "synthetic",
+        "packages": {},
+        "external_tools": [],
+        "config_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "catalog_id": "1111111111111111111111111111111111111111111111111111111111111111",
+      "catalog_ref": "store/catalog.json",
+      "kits": []
+    },
+    "refs": [],
+    "prev": "0000000000000000000000000000000000000000000000000000000000000000",
+    "hash": "2222222222222222222222222222222222222222222222222222222222222222",
+    "undeclared_field": true
+  }
+}

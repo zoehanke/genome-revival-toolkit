@@ -1,0 +1,9 @@
+{
+  "check": "check.goal.output_present",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove the bound output file."
+  }
+}

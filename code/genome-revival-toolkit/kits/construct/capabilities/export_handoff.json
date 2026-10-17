@@ -1,0 +1,377 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.export_handoff",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Write identity-handoff.json with actual reference-file hashes and explicit primer sequences.",
+  "effects": [
+    "reads_files",
+    "writes_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "original_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "original file"
+    },
+    {
+      "name": "edited_file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "edited file"
+    },
+    {
+      "name": "assay",
+      "type": "document",
+      "required": true,
+      "constraints": {},
+      "description": "assay",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "junction-assay-v1"
+          },
+          "original_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "edited_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "donor_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "primers": {
+            "type": "object",
+            "properties": {
+              "schema": {
+                "const": "primer-set-v1"
+              },
+              "primers": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "sequence": {
+                      "type": "string",
+                      "pattern": "^[ACGT]+$"
+                    },
+                    "core_length": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "purpose": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "sequence",
+                    "core_length",
+                    "purpose"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 2
+              },
+              "pairs": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "forward": {
+                      "type": "string"
+                    },
+                    "reverse": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "forward",
+                    "reverse"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "schema",
+              "primers",
+              "pairs"
+            ],
+            "additionalProperties": false
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "reference_id": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "reference_id",
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "backgrounds": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "enum": [
+                    "original",
+                    "edited",
+                    "donor"
+                  ]
+                },
+                "predictions": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "pair_id": {
+                        "type": "string"
+                      },
+                      "product_count": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "product_bp": {
+                        "type": [
+                          "integer",
+                          "null"
+                        ],
+                        "minimum": 1
+                      },
+                      "forward_sites": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "reverse_sites": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    },
+                    "required": [
+                      "pair_id",
+                      "product_count",
+                      "product_bp",
+                      "forward_sites",
+                      "reverse_sites"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "id",
+                "predictions"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 3
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "minItems": 0
+          }
+        },
+        "required": [
+          "schema",
+          "original_id",
+          "edited_id",
+          "donor_id",
+          "primers",
+          "regions",
+          "backgrounds",
+          "warnings"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "handoff",
+      "type": "artifact",
+      "output_role": "analysis"
+    },
+    {
+      "name": "reference_original",
+      "type": "artifact",
+      "output_role": "analysis"
+    },
+    {
+      "name": "reference_edited",
+      "type": "artifact",
+      "output_role": "analysis"
+    },
+    {
+      "name": "handoff_data",
+      "type": "document",
+      "output_role": "analysis",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "identity-handoff-v1"
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "role": {
+                  "enum": [
+                    "original",
+                    "edited"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "sha256",
+                "role"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 2
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "reference_id": {
+                  "type": "string"
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "reference_id",
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          },
+          "primers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "sequence": {
+                  "type": "string",
+                  "pattern": "^[ACGT]+$"
+                }
+              },
+              "required": [
+                "id",
+                "sequence"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 2
+          }
+        },
+        "required": [
+          "schema",
+          "references",
+          "regions",
+          "primers"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival"
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11",
+      "MIGRATION-LOG.md: S5a"
+    ],
+    "implemented_in": "construct.capabilities.handoff:export_handoff"
+  },
+  "owner": "kit:construct",
+  "granularity": "atomic"
+}

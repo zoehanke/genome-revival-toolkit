@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "run",
+      "create",
+      "<WORK>\\manifest-corrupt-run"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.891
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\cases-01\\cut-plasmid\\portable\\f801a64dc1c98d59ef29f3ccf608423911473a1e57e948121fb77fc6af78d6c3"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.813
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<WORK>\\cases-01\\cut-plasmid\\portable\\f801a64dc1c98d59ef29f3ccf608423911473a1e57e948121fb77fc6af78d6c3"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 37.171
+  }
+]

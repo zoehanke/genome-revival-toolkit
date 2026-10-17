@@ -1,0 +1,48 @@
+{
+  "schema_id": "pipeline.revised-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required operations."
+  },
+  "data": {
+    "pipeline_digest": "2222222222222222222222222222222222222222222222222222222222222222",
+    "version": 2,
+    "previous_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "document": {
+      "schema": "pipeline-v1",
+      "version": 1,
+      "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "steps": [
+        {
+          "step_id": "s1",
+          "use": "demo.length@0.0.0",
+          "inputs": {
+            "sequence": {
+              "literal": "ACGT"
+            }
+          },
+          "params": {},
+          "why": "Count four constructed symbols."
+        }
+      ],
+      "outputs": [
+        {
+          "name": "length",
+          "from": {
+            "step": "s1",
+            "port": "length"
+          },
+          "target": "t1"
+        }
+      ],
+      "library_ref": null
+    },
+    "trigger": {
+      "kind": "user_request",
+      "event_refs": [],
+      "quote": "Use a new synthetic input."
+    },
+    "reason_event": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}

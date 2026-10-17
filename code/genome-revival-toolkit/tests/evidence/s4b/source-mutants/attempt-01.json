@@ -1,0 +1,7 @@
+{
+  "command": ["<SOURCE>/.venv/Scripts/python.exe", "-X", "utf8", "-B", "tests/evidence/s4b/run-source-mutants.py", "--source", ".", "--work", "<PRIVATE>/mutants-01"],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "attempt-01.stderr.txt",
+  "failure": "The mutation harness matched both release= and installed_release= substrings. No mutant ran. Fix: include indentation to identify the complete statement. This is not a runtime-test failure or a detected mutant."
+}

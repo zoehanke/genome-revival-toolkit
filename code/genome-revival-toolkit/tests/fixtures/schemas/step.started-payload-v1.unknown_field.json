@@ -1,0 +1,29 @@
+{
+  "schema_id": "step.started-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "step_id": "s1",
+    "capability": {
+      "id": "demo.length",
+      "version": "0.0.0",
+      "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "code_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "inputs": {
+      "sequence": {
+        "id": "1111111111111111111111111111111111111111111111111111111111111111",
+        "origin": {
+          "kind": "literal",
+          "ref": null
+        }
+      }
+    },
+    "params": {},
+    "params_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "undeclared_field": true
+  }
+}

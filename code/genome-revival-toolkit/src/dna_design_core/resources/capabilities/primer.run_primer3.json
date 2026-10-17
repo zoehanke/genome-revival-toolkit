@@ -1,0 +1,92 @@
+{
+  "schema": "capability-v1",
+  "id": "primer.run_primer3",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Run local Primer3 on complete supplied oligos, recording executable version and hashes.",
+  "effects": [
+    "reads_files",
+    "writes_files",
+    "external_process"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "forward",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "forward"
+    },
+    {
+      "name": "reverse",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "reverse"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "sodium_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "magnesium_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "dntp_mM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      },
+      "total_oligo_nM": {
+        "type": "string",
+        "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    },
+    {
+      "name": "request",
+      "type": "artifact",
+      "output_role": null
+    },
+    {
+      "name": "response",
+      "type": "artifact",
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.primer.backend:run_primer3"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

@@ -1,0 +1,12 @@
+{
+  "schema_id": "journal.recovered-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "discarded_bytes": 12,
+    "reason": "Incomplete last line."
+  }
+}

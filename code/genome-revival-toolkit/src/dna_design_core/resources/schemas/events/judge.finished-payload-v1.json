@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:judge.finished-payload-v1",
+  "title": "judge.finished-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E: judge.finished; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "candidate_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "obligation_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "verdict_ids": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "unsatisfied": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "check": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+          },
+          "outcome": {
+            "enum": [
+              "PASS",
+              "FAIL",
+              "UNKNOWN",
+              "NOT_APPLICABLE"
+            ]
+          },
+          "verdict_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "recovery": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "check",
+          "outcome",
+          "verdict_id",
+          "recovery"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "candidate_digest",
+    "obligation_ids",
+    "verdict_ids",
+    "unsatisfied"
+  ],
+  "additionalProperties": false
+}

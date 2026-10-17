@@ -1,0 +1,15 @@
+{
+  "schema_id": "run.abandoned-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Actor kind is from the existing vocabulary."
+  },
+  "data": {
+    "reason": "Synthetic stop.",
+    "by": {
+      "kind": "robot",
+      "name": "synthetic"
+    }
+  }
+}

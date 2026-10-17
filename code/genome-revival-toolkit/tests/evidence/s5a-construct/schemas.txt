@@ -1,0 +1,7 @@
+{
+  "counts": {
+    "schemas": 35,
+    "fixtures": 237
+  },
+  "findings": []
+}

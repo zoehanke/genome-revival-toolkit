@@ -1,0 +1,21 @@
+{
+  "schema_id": "step.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "step_id": "s1",
+    "outputs": {
+      "materials": {},
+      "documents": {},
+      "artifacts": []
+    },
+    "values": {},
+    "unverified": [],
+    "verdict_ids": [],
+    "duration_ms": 1,
+    "undeclared_field": true
+  }
+}

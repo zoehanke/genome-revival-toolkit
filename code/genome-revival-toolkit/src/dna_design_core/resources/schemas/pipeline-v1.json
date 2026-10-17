@@ -1,0 +1,373 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:pipeline-v1",
+  "title": "pipeline-v1",
+  "x-spec-ref": "D4; A3",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "pipeline-v1"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "goal_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]{0,31}$"
+          },
+          "use": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_.]*(?:@[0-9]+\\.[0-9]+\\.[0-9]+(?:[-+][0-9A-Za-z.-]+)?)?$"
+          },
+          "inputs": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "literal": {
+                        "$ref": "#/$defs/value"
+                      }
+                    },
+                    "required": [
+                      "literal"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "source"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "step": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9_]{0,31}$"
+                      },
+                      "port": {
+                        "type": "string"
+                      },
+                      "index": {
+                        "type": "integer",
+                        "minimum": 0
+                      }
+                    },
+                    "required": [
+                      "step",
+                      "port"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "artifact": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "artifact"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "params": {
+            "type": "object",
+            "patternProperties": {
+              "^.*$": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "additionalProperties": false
+          },
+          "why": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400
+          },
+          "expects": {
+            "type": "object",
+            "properties": {
+              "on": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "literal": {
+                        "$ref": "#/$defs/value"
+                      },
+                      "pointer": {
+                        "type": "string",
+                        "pattern": "^(|(/([^~/]|~[01])*)*)$"
+                      }
+                    },
+                    "required": [
+                      "literal"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "pointer": {
+                        "type": "string",
+                        "pattern": "^(|(/([^~/]|~[01])*)*)$"
+                      }
+                    },
+                    "required": [
+                      "source"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "step": {
+                        "type": "string",
+                        "pattern": "^[a-z][a-z0-9_]{0,31}$"
+                      },
+                      "port": {
+                        "type": "string"
+                      },
+                      "index": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "pointer": {
+                        "type": "string",
+                        "pattern": "^(|(/([^~/]|~[01])*)*)$"
+                      }
+                    },
+                    "required": [
+                      "step",
+                      "port"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "artifact": {
+                        "type": "string"
+                      },
+                      "pointer": {
+                        "type": "string",
+                        "pattern": "^(|(/([^~/]|~[01])*)*)$"
+                      }
+                    },
+                    "required": [
+                      "artifact"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              },
+              "op": {
+                "enum": [
+                  "equals",
+                  "gte",
+                  "lte",
+                  "between",
+                  "contains",
+                  "length_equals"
+                ]
+              },
+              "value": {
+                "$ref": "#/$defs/value"
+              }
+            },
+            "required": [
+              "on",
+              "op",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "step_id",
+          "use",
+          "inputs",
+          "params",
+          "why"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "from": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "literal": {
+                    "$ref": "#/$defs/value"
+                  }
+                },
+                "required": [
+                  "literal"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "source": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "source"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "step": {
+                    "type": "string",
+                    "pattern": "^[a-z][a-z0-9_]{0,31}$"
+                  },
+                  "port": {
+                    "type": "string"
+                  },
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "step",
+                  "port"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "artifact": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "artifact"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "target": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "from",
+          "target"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "library_ref": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$"
+            },
+            "template_digest": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "name",
+            "version",
+            "template_digest"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "schema",
+    "version",
+    "goal_digest",
+    "steps",
+    "outputs"
+  ],
+  "additionalProperties": false
+}

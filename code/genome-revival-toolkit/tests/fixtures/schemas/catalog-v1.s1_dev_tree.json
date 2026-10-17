@@ -1,0 +1,104 @@
+{
+  "schema_id": "catalog-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "D16/A14 e621b5c permits exactly dev-tree or 64 lowercase hex characters."
+  },
+  "data": {
+    "schema": "catalog-v1",
+    "release_id": "dev-tree",
+    "capabilities": [
+      {
+        "declaration": {
+          "schema": "capability-v1",
+          "id": "demo.length",
+          "version": "0.0.0",
+          "role": "ACTION",
+          "summary": "Report length.",
+          "effects": [
+            "pure"
+          ],
+          "deterministic": true,
+          "requires_runtime": [],
+          "inputs": [
+            {
+              "name": "sequence",
+              "type": "value",
+              "required": true,
+              "constraints": {},
+              "description": "Synthetic input."
+            }
+          ],
+          "params": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "outputs": [
+            {
+              "name": "length",
+              "type": "value",
+              "output_role": "analysis"
+            }
+          ],
+          "step_checks": [],
+          "final_checks": [],
+          "does_not_establish": [
+            "Experimental result."
+          ],
+          "source": {
+            "algorithm_refs": [],
+            "implemented_in": "capabilities/length.py"
+          },
+          "owner": "kit:demo",
+          "authorship": {
+            "kind": "unknown",
+            "tool_or_model": "synthetic fixture",
+            "date": "2026-01-01"
+          },
+          "granularity": "atomic"
+        },
+        "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+        "code_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+        "owner": "kit:demo"
+      }
+    ],
+    "knowledge": [],
+    "kits": [],
+    "profiles": {
+      "always": [
+        "check.readback",
+        "check.manifest",
+        "check.journal_chain",
+        "check.store_hashes",
+        "check.inputs_unchanged",
+        "check.goal.nonempty",
+        "check.goal.target_role_met"
+      ],
+      "on_material_output": [
+        "check.replay",
+        "check.lineage",
+        "check.annotation_integrity",
+        "check.cds_validity",
+        "check.biological_sanity"
+      ],
+      "roles": {
+        "construct": [
+          "check.reaction_chain",
+          "check.primer_quality",
+          "check.order_table"
+        ],
+        "primer_set": [
+          "check.primer_quality",
+          "check.order_table",
+          "check.reaction_chain"
+        ],
+        "component": [],
+        "analysis": []
+      }
+    },
+    "profiles_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "vocab_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}

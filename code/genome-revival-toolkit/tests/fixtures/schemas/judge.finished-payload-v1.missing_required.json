@@ -1,0 +1,13 @@
+{
+  "schema_id": "judge.finished-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required unsatisfied."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "obligation_ids": [],
+    "verdict_ids": []
+  }
+}

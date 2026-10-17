@@ -1,0 +1,31 @@
+{
+  "schema_id": "call.recorded-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "E requires output or failure, not both."
+  },
+  "data": {
+    "parent": "s1",
+    "capability": {
+      "id": "demo.length",
+      "version": "0.0.0",
+      "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "code_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "input_ids": {},
+    "outputs": {},
+    "duration_ms": 1,
+    "failure": {
+      "code": "PLAN_SCHEMA_INVALID",
+      "category": "INVALID_INPUT",
+      "message": "Constructed failure.",
+      "details": {},
+      "recovery": "Correct request.",
+      "retryable": false,
+      "cause_chain": []
+    },
+    "params": {},
+    "params_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  }
+}

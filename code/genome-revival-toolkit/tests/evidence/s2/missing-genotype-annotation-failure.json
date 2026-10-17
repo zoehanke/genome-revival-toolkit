@@ -1,0 +1,9 @@
+{
+  "case": "Missing genotype and a spacer incorrectly labelled CDS",
+  "state": "COMPLETED",
+  "expected_selection_status": "UNKNOWN",
+  "actual_selection_status": "CONFLICT",
+  "annotation_conflicts": [
+    0
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "mutation": "== changed to != in the count/size discrimination comparison",
+  "caught": true,
+  "runs": [
+    {
+      "variant": "baseline",
+      "exit_code": 0,
+      "output": "baseline.txt"
+    },
+    {
+      "variant": "mutant",
+      "exit_code": 1,
+      "output": "mutant.txt"
+    }
+  ],
+  "oracle_kind": "construction"
+}

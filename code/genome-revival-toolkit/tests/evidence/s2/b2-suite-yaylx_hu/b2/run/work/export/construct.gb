@@ -1,0 +1,36 @@
+LOCUS       material                 360 bp    DNA     circular UNK 01-JAN-1980
+DEFINITION  material.
+ACCESSION   material
+VERSION     material
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+COMMENT     GRT-MATERIAL:
+            eyJtYXRlcmlhbCI6eyJlbmRzIjpudWxsLCJmZWF0dXJlcyI6W3siZW5kIjox
+            NTAsImxhYmVsIjoiZ1JOQSBzcGFjZXIiLCJvcGVyYXRvciI6bnVsbCwicGFy
+            dHMiOlt7ImVuZCI6MTUwLCJzdGFydCI6MTMwLCJzdHJhbmQiOjF9XSwicXVh
+            bGlmaWVycyI6eyJsYWJlbCI6WyJnUk5BIHNwYWNlciJdfSwic3RhcnQiOjEz
+            MCwidHlwZSI6Im1pc2NfUk5BIn1dLCJzZXF1ZW5jZSI6IkdUQ0NUQUFBQVRH
+            Q0FUVENUQUdBVFRHVFRHR0dBR0NBR0dDR1RDR0NUQUNDQUNHVENBR0NUVEdD
+            Q0NUR1RUQUdBR1RHR0NHQ0dUQUdHQ1RUQUdDQ1RUQVRDVEdUQ0NHVEdDQ0dH
+            VFRDVENUR0dBQUFUQ0FUQVRUVENDR0FBQUFBQUNHQUNBVENHVEFDR0FUQ0dU
+            QUNBVEdUVEdDVEdUR0FUQ0FDVFRHQUdUQUNHQVRDR1RHQ0FBVENDVEdBR1RD
+            Q0NBQUNDQ1RBQUdUQUdDQ0dHR1RBVEdUVEdDR0dDQ0FUVFRBQUdUR1RDQUdD
+            VENUQUFHR1RBQ0FUQ1RBQ1RHR0dUQUFBQ1RBVFRBQUdBVENUQ1RDQ0NDVEdB
+            R0NHVEdHR0dHVEFHVEdHVFRUQ0NDVEdBQUFDQ0FBQ0FHVENHQ0dBVEFBR0ND
+            VEdUVEFBR0dUR0FDVEFHVEdHQVRBR0FBQ1RBQ1RUQUFHVCIsInN0cmFuZGVk
+            bmVzcyI6ImRvdWJsZSIsInRvcG9sb2d5IjoiY2lyY3VsYXIifSwicHJvamVj
+            dGlvbiI6IjI3ODE1ZTZkZTA5OTA5ODIwNDUyNDdhM2E5MzJkZGRkMGNmMDVm
+            ZTg0M2Q1ODliZmQwMzk1YjVhZGM5YWM5ZDUifQ==
+FEATURES             Location/Qualifiers
+     misc_RNA        131..150
+                     /label="gRNA spacer"
+ORIGIN
+        1 gtcctaaaat gcattctaga ttgttgggag caggcgtcgc taccacgtca gcttgccctg
+       61 ttagagtggc gcgtaggctt agccttatct gtccgtgccg gttctctgga aatcatattt
+      121 ccgaaaaaac gacatcgtac gatcgtacat gttgctgtga tcacttgagt acgatcgtgc
+      181 aatcctgagt cccaacccta agtagccggg tatgttgcgg ccatttaagt gtcagctcta
+      241 aggtacatct actgggtaaa ctattaagat ctctcccctg agcgtggggg tagtggtttc
+      301 cctgaaacca acagtcgcga taagcctgtt aaggtgacta gtggatagaa ctacttaagt
+//

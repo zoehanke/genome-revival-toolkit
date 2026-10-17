@@ -1,0 +1,21 @@
+{
+  "check": "check.goal.claim_reported",
+  "variant": "fail",
+  "expected": "FAIL",
+  "params": {
+    "claim": "functional_revival"
+  },
+  "kind": "artifact",
+  "value": {
+    "claims": [
+      {
+        "claim": "functional_revival"
+      }
+    ],
+    "notes": "A status named only in free text is insufficient."
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "A named structured claim with INSUFFICIENT is reported; the negative deliberately omits its status. No biological success is implied."
+  }
+}

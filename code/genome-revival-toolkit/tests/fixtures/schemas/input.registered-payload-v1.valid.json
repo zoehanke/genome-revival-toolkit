@@ -1,0 +1,20 @@
+{
+  "schema_id": "input.registered-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "source_id": "input1",
+    "file_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "size": 4,
+    "run_path": "inputs/synthetic.txt",
+    "input_origin": "user_file",
+    "declared_by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    }
+  }
+}

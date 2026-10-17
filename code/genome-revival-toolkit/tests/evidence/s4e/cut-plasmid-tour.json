@@ -1,0 +1,19 @@
+{
+  "acceptance_passed": true,
+  "initial_step_failed": true,
+  "revision_before_replacement": true,
+  "original_goal_preserved": true,
+  "independent_sequence_and_pcr": "PASS",
+  "genbank_readback_equal": true,
+  "selection_status": "UNKNOWN",
+  "seal_created": true,
+  "portable_verify_performed": true,
+  "unsatisfied": [],
+  "connection_attempts": 0,
+  "commands": 13,
+  "run": "<SOURCE>\\dist\\s4e-development-02\\tours\\cut-plasmid\\original-run-retained",
+  "candidate": "<SOURCE>\\dist\\s4e-development-02\\tours\\cut-plasmid\\original-run-retained\\candidate\\1",
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run",
+  "laboratory": "PLANNED / NOT_PERFORMED"
+}

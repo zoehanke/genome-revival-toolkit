@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "unittest",
+      "tests.integration.test_release_identity.ReleaseIdentityTests.test_source_build_metadata_is_not_an_installed_release",
+      "-v"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 0.891
+  }
+]

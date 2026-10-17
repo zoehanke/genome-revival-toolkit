@@ -1,0 +1,18 @@
+[
+  {
+    "mutation": "rejects_development_seal",
+    "from": "if manifest['release_id']!='dev-tree' and installed_release!='dev-tree' and manifest['release_id']!=installed_release:",
+    "to": "if installed_release!='dev-tree' and manifest['release_id']!=installed_release:",
+    "test": "test_development_seal_verifies_in_an_installed_release",
+    "exit_code": 1,
+    "mutation_detected": true
+  },
+  {
+    "mutation": "ignores_release_mismatch",
+    "from": "if manifest['release_id']!='dev-tree' and installed_release!='dev-tree' and manifest['release_id']!=installed_release:",
+    "to": "if False:",
+    "test": "test_installed_seal_verifies_portably_but_different_release_is_rejected",
+    "exit_code": 1,
+    "mutation_detected": true
+  }
+]

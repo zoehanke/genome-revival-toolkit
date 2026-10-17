@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 124, in <module>
+    print(json.dumps(run(parser.parse_args().out), indent=2))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 90, in run
+    sealed = command(folder, "seal", "--run", directory)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<SOURCE>\tests\e2e\run_genome_identity.py", line 47, in command
+    assert completed.returncode == expected, receipts[-1]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'arguments': ['seal', '--run', '<TEMP>\\s5b-public-cli-20261017-020036\\different_sizes\\run'], 'exit_code': 10, 'receipt': {'run_id': 'd570d05dc496ae34', 'state': 'COMPLETED', 'event_range': {'from_seq': 31, 'to_seq': 46}, 'result': {'sealed': False, 'candidate_digest': 'd946e049fe9be599a4662fd2b1c26ade453a8f912dcfe66894ad6d7cc180d59f', 'unsatisfied': [{'check': 'check.annotation_integrity', 'outcome': 'UNKNOWN', 'verdict_id': 'b16e2dab85968e171afa0ef0c02f2d75236c5dccf8b4ac20c5403516e4989459', 'recovery': 'Inspect the verdict evidence; correct the input or add and supersede a step, then judge again.'}, {'check': 'check.cds_validity', 'outcome': 'UNKNOWN', 'verdict_id': 'f8cf39f10195d07fb3208dd465d27a6b12f29cef9f61233025b57278e53e82ea', 'recovery': 'Inspect the verdict evidence; correct the input or add and supersede a step, then judge again.'}, {'check': 'check.biological_sanity', 'outcome': 'UNKNOWN', 'verdict_id': '6e5174839517e4a9bf5c88c5beb1b5c858259d14ccb4a6f542760aab9ee46260', 'recovery': 'Inspect the verdict evidence; correct the input or add and supersede a step, then judge again.'}], 'present_files': []}, 'problems': [], 'next': [], 'labels': ['Unsealed', 'reviewed 0 / stale 0 / none 0']}}

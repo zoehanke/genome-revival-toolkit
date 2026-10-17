@@ -1,0 +1,6 @@
+{
+  "outcome": "UNKNOWN",
+  "reason": "Primer3 executable missing",
+  "recovery": "Configure GRT_PRIMER3_CORE with a local primer3_core executable; do not install automatically.",
+  "cases": []
+}

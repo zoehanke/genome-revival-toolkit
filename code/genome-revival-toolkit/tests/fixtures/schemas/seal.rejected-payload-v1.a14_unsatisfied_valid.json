@@ -1,0 +1,19 @@
+{
+  "schema_id": "seal.rejected-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Constructed from the named A14 shape."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "unsatisfied": [
+      {
+        "check": "check.readback",
+        "outcome": "UNKNOWN",
+        "verdict_id": "1111111111111111111111111111111111111111111111111111111111111111",
+        "recovery": "Provide local reader."
+      }
+    ]
+  }
+}

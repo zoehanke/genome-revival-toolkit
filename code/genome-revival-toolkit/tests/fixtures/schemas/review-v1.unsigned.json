@@ -1,0 +1,20 @@
+{
+  "schema_id": "review-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "RV-3 allows missing reviewer/date; runtime classifies draft."
+  },
+  "data": {
+    "schema": "review-v1",
+    "object": {
+      "kind": "rule",
+      "id": "demo.boundary",
+      "path": "knowledge/boundary.json",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "scope": "",
+    "decision": "changes_requested",
+    "notes": "Unsigned schema fixture; not a review record."
+  }
+}

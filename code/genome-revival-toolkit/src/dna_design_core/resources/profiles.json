@@ -1,0 +1,24 @@
+{
+  "always": [
+    "check.readback",
+    "check.manifest",
+    "check.journal_chain",
+    "check.store_hashes",
+    "check.inputs_unchanged",
+    "check.goal.nonempty",
+    "check.goal.target_role_met"
+  ],
+  "on_material_output": [
+    "check.replay",
+    "check.lineage",
+    "check.annotation_integrity",
+    "check.cds_validity",
+    "check.biological_sanity"
+  ],
+  "roles": {
+    "construct": ["check.reaction_chain", "check.primer_quality", "check.order_table"],
+    "primer_set": ["check.primer_quality", "check.order_table", "check.reaction_chain"],
+    "component": [],
+    "analysis": []
+  }
+}

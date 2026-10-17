@@ -1,0 +1,15 @@
+{
+  "schema_id": "seal.created-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "seal_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "manifest_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "journal_head": "2222222222222222222222222222222222222222222222222222222222222222",
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "labels": {}
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schema_id": "profiles-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required roles."
+  },
+  "data": {
+    "always": [
+      "check.readback",
+      "check.manifest",
+      "check.journal_chain",
+      "check.store_hashes",
+      "check.inputs_unchanged",
+      "check.goal.nonempty",
+      "check.goal.target_role_met"
+    ],
+    "on_material_output": [
+      "check.replay",
+      "check.lineage",
+      "check.annotation_integrity",
+      "check.cds_validity",
+      "check.biological_sanity"
+    ]
+  }
+}

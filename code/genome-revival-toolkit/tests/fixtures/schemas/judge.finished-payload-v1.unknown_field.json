@@ -1,0 +1,15 @@
+{
+  "schema_id": "judge.finished-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "obligation_ids": [],
+    "verdict_ids": [],
+    "unsatisfied": [],
+    "undeclared_field": true
+  }
+}

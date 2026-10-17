@@ -1,0 +1,32 @@
+{
+  "schema": "identity-expected-results-v1",
+  "assay_id": "assay1",
+  "backgrounds": [
+    {
+      "id": "original",
+      "reference_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_bp": 1000,
+        "status": "DISTINGUISHABLE",
+        "product_count": 1
+      }
+    },
+    {
+      "id": "edited",
+      "reference_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "primer_pair": [
+        "forward",
+        "reverse"
+      ],
+      "expected": {
+        "product_bp": 1300,
+        "status": "DISTINGUISHABLE",
+        "product_count": 1
+      }
+    }
+  ]
+}

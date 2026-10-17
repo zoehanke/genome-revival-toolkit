@@ -1,0 +1,43 @@
+{
+  "schema_id": "manifest-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "schema": "manifest-v1",
+    "run_id": "aaaaaaaaaaaaaaaa",
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "pipeline_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "revisions": [],
+    "journal_head": "1111111111111111111111111111111111111111111111111111111111111111",
+    "catalog_ids": [
+      "1111111111111111111111111111111111111111111111111111111111111111"
+    ],
+    "environment_ids": [
+      "1111111111111111111111111111111111111111111111111111111111111111"
+    ],
+    "files": [
+      {
+        "path": "result.json",
+        "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+        "role": "analysis",
+        "labels": []
+      }
+    ],
+    "verdicts": [],
+    "profile": {
+      "profiles_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "obligation_ids": []
+    },
+    "not_verified": [
+      "Wet experiments."
+    ],
+    "labels": {},
+    "review_states": {},
+    "kit_receipts": [],
+    "undeclared_field": true
+  }
+}

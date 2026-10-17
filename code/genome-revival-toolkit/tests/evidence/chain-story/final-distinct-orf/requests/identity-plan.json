@@ -1,0 +1,143 @@
+{
+  "schema": "pipeline-v1",
+  "version": 1,
+  "goal_digest": "ac0f944fc2357053635068d0fd7a346ec67e0405b43f5b4d251efd8a1db44f6e",
+  "steps": [
+    {
+      "step_id": "read_original",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "original"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic original FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_edited",
+      "use": "format.read_genbank",
+      "inputs": {
+        "file": {
+          "source": "edited"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic edited FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_forward",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "forward"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "single"
+      },
+      "why": "Read the registered synthetic forward FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_reverse",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "reverse"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "single"
+      },
+      "why": "Read the registered synthetic reverse FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_handoff",
+      "use": "identity.read_handoff",
+      "inputs": {
+        "file": {
+          "source": "handoff"
+        }
+      },
+      "params": {},
+      "why": "Read the Construct handoff without guessing a legacy format."
+    },
+    {
+      "step_id": "regions",
+      "use": "identity.compare_regions",
+      "inputs": {
+        "reference_original": {
+          "step": "read_original",
+          "port": "material"
+        },
+        "reference_edited": {
+          "step": "read_edited",
+          "port": "material"
+        }
+      },
+      "params": {},
+      "why": "Compare the two complete supplied reference intervals."
+    },
+    {
+      "step_id": "assay",
+      "use": "identity.analyze_assay",
+      "inputs": {
+        "reference_original": {
+          "step": "read_original",
+          "port": "material"
+        },
+        "reference_edited": {
+          "step": "read_edited",
+          "port": "material"
+        },
+        "forward": {
+          "step": "read_forward",
+          "port": "material"
+        },
+        "reverse": {
+          "step": "read_reverse",
+          "port": "material"
+        },
+        "reference_original_file": {
+          "source": "original"
+        },
+        "reference_edited_file": {
+          "source": "edited"
+        },
+        "handoff": {
+          "step": "read_handoff",
+          "port": "handoff"
+        }
+      },
+      "params": {
+        "assay_id": "flanking",
+        "forward_id": "left_forward",
+        "reverse_id": "right_reverse"
+      },
+      "why": "Bind reference file bytes to materials and predict exact products in both backgrounds."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "identity-expected-results",
+      "from": {
+        "step": "assay",
+        "port": "expected_results"
+      },
+      "target": "table"
+    }
+  ],
+  "library_ref": {
+    "name": "genome-identity.from_handoff",
+    "version": "0.0.0",
+    "template_digest": "6096cc489bf48659e14c05ef0f6a92f99180f0c17f143076889d9480811c1d58"
+  }
+}

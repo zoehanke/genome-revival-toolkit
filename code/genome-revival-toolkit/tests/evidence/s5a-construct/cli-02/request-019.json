@@ -1,0 +1,60 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Replace the selected gene with the supplied cassette and retain both 50 bp homology arms.",
+  "sources": [
+    {
+      "source_id": "input_reference",
+      "from": "tests\\evidence\\s5a-construct\\cli-02\\diagnostic\\reference.fasta",
+      "input_origin": "user_file",
+      "as": "artifact",
+      "declared": {}
+    },
+    {
+      "source_id": "input_cargo",
+      "from": "tests\\evidence\\s5a-construct\\cli-02\\diagnostic\\cargo.fasta",
+      "input_origin": "user_file",
+      "as": "artifact",
+      "declared": {}
+    },
+    {
+      "source_id": "input_donor_template",
+      "from": "tests\\evidence\\s5a-construct\\cli-02\\diagnostic\\donor-template.fasta",
+      "input_origin": "user_file",
+      "as": "artifact",
+      "declared": {}
+    }
+  ],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "donor",
+      "role": "construct",
+      "required": true
+    },
+    {
+      "id": "primers",
+      "role": "primer_set",
+      "required": true
+    },
+    {
+      "id": "assay",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "exact",
+      "check": "check.goal.exact_sequence@0.0.0",
+      "params": {
+        "sequence": "GTTACTAGTTGCAATCGATCACTCATAACTTAACGAAACAAATTGCGTGTCTTATGGACAAATTACCGCGGACATGAGGGCCGTTTCCAACGAGAAACCACCGAACGTCTGTTTCTTTTTTATCGCCTACTTCTCACACCGACCGAATTGCTGATTTTTTGTCTCAGCTCCTGCTTTCTGGTGATGTTTA"
+      },
+      "target": "donor",
+      "source_quote": "",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

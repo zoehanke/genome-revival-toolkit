@@ -1,0 +1,3582 @@
+[
+  {
+    "arguments": [
+      "describe",
+      "checks"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "description": [
+          {
+            "schema": "capability-v1",
+            "id": "check.assembly_product",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Recompute recorded digest, ligation, overlap or inverse-PCR sequence products.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory success, biological function or reaction efficiency.",
+              "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/MIGRATION-MAP.md: batches 1-4",
+                "MIGRATION-LOG.md"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_assembly_product"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "preparation_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/biology/checks/check.assembly_product.pass.json",
+              "fail": "tests/fixtures/biology/checks/check.assembly_product.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.dna_value_valid",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Check DNA-valued document outputs against the IUPAC DNA alphabet.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:dna_value_valid"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.dna_value_valid.pass.json",
+              "fail": "tests/fixtures/checks/check.dna_value_valid.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.format_roundtrip",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Read actual exported DNA files and compare complete kernel material identities.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory success, biological function or reaction efficiency.",
+              "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/MIGRATION-MAP.md: batches 1-4",
+                "MIGRATION-LOG.md"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_format_roundtrip"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": false,
+            "fixtures": {
+              "pass": "tests/fixtures/biology/checks/check.format_roundtrip.pass.json",
+              "fail": "tests/fixtures/biology/checks/check.format_roundtrip.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.claim_reported",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Require a unique explicitly named claim with a nonempty status in target JSON reports.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "claim": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "\\S"
+                },
+                "pointer": {
+                  "type": "string",
+                  "pattern": "^(?:/(?:[^~/]|~[01])*)*$"
+                }
+              },
+              "required": [
+                "claim"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:claim_reported"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/claim_reported.pass.json",
+              "fail": "tests/fixtures/goal_checks/claim_reported.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.components_absent",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Require every explicit component sequence to be absent from every target material.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "sequence": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[ACGTacgt]+$"
+                      },
+                      "strand": {
+                        "enum": [
+                          1,
+                          -1
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "sequence"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "components"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:components_absent"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/components_absent.pass.json",
+              "fail": "tests/fixtures/goal_checks/components_absent.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.components_present",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Require every explicit component sequence in every target material.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "\\S"
+                      },
+                      "sequence": {
+                        "type": "string",
+                        "minLength": 1,
+                        "pattern": "^[ACGTacgt]+$"
+                      },
+                      "strand": {
+                        "enum": [
+                          1,
+                          -1
+                        ]
+                      }
+                    },
+                    "required": [
+                      "name",
+                      "sequence"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "components"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:components_present"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/components_present.pass.json",
+              "fail": "tests/fixtures/goal_checks/components_present.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.exact_sequence",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare complete target sequences literally at their declared origin and orientation.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "sequence": {
+                  "type": "string",
+                  "minLength": 1,
+                  "pattern": "^[ACGTRYSWKMBDHVNacgtryswkmbdhvn]+$"
+                }
+              },
+              "required": [
+                "sequence"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:exact_sequence"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/exact_sequence.pass.json",
+              "fail": "tests/fixtures/goal_checks/exact_sequence.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.nonempty",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Require at least one active, computable goal constraint.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:goal_nonempty"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.goal.nonempty.pass.json",
+              "fail": "tests/fixtures/checks/check.goal.nonempty.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.output_present",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Check that the constrained target has a retained output.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "fields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:output_present"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.goal.output_present.pass.json",
+              "fail": "tests/fixtures/checks/check.goal.output_present.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.regions_unchanged",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare explicit nonwrapping reference/target intervals in retained materials.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "reference_material_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "regions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source_start": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "source_end": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "target_start": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "target_end": {
+                        "type": "integer",
+                        "minimum": 0
+                      },
+                      "strand": {
+                        "enum": [
+                          1,
+                          -1
+                        ]
+                      }
+                    },
+                    "required": [
+                      "source_start",
+                      "source_end",
+                      "target_start",
+                      "target_end"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "reference_material_id",
+                "regions"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:regions_unchanged"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/regions_unchanged.pass.json",
+              "fail": "tests/fixtures/goal_checks/regions_unchanged.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.target_role_met",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare required targets with producer-declared output roles.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:target_role_met"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.goal.target_role_met.pass.json",
+              "fail": "tests/fixtures/checks/check.goal.target_role_met.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.goal.topology",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare every target material's known topology with the requested topology.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "topology": {
+                  "enum": [
+                    "linear",
+                    "circular"
+                  ]
+                }
+              },
+              "required": [
+                "topology"
+              ],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Experimental performance, functional identity or truth of a reported claim.",
+              "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "SPEC D2 GOL-4/GOL-6",
+                "SPEC D9 retained content identities"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.goal:topology"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "user_goal",
+            "evaluates_constraint": true,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/goal_checks/topology.pass.json",
+              "fail": "tests/fixtures/goal_checks/topology.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.inputs_unchanged",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare input copies with the registered file hashes.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:inputs_unchanged"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.inputs_unchanged.pass.json",
+              "fail": "tests/fixtures/checks/check.inputs_unchanged.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.journal_chain",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Validate each recorded event and its hash-chain predecessor.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:journal_chain"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.journal_chain.pass.json",
+              "fail": "tests/fixtures/checks/check.journal_chain.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.lineage",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Match explicit input bindings to the recorded content identities.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:lineage"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.lineage.pass.json",
+              "fail": "tests/fixtures/checks/check.lineage.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.manifest",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare the staged file list with actual bytes and files.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:manifest"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.manifest.pass.json",
+              "fail": "tests/fixtures/checks/check.manifest.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.model_agreement",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Compare the recorded product with an independently declared model.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.model_agreement:compare"
+            },
+            "owner": "core",
+            "granularity": "composite",
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.model_agreement.pass.json",
+              "fail": "tests/fixtures/checks/check.model_agreement.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.pcr_product",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Recompute PCR from actual recorded template/primer materials and compare product identities.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory success, biological function or reaction efficiency.",
+              "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/MIGRATION-MAP.md: batches 1-4",
+                "MIGRATION-LOG.md"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_pcr_product"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "preparation_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/biology/checks/check.pcr_product.pass.json",
+              "fail": "tests/fixtures/biology/checks/check.pcr_product.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.primer_quality",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Apply explicit limits to complete retained oligos; missing limits give UNKNOWN.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {
+                "material_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "minItems": 1,
+                  "maxItems": 2
+                },
+                "limits": {
+                  "type": [
+                    "object",
+                    "null"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "length_min": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "length_max": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "max_T_run": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "max_3prime_dimer": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "max_hairpin_stem": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "gc_min": {
+                      "type": "string"
+                    },
+                    "gc_max": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "length_min",
+                    "length_max",
+                    "gc_min",
+                    "gc_max",
+                    "max_T_run",
+                    "max_3prime_dimer",
+                    "max_hairpin_stem"
+                  ]
+                },
+                "min_loop": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [],
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory success, biological function or reaction efficiency.",
+              "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/MIGRATION-MAP.md: batches 1-4",
+                "MIGRATION-LOG.md"
+              ],
+              "implemented_in": "dna_design_core.capabilities.builtin.check.biology:check_primer_quality"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "preparation_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/biology/checks/check.primer_quality.pass.json",
+              "fail": "tests/fixtures/biology/checks/check.primer_quality.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.readback",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Read exported JSON and compare its content identity.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:readback"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.readback.pass.json",
+              "fail": "tests/fixtures/checks/check.readback.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.replay",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Recompute deterministic steps from their recorded inputs and versions.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:replay"
+            },
+            "owner": "core",
+            "granularity": "composite",
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.replay.pass.json",
+              "fail": "tests/fixtures/checks/check.replay.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "check.store_hashes",
+            "version": "0.0.0",
+            "role": "CHECK",
+            "summary": "Recompute every stored document and material content identity.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [],
+            "inputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "additionalProperties": false
+            },
+            "outputs": [],
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Wet-laboratory performance or biological function."
+            ],
+            "source": {
+              "algorithm_refs": [],
+              "implemented_in": "dna_design_core.capabilities.builtin.checks:store_hashes"
+            },
+            "owner": "core",
+            "granularity": "atomic",
+            "scope": "file",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "tests/fixtures/checks/check.store_hashes.pass.json",
+              "fail": "tests/fixtures/checks/check.store_hashes.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "cut_plasmid.check_direction",
+            "version": "0.1.0",
+            "role": "CHECK",
+            "summary": "Check direction.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "outputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Cleavage activity",
+              "Editing efficiency",
+              "Genome-wide off-target safety",
+              "Experimental PCR, transformation or phenotype."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/SPEC.md D3 D7 D11 B2",
+                "MIGRATION-LOG.md S2"
+              ],
+              "implemented_in": "grt_kit_cut_plasmid.capabilities.checks:check_direction"
+            },
+            "owner": "kit:cut-plasmid",
+            "granularity": "atomic",
+            "authorship": {
+              "kind": "ai",
+              "tool_or_model": "Codex",
+              "date": "2026-10-17"
+            },
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "capabilities/fixtures/check_direction.pass.json",
+              "fail": "capabilities/fixtures/check_direction.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "cut_plasmid.check_pam",
+            "version": "0.1.0",
+            "role": "CHECK",
+            "summary": "Check pam.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "outputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Cleavage activity",
+              "Editing efficiency",
+              "Genome-wide off-target safety",
+              "Experimental PCR, transformation or phenotype."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/SPEC.md D3 D7 D11 B2",
+                "MIGRATION-LOG.md S2"
+              ],
+              "implemented_in": "grt_kit_cut_plasmid.capabilities.checks:check_pam"
+            },
+            "owner": "kit:cut-plasmid",
+            "granularity": "atomic",
+            "authorship": {
+              "kind": "ai",
+              "tool_or_model": "Codex",
+              "date": "2026-10-17"
+            },
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "capabilities/fixtures/check_pam.pass.json",
+              "fail": "capabilities/fixtures/check_pam.fail.json"
+            }
+          },
+          {
+            "schema": "capability-v1",
+            "id": "cut_plasmid.check_vector_self_target",
+            "version": "0.1.0",
+            "role": "CHECK",
+            "summary": "Check vector self target.",
+            "effects": [
+              "reads_files"
+            ],
+            "deterministic": true,
+            "requires_runtime": [
+              {
+                "kind": "python_package",
+                "name": "biopython",
+                "probe": null
+              }
+            ],
+            "inputs": [],
+            "outputs": [],
+            "params": {
+              "type": "object",
+              "properties": {},
+              "required": [],
+              "additionalProperties": false
+            },
+            "step_checks": [],
+            "final_checks": [],
+            "does_not_establish": [
+              "Cleavage activity",
+              "Editing efficiency",
+              "Genome-wide off-target safety",
+              "Experimental PCR, transformation or phenotype."
+            ],
+            "source": {
+              "algorithm_refs": [
+                "spec/SPEC.md D3 D7 D11 B2",
+                "MIGRATION-LOG.md S2"
+              ],
+              "implemented_in": "grt_kit_cut_plasmid.capabilities.checks:check_vector_self_target"
+            },
+            "owner": "kit:cut-plasmid",
+            "granularity": "atomic",
+            "authorship": {
+              "kind": "ai",
+              "tool_or_model": "Codex",
+              "date": "2026-10-17"
+            },
+            "scope": "content_model",
+            "evaluates_constraint": false,
+            "offline": true,
+            "fixtures": {
+              "pass": "capabilities/fixtures/check_vector_self_target.pass.json",
+              "fail": "capabilities/fixtures/check_vector_self_target.fail.json"
+            }
+          }
+        ],
+        "kit_diagnostics": [],
+        "notices": [],
+        "unavailable": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "dev-tree",
+        "kit_diagnostics": [],
+        "notices": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run",
+      "--request",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\goal-request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 4
+      },
+      "result": {
+        "goal_digest": "5e4211f01afb8df9b3c3b6a61d19e44f7748864398c1b7fdfea2e6b311e1b265",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run",
+      "--request",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\initial-plan.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 5,
+        "to_seq": 8
+      },
+      "result": {
+        "pipeline_digest": "af0706fed961190216e37057aa0f802468dd958e7e881dec572212c6b3256ccf",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "HALTED",
+      "event_range": {
+        "from_seq": 9,
+        "to_seq": 16
+      },
+      "result": {
+        "state": "HALTED",
+        "failure": {
+          "code": "STEP_EXPECTATION_FAILED",
+          "category": "CAPABILITY_FAILURE",
+          "message": "A host expectation was false.",
+          "details": {},
+          "recovery": "Inspect the retained result, then add a replacement step in a justified revision.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "STEP_EXPECTATION_FAILED",
+          "category": "CAPABILITY_FAILURE",
+          "message": "A host expectation was false.",
+          "recovery": "Inspect the retained result, then add a replacement step in a justified revision.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "declare",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run",
+      "--request",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\declaration.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "HALTED",
+      "event_range": {
+        "from_seq": 17,
+        "to_seq": 17
+      },
+      "result": {
+        "event": "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db"
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "revise",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run",
+      "--request",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\revision.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "RUNNING",
+      "event_range": {
+        "from_seq": 18,
+        "to_seq": 19
+      },
+      "result": {
+        "pipeline_digest": "688e19eb247cb33357b5d16e91a5f08bceed4745d1ae8d24bc5a177c6cd79ae4",
+        "version": 2
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 20,
+        "to_seq": 38
+      },
+      "result": {
+        "state": "COMPLETED"
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "judge",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 39,
+        "to_seq": 66
+      },
+      "result": {
+        "candidate_digest": "b5457691c9d75510912b84a0accb2fb81c66d8d042019860b1eeb42a0ef67cc7",
+        "obligation_ids": [
+          "7b4955ace7cc5217bdd15fefc158962f8ab5748198389f570af65808d9ecedbe",
+          "6ffc577ea8aa0785bd6d5dd018d74aafcda0dca7cd9dbee07dcee80f11bf8feb",
+          "fd0efff153c80677038fc5ece719de5c57f69ad2bd407d754d28f6dd81ea7b19",
+          "feec4ae35761a689afb2f7de4b31a85bcd44c9030a964695e069b00421125e6f",
+          "cf1c558676e06b34515c30fd1b712bbd9d3db580263dd1cf652178b83edd4391",
+          "9edb702a591775959b531f977eb4d055920fc875972629b9b86251d09d0ce68a",
+          "feccc9a952294fceda2ec7e9ad3b7ba820fe2a45ee26c586819ef831a80c1444",
+          "5c5760d402a6942136f413bb6d46b95fa464c08a9885d847af4b9cc4fa304d9e",
+          "7a42e5ea7711a50dc803c253bb9fee5b457e32f3a9a262c993c59d089c6ae59c",
+          "0a62e7c30ebd85c8b93c81b1aeb58d7bf30ff38dbe562da339b04e7082cca9b8",
+          "972288d38eaa4b5b83be8e4f31362e9034cee57100cab041cc3e6a19c3e7561d",
+          "cd03c05c01ff24b6c19950de96a455b733a5cc2add15cb182cce2d46a345a367",
+          "c4bf579de4069ee479f3f8f63f64796c5672caf0461828e0cdf3f80dd7cae120",
+          "e944131175b38ed168465b1ad5bee775b9a658b5290a1417a9e826a4e0720292",
+          "9eba2f761f83eeda963bc39b7bd5e4916fff52015148217e61a744e24b22b9b1",
+          "ce9cc0508ce9efb4ffe4548160677ddc6dde980513454dbcfc3a9a7f8fed2a19",
+          "6dab9925071174a8283ad3d7a394fdee331b297eeba752d469ab9d0fb53955ae",
+          "16650604b400c9835f7a96025a4574b60ac406a5b91d0a034b0ef3d6a130ee03",
+          "72b15186b68c86bf7920094720c7ff0a6fae1519d9cf1a79a1149e9363c6b3ab",
+          "41a1b6bbbea59a2e50cb6d17068a0ea675e4c1dfa3b1b8f03bb170e89581ef52",
+          "4148eff7a4653baa3fc687e88ce6792ed6611c406423a7f30d6cfc51bdc52f5e",
+          "58d07f803091eea8cd9150078ab198a3eae16ac44a176fa633ea91634bc49d7a",
+          "aee80f7d851468739b3cda35eb4a3ccd58149e0e325d3e4503be631dcf83bdaf",
+          "662b7aaa66158de3a8f9bd7c206854cafecf8c604d51d97a9b4fba6716242437"
+        ],
+        "verdict_ids": [
+          "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+          "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+          "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+          "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+          "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+          "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+          "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+          "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+          "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+          "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+          "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+          "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+          "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+          "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+          "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+          "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+          "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183",
+          "3e19eab3b8049a55455c02de2492d2e365417f9180b0ad181f26e4d600be37f1",
+          "ad8428eddba17c9702c93e21970bd1040a7fdb4f3451c0b0685c6ee0b6c78769",
+          "612be92ae67f11e6c267cdd5c885cecc43947ac778470ab0fa95ce07d78ad70d",
+          "7b4f10fd04742b0e8f1d7afc909c2ce134b3c579b0acb0b53f42239e91efed9e",
+          "fe35d401d7e1e474110462ffd44c710a182acb6e6ed3813b6c3578fcdad827f3",
+          "02a5805e97aa2bc3749891088dfaa2b6ee161d20618f2bd0533da754734530fc",
+          "9c01470ab7a72c039b685f9bf138520a342d0bf1d31ed1abedbf8efbcefa8794"
+        ],
+        "unsatisfied": [
+          {
+            "check": "check.annotation_integrity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.cds_validity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.biological_sanity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.reaction_chain",
+            "outcome": "UNKNOWN",
+            "verdict_id": "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.primer_quality",
+            "outcome": "UNKNOWN",
+            "verdict_id": "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.order_table",
+            "outcome": "UNKNOWN",
+            "verdict_id": "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          }
+        ],
+        "verdicts": [
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.readback",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Exported content comparison.",
+              "evidence": {
+                "different_files": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+            "obligation_id": "7b4955ace7cc5217bdd15fefc158962f8ab5748198389f570af65808d9ecedbe"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.manifest",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "File list and byte hashes checked.",
+              "evidence": {
+                "listed": 3,
+                "actual": 3
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+            "obligation_id": "6ffc577ea8aa0785bd6d5dd018d74aafcda0dca7cd9dbee07dcee80f11bf8feb"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.journal_chain",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recorded event chain checked.",
+              "evidence": {
+                "events": 43,
+                "head": "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184"
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+            "obligation_id": "fd0efff153c80677038fc5ece719de5c57f69ad2bd407d754d28f6dd81ea7b19"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.store_hashes",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Stored content identities checked.",
+              "evidence": {
+                "different_ids": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+            "obligation_id": "feec4ae35761a689afb2f7de4b31a85bcd44c9030a964695e069b00421125e6f"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.inputs_unchanged",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Registered input copies checked.",
+              "evidence": {
+                "different_sources": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+            "obligation_id": "cf1c558676e06b34515c30fd1b712bbd9d3db580263dd1cf652178b83edd4391"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.nonempty",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Active goal constraints counted.",
+              "evidence": {
+                "active": 3
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+            "obligation_id": "9edb702a591775959b531f977eb4d055920fc875972629b9b86251d09d0ce68a"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.target_role_met",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Producer roles compared with target roles.",
+              "evidence": {
+                "unmet_targets": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+            "obligation_id": "feccc9a952294fceda2ec7e9ad3b7ba820fe2a45ee26c586819ef831a80c1444"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.replay",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Deterministic output identities compared.",
+              "evidence": {
+                "differences": [],
+                "not_replayed": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+            "obligation_id": "5c5760d402a6942136f413bb6d46b95fa464c08a9885d847af4b9cc4fa304d9e"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.lineage",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Input bindings and identities compared.",
+              "evidence": {
+                "different_steps": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+            "obligation_id": "7a42e5ea7711a50dc803c253bb9fee5b457e32f3a9a262c993c59d089c6ae59c"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.annotation_integrity",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Required check could not be completed.",
+              "evidence": {
+                "failure": {
+                  "code": "CHECK_UNAVAILABLE",
+                  "category": "ENVIRONMENT",
+                  "message": "A mandatory check or its local dependency is unavailable.",
+                  "details": {
+                    "check": "check.annotation_integrity",
+                    "failure": {
+                      "code": "CHECK_UNAVAILABLE",
+                      "category": "ENVIRONMENT",
+                      "message": "A mandatory check or its local dependency is unavailable.",
+                      "details": {
+                        "check": "check.annotation_integrity"
+                      },
+                      "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                      "retryable": true,
+                      "cause_chain": []
+                    }
+                  },
+                  "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                  "retryable": true,
+                  "cause_chain": []
+                }
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "The required obligation."
+              ]
+            },
+            "event": "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+            "obligation_id": "0a62e7c30ebd85c8b93c81b1aeb58d7bf30ff38dbe562da339b04e7082cca9b8"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.cds_validity",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Required check could not be completed.",
+              "evidence": {
+                "failure": {
+                  "code": "CHECK_UNAVAILABLE",
+                  "category": "ENVIRONMENT",
+                  "message": "A mandatory check or its local dependency is unavailable.",
+                  "details": {
+                    "check": "check.cds_validity",
+                    "failure": {
+                      "code": "CHECK_UNAVAILABLE",
+                      "category": "ENVIRONMENT",
+                      "message": "A mandatory check or its local dependency is unavailable.",
+                      "details": {
+                        "check": "check.cds_validity"
+                      },
+                      "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                      "retryable": true,
+                      "cause_chain": []
+                    }
+                  },
+                  "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                  "retryable": true,
+                  "cause_chain": []
+                }
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "The required obligation."
+              ]
+            },
+            "event": "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+            "obligation_id": "972288d38eaa4b5b83be8e4f31362e9034cee57100cab041cc3e6a19c3e7561d"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.biological_sanity",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Required check could not be completed.",
+              "evidence": {
+                "failure": {
+                  "code": "CHECK_UNAVAILABLE",
+                  "category": "ENVIRONMENT",
+                  "message": "A mandatory check or its local dependency is unavailable.",
+                  "details": {
+                    "check": "check.biological_sanity",
+                    "failure": {
+                      "code": "CHECK_UNAVAILABLE",
+                      "category": "ENVIRONMENT",
+                      "message": "A mandatory check or its local dependency is unavailable.",
+                      "details": {
+                        "check": "check.biological_sanity"
+                      },
+                      "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                      "retryable": true,
+                      "cause_chain": []
+                    }
+                  },
+                  "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                  "retryable": true,
+                  "cause_chain": []
+                }
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "The required obligation."
+              ]
+            },
+            "event": "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+            "obligation_id": "cd03c05c01ff24b6c19950de96a455b733a5cc2add15cb182cce2d46a345a367"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.reaction_chain",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Required check could not be completed.",
+              "evidence": {
+                "failure": {
+                  "code": "CHECK_UNAVAILABLE",
+                  "category": "ENVIRONMENT",
+                  "message": "A mandatory check or its local dependency is unavailable.",
+                  "details": {
+                    "check": "check.reaction_chain",
+                    "failure": {
+                      "code": "CHECK_UNAVAILABLE",
+                      "category": "ENVIRONMENT",
+                      "message": "A mandatory check or its local dependency is unavailable.",
+                      "details": {
+                        "check": "check.reaction_chain"
+                      },
+                      "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                      "retryable": true,
+                      "cause_chain": []
+                    }
+                  },
+                  "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                  "retryable": true,
+                  "cause_chain": []
+                }
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "The required obligation."
+              ]
+            },
+            "event": "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+            "obligation_id": "c4bf579de4069ee479f3f8f63f64796c5672caf0461828e0cdf3f80dd7cae120"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.primer_quality",
+                "version": "0.0.0"
+              },
+              "scope": "preparation_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Explicit primer-quality limits are required.",
+              "evidence": {},
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success or biological function.",
+                "Independence of the shared calculation implementation."
+              ]
+            },
+            "event": "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+            "obligation_id": "e944131175b38ed168465b1ad5bee775b9a658b5290a1417a9e826a4e0720292"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.order_table",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "UNKNOWN",
+              "issuer": "check_capability",
+              "summary": "Required check could not be completed.",
+              "evidence": {
+                "failure": {
+                  "code": "CHECK_UNAVAILABLE",
+                  "category": "ENVIRONMENT",
+                  "message": "A mandatory check or its local dependency is unavailable.",
+                  "details": {
+                    "check": "check.order_table",
+                    "failure": {
+                      "code": "CHECK_UNAVAILABLE",
+                      "category": "ENVIRONMENT",
+                      "message": "A mandatory check or its local dependency is unavailable.",
+                      "details": {
+                        "check": "check.order_table"
+                      },
+                      "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                      "retryable": true,
+                      "cause_chain": []
+                    }
+                  },
+                  "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+                  "retryable": true,
+                  "cause_chain": []
+                }
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "The required obligation."
+              ]
+            },
+            "event": "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+            "obligation_id": "9eba2f761f83eeda963bc39b7bd5e4916fff52015148217e61a744e24b22b9b1"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.components_present",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": "k1",
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Components checked against sequence on the explicit strand; labels do not establish presence or absence.",
+              "evidence": {
+                "components": [
+                  {
+                    "material_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "name": "selected spacer",
+                    "strand": 1,
+                    "positions": [
+                      130
+                    ],
+                    "unresolved": false
+                  }
+                ]
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success, biological function or truth of a reported claim."
+              ]
+            },
+            "event": "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+            "obligation_id": "ce9cc0508ce9efb4ffe4548160677ddc6dde980513454dbcfc3a9a7f8fed2a19"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.regions_unchanged",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": "k2",
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Explicit reference/target intervals compared; annotation inheritance is outside this check.",
+              "evidence": {
+                "reference_material_id": "ff0a9b4296df981dc70fac289eb32e2031548fc760125513391df8b62b1bf1db",
+                "comparisons": [
+                  {
+                    "material_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "region": {
+                      "source_end": 130,
+                      "source_start": 0,
+                      "target_end": 130,
+                      "target_start": 0
+                    },
+                    "matches": true
+                  },
+                  {
+                    "material_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "region": {
+                      "source_end": 360,
+                      "source_start": 150,
+                      "target_end": 360,
+                      "target_start": 150
+                    },
+                    "matches": true
+                  }
+                ]
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+                "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success, biological function or truth of a reported claim."
+              ]
+            },
+            "event": "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183",
+            "obligation_id": "6dab9925071174a8283ad3d7a394fdee331b297eeba752d469ab9d0fb53955ae"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.claim_reported",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": "k3",
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Claim reporting checked; its status need not assert success and its truth is not evaluated.",
+              "evidence": {
+                "claim": "selection",
+                "pointer": "",
+                "matches": 1,
+                "reported_status": "UNKNOWN"
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+                "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+                "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success, biological function or truth of a reported claim."
+              ]
+            },
+            "event": "3e19eab3b8049a55455c02de2492d2e365417f9180b0ad181f26e4d600be37f1",
+            "obligation_id": "16650604b400c9835f7a96025a4574b60ac406a5b91d0a034b0ef3d6a130ee03"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.assembly_product",
+                "version": "0.0.0"
+              },
+              "scope": "preparation_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "NOT_APPLICABLE",
+              "issuer": "check_capability",
+              "summary": "No matching sequence reaction was recorded.",
+              "evidence": {},
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+                "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+                "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183",
+                "3e19eab3b8049a55455c02de2492d2e365417f9180b0ad181f26e4d600be37f1"
+              ],
+              "applicability": {
+                "reason": "No matching sequence reaction was recorded.",
+                "basis": [
+                  "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058"
+                ]
+              },
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success or biological function.",
+                "Independence of the shared calculation implementation."
+              ]
+            },
+            "event": "ad8428eddba17c9702c93e21970bd1040a7fdb4f3451c0b0685c6ee0b6c78769",
+            "obligation_id": "72b15186b68c86bf7920094720c7ff0a6fae1519d9cf1a79a1149e9363c6b3ab"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "cut_plasmid.check_direction",
+                "version": "0.1.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recomputed supplied-sequence direction.",
+              "evidence": {
+                "results": [
+                  {
+                    "step_id": "s2",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  },
+                  {
+                    "step_id": "s3",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  }
+                ]
+              },
+              "basis": [
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Cleavage activity",
+                "Editing efficiency",
+                "Genome-wide off-target safety"
+              ]
+            },
+            "event": "612be92ae67f11e6c267cdd5c885cecc43947ac778470ab0fa95ce07d78ad70d",
+            "obligation_id": "41a1b6bbbea59a2e50cb6d17068a0ea675e4c1dfa3b1b8f03bb170e89581ef52"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "cut_plasmid.check_pam",
+                "version": "0.1.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recomputed supplied-sequence pam.",
+              "evidence": {
+                "results": [
+                  {
+                    "step_id": "s2",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  },
+                  {
+                    "step_id": "s3",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  }
+                ]
+              },
+              "basis": [
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Cleavage activity",
+                "Editing efficiency",
+                "Genome-wide off-target safety"
+              ]
+            },
+            "event": "7b4f10fd04742b0e8f1d7afc909c2ce134b3c579b0acb0b53f42239e91efed9e",
+            "obligation_id": "4148eff7a4653baa3fc687e88ce6792ed6611c406423a7f30d6cfc51bdc52f5e"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "cut_plasmid.check_vector_self_target",
+                "version": "0.1.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recomputed supplied-sequence vector self target.",
+              "evidence": {
+                "results": [
+                  {
+                    "step_id": "s2",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  },
+                  {
+                    "step_id": "s3",
+                    "vector_id": "38cf3057ee5ae261478e8f40803734784f37e1844c77dbfd1ac3d2d4baa5d5c7",
+                    "target_id": "405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c",
+                    "outcome": "PASS",
+                    "direction_status": "CORRECT",
+                    "valid_target_locus_count": 1,
+                    "vector_self_target_count": 0,
+                    "vector_max_mismatches": 3,
+                    "vector_search_complete": true,
+                    "annotation_findings": []
+                  }
+                ]
+              },
+              "basis": [
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Cleavage activity",
+                "Editing efficiency",
+                "Genome-wide off-target safety"
+              ]
+            },
+            "event": "fe35d401d7e1e474110462ffd44c710a182acb6e6ed3813b6c3578fcdad827f3",
+            "obligation_id": "58d07f803091eea8cd9150078ab198a3eae16ac44a176fa633ea91634bc49d7a"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.model_agreement",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recorded and model products compared without annotations.",
+              "evidence": {
+                "compared": [
+                  {
+                    "step_id": "s2",
+                    "model": "cut_plasmid.model_replace",
+                    "recorded_result": "cbd44a43e3f2d62fea9bf30c628360cc70c6882327e95358336a3505246530fb",
+                    "model_result": "cbd44a43e3f2d62fea9bf30c628360cc70c6882327e95358336a3505246530fb"
+                  }
+                ],
+                "differences": [],
+                "not_checked": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+                "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+                "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183",
+                "3e19eab3b8049a55455c02de2492d2e365417f9180b0ad181f26e4d600be37f1",
+                "ad8428eddba17c9702c93e21970bd1040a7fdb4f3451c0b0685c6ee0b6c78769",
+                "612be92ae67f11e6c267cdd5c885cecc43947ac778470ab0fa95ce07d78ad70d",
+                "7b4f10fd04742b0e8f1d7afc909c2ce134b3c579b0acb0b53f42239e91efed9e",
+                "fe35d401d7e1e474110462ffd44c710a182acb6e6ed3813b6c3578fcdad827f3"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "02a5805e97aa2bc3749891088dfaa2b6ee161d20618f2bd0533da754734530fc",
+            "obligation_id": "aee80f7d851468739b3cda35eb4a3ccd58149e0e325d3e4503be631dcf83bdaf"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.format_roundtrip",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "b4072f5e5d1cf20a"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Exported material identities compared.",
+              "evidence": {
+                "different_steps": []
+              },
+              "basis": [
+                "b59f1d82dfdf8de289cb556416292afd55b4e02528cb7833c2d2eb4737897058",
+                "776071800f82bcaf4e5995ccfcce24511d091dca8fe1ac3b80614eabd1f71756",
+                "233a0ff2cd87f9699d23abb1ccf7d0da082da4e5e98b5cd978ccd06697b1dfa7",
+                "f4a35078abacffec97686e97efde360e1a66291fcb0628482de83507af12072d",
+                "8f6cbb913197928e8f4141871efe449b5ca64cbe3a8a280d6a512d49d70c1977",
+                "3a54678d1227371c58eface2af9fe53cfc3f3ccd57e5c4b5b05608d5223dc8d8",
+                "d7e3c28b4dbe8c3f5ff9bb4d280ef27b020b2a84f7190cb5ede27b2a930591f1",
+                "ed1b4c62504dd4a659e478b62172342ccc8954bffa9b8b3af6e0697058394b0b",
+                "8c96aa758cc7c96b09ab3324ed5806ca036bfd0f79bcea17413989f1708fb70b",
+                "ba2356c9c375e9c48d8a74c2da30fa1dde6c3e9fd724db74bbeb11dfb3a1edc8",
+                "4c8c1f40991689ae1ad7ad88759aaa01d1d8204dcc15fa6f1530e2eff9f73c40",
+                "3e9b62c7d3134acc3d6788104a1c3e8746b27d18f98b6489f2c86c1ad1136bea",
+                "7d59b386064d641625b7d57ce9706ff9c2170a349bfaebc407b924f5d1a9437f",
+                "e27cb50fb8815c18bda1d72d39c1667cb023551b35430d9ee244537624be32b3",
+                "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759",
+                "c7633888e7d916a2180d9c8615d5003a20217790b189aa1d1717ddcf7ed7e360",
+                "73a3aa84b474ac341613329748a488cf09c39dd9f4bc17ed3a72dc08287280db",
+                "18fe553b01aa508b2bd7ba63a370bc97df5510d086155dacee592dd41dbcc537",
+                "17878392a6e5d64d7b3d73857802eda9b15db65fc0da1f7fc558c924087b6485",
+                "29e1e2fc9580d73e3737b5f8a95bb2ba37f26b13fc07c49dc1018349457228ca",
+                "caeeb26d8cfc3debd7e9fa4383e56624e65bb5dee333f8c803f78c08a3bca423",
+                "9351a186fa428488bc3fad535dca0e5feef12006a00b5dff83e548656fd5d87e",
+                "cce6422ef6d7ab652cc605e751c69acc889d47e5546390b2a13bd06340d08e71",
+                "b4ae31f06f6021acd74e4c2858b059ffbf1ef82b292abf45b0bc8182f911e792",
+                "6846314bf42ae34e973cf0f67373f9d44c0d22237ee3614559ad8dda68d4e1fa",
+                "6353f8dd65d8f87a73b3c9a81336fc74b6f767fef979da24ce0602018129f00d",
+                "eb914560353445b8392e63a6042c4fc3710379b0b7fe51bdae7a2e8467db8af7",
+                "828ae71da838d32ecd368d038be15bb36c7633933ae6593842a5219dfc6fa8ec",
+                "821c4b5e38bb370bb8d5525d713cca8ce3c8e95b41345959a240521069cf2d4b",
+                "77914e39e43f6226760f985ef3f689463dbd5bbca1ade00535d45604570c54b1",
+                "f975e31bf9096d2b80e243c453a74cfddc9c03ef338d77b8e2b19930339dcce1",
+                "27782fc529341acc88dbfab1c26ce4c5c785331a8e27429f16eee6c597f79526",
+                "92a9744e8cd5a790ea8ddabd42ffe2d2c74b621abd916a738f165b6e41d6f57e",
+                "44a112bcdfb85a80180f88f23a813e046309918f81f7adcf1a946183064a0084",
+                "dc867ecb20f33ce07d5458b863448d9422b074209f4d447fccda9d3787a4ad6d",
+                "15b70521d49f921c9a33c7f5be8d5624c93ce07547b273c054de29a2dfc89c64",
+                "894a26ad02f30e5caf77d4caa8118f0ee078b9d528696f7063e479fb96420230",
+                "f8a3567d38022cbf426aab242a749d9248104ebd4ddab4cc9bf72eae7e03c245",
+                "1a15ada7a82d00ac8860a2951b48c54de8b89036b412ca2f8627f18a8280b0f2",
+                "8608ced065c5bd0d4dd2134dd4a0b76a514cad8005f1592dc9d2491769529e75",
+                "55a1665584ba693decf611af0358f736a1efb3747345501fbadd58ae544d2e1d",
+                "1e4dcbfc8ffee64ce90324443bd7d98f2bc1ee7b59714b695e54819e9c6cf2f8",
+                "ea1c0397f54475ada663021f2695af30ceae0a367c994f50d960c7a27722c184",
+                "bb67a918aada5cb7e50e895b6b5127fb68fc34607f5ee4b52424337a59300a25",
+                "3eb91230330b8c4bf899dbd608459d7819a7422cc6d933543dd5ed436e0df04f",
+                "63042c9639918a57572c3ba6bc3530fa9cf0af5fb5c5f261f6c329e344ace1ca",
+                "024b04edbcbca514ee4c2110bf74a935c25eb63367715befc5c787b8226609e9",
+                "aac35933f76811ac08d63d71291ba1d38af92e89dcd28aafa90b49a9d7a5f1a9",
+                "11d06f102b2a7c7747f6381b211854ae4b13c4e90b92a95acfb9d3391565682c",
+                "6db4e3e90d3010517882a9a0c5a32094232f600dcaa28e66e4420bd78a67343b",
+                "8fdba6c3c6382f2c0952fa3ab8470922183e1c79814b3e84b7384942093224cb",
+                "52b26ad4a8fad463b8e7f03cfa77984365487c26cc9e4e19736b06513864ce61",
+                "b523cb17ed9fa7f6d3fcafd64e4e2da34779a5acc9cbc04b8ece733773c4a7d5",
+                "2aa93663b1f9990e73ffd3e9f171dd363a6f757095afc29f145876f31be6dcd1",
+                "006862769b8868826bf472316fdb513b4470507fbdbdf67175c1a4d2937f7742",
+                "36d9154c381f12ffaf0f8555ab98051ac7853810a80268389070832d8ce67afb",
+                "057c210bbc01ca378c189560a9bd19fc04de966e6238688c4a8f4b0aee15d751",
+                "4cfc1b82c5728b744729c69ea6147e9bbd4d5ad2a6afd70c76076aadcc921183",
+                "3e19eab3b8049a55455c02de2492d2e365417f9180b0ad181f26e4d600be37f1",
+                "ad8428eddba17c9702c93e21970bd1040a7fdb4f3451c0b0685c6ee0b6c78769",
+                "612be92ae67f11e6c267cdd5c885cecc43947ac778470ab0fa95ce07d78ad70d",
+                "7b4f10fd04742b0e8f1d7afc909c2ce134b3c579b0acb0b53f42239e91efed9e",
+                "fe35d401d7e1e474110462ffd44c710a182acb6e6ed3813b6c3578fcdad827f3",
+                "02a5805e97aa2bc3749891088dfaa2b6ee161d20618f2bd0533da754734530fc"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental success or biological function.",
+                "Independence of the shared calculation implementation."
+              ]
+            },
+            "event": "9c01470ab7a72c039b685f9bf138520a342d0bf1d31ed1abedbf8efbcefa8794",
+            "obligation_id": "662b7aaa66158de3a8f9bd7c206854cafecf8c604d51d97a9b4fba6716242437"
+          }
+        ],
+        "not_rerun": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 10,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 67,
+        "to_seq": 95
+      },
+      "result": {
+        "sealed": false,
+        "candidate_digest": "b5457691c9d75510912b84a0accb2fb81c66d8d042019860b1eeb42a0ef67cc7",
+        "unsatisfied": [
+          {
+            "check": "check.annotation_integrity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "1ded245405fef9dc66072a9bde907e103253d8a6b4dc71f86f14a8dd3bb31365",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.cds_validity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "27cc554f9a7a7cb500002fe6e783f40e996d764ef57a3e164f637b2dcb8be432",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.biological_sanity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "93dc6f7d544d002c32f6c588573d8b1a59b6434c2c21345e8fb95c452f4cb0d7",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.reaction_chain",
+            "outcome": "UNKNOWN",
+            "verdict_id": "ee5630bc7f1061533b71a370dbddf5c0540debe025b7dbc92e5676ea16f217ad",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.primer_quality",
+            "outcome": "UNKNOWN",
+            "verdict_id": "a2953ff232925db8d3b62b68e627c5192c20ec0ee3e36f77687766ca884268c1",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.order_table",
+            "outcome": "UNKNOWN",
+            "verdict_id": "aa405047c3f7fa426142613bcc33d6b586f5550ade3d434c435faa0f2c65212d",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          }
+        ],
+        "present_files": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "record",
+      "render",
+      "--run",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "COMPLETED",
+      "event_range": null,
+      "result": {
+        "files": [
+          "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run\\views\\runcard.html",
+          "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run\\views\\report.md"
+        ],
+        "language": "en",
+        "through_event": 95
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<SOURCE>\\tests\\evidence\\s2\\b2-suite-yaylx_hu\\b2\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "b4072f5e5d1cf20a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 95
+      },
+      "result": {
+        "failure": {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "This run has no sealed package.",
+          "details": {},
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "This run has no sealed package.",
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 1"
+      ]
+    }
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "checked_backgrounds": 2,
+  "product_counts": [
+    1,
+    1
+  ],
+  "product_bp": [
+    1000,
+    1300
+  ],
+  "status": "DISTINGUISHABLE",
+  "oracle": "independent standard-library window enumeration",
+  "laboratory_status": "NOT_PERFORMED"
+}

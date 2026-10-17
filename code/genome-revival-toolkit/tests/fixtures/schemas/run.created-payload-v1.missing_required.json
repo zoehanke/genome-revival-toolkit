@@ -1,0 +1,22 @@
+{
+  "schema_id": "run.created-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required environment."
+  },
+  "data": {
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "schema_versions": {
+      "event": 1
+    },
+    "created_by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    },
+    "catalog_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "catalog_ref": "store/catalog.json",
+    "kits": []
+  }
+}

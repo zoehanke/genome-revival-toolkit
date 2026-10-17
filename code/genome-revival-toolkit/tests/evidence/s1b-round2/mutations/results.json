@@ -1,0 +1,38 @@
+[
+  {
+    "id": "region_suffix",
+    "before": "value[\"sequence\"][end:]",
+    "after": "value[\"sequence\"][end + 1:]",
+    "test": "test_biology_round2_common.Round2CommonTests.test_region_edit_sequence_and_annotation_retirement",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "region_suffix.txt"
+  },
+  {
+    "id": "cds_always_consistent",
+    "before": "\"complete_cds_consistent\": None if partial or ambiguous else consistent",
+    "after": "\"complete_cds_consistent\": True",
+    "test": "test_biology_round2_common.Round2CommonTests.test_cds_hand_translation_frame_and_partial_unknown",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "cds_always_consistent.txt"
+  },
+  {
+    "id": "primer_loses_tail",
+    "before": "full = tail + core",
+    "after": "full = core",
+    "test": "test_biology_round2_common.Round2CommonTests.test_primer_candidates_core_tail_and_reverse_anchor",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "primer_loses_tail.txt"
+  },
+  {
+    "id": "read_off_by_one",
+    "before": "site[\"end_unwrapped\"] + trim,",
+    "after": "site[\"end_unwrapped\"] + trim - 1,",
+    "test": "test_biology_round2_common.Round2CommonTests.test_coverage_first_usable_base_is_after_primer_plus_trim",
+    "exit_code": 1,
+    "caught_by_assertion": true,
+    "output": "read_off_by_one.txt"
+  }
+]

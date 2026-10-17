@@ -1,0 +1,46 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Report bounded conclusions about functional revival from synthetic observations.",
+  "sources": [
+    {
+      "source_id": "observations",
+      "from": "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\kits\\revival-evidence\\examples\\product-count-observations.json",
+      "as": "artifact",
+      "input_origin": "researcher_observation",
+      "declared": {
+        "observation_origin": "SYNTHETIC_EXAMPLE"
+      }
+    },
+    {
+      "source_id": "predictions",
+      "from": "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\kits\\revival-evidence\\examples\\product-count-predictions.json",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    }
+  ],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "t1",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "c1",
+      "check": "check.goal.claim_reported@0.0.0",
+      "params": {
+        "claim": "functional_revival",
+        "pointer": "/conclusions"
+      },
+      "target": "t1",
+      "source_quote": "Report bounded conclusions",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

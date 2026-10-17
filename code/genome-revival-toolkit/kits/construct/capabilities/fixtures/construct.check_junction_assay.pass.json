@@ -1,0 +1,10 @@
+{
+  "check": "construct.check_junction_assay",
+  "expected": "PASS",
+  "params": {},
+  "scenario": "valid_gibson",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Predetermined template edit or both QC primers inside retained donor arms."
+  }
+}

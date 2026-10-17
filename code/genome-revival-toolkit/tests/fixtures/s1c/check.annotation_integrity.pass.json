@@ -1,0 +1,8 @@
+{
+  "check": "check.annotation_integrity",
+  "expected": "PASS",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Nine-base material has one in-bounds [0,9) feature, strand +1, one exact part and string-array qualifiers. Separate unchanged-input error must be marked INHERITED."
+  }
+}

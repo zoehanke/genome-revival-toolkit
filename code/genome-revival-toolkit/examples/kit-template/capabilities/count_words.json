@@ -1,0 +1,86 @@
+{
+  "schema": "capability-v1",
+  "id": "word_count.count_words",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Count whitespace-separated words and apply a sourced tutorial threshold.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "text"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "word_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minimum_words": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "meets_minimum": {
+            "type": "boolean"
+          },
+          "rule_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "text",
+          "word_count",
+          "minimum_words",
+          "meets_minimum",
+          "rule_id"
+        ],
+        "additionalProperties": false
+      },
+      "output_role": "analysis"
+    }
+  ],
+  "step_checks": [
+    "word_count.check_count"
+  ],
+  "final_checks": [
+    {
+      "check": "word_count.check_count"
+    }
+  ],
+  "does_not_establish": [
+    "This is a tutorial example, not any experimental or scientific claim."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "README.md: Counting contract; knowledge/minimum_words.json"
+    ],
+    "implemented_in": "grt_kit_word_count.capabilities.count:count_words"
+  },
+  "owner": "kit:word-count",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

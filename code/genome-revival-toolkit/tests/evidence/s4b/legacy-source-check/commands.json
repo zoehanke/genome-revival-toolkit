@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "dna_design_core.application.cli",
+      "verify",
+      "<SOURCE>\\examples\\sealed\\b1\\c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.0
+  }
+]

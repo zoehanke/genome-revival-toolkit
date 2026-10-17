@@ -1,0 +1,15 @@
+{
+  "schema_id": "seal.created-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "D16/A14 e621b5c permits exactly dev-tree or 64 lowercase hex characters."
+  },
+  "data": {
+    "seal_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "manifest_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "journal_head": "2222222222222222222222222222222222222222222222222222222222222222",
+    "release_id": "development",
+    "labels": {}
+  }
+}

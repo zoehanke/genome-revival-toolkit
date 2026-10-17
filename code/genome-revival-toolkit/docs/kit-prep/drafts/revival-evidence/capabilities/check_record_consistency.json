@@ -1,0 +1,43 @@
+{
+  "schema": "capability-v1",
+  "id": "evidence.check_record_consistency",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Draft contract for evidence.check_record_consistency; no Kit implementation exists.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental success",
+    "Functional revival",
+    "Authenticity of submitted observations",
+    "Whole-genome identity or elimination."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_revival_evidence.capabilities.operations:check_record_consistency"
+  },
+  "owner": "kit:revival-evidence",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/check_record_consistency.pass.json",
+    "fail": "capabilities/fixtures/check_record_consistency.fail.json"
+  }
+}

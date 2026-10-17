@@ -1,0 +1,64 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "pip",
+      "--isolated",
+      "install",
+      "--disable-pip-version-check",
+      "--no-index",
+      "--no-deps",
+      "--report",
+      "<WORK>\\local-wheel-install.json",
+      "<WORK>\\wheels-02\\genome_revival_toolkit-0.0.0-py3-none-any.whl"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 2.032
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import dna_design_core,json,sys,hashlib; from pathlib import Path; p=Path(dna_design_core.__file__).resolve(); m=p.parent/\"release-manifest.json\"; data=m.read_bytes(); value=json.loads(data); print(json.dumps({\"module\":str(p),\"prefix\":sys.prefix,\"from_environment\":p.is_relative_to(Path(sys.prefix)),\"manifest_sha256\":hashlib.sha256(data).hexdigest(),\"build_id\":value[\"build_id\"],\"files\":len(value[\"files\"])}))"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.093
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\grt.exe",
+      "doctor"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.047
+  },
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\grt.exe",
+      "describe",
+      "kits"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.86
+  }
+]

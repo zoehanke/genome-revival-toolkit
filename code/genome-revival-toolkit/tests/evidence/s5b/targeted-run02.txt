@@ -1,0 +1,32 @@
+test_both_absent (tests.unit.test_genome_identity.GenomeIdentityTests.test_both_absent) ... ok
+test_circular_origin (tests.unit.test_genome_identity.GenomeIdentityTests.test_circular_origin) ... ok
+test_compare_regions_hand_distances (tests.unit.test_genome_identity.GenomeIdentityTests.test_compare_regions_hand_distances) ... ok
+test_different_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_different_sizes) ... ok
+test_expected_schema_refuses_no_product_encoded_as_ambiguous (tests.unit.test_genome_identity.GenomeIdentityTests.test_expected_schema_refuses_no_product_encoded_as_ambiguous) ... ok
+test_explicit_intervals_and_out_of_bounds (tests.unit.test_genome_identity.GenomeIdentityTests.test_explicit_intervals_and_out_of_bounds) ... ok
+test_exported_declarations_match_decorators_and_typed_signatures (tests.unit.test_genome_identity.GenomeIdentityTests.test_exported_declarations_match_decorators_and_typed_signatures) ... ok
+test_handoff_hash_mismatch_is_failure (tests.unit.test_genome_identity.GenomeIdentityTests.test_handoff_hash_mismatch_is_failure) ... ok
+test_independent_oracle_rejects_a_false_size (tests.unit.test_genome_identity.GenomeIdentityTests.test_independent_oracle_rejects_a_false_size) ... ok
+test_limitations_remain_in_unverified (tests.unit.test_genome_identity.GenomeIdentityTests.test_limitations_remain_in_unverified) ... ok
+test_material_cannot_be_substituted_under_a_valid_file_hash (tests.unit.test_genome_identity.GenomeIdentityTests.test_material_cannot_be_substituted_under_a_valid_file_hash) ... ok
+test_multiple_sites (tests.unit.test_genome_identity.GenomeIdentityTests.test_multiple_sites) ... ok
+test_no_product (tests.unit.test_genome_identity.GenomeIdentityTests.test_no_product) ... ok
+test_primer_id_and_sequence_must_match_handoff (tests.unit.test_genome_identity.GenomeIdentityTests.test_primer_id_and_sequence_must_match_handoff) ... ok
+test_read_handoff_and_legacy_shape_refusal (tests.unit.test_genome_identity.GenomeIdentityTests.test_read_handoff_and_legacy_shape_refusal) ... ok
+test_reverse_orientation (tests.unit.test_genome_identity.GenomeIdentityTests.test_reverse_orientation) ... ok
+test_same_sequence_with_changed_file_header_fails_handoff_hash (tests.unit.test_genome_identity.GenomeIdentityTests.test_same_sequence_with_changed_file_header_fails_handoff_hash) ... ok
+test_same_sizes (tests.unit.test_genome_identity.GenomeIdentityTests.test_same_sizes) ... ok
+test_semantic_handoff_failures (tests.unit.test_genome_identity.GenomeIdentityTests.test_semantic_handoff_failures) ... ok
+test_swapping_files_cannot_bypass_material_binding (tests.unit.test_genome_identity.GenomeIdentityTests.test_swapping_files_cannot_bypass_material_binding) ... ok
+test_unknown_or_double_stranded_primer_is_rejected (tests.unit.test_genome_identity.GenomeIdentityTests.test_unknown_or_double_stranded_primer_is_rejected) ... ok
+test_unknown_topology_and_degenerate_reference_do_not_become_no_product (tests.unit.test_genome_identity.GenomeIdentityTests.test_unknown_topology_and_degenerate_reference_do_not_become_no_product) ... ok
+test_without_handoff_uses_actual_hashes_and_fixed_port_ids (tests.unit.test_genome_identity.GenomeIdentityTests.test_without_handoff_uses_actual_hashes_and_fixed_port_ids) ... ok
+test_circular_origin_binding_reaches_public_pipeline_and_judge (tests.integration.test_genome_identity.GenomeIdentityIntegrationTests.test_circular_origin_binding_reaches_public_pipeline_and_judge) ... ok
+test_multiple_sites_remain_undetermined (tests.integration.test_genome_identity.GenomeIdentityIntegrationTests.test_multiple_sites_remain_undetermined) ... ok
+test_same_sized_products_remain_not_distinguishable (tests.integration.test_genome_identity.GenomeIdentityIntegrationTests.test_same_sized_products_remain_not_distinguishable) ... ok
+test_template_without_handoff_has_no_untracked_material_list (tests.integration.test_genome_identity.GenomeIdentityIntegrationTests.test_template_without_handoff_has_no_untracked_material_list) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 55.130s
+
+OK

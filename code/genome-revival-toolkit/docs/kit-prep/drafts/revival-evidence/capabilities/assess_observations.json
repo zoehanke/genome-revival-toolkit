@@ -1,0 +1,63 @@
+{
+  "schema": "capability-v1",
+  "id": "evidence.assess_observations",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for evidence.assess_observations; no Kit implementation exists.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "observations",
+      "type": "document",
+      "required": true,
+      "constraints": {},
+      "description": "observations",
+      "schema_ref": "observation-table-v1"
+    },
+    {
+      "name": "expected_results",
+      "type": "artifact",
+      "required": false,
+      "constraints": {},
+      "description": "expected results"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "assessment",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "revival-assessment-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "evidence.check_record_consistency"
+    }
+  ],
+  "does_not_establish": [
+    "Experimental success",
+    "Functional revival",
+    "Authenticity of submitted observations",
+    "Whole-genome identity or elimination."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_revival_evidence.capabilities.operations:assess_observations"
+  },
+  "owner": "kit:revival-evidence",
+  "granularity": "atomic"
+}

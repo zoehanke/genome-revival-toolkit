@@ -1,0 +1,43 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.check_direction",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Draft contract for cut_plasmid.check_direction; no Kit implementation exists.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Wet-laboratory PCR, DpnI, KLD or transformation."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.operations:check_direction"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/check_direction.pass.json",
+    "fail": "capabilities/fixtures/check_direction.fail.json"
+  }
+}

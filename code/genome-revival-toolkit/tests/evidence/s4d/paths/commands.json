@@ -1,0 +1,32 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "<WORK>\\before\\tests\\oracles\\prepare_cut_plasmid.py"
+    ],
+    "cwd": "<WORK>\\before",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.953
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "<WORK>\\after\\tests\\oracles\\prepare_cut_plasmid.py",
+      "--legacy-repo",
+      "<LEGACY_SOURCE>"
+    ],
+    "cwd": "<WORK>\\after",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.968
+  }
+]

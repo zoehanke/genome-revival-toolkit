@@ -1,0 +1,22 @@
+{
+  "schema_id": "call.recorded-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "parent": "s1",
+    "capability": {
+      "id": "demo.length",
+      "version": "0.0.0",
+      "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "code_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "input_ids": {},
+    "outputs": {},
+    "duration_ms": 1,
+    "params": {},
+    "params_digest": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  }
+}

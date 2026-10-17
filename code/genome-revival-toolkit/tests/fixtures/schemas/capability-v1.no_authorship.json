@@ -1,0 +1,59 @@
+{
+  "schema_id": "capability-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 8ad9c44 A2/A9 explicitly make authorship optional; original missing-field case retained."
+  },
+  "data": {
+    "schema": "capability-v1",
+    "id": "demo.check_length",
+    "version": "0.0.0",
+    "role": "CHECK",
+    "summary": "Report length.",
+    "effects": [
+      "pure"
+    ],
+    "deterministic": true,
+    "requires_runtime": [],
+    "inputs": [
+      {
+        "name": "sequence",
+        "type": "value",
+        "required": true,
+        "constraints": {},
+        "description": "Synthetic input."
+      }
+    ],
+    "params": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputs": [
+      {
+        "name": "length",
+        "type": "value",
+        "output_role": "analysis"
+      }
+    ],
+    "step_checks": [],
+    "final_checks": [],
+    "does_not_establish": [
+      "Experimental result."
+    ],
+    "source": {
+      "algorithm_refs": [],
+      "implemented_in": "capabilities/length.py"
+    },
+    "owner": "kit:demo",
+    "scope": "content_model",
+    "evaluates_constraint": false,
+    "fixtures": {
+      "pass": "pass.json",
+      "fail": "fail.json"
+    },
+    "offline": true,
+    "granularity": "atomic"
+  }
+}

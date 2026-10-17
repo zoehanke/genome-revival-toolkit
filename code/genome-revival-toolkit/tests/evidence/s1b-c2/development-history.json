@@ -1,0 +1,11 @@
+{
+  "initial_targeted_run": {
+    "tests": 9,
+    "error_subtests": 6,
+    "failure": "KeyError: 'files'",
+    "location": "goal_runtime.fixture_case candidate construction",
+    "correction": "Provide actual bound file paths and byte hashes in candidate.files; product code unchanged.",
+    "followup": "One targeted test with six check subcases passed."
+  },
+  "record_type": "Observed development summary."
+}

@@ -1,0 +1,16 @@
+{
+  "schema_id": "seal.created-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "seal_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "manifest_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "journal_head": "2222222222222222222222222222222222222222222222222222222222222222",
+    "release_id": "1111111111111111111111111111111111111111111111111111111111111111",
+    "labels": {},
+    "undeclared_field": true
+  }
+}

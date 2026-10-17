@@ -1,0 +1,19 @@
+{
+  "expected_invalid_probes": {
+    "drafts/revival-evidence/probes/source-missing.json": "rule-v1",
+    "drafts/revival-evidence/probes/partial-placeholder.json": "pipeline-template-v1"
+  },
+  "issue_map": {
+    "document_schema": "K1",
+    "source_quarantine": "K2",
+    "material_collection": "K3",
+    "model_binding": "K4",
+    "handoff_shape": "K5",
+    "action_knowledge_access": "K6"
+  },
+  "knowledge_consumers": [
+    "cut_plasmid.assess_selection",
+    "evidence.assess_observations"
+  ],
+  "handoff_authority": "prompts/s5b-genome-identity.md; old schema_version/references-dict/rows protocol is not the new contract"
+}

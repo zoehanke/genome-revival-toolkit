@@ -1,0 +1,16 @@
+{
+  "schema_id": "run.abandoned-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "reason": "Synthetic stop.",
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic",
+      "version": "0.0.0"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.check_junction_assay",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Draft contract for construct.check_junction_assay; no Kit implementation exists.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_construct.capabilities.operations:check_junction_assay"
+  },
+  "owner": "kit:construct",
+  "granularity": "atomic",
+  "scope": "preparation_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/check_junction_assay.pass.json",
+    "fail": "capabilities/fixtures/check_junction_assay.fail.json"
+  }
+}

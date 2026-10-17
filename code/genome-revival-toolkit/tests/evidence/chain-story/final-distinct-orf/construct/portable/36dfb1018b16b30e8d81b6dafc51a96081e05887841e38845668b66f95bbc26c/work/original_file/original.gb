@@ -1,0 +1,48 @@
+LOCUS       material                 800 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  material.
+ACCESSION   material
+VERSION     material
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+COMMENT     GRT-MATERIAL:
+            eyJtYXRlcmlhbCI6eyJlbmRzIjpudWxsLCJmZWF0dXJlcyI6W10sInNlcXVl
+            bmNlIjoiQUNHQ1RDQUFDR1RHVEFBR0FHR0FDQVRUQ0NDQ1RBQ0NBQUdDR0dD
+            QVRUQVRDQ0NDQUFHVENDQUFBQUFBR0FHQUFDR1RHQ1RHR0NBR0dDVEdBQ0NU
+            R0dHVEFHQ0FDQ0NHVEdHVENBR0dDR0FBQ0NUR0FBQUFBR0dHQ0FUQ0FBR0FB
+            R1RHR0FDVENBQUFUR0dUR0FBVEFUR1RHQ0FHVEdDQUFBQVRDVFRDQ0NBVEFB
+            VEdBQVRUQ0NHR1RDVEdDQUFHQ0FDQUdBR1RHQ0NDQ0NBQ0NUVEFBQVRHQ0FU
+            R0FUQUdBQUdDQ1RHVEdHQ0NDQUFUQUFBVENBVEFHQ0FDQUFDQUdUQVRHR1RU
+            R0dDR0FUVENUVFRHQUdHQ0FBQUdDR0NHQ0FDQ0FDVEdUVFRDQVRHR0NUR0NU
+            R0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NU
+            R0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NUR0NU
+            R0NUR0NUR0NUR0NUR0NUR0NUVEFBR0dBR0NBQ0dDQ0FBQ0NBR0NDR1RUQ0FH
+            VEFHQ1RBVFRUR0FUQUFBQUdHQVRUVFRUR1RDVFRUVEFBVFRUR0FHQ1RHQ0FD
+            QVRHVFRUQUFUQ1RUQ0dBR0FDQ0dHQUNHQ0FDQ0dUQUFUVENBQUdUQUdHVFRD
+            R0FHQ0FDQUdHVFRBQUNDR1RHVENHQUFHQ0FDQUNDVFRDR0dBQ1RBQ0FHQUND
+            VENUQUdDQ0dBVENDVEdDQ1RBR0FUR0NBVENHQUFHVENBQUdDR0FDQVRHQ0FU
+            R1RDQ0NHR1RHR0FHR1RHVEdHQ0dDR0NBVENDQVRUQ0NUQUFBR0NHR0dDQUdD
+            VFRBQ1RHR0FUVENBQUNUVEFHR0NHVENUQ0dBR0dHVEFHR0dBQUNUQUdUQUFU
+            Q0dDQ0FBR1RHR0FUQ0NDVEFUQ0FUQ0NHQ0FBQUNHVEFUQ1RUQUdDVFRHQUdU
+            VENHQ0FHQVRUVFRHR0NHR0NHQ1RHQ0dUQ0FBQ1RUVEFBQUFHR0dUQ1QiLCJz
+            dHJhbmRlZG5lc3MiOiJkb3VibGUiLCJ0b3BvbG9neSI6ImxpbmVhciJ9LCJw
+            cm9qZWN0aW9uIjoiMDg2OWUwZmQzZDA3ZWNiMzcxYWVjY2Q1NWE0ZGY0ZWM5
+            MjM3N2U5MGVkOTZhNzdmMzFlZTY2ODlhM2JjMzE4MCJ9
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 acgctcaacg tgtaagagga cattccccta ccaagcggca ttatccccaa gtccaaaaaa
+       61 gagaacgtgc tggcaggctg acctgggtag cacccgtggt caggcgaacc tgaaaaaggg
+      121 catcaagaag tggactcaaa tggtgaatat gtgcagtgca aaatcttccc ataatgaatt
+      181 ccggtctgca agcacagagt gcccccacct taaatgcatg atagaagcct gtggcccaat
+      241 aaatcatagc acaacagtat ggttggcgat tctttgaggc aaagcgcgca ccactgtttc
+      301 atggctgctg ctgctgctgc tgctgctgct gctgctgctg ctgctgctgc tgctgctgct
+      361 gctgctgctg ctgctgctgc tgctgctgct gctgctgctg ctgctgctgc tgctgcttaa
+      421 ggagcacgcc aaccagccgt tcagtagcta tttgataaaa ggatttttgt cttttaattt
+      481 gagctgcaca tgtttaatct tcgagaccgg acgcaccgta attcaagtag gttcgagcac
+      541 aggttaaccg tgtcgaagca caccttcgga ctacagacct ctagccgatc ctgcctagat
+      601 gcatcgaagt caagcgacat gcatgtcccg gtggaggtgt ggcgcgcatc cattcctaaa
+      661 gcgggcagct tactggattc aacttaggcg tctcgagggt agggaactag taatcgccaa
+      721 gtggatccct atcatccgca aacgtatctt agcttgagtt cgcagatttt ggcggcgctg
+      781 cgtcaacttt aaaagggtct
+//

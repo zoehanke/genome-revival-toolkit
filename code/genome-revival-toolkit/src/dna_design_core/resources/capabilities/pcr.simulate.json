@@ -1,0 +1,94 @@
+{
+  "schema": "capability-v1",
+  "id": "pcr.simulate",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Predict one unique annotated PCR product; reject missing or ambiguous products.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "template",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "template"
+    },
+    {
+      "name": "forward",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "forward"
+    },
+    {
+      "name": "reverse",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reverse"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "forward_core_length": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      },
+      "reverse_core_length": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "component"
+    },
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "check.pcr_product"
+    }
+  ],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.pcr.operations:simulate"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

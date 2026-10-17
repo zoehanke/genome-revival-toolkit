@@ -1,0 +1,247 @@
+{
+  "cases": {
+    "b3": {
+      "package": "b3/portable/77c15852d8c281687ed76efef49f3aa38e39d5405032df90b2afe9109b01ca52",
+      "verify": true,
+      "conclusions": [
+        {
+          "applicability": "PASS",
+          "claim": "control_no_outgrowth",
+          "reason": "Colonies were reported in the designated no-outgrowth control; reported absence is contradicted.",
+          "rule_ref": "b265867203a16cfb4c895c842b2d637149a7ab973262c7fbfbf64716203e2a05",
+          "status": "CONTRADICTED",
+          "subject": {
+            "sample_id": "o2"
+          }
+        },
+        {
+          "applicability": "PASS",
+          "claim": "functional_revival",
+          "reason": "Reported colony growth and selected assays do not establish donor-dependent functional revival.",
+          "rule_ref": "66ed21b9c5a60d494091715ecfe418e8a92bfd4d61d5a7f434bd2475e7d32a4a",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "whole_genome_elimination",
+          "reason": "No genotype observations were supplied.",
+          "rule_ref": "c9afa7893abdbfeadccad996fb5b250bc77b872ea5e1b7b030d4b9f21e8bcc65",
+          "status": "NOT_TESTED",
+          "subject": {}
+        }
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+      "offline_checks": 9,
+      "oracle": {
+        "conclusions_compared": 3,
+        "groups_compared": 2,
+        "comparisons_compared": 1,
+        "result": "PASS",
+        "method": "Independent standard-library parsing, count arithmetic and rule-file truth-table lookup."
+      }
+    },
+    "missing_count_and_ids": {
+      "package": "missing_count_and_ids/portable/35cefa95cb8e2cad5b955bc94e70ebae1c9714b23ce260608fe6618d4f02fcbb",
+      "verify": true,
+      "conclusions": [
+        {
+          "applicability": "PASS",
+          "claim": "control_no_outgrowth",
+          "reason": "The reported negative-control count is missing; missing is not zero.",
+          "rule_ref": "b265867203a16cfb4c895c842b2d637149a7ab973262c7fbfbf64716203e2a05",
+          "status": "NOT_TESTED",
+          "subject": {
+            "sample_id": "row_2"
+          }
+        },
+        {
+          "applicability": "PASS",
+          "claim": "functional_revival",
+          "reason": "Reported colony growth and selected assays do not establish donor-dependent functional revival.",
+          "rule_ref": "66ed21b9c5a60d494091715ecfe418e8a92bfd4d61d5a7f434bd2475e7d32a4a",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "whole_genome_elimination",
+          "reason": "No genotype observations were supplied.",
+          "rule_ref": "c9afa7893abdbfeadccad996fb5b250bc77b872ea5e1b7b030d4b9f21e8bcc65",
+          "status": "NOT_TESTED",
+          "subject": {}
+        }
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+      "offline_checks": 9,
+      "oracle": {
+        "conclusions_compared": 3,
+        "groups_compared": 2,
+        "comparisons_compared": 1,
+        "result": "PASS",
+        "method": "Independent standard-library parsing, count arithmetic and rule-file truth-table lookup."
+      }
+    },
+    "local_predictions": {
+      "package": "local_predictions/portable/7a4fc844d390ec124199b58f2599f2b176a19720edce0fc930191a8ee272a6cc",
+      "verify": true,
+      "conclusions": [
+        {
+          "applicability": "PASS",
+          "claim": "functional_revival",
+          "reason": "Reported colony growth and selected assays do not establish donor-dependent functional revival.",
+          "rule_ref": "66ed21b9c5a60d494091715ecfe418e8a92bfd4d61d5a7f434bd2475e7d32a4a",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "whole_genome_elimination",
+          "reason": "Selected-region observations do not cover a whole genome.",
+          "rule_ref": "c9afa7893abdbfeadccad996fb5b250bc77b872ea5e1b7b030d4b9f21e8bcc65",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "local_prediction_agreement",
+          "reason": "A complete reported positive band contradicts the supplied local prediction: unexpected presence or size outside the declared tolerance.",
+          "rule_ref": "0d388848b6ff82befe7a0ea95a67e8a9a782b1fccb35de83e421aa46e5ef64e6",
+          "status": "CONTRADICTED",
+          "subject": {
+            "assay_id": "assay1",
+            "background_id": "edited",
+            "sample_id": "sample2"
+          }
+        },
+        {
+          "applicability": "PASS",
+          "claim": "local_prediction_agreement",
+          "reason": "Reported local result agrees with the supplied prediction within the explicitly reported size tolerance.",
+          "rule_ref": "0d388848b6ff82befe7a0ea95a67e8a9a782b1fccb35de83e421aa46e5ef64e6",
+          "status": "SUPPORTED",
+          "subject": {
+            "assay_id": "assay1",
+            "background_id": "original",
+            "sample_id": "sample1"
+          }
+        }
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+      "offline_checks": 9,
+      "oracle": {
+        "conclusions_compared": 4,
+        "groups_compared": 0,
+        "comparisons_compared": 0,
+        "result": "PASS",
+        "method": "Independent standard-library parsing, count arithmetic and rule-file truth-table lookup."
+      }
+    },
+    "empty": {
+      "package": "empty/portable/960b7ddff3df2b7b72241a4c5a8f52e5803c84283b336e9577a2ef87d1159a02",
+      "verify": true,
+      "conclusions": [
+        {
+          "applicability": "PASS",
+          "claim": "functional_revival",
+          "reason": "No counts, genotype assays or functional observations were supplied.",
+          "rule_ref": "66ed21b9c5a60d494091715ecfe418e8a92bfd4d61d5a7f434bd2475e7d32a4a",
+          "status": "NOT_TESTED",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "whole_genome_elimination",
+          "reason": "No genotype observations were supplied.",
+          "rule_ref": "c9afa7893abdbfeadccad996fb5b250bc77b872ea5e1b7b030d4b9f21e8bcc65",
+          "status": "NOT_TESTED",
+          "subject": {}
+        }
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+      "offline_checks": 9,
+      "oracle": {
+        "conclusions_compared": 2,
+        "groups_compared": 0,
+        "comparisons_compared": 0,
+        "result": "PASS",
+        "method": "Independent standard-library parsing, count arithmetic and rule-file truth-table lookup."
+      }
+    },
+    "product_counts": {
+      "package": "product_counts/portable/7d680d92a4d2b103d4899d22d15713a9f623a96cb3abbc6a7e9653ff05b63782",
+      "verify": true,
+      "conclusions": [
+        {
+          "applicability": "PASS",
+          "claim": "functional_revival",
+          "reason": "Reported colony growth and selected assays do not establish donor-dependent functional revival.",
+          "rule_ref": "66ed21b9c5a60d494091715ecfe418e8a92bfd4d61d5a7f434bd2475e7d32a4a",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "whole_genome_elimination",
+          "reason": "Selected-region observations do not cover a whole genome.",
+          "rule_ref": "c9afa7893abdbfeadccad996fb5b250bc77b872ea5e1b7b030d4b9f21e8bcc65",
+          "status": "INSUFFICIENT",
+          "subject": {}
+        },
+        {
+          "applicability": "PASS",
+          "claim": "local_prediction_agreement",
+          "reason": "Reported local result agrees with the supplied prediction within the explicitly reported size tolerance.",
+          "rule_ref": "0d388848b6ff82befe7a0ea95a67e8a9a782b1fccb35de83e421aa46e5ef64e6",
+          "status": "SUPPORTED",
+          "subject": {
+            "assay_id": "counts_assay",
+            "background_id": "absent",
+            "sample_id": "sample_absent"
+          }
+        },
+        {
+          "applicability": "PASS",
+          "claim": "local_prediction_agreement",
+          "reason": "An interpretable prediction bound to the reported reference hash is missing.",
+          "rule_ref": "0d388848b6ff82befe7a0ea95a67e8a9a782b1fccb35de83e421aa46e5ef64e6",
+          "status": "INSUFFICIENT",
+          "subject": {
+            "assay_id": "counts_assay",
+            "background_id": "multiple",
+            "sample_id": "sample_multiple"
+          }
+        },
+        {
+          "applicability": "PASS",
+          "claim": "local_prediction_agreement",
+          "reason": "Reported local result agrees with the supplied prediction within the explicitly reported size tolerance.",
+          "rule_ref": "0d388848b6ff82befe7a0ea95a67e8a9a782b1fccb35de83e421aa46e5ef64e6",
+          "status": "SUPPORTED",
+          "subject": {
+            "assay_id": "counts_assay",
+            "background_id": "single",
+            "sample_id": "sample_single"
+          }
+        }
+      ],
+      "release_id": "f64c02a084117c0f31d70388c85fb27634846d187bb5d13fa71597d665ad1a78",
+      "offline_checks": 9,
+      "oracle": {
+        "conclusions_compared": 5,
+        "groups_compared": 0,
+        "comparisons_compared": 0,
+        "result": "PASS",
+        "method": "Independent standard-library parsing, count arithmetic and rule-file truth-table lookup."
+      }
+    }
+  },
+  "commands": 45,
+  "connection_attempts": 0,
+  "limits": [
+    "Constructed S5b interface files; actual cross-Kit execution was not performed.",
+    "Synthetic observations; wet-laboratory outcomes and authenticity were not verified."
+  ],
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run"
+}

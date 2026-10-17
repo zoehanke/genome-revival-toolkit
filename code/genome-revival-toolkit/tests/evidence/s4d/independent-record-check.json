@@ -1,0 +1,31 @@
+[
+  {
+    "case": "current",
+    "files_with_matching_hashes": 18,
+    "events_with_matching_hashes": 34,
+    "missing_call_parameters": [],
+    "method": "stdlib hashlib and public rfc8785; no Core or Kit imports"
+  },
+  {
+    "case": "legacy",
+    "files_with_matching_hashes": 12,
+    "events_with_matching_hashes": 34,
+    "missing_call_parameters": [
+      {
+        "seq": 9,
+        "missing": [
+          "params",
+          "params_digest"
+        ]
+      },
+      {
+        "seq": 22,
+        "missing": [
+          "params",
+          "params_digest"
+        ]
+      }
+    ],
+    "method": "stdlib hashlib and public rfc8785; no Core or Kit imports"
+  }
+]

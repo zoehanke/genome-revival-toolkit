@@ -1,0 +1,332 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "reference",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{reference_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the supplied synthetic linear reference."
+    },
+    {
+      "step_id": "cargo",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{cargo_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the actual selected cargo source."
+    },
+    {
+      "step_id": "donor_template",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{donor_template_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Read the actual complete donor template; do not create it from the model."
+    },
+    {
+      "step_id": "model",
+      "use": "construct.model_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}",
+        "arm_length": "{{arm_length}}",
+        "cargo_start": "{{cargo_start}}",
+        "cargo_end": "{{cargo_end}}"
+      },
+      "why": "Compute the independent source-bound expectation before preparation."
+    },
+    {
+      "step_id": "design",
+      "use": "construct.design_donor",
+      "inputs": {
+        "reference": {
+          "step": "reference",
+          "port": "material"
+        },
+        "cargo": {
+          "step": "cargo",
+          "port": "material"
+        },
+        "donor_template": {
+          "step": "donor_template",
+          "port": "material"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}",
+        "arm_length": "{{arm_length}}",
+        "cargo_start": "{{cargo_start}}",
+        "cargo_end": "{{cargo_end}}",
+        "preparation_method": "pcr",
+        "primer_length": "{{primer_length}}",
+        "donor_start": "{{donor_start}}",
+        "donor_end": "{{donor_end}}"
+      },
+      "why": "Prepare through actual template PCR and the requested assembly method."
+    },
+    {
+      "step_id": "assay",
+      "use": "construct.design_junction_assay",
+      "inputs": {
+        "original": {
+          "step": "reference",
+          "port": "material"
+        },
+        "edited": {
+          "step": "design",
+          "port": "edited"
+        },
+        "donor": {
+          "step": "design",
+          "port": "product"
+        }
+      },
+      "params": {
+        "start": "{{start}}",
+        "end": "{{end}}",
+        "arm_length": "{{arm_length}}",
+        "primer_length": "{{primer_length}}"
+      },
+      "why": "Test external junction primers on edited, original and residual donor DNA."
+    },
+    {
+      "step_id": "original_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "reference",
+          "port": "material"
+        }
+      },
+      "params": {
+        "name": "original.gb"
+      },
+      "why": "Export the exact original assay background."
+    },
+    {
+      "step_id": "edited_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "design",
+          "port": "edited"
+        }
+      },
+      "params": {
+        "name": "edited.gb"
+      },
+      "why": "Export the exact edited assay background."
+    },
+    {
+      "step_id": "donor_file",
+      "use": "format.write_genbank",
+      "inputs": {
+        "material": {
+          "step": "design",
+          "port": "product"
+        }
+      },
+      "params": {
+        "name": "donor.gb"
+      },
+      "why": "Export the actual PCR/assembly product for independent recomputation."
+    },
+    {
+      "step_id": "handoff",
+      "use": "construct.export_handoff",
+      "inputs": {
+        "original_file": {
+          "step": "original_file",
+          "port": "file"
+        },
+        "edited_file": {
+          "step": "edited_file",
+          "port": "file"
+        },
+        "assay": {
+          "step": "assay",
+          "port": "assay"
+        }
+      },
+      "params": {},
+      "why": "Bind actual reference-file hashes and junction primers into the D11 file protocol."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "donor",
+      "from": {
+        "step": "design",
+        "port": "product"
+      },
+      "target": "{{donor_target}}"
+    },
+    {
+      "name": "primers",
+      "from": {
+        "step": "design",
+        "port": "primers"
+      },
+      "target": "{{primers_target}}"
+    },
+    {
+      "name": "assay",
+      "from": {
+        "step": "assay",
+        "port": "assay"
+      },
+      "target": "{{assay_target}}"
+    },
+    {
+      "name": "identity_handoff",
+      "from": {
+        "step": "handoff",
+        "port": "handoff"
+      },
+      "target": "{{handoff_target}}"
+    },
+    {
+      "name": "identity_original",
+      "from": {
+        "step": "handoff",
+        "port": "reference_original"
+      },
+      "target": "{{handoff_target}}"
+    },
+    {
+      "name": "identity_edited",
+      "from": {
+        "step": "handoff",
+        "port": "reference_edited"
+      },
+      "target": "{{handoff_target}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "goal digest"
+      },
+      "reference_source": {
+        "type": "string",
+        "description": "reference source"
+      },
+      "cargo_source": {
+        "type": "string",
+        "description": "cargo source"
+      },
+      "donor_target": {
+        "type": "string",
+        "description": "Existing goal target id with role construct."
+      },
+      "primers_target": {
+        "type": "string",
+        "description": "Existing goal target id with role primer_set."
+      },
+      "assay_target": {
+        "type": "string",
+        "description": "Existing goal target id with role analysis."
+      },
+      "handoff_target": {
+        "type": "string",
+        "description": "Existing goal target id with role analysis. Binds the handoff and both hash-referenced delivered files."
+      },
+      "start": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit start"
+      },
+      "end": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit end"
+      },
+      "arm_length": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit arm length"
+      },
+      "cargo_start": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit cargo start"
+      },
+      "cargo_end": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit cargo end"
+      },
+      "primer_length": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Explicit primer length"
+      },
+      "donor_template_source": {
+        "type": "string",
+        "description": "donor template source"
+      },
+      "donor_start": {
+        "type": "integer",
+        "description": "donor start"
+      },
+      "donor_end": {
+        "type": "integer",
+        "description": "donor end"
+      }
+    },
+    "required": [
+      "goal_digest",
+      "reference_source",
+      "cargo_source",
+      "donor_target",
+      "primers_target",
+      "assay_target",
+      "handoff_target",
+      "start",
+      "end",
+      "arm_length",
+      "cargo_start",
+      "cargo_end",
+      "primer_length",
+      "donor_template_source",
+      "donor_start",
+      "donor_end"
+    ],
+    "additionalProperties": false
+  }
+}

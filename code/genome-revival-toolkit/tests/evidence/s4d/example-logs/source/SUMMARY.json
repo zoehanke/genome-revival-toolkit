@@ -1,0 +1,10 @@
+{
+  "expected": {
+    "sequence": "TTCTGACT"
+  },
+  "verified": true,
+  "portable_package": "portable/cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+  "release_id": "dev-tree",
+  "execution": "source tree",
+  "scope": "Synthetic reverse-complement calculation and portable sealed-record verification; no Kit or laboratory result."
+}

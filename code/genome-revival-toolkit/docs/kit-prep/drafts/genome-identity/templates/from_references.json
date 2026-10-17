@@ -1,0 +1,143 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "original",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{original_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "edited",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{edited_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "double"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "forward",
+      "use": "seq.make_material",
+      "inputs": {
+        "sequence": {
+          "literal": "{{forward_sequence}}"
+        }
+      },
+      "params": {
+        "strandedness": "single"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "reverse",
+      "use": "seq.make_material",
+      "inputs": {
+        "sequence": {
+          "literal": "{{reverse_sequence}}"
+        }
+      },
+      "params": {
+        "strandedness": "single"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    },
+    {
+      "step_id": "assay",
+      "use": "identity.analyze_assay",
+      "inputs": {
+        "references": [
+          {
+            "step": "original",
+            "port": "material"
+          },
+          {
+            "step": "edited",
+            "port": "material"
+          }
+        ],
+        "forward": {
+          "step": "forward",
+          "port": "material"
+        },
+        "reverse": {
+          "step": "reverse",
+          "port": "material"
+        }
+      },
+      "params": {
+        "assay_id": "{{assay_id}}"
+      },
+      "why": "Apply the declared operation to explicitly registered synthetic inputs."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "result",
+      "from": {
+        "step": "assay",
+        "port": "expected_results"
+      },
+      "target": "{{target_id}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "description": "Explicit caller-provided goal digest; no inferred source or scientific threshold.",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "target_id": {
+        "type": "string",
+        "description": "Explicit caller-provided target id; no inferred source or scientific threshold."
+      },
+      "original_source": {
+        "type": "string",
+        "description": "Explicit caller-provided original source; no inferred source or scientific threshold."
+      },
+      "edited_source": {
+        "type": "string",
+        "description": "Explicit caller-provided edited source; no inferred source or scientific threshold."
+      },
+      "forward_sequence": {
+        "type": "string",
+        "description": "Explicit caller-provided forward sequence; no inferred source or scientific threshold."
+      },
+      "reverse_sequence": {
+        "type": "string",
+        "description": "Explicit caller-provided reverse sequence; no inferred source or scientific threshold."
+      },
+      "assay_id": {
+        "type": "string",
+        "description": "Explicit caller-provided assay id; no inferred source or scientific threshold."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "target_id",
+      "original_source",
+      "edited_source",
+      "forward_sequence",
+      "reverse_sequence",
+      "assay_id"
+    ],
+    "additionalProperties": false
+  }
+}

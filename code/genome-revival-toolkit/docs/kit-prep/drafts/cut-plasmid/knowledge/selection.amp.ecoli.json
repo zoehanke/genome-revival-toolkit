@@ -1,0 +1,47 @@
+{
+  "schema": "rule-v1",
+  "id": "selection.amp.ecoli",
+  "name": "Conditional selection for amp / ecoli",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "marker_id": "amp",
+    "pattern": "ampr|ampicillin|bla(?:tem\\d*)?|beta-lactamase",
+    "host": "ecoli",
+    "plate": "LB + ampicillin",
+    "auxotrophy": null
+  },
+  "applies_when": [
+    {
+      "field": "marker_id",
+      "op": "eq",
+      "value": "amp"
+    },
+    {
+      "field": "host",
+      "op": "eq",
+      "value": "ecoli"
+    }
+  ],
+  "source": {
+    "source_class": "official_method",
+    "citation": "NEB Turbo competent E. coli: antibiotics for plasmid selection",
+    "locator": "https://www.neb.com/en-us/products/c2986-neb-turbo-electrocompetent-e-coli",
+    "retrieved_at": "2026-10-14",
+    "content_ref": null,
+    "archive_note": "Copied legacy citation, not fetched online. Old verified flags/receipts are not inherited.",
+    "supports": [
+      "ecoli selection mapping for amp"
+    ],
+    "does_not_support": [
+      "Resistance, expression or compatible selection measured in the user's strain."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/selection.amp.ecoli.json"
+}

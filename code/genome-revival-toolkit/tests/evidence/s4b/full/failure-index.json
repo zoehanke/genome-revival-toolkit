@@ -1,0 +1,918 @@
+{
+  "failed_trace_blocks": 151,
+  "exception_types": {
+    "AssertionError": 106,
+    "FileNotFoundError": 32,
+    "UNKNOWN": 13
+  },
+  "source_changed_blocks": 135,
+  "missing_manifest_blocks": 135,
+  "trace_headers": [
+    {
+      "test": "ERROR: setUpClass (integration.test_construct.ConstructTests)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: setUpClass (integration.test_revival_evidence_mutations.EvidenceMutations)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.fail.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.pass.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.fail.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_pam.pass.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.fail.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_all_check_pass_and_fail_fixtures_actually_run (unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_vector_self_target.pass.json')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_annotation_disagreement_is_reported_without_overriding_sequence (unit.test_cut_plasmid.CutPlasmidTests.test_annotation_disagreement_is_reported_without_overriding_sequence)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer (unit.test_cut_plasmid.CutPlasmidTests.test_b2_replacement_primers_and_linear_intermediate_match_constructed_answer)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_b2_wrong_pam_is_computed_from_bases (unit.test_cut_plasmid.CutPlasmidTests.test_b2_wrong_pam_is_computed_from_bases)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_independent_model_matches_constructed_edit (unit.test_cut_plasmid.CutPlasmidTests.test_independent_model_matches_constructed_edit)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_missing_genotype_is_unknown_and_has_no_plate_recommendation (unit.test_cut_plasmid.CutPlasmidTests.test_missing_genotype_is_unknown_and_has_no_plate_recommendation)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_model_agreement_detects_a_constructed_one_base_wrong_product (unit.test_cut_plasmid.CutPlasmidTests.test_model_agreement_detects_a_constructed_one_base_wrong_product)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_multiple_target_loci_are_counted_without_choosing_one (unit.test_cut_plasmid.CutPlasmidTests.test_multiple_target_loci_are_counted_without_choosing_one)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_reverse_insert_is_not_rescued_by_forward_annotation (unit.test_cut_plasmid.CutPlasmidTests.test_reverse_insert_is_not_rescued_by_forward_annotation)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_second_binding_site_blocks_design_with_positive_control (unit.test_cut_plasmid.CutPlasmidTests.test_second_binding_site_blocks_design_with_positive_control)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_source_labelled_mapping_requires_complete_declared_genotype (unit.test_cut_plasmid.CutPlasmidTests.test_source_labelled_mapping_requires_complete_declared_genotype)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_spacer_marked_as_cds_is_identified_and_retired (unit.test_cut_plasmid.CutPlasmidTests.test_spacer_marked_as_cds_is_identified_and_retired)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_tm_window_rejects_impossible_design_with_positive_control (unit.test_cut_plasmid.CutPlasmidTests.test_tm_window_rejects_impossible_design_with_positive_control)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_untouched_invalid_cds_retains_sequence_and_annotation (unit.test_cut_plasmid.CutPlasmidTests.test_untouched_invalid_cds_retains_sequence_and_annotation)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_vector_near_match_and_ambiguous_bases_do_not_become_pass (unit.test_cut_plasmid.CutPlasmidTests.test_vector_near_match_and_ambiguous_bases_do_not_become_pass)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_wrapping_origin_replacement_and_negative_transcription (unit.test_cut_plasmid.CutPlasmidTests.test_wrapping_origin_replacement_and_negative_transcription)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_action_check_and_verify_use_frozen_knowledge (unit.test_revival_evidence.EvidenceTests.test_action_check_and_verify_use_frozen_knowledge)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_checker_catches_parse_missingness_and_claim_mutations (unit.test_revival_evidence.EvidenceTests.test_checker_catches_parse_missingness_and_claim_mutations)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_checker_pass_and_deliberate_fail_fixtures (unit.test_revival_evidence.EvidenceTests.test_checker_pass_and_deliberate_fail_fixtures) (variant='pass')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_checker_pass_and_deliberate_fail_fixtures (unit.test_revival_evidence.EvidenceTests.test_checker_pass_and_deliberate_fail_fixtures) (variant='fail')",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_checker_without_assessment_cannot_pass (unit.test_revival_evidence.EvidenceTests.test_checker_without_assessment_cannot_pass)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_claim_constraint_reports_insufficient_and_derives_origin (unit.test_revival_evidence.EvidenceTests.test_claim_constraint_reports_insufficient_and_derives_origin)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_invoked_checker_rejects_changed_export_without_rewriting_it (unit.test_revival_evidence.EvidenceTests.test_invoked_checker_rejects_changed_export_without_rewriting_it)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_missing_requested_theme_prevents_sealing (unit.test_revival_evidence.EvidenceTests.test_missing_requested_theme_prevents_sealing)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_seal_portability_and_not_done (unit.test_revival_evidence.EvidenceTests.test_seal_portability_and_not_done)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "ERROR: test_core_reads_core_package_but_not_kit_package (unit.test_s1_followup2.KnowledgeTests.test_core_reads_core_package_but_not_kit_package)",
+      "exception": "FileNotFoundError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_public_cli_revision_reaction_readback_and_honest_seal_result (e2e.test_cut_plasmid.CutPlasmidEndToEndTests.test_public_cli_revision_reaction_readback_and_honest_seal_result)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_public_cli_examples_and_portable_seals (e2e.test_examples.EndToEndTests.test_public_cli_examples_and_portable_seals)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_public_cli_and_copied_seal (e2e.test_genome_identity.GenomeIdentityCliTests.test_public_cli_and_copied_seal)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_constraint_parameters_are_rejected_during_goal_declaration (e2e.test_goal_constraints.GoalConstraintTests.test_constraint_parameters_are_rejected_during_goal_declaration)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_fields_constraint_allows_b1_seal (e2e.test_goal_constraints.GoalConstraintTests.test_fields_constraint_allows_b1_seal)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_goal_schema_recovery_names_the_goal_schema (e2e.test_goal_constraints.GoalConstraintTests.test_goal_schema_recovery_names_the_goal_schema)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_missing_document_field_is_fail (e2e.test_goal_constraints.GoalConstraintTests.test_missing_document_field_is_fail)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_request_origin_is_rejected (e2e.test_goal_constraints.GoalConstraintTests.test_request_origin_is_rejected)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_external_loader_cli (e2e.test_s1_followup2.Followup2CliTests.test_external_loader_cli)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_frozen_knowledge_cli (e2e.test_s1_followup2.Followup2CliTests.test_frozen_knowledge_cli)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_inline_document_cli (e2e.test_s1_followup2.Followup2CliTests.test_inline_document_cli)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_materials_cli (e2e.test_s1_followup2.Followup2CliTests.test_materials_cli)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_convention_cli (e2e.test_s1_followup2.Followup2CliTests.test_model_convention_cli)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_source_import_through_public_cli_preserves_bytes_and_rejects_id_change (integration.test_cli.CliTests.test_source_import_through_public_cli_preserves_bytes_and_rejects_id_change)",
+      "exception": "AssertionError",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_public_execute_recovers_killed_tail_and_records_interrupted_step (integration.test_crash_recovery.CrashRecoveryTests.test_public_execute_recovers_killed_tail_and_records_interrupted_step)",
+      "exception": "AssertionError",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_circular_origin_binding_reaches_public_pipeline_and_judge (integration.test_genome_identity.GenomeIdentityIntegrationTests.test_circular_origin_binding_reaches_public_pipeline_and_judge)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_multiple_sites_remain_undetermined (integration.test_genome_identity.GenomeIdentityIntegrationTests.test_multiple_sites_remain_undetermined)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_same_sized_products_remain_not_distinguishable (integration.test_genome_identity.GenomeIdentityIntegrationTests.test_same_sized_products_remain_not_distinguishable)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_template_without_handoff_has_no_untracked_material_list (integration.test_genome_identity.GenomeIdentityIntegrationTests.test_template_without_handoff_has_no_untracked_material_list)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_public_goal_execute_judge_keeps_six_constraint_answers (integration.test_goal_constraints_api.GoalConstraintApiTests.test_public_goal_execute_judge_keeps_six_constraint_answers)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_declared_file_read_passes (integration.test_postcall_io.PostCallIOTests.test_declared_file_read_passes)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_declared_write_inside_workdir_passes (integration.test_postcall_io.PostCallIOTests.test_declared_write_inside_workdir_passes)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_declared_writer_cannot_change_its_input (integration.test_postcall_io.PostCallIOTests.test_declared_writer_cannot_change_its_input)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_interpreter_cache_is_not_a_capability_file_effect (integration.test_postcall_io.PostCallIOTests.test_interpreter_cache_is_not_a_capability_file_effect)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_lazy_helper_import_cache_is_not_a_capability_file_effect (integration.test_postcall_io.PostCallIOTests.test_lazy_helper_import_cache_is_not_a_capability_file_effect)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_module_initialization_write_is_part_of_loading_the_capability (integration.test_postcall_io.PostCallIOTests.test_module_initialization_write_is_part_of_loading_the_capability)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_nested_broker_store_and_journal_writes_are_allowed (integration.test_postcall_io.PostCallIOTests.test_nested_broker_store_and_journal_writes_are_allowed)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_new_file_outside_workdir_is_detected_after_it_was_written (integration.test_postcall_io.PostCallIOTests.test_new_file_outside_workdir_is_detected_after_it_was_written)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_new_store_file_is_not_an_authorized_work_output (integration.test_postcall_io.PostCallIOTests.test_new_store_file_is_not_an_authorized_work_output)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_outside_run_write_is_observed_without_monitoring_whole_computer (integration.test_postcall_io.PostCallIOTests.test_outside_run_write_is_observed_without_monitoring_whole_computer)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_parent_cannot_swallow_nested_write_violation (integration.test_postcall_io.PostCallIOTests.test_parent_cannot_swallow_nested_write_violation)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_transient_undeclared_write_cannot_hide_by_deleting (integration.test_postcall_io.PostCallIOTests.test_transient_undeclared_write_cannot_hide_by_deleting)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_write_then_exception_still_reports_write_violation (integration.test_postcall_io.PostCallIOTests.test_write_then_exception_still_reports_write_violation)",
+      "exception": "UNKNOWN",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_development_tree_still_records_dev_tree (integration.test_release_identity.ReleaseIdentityTests.test_development_tree_still_records_dev_tree)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_complete_cds_and_introduced_internal_stop_have_opposite_verdicts (integration.test_s1c_cds.CDSValidityTests.test_complete_cds_and_introduced_internal_stop_have_opposite_verdicts) (sequence_case='PASS')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_complete_cds_and_introduced_internal_stop_have_opposite_verdicts (integration.test_s1c_cds.CDSValidityTests.test_complete_cds_and_introduced_internal_stop_have_opposite_verdicts) (sequence_case='FAIL')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_inherited_internal_stop_is_pass_for_exact_copy_and_unique_rotation (integration.test_s1c_cds.CDSValidityTests.test_inherited_internal_stop_is_pass_for_exact_copy_and_unique_rotation) (mode='EXACT_COPY')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_inherited_internal_stop_is_pass_for_exact_copy_and_unique_rotation (integration.test_s1c_cds.CDSValidityTests.test_inherited_internal_stop_is_pass_for_exact_copy_and_unique_rotation) (mode='CIRCULAR_ROTATION')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_new_frame_start_and_terminal_stop_errors_fail (integration.test_s1c_cds.CDSValidityTests.test_new_frame_start_and_terminal_stop_errors_fail) (code='FRAME_LENGTH')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_new_frame_start_and_terminal_stop_errors_fail (integration.test_s1c_cds.CDSValidityTests.test_new_frame_start_and_terminal_stop_errors_fail) (code='START_CODON')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_new_frame_start_and_terminal_stop_errors_fail (integration.test_s1c_cds.CDSValidityTests.test_new_frame_start_and_terminal_stop_errors_fail) (code='TERMINAL_STOP')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_shifted_old_cds_without_supported_mapping_is_undetermined_and_fails (integration.test_s1c_cds.CDSValidityTests.test_shifted_old_cds_without_supported_mapping_is_undetermined_and_fails)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_legal_and_introduced_bad_strand_have_opposite_verdicts (integration.test_s1c_content.AnnotationIntegrityTests.test_legal_and_introduced_bad_strand_have_opposite_verdicts) (introduced=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_legal_and_introduced_bad_strand_have_opposite_verdicts (integration.test_s1c_content.AnnotationIntegrityTests.test_legal_and_introduced_bad_strand_have_opposite_verdicts) (introduced=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_new_compound_envelope_error_and_valid_wrap_control (integration.test_s1c_content.AnnotationIntegrityTests.test_new_compound_envelope_error_and_valid_wrap_control) (broken=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_new_compound_envelope_error_and_valid_wrap_control (integration.test_s1c_content.AnnotationIntegrityTests.test_new_compound_envelope_error_and_valid_wrap_control) (broken=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unchanged_bad_input_annotation_is_explicitly_inherited (integration.test_s1c_content.AnnotationIntegrityTests.test_unchanged_bad_input_annotation_is_explicitly_inherited)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_diagnostic_assay_proposal_is_not_promoted_to_a_preparation_order (integration.test_s1c_orders.OrderTableTests.test_diagnostic_assay_proposal_is_not_promoted_to_a_preparation_order)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_full_primers_match_but_changed_5prime_tail_fails (integration.test_s1c_orders.OrderTableTests.test_full_primers_match_but_changed_5prime_tail_fails) (wrong_tail=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_full_primers_match_but_changed_5prime_tail_fails (integration.test_s1c_orders.OrderTableTests.test_full_primers_match_but_changed_5prime_tail_fails) (wrong_tail=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_construct_can_seal_length_only_and_records_thermal_limit (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_construct_can_seal_length_only_and_records_thermal_limit)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_explicit_nn_window_is_enforced_with_hand_computed_annealing_tm (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_explicit_nn_window_is_enforced_with_hand_computed_annealing_tm) (window=('-200', '200'))",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_explicit_nn_window_is_enforced_with_hand_computed_annealing_tm (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_explicit_nn_window_is_enforced_with_hand_computed_annealing_tm) (window=('100', '101'))",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_no_marked_primers_is_not_applicable_with_basis (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_no_marked_primers_is_not_applicable_with_basis)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_recorded_length_passes_but_document_core_length_tamper_fails (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_recorded_length_passes_but_document_core_length_tamper_fails) (wrong_core=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_recorded_length_passes_but_document_core_length_tamper_fails (integration.test_s1c_primer_quality.AutomaticPrimerQualityTests.test_recorded_length_passes_but_document_core_length_tamper_fails) (wrong_core=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_actual_parameter_tamper_is_not_accepted (integration.test_s1c_reactions.ReactionChainTests.test_actual_parameter_tamper_is_not_accepted)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_original_route_passes_but_one_base_candidate_fails_both_checks (integration.test_s1c_reactions.ReactionChainTests.test_original_route_passes_but_one_base_candidate_fails_both_checks) (wrong_candidate=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_original_route_passes_but_one_base_candidate_fails_both_checks (integration.test_s1c_reactions.ReactionChainTests.test_original_route_passes_but_one_base_candidate_fails_both_checks) (wrong_candidate=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_simulator_finishes_before_candidate_material_is_read (integration.test_s1c_reactions.ReactionChainTests.test_simulator_finishes_before_candidate_material_is_read)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unknown_route_remains_unknown (integration.test_s1c_reactions.ReactionChainTests.test_unknown_route_remains_unknown)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unrelated_coordinate_branch_is_not_a_physical_preparation_step (integration.test_s1c_reactions.ReactionChainTests.test_unrelated_coordinate_branch_is_not_a_physical_preparation_step) (wrong_candidate=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unrelated_coordinate_branch_is_not_a_physical_preparation_step (integration.test_s1c_reactions.ReactionChainTests.test_unrelated_coordinate_branch_is_not_a_physical_preparation_step) (wrong_candidate=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_bad_physical_input_does_not_receive_inherited_exemption (integration.test_s1c_sanity.BiologicalSanityTests.test_bad_physical_input_does_not_receive_inherited_exemption)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_circular_no_ends_passes_but_circular_linear_ends_fail (integration.test_s1c_sanity.BiologicalSanityTests.test_circular_no_ends_passes_but_circular_linear_ends_fail) (contradictory=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_circular_no_ends_passes_but_circular_linear_ends_fail (integration.test_s1c_sanity.BiologicalSanityTests.test_circular_no_ends_passes_but_circular_linear_ends_fail) (contradictory=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_empty_material_fails_and_iupac_unknowns_are_not_erased (integration.test_s1c_sanity.BiologicalSanityTests.test_empty_material_fails_and_iupac_unknowns_are_not_erased) (case='FAIL')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_empty_material_fails_and_iupac_unknowns_are_not_erased (integration.test_s1c_sanity.BiologicalSanityTests.test_empty_material_fails_and_iupac_unknowns_are_not_erased) (case='PASS')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_empty_goal_lists_missing_paths_and_reasons (integration.test_s1d_messages.RequestMessageTests.test_empty_goal_lists_missing_paths_and_reasons)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_missing_source_declaration_names_nested_field (integration.test_s1d_messages.RequestMessageTests.test_missing_source_declaration_names_nested_field)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_missing_target_names_output_and_producer_role (integration.test_s1d_messages.RequestMessageTests.test_missing_target_names_output_and_producer_role)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_same_template_with_all_targets_is_admitted (integration.test_s1d_messages.RequestMessageTests.test_same_template_with_all_targets_is_admitted)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_agreeing_record_without_controls_is_still_insufficient (integration.test_s1d_observations.ObservationMessageTests.test_agreeing_record_without_controls_is_still_insufficient)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_complete_positive_still_agrees_with_constructed_1000_bp (integration.test_s1d_observations.ObservationMessageTests.test_complete_positive_still_agrees_with_constructed_1000_bp)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_failed_controls_do_not_hide_reported_mismatch (integration.test_s1d_observations.ObservationMessageTests.test_failed_controls_do_not_hide_reported_mismatch)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_incomplete_positive_is_not_used_to_contradict_a_prediction (integration.test_s1d_observations.ObservationMessageTests.test_incomplete_positive_is_not_used_to_contradict_a_prediction)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_negative_matches_no_product_but_missing_controls_remain_insufficient (integration.test_s1d_observations.ObservationMessageTests.test_negative_matches_no_product_but_missing_controls_remain_insufficient)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_negative_without_size_remains_a_valid_negative_record (integration.test_s1d_observations.ObservationMessageTests.test_negative_without_size_remains_a_valid_negative_record)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_no_product_prediction_and_reported_positive_are_contradicted_without_controls (integration.test_s1d_observations.ObservationMessageTests.test_no_product_prediction_and_reported_positive_are_contradicted_without_controls)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_positive_without_size_and_controls_is_explicitly_incomplete (integration.test_s1d_observations.ObservationMessageTests.test_positive_without_size_and_controls_is_explicitly_incomplete)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_positive_without_size_is_incomplete_even_without_prediction (integration.test_s1d_observations.ObservationMessageTests.test_positive_without_size_is_incomplete_even_without_prediction)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unbound_reference_cannot_establish_a_contradiction (integration.test_s1d_observations.ObservationMessageTests.test_unbound_reference_cannot_establish_a_contradiction)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_invalid_control_status_lists_choices_and_still_cannot_seal (integration.test_s1e_evidence.S1eEvidenceTests.test_invalid_control_status_lists_choices_and_still_cannot_seal)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_negative_without_controls_is_insufficient_not_contradicted (integration.test_s1e_evidence.S1eEvidenceTests.test_negative_without_controls_is_insufficient_not_contradicted)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_only_result_draft_is_a_submittable_pipeline (integration.test_s1e_evidence.S1eEvidenceTests.test_only_result_draft_is_a_submittable_pipeline)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_each_check_has_constructed_positive_and_negative (unit.test_assurance.AssuranceTests.test_each_check_has_constructed_positive_and_negative) (check='check.model_agreement')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_snapshot_material_checks_remain_required_when_unavailable (unit.test_assurance.AssuranceTests.test_snapshot_material_checks_remain_required_when_unavailable)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_external_two_step_non_dna_kit_and_incorrect_algorithm_control (unit.test_capabilities.CapabilityTests.test_external_two_step_non_dna_kit_and_incorrect_algorithm_control) (faulty=False, missing_dependency=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_external_two_step_non_dna_kit_and_incorrect_algorithm_control (unit.test_capabilities.CapabilityTests.test_external_two_step_non_dna_kit_and_incorrect_algorithm_control) (faulty=True, missing_dependency=False)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_external_two_step_non_dna_kit_and_incorrect_algorithm_control (unit.test_capabilities.CapabilityTests.test_external_two_step_non_dna_kit_and_incorrect_algorithm_control) (faulty=False, missing_dependency=True)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_inline_document_roundtrip_is_frozen_and_bound (unit.test_s1_followup2.InlineDocumentTests.test_inline_document_roundtrip_is_frozen_and_bound)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_invalid_inline_input_fails_before_consumer (unit.test_s1_followup2.InlineDocumentTests.test_invalid_inline_input_fails_before_consumer)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_invalid_inline_output_is_not_persisted (unit.test_s1_followup2.InlineDocumentTests.test_invalid_inline_output_is_not_persisted)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_action_and_check_read_frozen_copy_via_one_path (unit.test_s1_followup2.KnowledgeTests.test_action_and_check_read_frozen_copy_via_one_path)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_changed_frozen_knowledge_is_integrity_failure (unit.test_s1_followup2.KnowledgeTests.test_changed_frozen_knowledge_is_integrity_failure)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_cross_kit_and_core_pack_reads_are_denied (unit.test_s1_followup2.KnowledgeTests.test_cross_kit_and_core_pack_reads_are_denied) (pack='kit:other/knowledge/table.json')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_cross_kit_and_core_pack_reads_are_denied (unit.test_s1_followup2.KnowledgeTests.test_cross_kit_and_core_pack_reads_are_denied) (pack='core/knowledge/table.json')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_loaded_other_kit_package_is_not_readable (unit.test_s1_followup2.KnowledgeTests.test_loaded_other_kit_package_is_not_readable)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_collection_and_explicit_item_bindings_run_and_replay (unit.test_s1_followup2.MaterialsTests.test_collection_and_explicit_item_bindings_run_and_replay) (consumer='total')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_collection_and_explicit_item_bindings_run_and_replay (unit.test_s1_followup2.MaterialsTests.test_collection_and_explicit_item_bindings_run_and_replay) (consumer='single')",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_lists_of_sources_or_steps_and_literal_collections_are_rejected (unit.test_s1_followup2.MaterialsTests.test_lists_of_sources_or_steps_and_literal_collections_are_rejected)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_missing_or_reordered_materials_still_fail_lineage_and_replay (unit.test_s1_followup2.MaterialsTests.test_missing_or_reordered_materials_still_fail_lineage_and_replay)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_uses_named_recorded_arguments_and_compares_content_not_annotations (unit.test_s1_followup2.ModelTests.test_model_uses_named_recorded_arguments_and_compares_content_not_annotations) (changes={})",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_uses_named_recorded_arguments_and_compares_content_not_annotations (unit.test_s1_followup2.ModelTests.test_model_uses_named_recorded_arguments_and_compares_content_not_annotations) (changes={'feature': True})",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_uses_named_recorded_arguments_and_compares_content_not_annotations (unit.test_s1_followup2.ModelTests.test_model_uses_named_recorded_arguments_and_compares_content_not_annotations) (changes={'sequence': 'ACGA'})",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_uses_named_recorded_arguments_and_compares_content_not_annotations (unit.test_s1_followup2.ModelTests.test_model_uses_named_recorded_arguments_and_compares_content_not_annotations) (changes={'topology': 'circular'})",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_model_uses_named_recorded_arguments_and_compares_content_not_annotations (unit.test_s1_followup2.ModelTests.test_model_uses_named_recorded_arguments_and_compares_content_not_annotations) (changes={'ends': {'left': 'A', 'right': 'T'}})",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_nested_model_without_recorded_parameters_is_unknown (unit.test_s1_followup2.ModelTests.test_nested_model_without_recorded_parameters_is_unknown)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_a_single_changed_artifact_byte_is_integrity_failure (unit.test_s1c_artifacts.ArtifactDeliveryTests.test_a_single_changed_artifact_byte_is_integrity_failure)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_raw_file_can_seal_move_and_verify_without_original_run (unit.test_s1c_artifacts.ArtifactDeliveryTests.test_raw_file_can_seal_move_and_verify_without_original_run) (payload_size=3)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_raw_file_can_seal_move_and_verify_without_original_run (unit.test_s1c_artifacts.ArtifactDeliveryTests.test_raw_file_can_seal_move_and_verify_without_original_run) (payload_size=16)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr (unit.test_s1c_calls.NestedCallTests.test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr) (core_length=4)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr (unit.test_s1c_calls.NestedCallTests.test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr) (core_length=2)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr (unit.test_s1c_calls.NestedCallTests.test_actual_nested_parameters_distinguish_unique_and_ambiguous_pcr)",
+      "exception": "AssertionError",
+      "contains_source_changed": false,
+      "contains_missing_manifest": false
+    },
+    {
+      "test": "FAIL: test_parameter_tamper_fails_independent_nested_model_check (unit.test_s1c_calls.NestedCallTests.test_parameter_tamper_fails_independent_nested_model_check)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_configured_tool_version_and_actual_file_hash_are_recorded (unit.test_s1c_environment.ExternalEnvironmentTests.test_configured_tool_version_and_actual_file_hash_are_recorded)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_no_configuration_records_empty_tools_without_launch (unit.test_s1c_environment.ExternalEnvironmentTests.test_no_configuration_records_empty_tools_without_launch)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    },
+    {
+      "test": "FAIL: test_unavailable_program_does_not_invent_version_or_hash (unit.test_s1c_environment.ExternalEnvironmentTests.test_unavailable_program_does_not_invent_version_or_hash)",
+      "exception": "AssertionError",
+      "contains_source_changed": true,
+      "contains_missing_manifest": true
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "check": "check.goal.components_present",
+  "variant": "fail",
+  "expected": "FAIL",
+  "params": {
+    "components": [
+      {
+        "name": "wanted",
+        "sequence": "CCCG"
+      }
+    ]
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AAAATTTT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": [
+      {
+        "start": 0,
+        "end": 3,
+        "type": "misc_feature",
+        "label": "wanted",
+        "strand": 1
+      }
+    ]
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "CCCG occupies [3,7) in the positive. The negative has only A/T but an intentionally misleading annotation."
+  }
+}

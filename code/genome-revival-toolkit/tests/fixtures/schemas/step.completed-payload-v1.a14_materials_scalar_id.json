@@ -1,0 +1,22 @@
+{
+  "schema_id": "step.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Even a single-value port uses an id array."
+  },
+  "data": {
+    "step_id": "s1",
+    "outputs": {
+      "materials": {
+        "product": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      "documents": {},
+      "artifacts": []
+    },
+    "values": {},
+    "unverified": [],
+    "verdict_ids": [],
+    "duration_ms": 1
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema_id": "receipt-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: No run implies null state."
+  },
+  "data": {
+    "run_id": null,
+    "state": "RUNNING",
+    "event_range": null,
+    "result": {},
+    "problems": [],
+    "next": [],
+    "labels": []
+  }
+}

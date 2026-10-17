@@ -1,0 +1,58 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.assess_selection",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for cut_plasmid.assess_selection; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    },
+    {
+      "name": "declared_genotype",
+      "type": "value",
+      "required": false,
+      "constraints": {},
+      "description": "declared genotype"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "selection",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "selection-assessment-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Wet-laboratory PCR, DpnI, KLD or transformation."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.operations:assess_selection"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic"
+}

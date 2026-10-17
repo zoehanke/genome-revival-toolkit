@@ -1,0 +1,26 @@
+{
+  "status": "INCOMPLETE",
+  "findings": [],
+  "placeholder_count": 3,
+  "placeholder_files": {
+    "README.md": 3
+  },
+  "tracked_bytes": 24215842,
+  "tracked_limit_bytes": 50000000,
+  "tracked_files": 2560,
+  "selected_files": 836,
+  "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "dependencies": {
+    "jsonschema": "4.26.0",
+    "rfc8785": "0.1.4",
+    "biopython": "1.88",
+    "referencing": "0.37.0",
+    "setuptools": "83.0.0",
+    "attrs": "26.1.0",
+    "jsonschema-specifications": "2025.9.1",
+    "rpds-py": "2026.6.3",
+    "numpy": "2.0.2",
+    "typing-extensions": "4.16.0"
+  },
+  "scope": "INV-F10 source inventory and payload hygiene; not S4 approval or scientific acceptance."
+}

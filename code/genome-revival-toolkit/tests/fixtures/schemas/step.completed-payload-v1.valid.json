@@ -1,0 +1,20 @@
+{
+  "schema_id": "step.completed-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "step_id": "s1",
+    "outputs": {
+      "materials": {},
+      "documents": {},
+      "artifacts": []
+    },
+    "values": {},
+    "unverified": [],
+    "verdict_ids": [],
+    "duration_ms": 1
+  }
+}

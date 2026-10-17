@@ -1,0 +1,16 @@
+{
+  "start": 100,
+  "end": 160,
+  "arm_length": 50,
+  "cargo_start": 0,
+  "cargo_end": 90,
+  "primer_length": 20,
+  "overlap": 20,
+  "goal_digest": "fe311a6b57bdc7802d3f13373e090314c619f15c6e9d2a40589426f2f60ca4e8",
+  "reference_source": "input_reference",
+  "cargo_source": "input_cargo",
+  "donor_target": "donor",
+  "primers_target": "primers",
+  "assay_target": "assay",
+  "handoff_target": "handoff"
+}

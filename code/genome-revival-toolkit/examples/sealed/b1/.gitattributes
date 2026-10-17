@@ -1,0 +1,2 @@
+# Sealed records retain their original bytes.
+* -text whitespace=cr-at-eol

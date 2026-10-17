@@ -1,0 +1,22 @@
+{
+  "schema_id": "kit-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required contributes."
+  },
+  "data": {
+    "schema": "kit-v1",
+    "name": "demo",
+    "version": "0.0.0",
+    "title": "Synthetic fixture",
+    "requires_core": {
+      "minimum": "0.0.0",
+      "maximum_exclusive": "1.0.0"
+    },
+    "does_not_establish": [
+      "Installed Kit."
+    ],
+    "review": "knowledge/review/"
+  }
+}

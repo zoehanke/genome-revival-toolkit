@@ -1,0 +1,8 @@
+Initial template unit run, 2026-10-17, Python 3.12.4.
+Ran 8 tests in 6.318s: 4 passed, 4 errors.
+All four errors were the same real verdict-schema rejection:
+dna_design_core.kernel.errors.ToolkitError: Document violates its declared schema: /rule_refs/0: Value does not satisfy the pattern constraint.
+Cause: the new CHECK supplied a human-readable rule ID where verdict-v1 requires
+a content digest. Corrected to kernel.public.document_id(rule). No schema,
+protected contract or existing test was changed. Full tracebacks are retained
+in the task's command output. This failed run is not counted as a pass.

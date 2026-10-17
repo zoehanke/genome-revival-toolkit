@@ -1,0 +1,14 @@
+{
+  "schema_id": "run.completed-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "pipeline_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "executed_steps": [
+      "s1"
+    ]
+  }
+}

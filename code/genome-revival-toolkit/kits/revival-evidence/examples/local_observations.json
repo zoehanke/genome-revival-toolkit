@@ -1,0 +1,25 @@
+{
+  "observations": [],
+  "genotype_results": [
+    {
+      "sample_id": "sample1",
+      "assay_id": "assay1",
+      "background_id": "original",
+      "reference_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "result": "positive",
+      "control_status": "passed",
+      "observed_band_bp": 1000
+    },
+    {
+      "sample_id": "sample2",
+      "assay_id": "assay1",
+      "background_id": "edited",
+      "reference_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "result": "positive",
+      "control_status": "passed",
+      "observed_band_bp": 1000
+    }
+  ],
+  "functional_results": [],
+  "observation_origin": "SYNTHETIC_EXAMPLE"
+}

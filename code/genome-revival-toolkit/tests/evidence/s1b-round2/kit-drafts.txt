@@ -1,0 +1,32 @@
+{
+  "draft_documents": 58,
+  "by_schema": {
+    "kit-v1": 4,
+    "capability-v1": 19,
+    "rule-v1": 26,
+    "pipeline-template-v1": 9
+  },
+  "schema_invalid_documents": 3,
+  "a14_invalid_documents": 1,
+  "expected_invalid_probe_documents": 2,
+  "question_ids": [
+    "K1",
+    "K2",
+    "K3",
+    "K4",
+    "K5",
+    "K6"
+  ],
+  "scope": "Schema/A14 and explicit contract rehearsal only. No Kit code imported, no draft is loadable or scientifically accepted."
+}
+drafts/genome-identity/templates/from_handoff.json ['steps', 5, 'inputs', 'references']: [{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not valid under any of the given schemas
+drafts/genome-identity/templates/from_references.json ['steps', 4, 'inputs', 'references']: [{'step': 'original', 'port': 'material'}, {'step': 'edited', 'port': 'material'}] is not valid under any of the given schemas
+drafts/revival-evidence/probes/source-missing.json ['source']: 'source_class' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'citation' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'locator' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'retrieved_at' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'content_ref' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'archive_note' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'supports' is a required property
+drafts/revival-evidence/probes/source-missing.json ['source']: 'does_not_support' is a required property
+drafts/revival-evidence/probes/partial-placeholder.json []: A14 requires a whole-string placeholder with a valid lowercase name.

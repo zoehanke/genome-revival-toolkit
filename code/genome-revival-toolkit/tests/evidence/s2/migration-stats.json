@@ -1,0 +1,68 @@
+{
+  "legacy_commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+  "old_files": {
+    "genome-revival-toolkit/kits/crispr/scripts/selection.py": {
+      "file_lines": 124,
+      "functions": {
+        "mapping_rows": 4,
+        "_mapping_rows": 11,
+        "marker_mappings": 2,
+        "mapping_sources": 2,
+        "marker_ids": 3,
+        "selection_report": 72
+      }
+    },
+    "snapgene-dna-design/core/tools/grna.py": {
+      "file_lines": 293,
+      "functions": {
+        "_label": 6,
+        "_location": 11,
+        "_parts": 2,
+        "_overlaps": 4,
+        "_locate": 68,
+        "_annotation_warnings": 10,
+        "replace_grna_spacer": 76,
+        "_target_matches": 22,
+        "check_grna": 60
+      }
+    },
+    "snapgene-dna-design/core/tools/grna_evaluation.py": {
+      "file_lines": 209,
+      "functions": {
+        "validate_mismatch_limit": 3,
+        "_parts": 5,
+        "pam_sites": 25,
+        "matching_sites": 9,
+        "vector_report": 18,
+        "check_grna_vector": 19,
+        "exact_loci": 14,
+        "evaluate_candidates": 73
+      }
+    },
+    "snapgene-dna-design/core/tools/grna_preparation.py": {
+      "file_lines": 152,
+      "functions": {
+        "_hits": 4,
+        "preparation_warnings": 21,
+        "plan_and_simulate": 89,
+        "protocol_steps": 12
+      }
+    }
+  },
+  "old_file_lines_total": 778,
+  "new_python_lines": {
+    "__init__.py": 1,
+    "checks.py": 69,
+    "contracts.py": 124,
+    "guide.py": 143,
+    "model.py": 22,
+    "preparation.py": 137,
+    "selection.py": 89
+  },
+  "new_python_lines_total": 585,
+  "old_imports_retained": 0,
+  "notes": [
+    "New independent model and declaration contract code are included in the new total.",
+    "Discarded legacy entry/workflow/gate/render/catalog wrappers; no old imports or execution."
+  ]
+}

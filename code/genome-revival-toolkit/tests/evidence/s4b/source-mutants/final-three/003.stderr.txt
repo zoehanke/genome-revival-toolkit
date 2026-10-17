@@ -1,0 +1,14 @@
+test_source_build_metadata_is_not_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_source_build_metadata_is_not_an_installed_release) ... FAIL
+
+======================================================================
+FAIL: test_source_build_metadata_is_not_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_source_build_metadata_is_not_an_installed_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_release_identity.py", line 79, in test_source_build_metadata_is_not_an_installed_release
+    self.assertEqual(code, 0, receipt)
+AssertionError: 1 != 0 : {'run_id': None, 'state': None, 'event_range': None, 'result': {'failure': {'code': 'SOURCE_CHANGED', 'category': 'INTEGRITY', 'message': "Installed release manifest validation failed: [Errno 2] No such file or directory: '<TEMP>\\\\s4b_身份_e8dhn6lc\\\\development-tree\\\\src\\\\dna_design_core\\\\release-manifest.json'", 'details': {}, 'recovery': 'Reinstall the unchanged wheel and retry; no development-tree fallback was used.', 'retryable': False, 'cause_chain': []}}, 'problems': [{'code': 'SOURCE_CHANGED', 'category': 'INTEGRITY', 'message': "Installed release manifest validation failed: [Errno 2] No such file or directory: '<TEMP>\\\\s4b_身份_e8dhn6lc\\\\development-tree\\\\src\\\\dna_design_core\\\\release-manifest.json'", 'recovery': 'Reinstall the unchanged wheel and retry; no development-tree fallback was used.', 'location': ''}], 'next': [], 'labels': []}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.799s
+
+FAILED (failures=1)

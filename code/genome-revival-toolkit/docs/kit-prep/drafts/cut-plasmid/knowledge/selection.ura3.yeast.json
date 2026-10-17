@@ -1,0 +1,47 @@
+{
+  "schema": "rule-v1",
+  "id": "selection.ura3.yeast",
+  "name": "Conditional selection for ura3 / yeast",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "cut_plasmid.assess_selection",
+  "parameters": {
+    "marker_id": "ura3",
+    "pattern": "ura3",
+    "host": "yeast",
+    "plate": "Synthetic defined medium without uracil",
+    "auxotrophy": "ura3"
+  },
+  "applies_when": [
+    {
+      "field": "marker_id",
+      "op": "eq",
+      "value": "ura3"
+    },
+    {
+      "field": "host",
+      "op": "eq",
+      "value": "yeast"
+    }
+  ],
+  "source": {
+    "source_class": "literature",
+    "citation": "Chee and Haase, G3 2012, redesigned pRS vectors",
+    "locator": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3362935/",
+    "retrieved_at": "2026-10-14",
+    "content_ref": null,
+    "archive_note": "Copied legacy citation, not fetched online. Old verified flags/receipts are not inherited.",
+    "supports": [
+      "yeast selection mapping for ura3"
+    ],
+    "does_not_support": [
+      "Resistance, expression or compatible selection measured in the user's strain."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/selection.ura3.yeast.json"
+}

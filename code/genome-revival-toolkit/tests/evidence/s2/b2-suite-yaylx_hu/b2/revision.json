@@ -1,0 +1,157 @@
+{
+  "schema": "pipeline-revision-v1",
+  "expected_digest": "af0706fed961190216e37057aa0f802468dd958e7e881dec572212c6b3256ccf",
+  "trigger": {
+    "kind": "step_failed",
+    "step_id": "s1",
+    "failure_code": "STEP_EXPECTATION_FAILED",
+    "event_refs": [
+      "88bf6dd4e9d9e5bb5f79b7bdfcdc08f175ed16aa3f4ed54f0f22b4d8f28e2759"
+    ]
+  },
+  "reason": "The initial spacer was shifted by one base; use target [13,33) followed by AGG.",
+  "operations": [
+    {
+      "op": "add_step",
+      "after": "s1",
+      "step": {
+        "step_id": "s2",
+        "use": "cut_plasmid.replace_spacer",
+        "inputs": {
+          "vector": {
+            "step": "read_vector",
+            "port": "material"
+          },
+          "target": {
+            "step": "read_target",
+            "port": "material"
+          }
+        },
+        "params": {
+          "promoter_end": 130,
+          "transcription_strand": 1,
+          "scaffold_sequence": "GTTGCTGTGATCACTTGAGTACG",
+          "spacer": "GACATCGTACGATCGTACAT"
+        },
+        "why": "Replace only the selected spacer and simulate inverse PCR plus closure."
+      }
+    },
+    {
+      "op": "add_step",
+      "after": "s2",
+      "step": {
+        "step_id": "s3",
+        "use": "cut_plasmid.inspect_guide",
+        "inputs": {
+          "vector": {
+            "step": "s2",
+            "port": "product"
+          },
+          "target": {
+            "step": "read_target",
+            "port": "material"
+          }
+        },
+        "params": {
+          "promoter_end": 130,
+          "transcription_strand": 1,
+          "scaffold_sequence": "GTTGCTGTGATCACTTGAGTACG"
+        },
+        "why": "Reinspect actual output sequence and its target PAM.",
+        "expects": {
+          "on": {
+            "step": "s3",
+            "port": "guide",
+            "pointer": "/pam_valid"
+          },
+          "op": "equals",
+          "value": true
+        }
+      }
+    },
+    {
+      "op": "add_step",
+      "after": "s3",
+      "step": {
+        "step_id": "s4",
+        "use": "cut_plasmid.assess_selection",
+        "inputs": {
+          "vector": {
+            "step": "s2",
+            "port": "product"
+          }
+        },
+        "params": {},
+        "why": "Report selection UNKNOWN because recipient genotype was not supplied."
+      }
+    },
+    {
+      "op": "add_step",
+      "after": "s4",
+      "step": {
+        "step_id": "export",
+        "use": "format.write_genbank",
+        "inputs": {
+          "material": {
+            "step": "s2",
+            "port": "product"
+          }
+        },
+        "params": {
+          "name": "construct.gb"
+        },
+        "why": "Export an annotated synthetic GenBank candidate."
+      }
+    },
+    {
+      "op": "add_step",
+      "after": "export",
+      "step": {
+        "step_id": "readback",
+        "use": "format.read_genbank",
+        "inputs": {
+          "file": {
+            "step": "export",
+            "port": "file"
+          }
+        },
+        "params": {},
+        "why": "Read back the actual exported GenBank bytes."
+      }
+    },
+    {
+      "op": "supersede_step",
+      "step_id": "s1",
+      "by": "s2"
+    },
+    {
+      "op": "set_outputs",
+      "outputs": [
+        {
+          "name": "construct",
+          "from": {
+            "step": "s2",
+            "port": "product"
+          },
+          "target": "t1"
+        },
+        {
+          "name": "primers",
+          "from": {
+            "step": "s2",
+            "port": "primers"
+          },
+          "target": "t2"
+        },
+        {
+          "name": "selection",
+          "from": {
+            "step": "s4",
+            "port": "selection"
+          },
+          "target": "t3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "findings": [
+    {
+      "id": "INV-Q3",
+      "file": "tests/fixtures/biology/oracles.json",
+      "message": "Fixture requires independent oracle category"
+    }
+  ]
+}

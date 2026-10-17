@@ -1,0 +1,222 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.assess_selection",
+  "version": "0.1.0",
+  "role": "ACTION",
+  "summary": "Assess selection.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "selection",
+      "type": "document",
+      "output_role": "analysis",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "selection-assessment-v1"
+          },
+          "claim": {
+            "const": "selection"
+          },
+          "status": {
+            "type": "string"
+          },
+          "markers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "feature_index": {
+                  "type": "integer"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "marker_id": {
+                  "type": "string"
+                },
+                "compatibility": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                },
+                "plate_options": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "host": {
+                        "type": "string"
+                      },
+                      "plate": {
+                        "type": "string"
+                      },
+                      "rule_id": {
+                        "type": "string"
+                      },
+                      "rule_digest": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      },
+                      "source_locator": {
+                        "type": "string"
+                      },
+                      "compatibility": {
+                        "type": "string"
+                      },
+                      "reason": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "host",
+                      "plate",
+                      "rule_id",
+                      "rule_digest",
+                      "source_locator",
+                      "compatibility",
+                      "reason"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "feature_index",
+                "name",
+                "marker_id",
+                "compatibility",
+                "reason",
+                "plate_options"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "annotation_conflicts": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "unmapped_markers": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "genotype_source": {
+            "type": "string"
+          },
+          "recipient_host": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "message": {
+            "type": "string"
+          },
+          "knowledge_digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "draft_rows_loaded": {
+            "const": 0
+          }
+        },
+        "required": [
+          "schema",
+          "claim",
+          "status",
+          "markers",
+          "annotation_conflicts",
+          "unmapped_markers",
+          "genotype_source",
+          "recipient_host",
+          "message",
+          "knowledge_digest",
+          "draft_rows_loaded"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "strain_genotype": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "organism": {
+            "type": "string"
+          },
+          "existing_markers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "auxotrophies": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Experimental PCR, transformation or phenotype."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11 B2",
+      "MIGRATION-LOG.md S2"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.selection:assess_selection"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

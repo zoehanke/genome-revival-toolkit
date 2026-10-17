@@ -1,0 +1,369 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.inspect_guide",
+  "version": "0.1.0",
+  "role": "ACTION",
+  "summary": "Inspect guide.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    },
+    {
+      "name": "target",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "target"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "guide",
+      "type": "document",
+      "output_role": "analysis",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "guide-inspection-v1"
+          },
+          "vector_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "target_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "promoter_end": {
+            "type": "integer"
+          },
+          "transcription_strand": {
+            "type": "integer"
+          },
+          "spacer": {
+            "type": "string",
+            "pattern": "^[ACGT]{20}$"
+          },
+          "spacer_parts": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0
+              }
+            }
+          },
+          "scaffold_sequence": {
+            "type": "string",
+            "pattern": "^[ACGT]+$"
+          },
+          "pam_valid": {
+            "type": "boolean"
+          },
+          "direction_status": {
+            "type": "string"
+          },
+          "direction_correct": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "orientation_distinguishable": {
+            "type": "boolean"
+          },
+          "target_matches": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "strand": {
+                  "type": "integer"
+                },
+                "rna_binding_strand": {
+                  "type": "integer"
+                },
+                "start": {
+                  "type": "integer"
+                },
+                "parts": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "pam": {
+                  "type": "string"
+                },
+                "pam_valid": {
+                  "type": "boolean"
+                },
+                "locus": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "strand",
+                "rna_binding_strand",
+                "start",
+                "parts",
+                "pam",
+                "pam_valid",
+                "locus"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "reverse_insert_hypotheses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "strand": {
+                  "type": "integer"
+                },
+                "rna_binding_strand": {
+                  "type": "integer"
+                },
+                "start": {
+                  "type": "integer"
+                },
+                "parts": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "pam": {
+                  "type": "string"
+                },
+                "pam_valid": {
+                  "type": "boolean"
+                },
+                "locus": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "strand",
+                "rna_binding_strand",
+                "start",
+                "parts",
+                "pam",
+                "pam_valid",
+                "locus"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "valid_target_locus_count": {
+            "type": "integer"
+          },
+          "vector_self_targets": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "strand": {
+                  "type": "integer"
+                },
+                "rna_binding_strand": {
+                  "type": "integer"
+                },
+                "start": {
+                  "type": "integer"
+                },
+                "parts": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "pam": {
+                  "type": "string"
+                },
+                "pam_valid": {
+                  "type": "boolean"
+                },
+                "locus": {
+                  "type": "string"
+                },
+                "mismatches": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "strand",
+                "rna_binding_strand",
+                "start",
+                "parts",
+                "pam",
+                "pam_valid",
+                "locus",
+                "mismatches"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "vector_max_mismatches": {
+            "type": "integer"
+          },
+          "vector_search_complete": {
+            "type": "boolean"
+          },
+          "annotation_findings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "code": {
+                  "type": "string"
+                },
+                "feature_index": {
+                  "type": "integer"
+                },
+                "annotation_strand": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ]
+                },
+                "sequence_transcription_strand": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "code",
+                "feature_index",
+                "annotation_strand",
+                "sequence_transcription_strand"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "vector_id",
+          "target_id",
+          "promoter_end",
+          "transcription_strand",
+          "spacer",
+          "spacer_parts",
+          "scaffold_sequence",
+          "pam_valid",
+          "direction_status",
+          "direction_correct",
+          "orientation_distinguishable",
+          "target_matches",
+          "reverse_insert_hypotheses",
+          "valid_target_locus_count",
+          "vector_self_targets",
+          "vector_max_mismatches",
+          "vector_search_complete",
+          "annotation_findings",
+          "warnings"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "promoter_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "transcription_strand": {
+        "type": "integer",
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "scaffold_sequence": {
+        "type": "string",
+        "pattern": "^[ACGT]{3,200}$"
+      },
+      "vector_max_mismatches": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 3
+      }
+    },
+    "required": [
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence"
+    ],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "cut_plasmid.check_direction"
+    },
+    {
+      "check": "cut_plasmid.check_pam"
+    },
+    {
+      "check": "cut_plasmid.check_vector_self_target"
+    }
+  ],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Experimental PCR, transformation or phenotype."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11 B2",
+      "MIGRATION-LOG.md S2"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.guide:inspect_guide"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-17"
+  }
+}

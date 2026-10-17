@@ -1,0 +1,14 @@
+test_development_seal_verifies_in_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_development_seal_verifies_in_an_installed_release) ... FAIL
+
+======================================================================
+FAIL: test_development_seal_verifies_in_an_installed_release (tests.integration.test_release_identity.ReleaseIdentityTests.test_development_seal_verifies_in_an_installed_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_release_identity.py", line 183, in test_development_seal_verifies_in_an_installed_release
+    self.assertEqual(code, 0, receipt)
+AssertionError: 1 != 0 : {'run_id': None, 'state': None, 'event_range': None, 'result': {'failure': {'code': 'SOURCE_CHANGED', 'category': 'INTEGRITY', 'message': 'Sealed release_id differs from the currently installed release manifest.', 'details': {'recorded': 'dev-tree', 'installed': '21cfa74f8d7c2dd2500de9d9e7e86c70d1d0ad292d5d2e7dca559d6e210296cc'}, 'recovery': 'Verify with the matching installed release; do not change the sealed record.', 'retryable': False, 'cause_chain': []}}, 'problems': [{'code': 'SOURCE_CHANGED', 'category': 'INTEGRITY', 'message': 'Sealed release_id differs from the currently installed release manifest.', 'recovery': 'Verify with the matching installed release; do not change the sealed record.', 'location': ''}], 'next': [], 'labels': []}
+
+----------------------------------------------------------------------
+Ran 1 test in 15.356s
+
+FAILED (failures=1)

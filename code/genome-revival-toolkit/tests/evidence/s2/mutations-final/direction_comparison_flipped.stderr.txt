@@ -1,0 +1,30 @@
+test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) ... 
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.fail.json') ... FAIL
+  test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.pass.json') ... FAIL
+
+======================================================================
+FAIL: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.fail.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<TEMP>\s2_mutation_16gpb417\project\tests\unit\test_cut_plasmid.py", line 64, in test_all_check_pass_and_fail_fixtures_actually_run
+    self.assertEqual(verdict["outcome"], case["expected"], verdict)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'schema': 'verdict-v1', 'check': {'id': 'cut_plasmid.check_direction', 'version': '0.1.0'}, 'scope': 'content_model', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'd6fff024f7b1b09b'}, 'constraint_id': None, 'outcome': 'PASS', 'issuer': 'check_capability', 'summary': 'Recomputed supplied-sequence direction.', 'evidence': {'results': [{'step_id': 'test', 'vector_id': 'b737a9442e6fdf66dca9413e4ae1966ded94777523cae2357c50c4d09f83325b', 'target_id': '405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c', 'outcome': 'PASS', 'direction_status': 'REVERSED', 'valid_target_locus_count': 0, 'vector_self_target_count': 0, 'vector_max_mismatches': 3, 'vector_search_complete': True, 'annotation_findings': []}]}, 'basis': ['14d28db9e9d5fd8f5f2011170648fa8e0983aab37403a6306fe9c8a49bfba892', '81637311f3752a20a4f3c2796e1bec5494db4b1efd0e730af6e6a522967da913', '5ed904e788a21bc4e9c42cfc8707448a8a5d1f8cf73450fb36b8199ed0ddd4b4', '874a7f5747d6c06310fcaf70b3c2829efc4065a356640e625fc9ba1da929d033', '38c91c2d8a16304565ccfd9207dff7e71a3d45f58b652690d1446a982e2c035a', 'a198ee1433ce158300fc2bdd870e6bafdcc99d3e722c48d58056ed422347685b'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Cleavage activity', 'Editing efficiency', 'Genome-wide off-target safety']}
+
+======================================================================
+FAIL: test_all_check_pass_and_fail_fixtures_actually_run (tests.unit.test_cut_plasmid.CutPlasmidTests.test_all_check_pass_and_fail_fixtures_actually_run) (fixture='check_direction.pass.json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<TEMP>\s2_mutation_16gpb417\project\tests\unit\test_cut_plasmid.py", line 64, in test_all_check_pass_and_fail_fixtures_actually_run
+    self.assertEqual(verdict["outcome"], case["expected"], verdict)
+AssertionError: 'FAIL' != 'PASS'
+- FAIL
++ PASS
+ : {'schema': 'verdict-v1', 'check': {'id': 'cut_plasmid.check_direction', 'version': '0.1.0'}, 'scope': 'content_model', 'moment': 'final', 'subject': {'kind': 'run', 'id': 'da843891d26003d6'}, 'constraint_id': None, 'outcome': 'FAIL', 'issuer': 'check_capability', 'summary': 'Recomputed supplied-sequence direction.', 'evidence': {'results': [{'step_id': 'test', 'vector_id': 'e39af364c24d1d71c69447e8b6b18e69ceb64dc94c5ee15bfc179d93afb565dc', 'target_id': '405f82e30947f1cbdadbb1eaad4485bd6806f691e2fd700938892df2a520c62c', 'outcome': 'FAIL', 'direction_status': 'CORRECT', 'valid_target_locus_count': 1, 'vector_self_target_count': 0, 'vector_max_mismatches': 3, 'vector_search_complete': True, 'annotation_findings': []}]}, 'basis': ['9ae5ed2dc0ee2670da58ae4d8be02f284226ac3ec021e4706ca1310c0535ba46', 'def712610fe3c533ecb973c314a2b7d014ea3c57c4cf1cbf4b3a305ce49252f3', 'd47f9b8e1a5495e03c3f49fe907a2c77579023544b021008a3e8059a175d337d', 'c2aca62b1bf635d753cffe8e2d36b3967445299b52aff3f5e989bb989741f3d4', 'c6bf64b05f2302ecc05fe5c1869b6d65a16e1a0715ae231f42a944b3469540da', 'c50a2e949da38ddb2615c50d84d9ebe1dd45e5af63c6340beb77328223ffc53c'], 'applicability': None, 'rule_refs': [], 'does_not_establish': ['Cleavage activity', 'Editing efficiency', 'Genome-wide off-target safety']}
+
+----------------------------------------------------------------------
+Ran 1 test in 10.181s
+
+FAILED (failures=2)

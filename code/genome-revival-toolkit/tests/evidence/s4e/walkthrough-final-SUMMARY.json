@@ -1,0 +1,35 @@
+{
+  "copyable_blocks_executed": [
+    "01-copy",
+    "02-manifest",
+    "03-action",
+    "04-rule",
+    "05-template",
+    "06-check",
+    "07-describe",
+    "08-lifecycle",
+    "09-checks",
+    "10-review"
+  ],
+  "cli_commands": 15,
+  "constructed_answer": {
+    "word_count": 4,
+    "minimum_words": 3,
+    "meets_minimum": true
+  },
+  "portable_verified": true,
+  "portable_unchanged": true,
+  "not_rerun": [],
+  "tamper_bytes_changed": 1,
+  "tamper_detected": true,
+  "check_moments": [
+    "step",
+    "final"
+  ],
+  "human_review": "NOT_PERFORMED",
+  "workspace": "<TEMP>\\grt-add-a-kit-f6c077efc3324acca84dbbbf80bb72c7",
+  "portable_package": "<TEMP>\\grt-add-a-kit-f6c077efc3324acca84dbbbf80bb72c7\\portable\\571f9ffd6b1cb6e2856ce29f5d4a01444095633b652b03cdd1c9b322ad38c0ee",
+  "scope": "Source-tree tutorial and synthetic non-DNA example; no new-developer timing trial.",
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run"
+}

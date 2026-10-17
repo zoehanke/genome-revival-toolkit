@@ -1,0 +1,5 @@
+{
+  "check": "check.reaction_chain",
+  "expected": "PASS",
+  "oracle": {"kind": "construction", "reason": "Full primers AACT and GATC on supplied TTAACTGGACTCCGATC, with 4 nt cores, uniquely produce AACTGGACTCCGATC. Expected answer is literal, not produced by a simulator."}
+}

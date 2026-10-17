@@ -1,0 +1,41 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Synthetic computational chain; laboratory steps PLANNED / NOT_PERFORMED.",
+  "sources": [
+    {
+      "source_id": "observations",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\observations.json",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "predictions",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\foreign-predictions.json",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    }
+  ],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "t1",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "present",
+      "check": "check.goal.output_present@0.0.0",
+      "params": {},
+      "target": "t1",
+      "source_quote": "report result",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

@@ -1,0 +1,90 @@
+{
+  "basis": "Original tool output and retained logs; failed runs were not deleted.",
+  "runs": [
+    {
+      "run": "initial unit invocation",
+      "test_cases": 14,
+      "errors": 17,
+      "includes_subtest_errors": true,
+      "issue": "Goal constraint check lacked exact version.",
+      "raw_diagnostic": "initial-goal-failure.json"
+    },
+    {
+      "run": "unit-run02.log",
+      "test_cases": 14,
+      "errors": 17,
+      "includes_subtest_errors": true,
+      "issue": "GenBank artifact sources need explicit read actions.",
+      "raw_diagnostic": "initial-admission-failure.json"
+    },
+    {
+      "run": "unit-run03.log",
+      "test_cases": 14,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": "52.700"
+    },
+    {
+      "run": "unit-run04.log",
+      "test_cases": 14,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": "85.573"
+    },
+    {
+      "run": "unit-run05.log",
+      "test_cases": 18,
+      "errors": 1,
+      "issue": "Core model-check fixture lacked frozen catalog in its candidate view.",
+      "elapsed_seconds": "125.989"
+    },
+    {
+      "run": "unit-fix06.log",
+      "test_cases": 2,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": "10.026"
+    },
+    {
+      "run": "missing-genotype-annotation-failure.json",
+      "issue": "Missing genotype plus CDS annotation conflict incorrectly yielded CONFLICT; required UNKNOWN.",
+      "expected": "UNKNOWN",
+      "observed": "CONFLICT"
+    },
+    {
+      "run": "full-suite-interrupted.log",
+      "outcome": "INTERRUPTED",
+      "reason": "Stopped only this worktree test process tree before correcting the demonstrated selection-state bug. Partial results do not count as a completed full suite."
+    },
+    {
+      "run": "selection-fix07.log",
+      "test_cases": 2,
+      "failures": 0,
+      "errors": 0,
+      "elapsed_seconds": "11.973"
+    },
+    {
+      "run": "full-suite.log",
+      "test_cases": 247,
+      "passed": 246,
+      "errors": 1,
+      "skips": 0,
+      "elapsed_hours": "0.283",
+      "error": "Shared Core test assumes Kit fixture paths are project-relative; see S2-Q6."
+    },
+    {
+      "run": "unit-final.log",
+      "test_cases": 18,
+      "errors": 0,
+      "failures": 0,
+      "note": "After separating CHECK params from inspection setup in Kit fixtures; production capabilities unchanged."
+    },
+    {
+      "run": "mutations-final/results.json",
+      "caught": 2,
+      "total": 2,
+      "note": "Repeated with the final fixture envelope; both intentional source defects caught by assertions."
+    }
+  ],
+  "scope_cleanup": "Full suite regenerated a tracked Core goal-check evidence file. Only basis event hashes differed. Fresh output preserved in core-goal-fixtures-generated-by-full-suite.json; the unrelated tracked file was restored byte-for-byte from HEAD."
+}

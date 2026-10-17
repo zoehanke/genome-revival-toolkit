@@ -1,0 +1,2341 @@
+[
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107",
+        "kit_diagnostics": [],
+        "notices": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 7
+      },
+      "result": {
+        "goal_digest": "be19022f5a133ce6f2a29d5cfdc13bdc84af7e4f5e5ee1ac0d254157880672d6",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "template",
+      "instantiate",
+      "genome-identity.from_handoff",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": null,
+      "event_range": null,
+      "result": {
+        "draft": {
+          "schema": "pipeline-v1",
+          "version": 1,
+          "goal_digest": "be19022f5a133ce6f2a29d5cfdc13bdc84af7e4f5e5ee1ac0d254157880672d6",
+          "steps": [
+            {
+              "step_id": "read_original",
+              "use": "identity.read_reference",
+              "inputs": {
+                "file": {
+                  "source": "original"
+                }
+              },
+              "params": {
+                "topology": "linear"
+              },
+              "why": "Read the actual file format while retaining reference material and byte-hash checks."
+            },
+            {
+              "step_id": "read_edited",
+              "use": "identity.read_reference",
+              "inputs": {
+                "file": {
+                  "source": "edited"
+                }
+              },
+              "params": {
+                "topology": "linear"
+              },
+              "why": "Read the actual file format while retaining reference material and byte-hash checks."
+            },
+            {
+              "step_id": "read_handoff",
+              "use": "identity.read_handoff",
+              "inputs": {
+                "file": {
+                  "source": "handoff_file"
+                }
+              },
+              "params": {},
+              "why": "Read the Construct handoff without guessing a legacy format."
+            },
+            {
+              "step_id": "assay",
+              "use": "identity.analyze_assay",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                },
+                "reference_original_file": {
+                  "source": "original"
+                },
+                "reference_edited_file": {
+                  "source": "edited"
+                },
+                "handoff": {
+                  "step": "read_handoff",
+                  "port": "handoff"
+                }
+              },
+              "params": {
+                "assay_id": "synthetic_identity",
+                "forward_id": "forward",
+                "reverse_id": "reverse"
+              },
+              "why": "Select explicit primer ids from the D11 handoff and bind reference file bytes before predicting PCR."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "identity-expected-results",
+              "from": {
+                "step": "assay",
+                "port": "expected_results"
+              },
+              "target": "expectations"
+            }
+          ],
+          "library_ref": {
+            "name": "genome-identity.from_handoff",
+            "version": "0.0.0",
+            "template_digest": "ddefbd1a0a6a95cd026e5393b72666d8698cc6f14428eb26bc94e2a6ea7108c7"
+          }
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 8,
+        "to_seq": 12
+      },
+      "result": {
+        "pipeline_digest": "13749a3256e2314954b311bbe07c09be17d8f68e58ae6cda2227c16c5f372bc5",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 13,
+        "to_seq": 21
+      },
+      "result": {
+        "state": "COMPLETED"
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 22,
+        "to_seq": 37
+      },
+      "result": {
+        "sealed": true,
+        "seal_id": "2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286",
+        "manifest": "<WORK>\\cases-01\\genome-identity\\different_sizes\\run\\sealed\\2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286\\manifest.json",
+        "present_files": [
+          "<WORK>\\cases-01\\genome-identity\\different_sizes\\run\\sealed\\2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286\\identity-expected-results.json",
+          "<WORK>\\cases-01\\genome-identity\\different_sizes\\run\\sealed\\2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286\\views\\runcard.html",
+          "<WORK>\\cases-01\\genome-identity\\different_sizes\\run\\sealed\\2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286\\views\\report.md"
+        ],
+        "labels": {
+          "review": "reviewed 0 / stale 0 / none 5"
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 50
+      },
+      "result": {
+        "verified": true,
+        "seal_id": "2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286",
+        "files_checked": 26,
+        "verdicts": [
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.readback",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Exported content comparison.",
+            "evidence": {
+              "different_files": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.manifest",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "File list and byte hashes checked.",
+            "evidence": {
+              "listed": 26,
+              "actual": 26
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.journal_chain",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Recorded event chain checked.",
+            "evidence": {
+              "events": 36,
+              "head": "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.store_hashes",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Stored content identities checked.",
+            "evidence": {
+              "different_ids": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.inputs_unchanged",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Registered input copies checked.",
+            "evidence": {
+              "different_sources": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.nonempty",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Active goal constraints counted.",
+            "evidence": {
+              "active": 1
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.target_role_met",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Producer roles compared with target roles.",
+            "evidence": {
+              "unmet_targets": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.replay",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Deterministic output identities compared.",
+            "evidence": {
+              "differences": [],
+              "not_replayed": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.lineage",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Input bindings and identities compared.",
+            "evidence": {
+              "different_steps": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.annotation_integrity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Output findings compared with explicitly bound input features.",
+            "evidence": {
+              "materials_checked": 2,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Biological correctness of feature names or strand/function claims.",
+              "Experimental function or correct transcription."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.cds_validity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "NOT_APPLICABLE",
+            "issuer": "check_capability",
+            "summary": "No CDS feature was present in recorded material outputs.",
+            "evidence": {
+              "features_checked": 0,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": {
+              "reason": "No CDS feature was present in recorded material outputs.",
+              "basis": [
+                "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+                "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+                "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+                "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+                "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+                "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+                "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+                "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+                "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+                "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+                "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+                "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+                "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+                "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+                "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+                "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+                "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+                "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+                "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+                "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+                "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+                "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+                "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+                "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+                "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+                "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+                "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+                "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+                "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+                "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+                "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+                "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+                "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+                "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+                "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+                "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+              ]
+            },
+            "rule_refs": [],
+            "does_not_establish": [
+              "Gene expression, protein activity, selectable phenotype or wet-laboratory function.",
+              "Complete-CDS start/stop validation of explicitly partial or pseudogene annotations.",
+              "Programmed frameshifts, recoding or unannotated strain-specific genetic code differences."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.biological_sanity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Nonempty DNA and physical declarations checked without empirical thresholds.",
+            "evidence": {
+              "materials_checked": 2,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental viability, function, efficiency or host-specific performance.",
+              "Unknown physical properties or ambiguous base identities.",
+              "Empirical thresholds not supplied by sourced rule data."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.output_present",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": "present",
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Bound output presence checked.",
+            "evidence": {
+              "outputs": 1
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          }
+        ],
+        "not_rerun": [],
+        "unsatisfied": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<WORK>\\cases-01\\genome-identity\\different_sizes\\portable\\2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "3c4d99ddbedde15a",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 36
+      },
+      "result": {
+        "verified": true,
+        "seal_id": "2e65979a78cfed65299f021789115890bb4a4f3fd2be383874aaf9b7ae809286",
+        "files_checked": 26,
+        "verdicts": [
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.readback",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Exported content comparison.",
+            "evidence": {
+              "different_files": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.manifest",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "File list and byte hashes checked.",
+            "evidence": {
+              "listed": 26,
+              "actual": 26
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.journal_chain",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Recorded event chain checked.",
+            "evidence": {
+              "events": 36,
+              "head": "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.store_hashes",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Stored content identities checked.",
+            "evidence": {
+              "different_ids": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.inputs_unchanged",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Registered input copies checked.",
+            "evidence": {
+              "different_sources": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.nonempty",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Active goal constraints counted.",
+            "evidence": {
+              "active": 1
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.target_role_met",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Producer roles compared with target roles.",
+            "evidence": {
+              "unmet_targets": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.replay",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Deterministic output identities compared.",
+            "evidence": {
+              "differences": [],
+              "not_replayed": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.lineage",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Input bindings and identities compared.",
+            "evidence": {
+              "different_steps": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.annotation_integrity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Output findings compared with explicitly bound input features.",
+            "evidence": {
+              "materials_checked": 2,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Biological correctness of feature names or strand/function claims.",
+              "Experimental function or correct transcription."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.cds_validity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "NOT_APPLICABLE",
+            "issuer": "check_capability",
+            "summary": "No CDS feature was present in recorded material outputs.",
+            "evidence": {
+              "features_checked": 0,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": {
+              "reason": "No CDS feature was present in recorded material outputs.",
+              "basis": [
+                "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+                "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+                "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+                "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+                "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+                "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+                "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+                "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+                "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+                "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+                "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+                "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+                "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+                "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+                "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+                "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+                "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+                "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+                "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+                "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+                "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+                "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+                "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+                "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+                "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+                "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+                "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+                "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+                "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+                "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+                "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+                "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+                "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+                "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+                "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+                "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+              ]
+            },
+            "rule_refs": [],
+            "does_not_establish": [
+              "Gene expression, protein activity, selectable phenotype or wet-laboratory function.",
+              "Complete-CDS start/stop validation of explicitly partial or pseudogene annotations.",
+              "Programmed frameshifts, recoding or unannotated strain-specific genetic code differences."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.biological_sanity",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Nonempty DNA and physical declarations checked without empirical thresholds.",
+            "evidence": {
+              "materials_checked": 2,
+              "findings": []
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental viability, function, efficiency or host-specific performance.",
+              "Unknown physical properties or ambiguous base identities.",
+              "Empirical thresholds not supplied by sourced rule data."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.output_present",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "3c4d99ddbedde15a"
+            },
+            "constraint_id": "present",
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Bound output presence checked.",
+            "evidence": {
+              "outputs": 1
+            },
+            "basis": [
+              "594732c35496f4ff069d623b4b7c98c7f92fc2448c1665c1efb9c4e83186484a",
+              "9f3b2247124326d8eafc739a5c6b9b14d942cbe6de6f107ab6e6bec075750180",
+              "4ecdcd8ca0ad1cc8f1a6c8deec0d534f25073a853125577a73fee21db690f707",
+              "e22b558a4289e9215ef831706ba5d6b7239850f066336ee3218906640ef3bcdc",
+              "f88fc7059d70cb2f1f0335384ab5feddc008334f52fb9f56153db3f736a4a0b3",
+              "a7f3c5e1402dbeed20b9b00aae39d83ba764f33245f0f2f04e42225b689ceaf8",
+              "9c1dccbff1d6df49e9fe9391ef36725074814fd594d9143984d1fe0a06ba1e3f",
+              "ee2c771bcb11e9fee47c3824019d7842110427ed2b3caf5f25b7473faaa52747",
+              "0fcc41c98ba8b9597e54df52842310aea87ba65c9d505524a2995fd9df4f0697",
+              "2e704d6a3a937042156ade9e00faaaa39a0878e1c5314e4d491d073ebe8d8d7e",
+              "0f2c958b3f0c2b027276dd2e0cd92b2ed6463447fff3252ce8a7b26665d2370b",
+              "978c9a70ec8110f39378bcbe7400e59d6a4371136e186a2aaec1131202f75a12",
+              "d2e0df09f50176c10ee5d3b7c855d2433fbfc274c5df130514ed69c29178befa",
+              "99cd454661fa501d43445181e5adfb97cbcc759af8810b1f9435b917a9eb52b2",
+              "eb84a571d14f0321586da5501eef1ea89741053460ad4f9dbb8c2080e0bbd1c0",
+              "e32a1e54fcee33ee4bad5a69986a9c89c928ebdfddecceeaef9a85f9563b3965",
+              "b69fd97ce7a64690e98e10a2aec73c1074a99f60e3bc2eb0117454128cdff49e",
+              "bea47ff1191c1587cad94a561550edbb1dd89fc2369f891a16fe6421826230fa",
+              "caac594e30737e158b68ef1f50d24078881d95a28c50c51b3f4cfacc37bf0088",
+              "fa30b853351751758f6717c41b430e9814b992bf0cd7e106b3951cee004e3ad0",
+              "e6230e2b6c84859fed62c74eef9fe645c62891363af61a655c2de3bd361d8f59",
+              "7d1e237ac0171fdf9db7e49737671ec741ef023fbdc5cee8faeec08a68e56801",
+              "064cb468cf13fb0a565e90daa55e498fa9eb0f4ed22583dd1ae66869261d810e",
+              "585de956f28eecc71a3bc6f8dc44cefeb8093dfc2e9b5e8491e26ee1abb23825",
+              "b54576d1b60ffc3fcdd9d2f51f5ee4eff0c6ef98e59e0af5d78612fed666bb4c",
+              "649054345eec1c95e8ad0f1f4d672c2ee2cdd305527a4f28e9b3dd7240bca97c",
+              "6ba61142184f0dd10c97ea52a05122a92364590a861116a3b844591b206112d2",
+              "b698a750e43b0a29df053b02e101b917ae1aa6da16535b4741e5b1260cb52964",
+              "82f6ed4a218aa94ab3e3e5129787130b402c6a0ec3afddb55f0bb81eb6bfce26",
+              "5c168e343103c2eb13081ed90cb7a5786b0f9c3d2da8824a6df1b5b7c65dc3b2",
+              "6d5623f133f72c14e5fc3187d55a36bfb4387f3d34e6c207ceef403b18f75e30",
+              "2b8de0cda612be541ff079eb2627ea978626dbb4da083db472015ff856cb1f9a",
+              "a5a88209d104a4b4560171e7a5c06a7d0223d796be542d34bc1b4bef8c14c807",
+              "a0f4bf8b2b4c22475525e62a23d3795749fbae83e0db9111b6253813c9985adf",
+              "ee9ec5ce000b02b50c9dc787420828823e211fbee8072565f839bcd70bdb219f",
+              "04a0b84e6cc051255e79692946fab89447c487c54fe3ae6b4bbf0dfbb0a25211"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          }
+        ],
+        "not_rerun": [],
+        "unsatisfied": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "c341bb84b5464bb387a6f54b2be1cbbbb676309a29fd61ef96be6de39f9d0107",
+        "kit_diagnostics": [],
+        "notices": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 7
+      },
+      "result": {
+        "goal_digest": "3030315529dba213f3c2a8cbaa5fd6564df545c1218d1afc82f4b1de47528db1",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "template",
+      "instantiate",
+      "genome-identity.from_handoff",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": null,
+      "event_range": null,
+      "result": {
+        "draft": {
+          "schema": "pipeline-v1",
+          "version": 1,
+          "goal_digest": "3030315529dba213f3c2a8cbaa5fd6564df545c1218d1afc82f4b1de47528db1",
+          "steps": [
+            {
+              "step_id": "read_original",
+              "use": "identity.read_reference",
+              "inputs": {
+                "file": {
+                  "source": "original"
+                }
+              },
+              "params": {
+                "topology": "linear"
+              },
+              "why": "Read the actual file format while retaining reference material and byte-hash checks."
+            },
+            {
+              "step_id": "read_edited",
+              "use": "identity.read_reference",
+              "inputs": {
+                "file": {
+                  "source": "edited"
+                }
+              },
+              "params": {
+                "topology": "linear"
+              },
+              "why": "Read the actual file format while retaining reference material and byte-hash checks."
+            },
+            {
+              "step_id": "read_handoff",
+              "use": "identity.read_handoff",
+              "inputs": {
+                "file": {
+                  "source": "handoff_file"
+                }
+              },
+              "params": {},
+              "why": "Read the Construct handoff without guessing a legacy format."
+            },
+            {
+              "step_id": "assay",
+              "use": "identity.analyze_assay",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                },
+                "reference_original_file": {
+                  "source": "original"
+                },
+                "reference_edited_file": {
+                  "source": "edited"
+                },
+                "handoff": {
+                  "step": "read_handoff",
+                  "port": "handoff"
+                }
+              },
+              "params": {
+                "assay_id": "synthetic_identity",
+                "forward_id": "forward",
+                "reverse_id": "reverse"
+              },
+              "why": "Select explicit primer ids from the D11 handoff and bind reference file bytes before predicting PCR."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "identity-expected-results",
+              "from": {
+                "step": "assay",
+                "port": "expected_results"
+              },
+              "target": "expectations"
+            }
+          ],
+          "library_ref": {
+            "name": "genome-identity.from_handoff",
+            "version": "0.0.0",
+            "template_digest": "ddefbd1a0a6a95cd026e5393b72666d8698cc6f14428eb26bc94e2a6ea7108c7"
+          }
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run",
+      "--request",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 8,
+        "to_seq": 12
+      },
+      "result": {
+        "pipeline_digest": "5b221af8446f8e474c830a0524de9b6ddd439fc582ed13832e473f68c2d8941a",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": "HALTED",
+      "event_range": {
+        "from_seq": 13,
+        "to_seq": 21
+      },
+      "result": {
+        "state": "HALTED",
+        "failure": {
+          "code": "SOURCE_CHANGED",
+          "category": "INTEGRITY",
+          "message": "Reference file hash differs from the Construct handoff.",
+          "details": {},
+          "recovery": "Restore the registered input or explicitly declare a new input; do not overwrite the original history.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "SOURCE_CHANGED",
+          "category": "INTEGRITY",
+          "message": "Reference file hash differs from the Construct handoff.",
+          "recovery": "Restore the registered input or explicitly declare a new input; do not overwrite the original history.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<WORK>\\cases-01\\genome-identity\\handoff_hash\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "98694d84e523c05d",
+      "state": "HALTED",
+      "event_range": null,
+      "result": {
+        "failure": {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "The run has not reached the sealing preconditions.",
+          "details": {},
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "The run has not reached the sealing preconditions.",
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 5"
+      ]
+    }
+  }
+]

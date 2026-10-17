@@ -1,0 +1,17 @@
+test_package_records_manifest_digest_and_detects_one_byte_change (tests.integration.test_release_identity.ReleaseIdentityTests.test_package_records_manifest_digest_and_detects_one_byte_change) ... FAIL
+
+======================================================================
+FAIL: test_package_records_manifest_digest_and_detects_one_byte_change (tests.integration.test_release_identity.ReleaseIdentityTests.test_package_records_manifest_digest_and_detects_one_byte_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\integration\test_release_identity.py", line 88, in test_package_records_manifest_digest_and_detects_one_byte_change
+    self.assertEqual(receipt["result"]["release_id"], expected)
+AssertionError: 'dev-tree' != 'da766e1e35fe976b672aef15377f8a77bc5713c595bf56615f6966126207aa40'
+- dev-tree
++ da766e1e35fe976b672aef15377f8a77bc5713c595bf56615f6966126207aa40
+
+
+----------------------------------------------------------------------
+Ran 1 test in 1.150s
+
+FAILED (failures=1)

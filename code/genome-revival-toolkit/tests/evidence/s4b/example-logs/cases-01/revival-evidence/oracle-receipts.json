@@ -1,0 +1,32 @@
+[
+  {
+    "case": "b3",
+    "exit_code": 0,
+    "stdout": "{\n  \"conclusions_compared\": 3,\n  \"groups_compared\": 2,\n  \"comparisons_compared\": 1,\n  \"result\": \"PASS\",\n  \"method\": \"Independent standard-library parsing, count arithmetic and rule-file truth-table lookup.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "case": "missing_count_and_ids",
+    "exit_code": 0,
+    "stdout": "{\n  \"conclusions_compared\": 3,\n  \"groups_compared\": 2,\n  \"comparisons_compared\": 1,\n  \"result\": \"PASS\",\n  \"method\": \"Independent standard-library parsing, count arithmetic and rule-file truth-table lookup.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "case": "local_predictions",
+    "exit_code": 0,
+    "stdout": "{\n  \"conclusions_compared\": 4,\n  \"groups_compared\": 0,\n  \"comparisons_compared\": 0,\n  \"result\": \"PASS\",\n  \"method\": \"Independent standard-library parsing, count arithmetic and rule-file truth-table lookup.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "case": "empty",
+    "exit_code": 0,
+    "stdout": "{\n  \"conclusions_compared\": 2,\n  \"groups_compared\": 0,\n  \"comparisons_compared\": 0,\n  \"result\": \"PASS\",\n  \"method\": \"Independent standard-library parsing, count arithmetic and rule-file truth-table lookup.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "case": "product_counts",
+    "exit_code": 0,
+    "stdout": "{\n  \"conclusions_compared\": 5,\n  \"groups_compared\": 0,\n  \"comparisons_compared\": 0,\n  \"result\": \"PASS\",\n  \"method\": \"Independent standard-library parsing, count arithmetic and rule-file truth-table lookup.\"\n}\n",
+    "stderr": ""
+  }
+]

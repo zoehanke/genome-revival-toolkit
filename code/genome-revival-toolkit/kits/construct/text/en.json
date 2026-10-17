@@ -1,0 +1,7 @@
+{
+  "construct.title": "Integration donor design",
+  "construct.donor_carryover": "Residual donor DNA also yields a band. Primers inside donor homology arms cannot establish genomic integration.",
+  "construct.scope": "Exact sequence simulations on supplied original, edited and donor references.",
+  "construct.laboratory_status": "PLANNED / NOT_PERFORMED",
+  "construct.not_established": "Laboratory preparation success; transformation efficiency; authentic integration locus."
+}

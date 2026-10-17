@@ -1,0 +1,20 @@
+{
+  "schema": "kit-v1",
+  "name": "cut-plasmid",
+  "version": "0.1.0",
+  "title": "Cut Plasmid",
+  "requires_core": {"minimum": "0.0.0", "maximum_exclusive": "1.0.0"},
+  "contributes": {
+    "capabilities": [
+      "capabilities/inspect_guide.json", "capabilities/replace_spacer.json",
+      "capabilities/assess_selection.json", "capabilities/model_replace.json",
+      "capabilities/check_direction.json", "capabilities/check_pam.json",
+      "capabilities/check_vector_self_target.json"
+    ],
+    "knowledge": ["knowledge/selection_markers.json"],
+    "templates": ["templates/replace_spacer.json", "templates/inspect_only.json"],
+    "text": ["text/en.json"]
+  },
+  "does_not_establish": ["Cleavage activity", "Editing efficiency", "Genome-wide off-target safety"],
+  "review": "knowledge/review/"
+}

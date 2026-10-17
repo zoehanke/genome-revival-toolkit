@@ -1,0 +1,60 @@
+{
+  "schema": "capability-v1",
+  "id": "seq.reverse_complement",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Compute the IUPAC DNA reverse complement as a document.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "sequence",
+      "type": "value",
+      "required": true,
+      "description": "DNA literal, at most 200 bases.",
+      "constraints": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 200,
+        "pattern": "^[ACGTRYSWKMBDHVNacgtryswkmbdhvn]+$"
+      }
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "result",
+      "type": "document",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value",
+      "output_role": "analysis"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "check.replay"
+    },
+    {
+      "check": "check.lineage"
+    },
+    {
+      "check": "check.dna_value_valid"
+    }
+  ],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.seq.reverse_complement:run"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

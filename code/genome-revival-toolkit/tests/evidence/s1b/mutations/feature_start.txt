@@ -1,0 +1,24 @@
+F
+======================================================================
+FAIL: test_feature_mapping_hand_forward_reverse_and_partial_cds (test_biology_sequence_formats.SequenceTests.test_feature_mapping_hand_forward_reverse_and_partial_cds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_sequence_formats.py", line 74, in test_feature_mapping_hand_forward_reverse_and_partial_cds
+    self.assertEqual((int(mapped.location.start), int(mapped.location.end)), (0, 5))
+AssertionError: Tuples differ: (1, 5) != (0, 5)
+
+First differing element 0:
+1
+0
+
+- (1, 5)
+?  ^
+
++ (0, 5)
+?  ^
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

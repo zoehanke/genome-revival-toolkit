@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:verdict.issued-payload-v1",
+  "title": "verdict.issued-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E: verdict.issued",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "verdict": {
+      "$ref": "urn:grt:schema:verdict-v1"
+    }
+  },
+  "required": [
+    "verdict"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema_id": "step.failed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Retained documents share completed output shape."
+  },
+  "data": {
+    "step_id": "s1",
+    "failure": {
+      "code": "PLAN_SCHEMA_INVALID",
+      "category": "INVALID_INPUT",
+      "message": "Constructed failure.",
+      "details": {},
+      "recovery": "Correct request.",
+      "retryable": false,
+      "cause_chain": []
+    },
+    "retained_outputs": {
+      "outputs": {
+        "materials": {
+          "product": [
+            "1111111111111111111111111111111111111111111111111111111111111111"
+          ]
+        },
+        "documents": {
+          "report": "1111111111111111111111111111111111111111111111111111111111111111"
+        },
+        "artifacts": []
+      },
+      "values": {},
+      "unverified": []
+    },
+    "superseded_by": null
+  }
+}

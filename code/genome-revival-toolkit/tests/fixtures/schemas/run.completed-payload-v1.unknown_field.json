@@ -1,0 +1,15 @@
+{
+  "schema_id": "run.completed-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "pipeline_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "executed_steps": [
+      "s1"
+    ],
+    "undeclared_field": true
+  }
+}

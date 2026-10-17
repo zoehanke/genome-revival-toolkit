@@ -1,0 +1,114 @@
+{
+  "structure": {
+    "command": [
+      "tools/check_structure.py"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 1,
+    "output": "check_structure.txt"
+  },
+  "schemas": {
+    "command": [
+      "tools/check_schemas.py"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 0,
+    "output": "check_schemas.txt"
+  },
+  "spec_lint": {
+    "command": [
+      "<REPOSITORY>\\tools\\spec_lint.py",
+      "<REPOSITORY>\\spec\\SPEC.md"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 0,
+    "output": "spec_lint.txt"
+  },
+  "all_tests_without_primer3_configuration": {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 1,
+    "output": "all-tests-default-ci.txt",
+    "tests": 163,
+    "passed": 160,
+    "skipped": 1,
+    "failures": 2,
+    "errors": 0
+  },
+  "actual_configured_primer3": {
+    "command": [
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests/integration",
+      "-p",
+      "test_biology_capabilities.py",
+      "-k",
+      "test_primer3_real_ctx_external_calls_and_recorded_fingerprint",
+      "-v"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": true,
+    "exit_code": 0,
+    "output": "configured-primer3.txt",
+    "tests": 1,
+    "passed": 1,
+    "skipped": 0,
+    "failures": 0,
+    "errors": 0
+  },
+  "mutations": {
+    "command": [
+      "tests/oracles/round2_mutations.py"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 0,
+    "output": "mutations.txt"
+  },
+  "kit_draft_validation": {
+    "command": [
+      "tools/validate_kit_drafts.py",
+      "--report",
+      "docs/kit-prep/schema-report.json",
+      "--write-markdown"
+    ],
+    "PYTHONPATH": "src",
+    "primer3_configured": false,
+    "exit_code": 1,
+    "output": "kit-drafts.txt"
+  },
+  "draft_findings": {
+    "draft_documents": 58,
+    "schema_invalid_documents": 3,
+    "a14_invalid_documents": 1,
+    "question_ids": [
+      "K1",
+      "K2",
+      "K3",
+      "K4",
+      "K5",
+      "K6"
+    ]
+  },
+  "skip_policy": {
+    "id": "S1B-PRIMER3-OPTIONAL",
+    "missing_config": "Registered NOT_PERFORMED skip; zero passes for that numerical verification.",
+    "configured_bad_result": "Actual integration test is exercised with a deliberately wrong fingerprint; expected failure and zero skips are asserted by unit tests."
+  },
+  "implementation_checks": "FAIL",
+  "kit_drafts": "FAIL",
+  "scope": "Kit migration rehearsal only; no Kit code, Kit runtime, wet-lab or new gate closure. Implementation tests and invalid draft findings remain separate."
+}

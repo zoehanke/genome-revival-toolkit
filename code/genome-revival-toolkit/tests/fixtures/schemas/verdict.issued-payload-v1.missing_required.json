@@ -1,0 +1,9 @@
+{
+  "schema_id": "verdict.issued-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required verdict."
+  },
+  "data": {}
+}

@@ -1,0 +1,63 @@
+{
+  "schema_id": "capability-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove field required by D3 or D20 and user authority decision."
+  },
+  "data": {
+    "schema": "capability-v1",
+    "id": "demo.check_length",
+    "version": "0.0.0",
+    "role": "CHECK",
+    "summary": "Report length.",
+    "effects": [
+      "pure"
+    ],
+    "deterministic": true,
+    "requires_runtime": [],
+    "inputs": [
+      {
+        "name": "sequence",
+        "type": "value",
+        "required": true,
+        "constraints": {},
+        "description": "Synthetic input."
+      }
+    ],
+    "params": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": false
+    },
+    "outputs": [
+      {
+        "name": "length",
+        "type": "value",
+        "output_role": "analysis"
+      }
+    ],
+    "step_checks": [],
+    "final_checks": [],
+    "does_not_establish": [
+      "Experimental result."
+    ],
+    "source": {
+      "algorithm_refs": [],
+      "implemented_in": "capabilities/length.py"
+    },
+    "owner": "kit:demo",
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    },
+    "scope": "content_model",
+    "evaluates_constraint": false,
+    "fixtures": {
+      "pass": "pass.json",
+      "fail": "fail.json"
+    },
+    "granularity": "atomic"
+  }
+}

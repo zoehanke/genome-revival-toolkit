@@ -1,0 +1,34 @@
+{
+  "code": "PLAN_SCHEMA_INVALID",
+  "category": "INVALID_INPUT",
+  "message": "Pipeline admission rejected.",
+  "details": {
+    "problems": [
+      {
+        "code": "PLAN_INPUT_UNBOUND",
+        "category": "INVALID_INPUT",
+        "message": "A required input is absent or has the wrong type.",
+        "details": {
+          "location": "/steps/0/inputs/vector"
+        },
+        "recovery": "Provide each required input using the capability declaration.",
+        "retryable": false,
+        "cause_chain": []
+      },
+      {
+        "code": "PLAN_INPUT_UNBOUND",
+        "category": "INVALID_INPUT",
+        "message": "A required input is absent or has the wrong type.",
+        "details": {
+          "location": "/steps/0/inputs/target"
+        },
+        "recovery": "Provide each required input using the capability declaration.",
+        "retryable": false,
+        "cause_chain": []
+      }
+    ]
+  },
+  "recovery": "Correct the request against pipeline-v1 and submit it again.",
+  "retryable": false,
+  "cause_chain": []
+}

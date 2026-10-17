@@ -1,0 +1,17 @@
+LOCUS       vector                   360 bp    DNA     circular UNK 01-JAN-1980
+DEFINITION  Synthetic S2 test input.
+ACCESSION   vector
+VERSION     vector
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 gtcctaaaat gcattctaga ttgttgggag caggcgtcgc taccacgtca gcttgccctg
+       61 ttagagtggc gcgtaggctt agccttatct gtccgtgccg gttctctgga aatcatattt
+      121 ccgaaaaaac cgacatcgta cgatcgtaca gttgctgtga tcacttgagt acgatcgtgc
+      181 aatcctgagt cccaacccta agtagccggg tatgttgcgg ccatttaagt gtcagctcta
+      241 aggtacatct actgggtaaa ctattaagat ctctcccctg agcgtggggg tagtggtttc
+      301 cctgaaacca acagtcgcga taagcctgtt aaggtgacta gtggatagaa ctacttaagt
+//

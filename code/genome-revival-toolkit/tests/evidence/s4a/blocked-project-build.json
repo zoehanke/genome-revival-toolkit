@@ -1,0 +1,40 @@
+{
+  "command": [
+    "tools/build_release.py",
+    "--out",
+    "dist/s4a-blocked-project-build"
+  ],
+  "PYTHONPATH": "src",
+  "exit_code": 1,
+  "result": {
+    "status": "INCOMPLETE",
+    "build_created": false,
+    "checks": {
+      "status": "INCOMPLETE",
+      "findings": [],
+      "placeholder_count": 5,
+      "placeholder_files": {
+        "docs/judges/architecture.md": 1,
+        "README.md": 4
+      },
+      "tracked_bytes": 5888993,
+      "tracked_limit_bytes": 50000000,
+      "tracked_files": 903,
+      "selected_files": 637,
+      "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "dependencies": {
+        "jsonschema": "4.26.0",
+        "rfc8785": "0.1.4",
+        "biopython": "1.88",
+        "referencing": "0.37.0",
+        "setuptools": "83.0.0",
+        "attrs": "26.1.0",
+        "jsonschema-specifications": "2025.9.1",
+        "rpds-py": "2026.6.3",
+        "numpy": "2.0.2",
+        "typing-extensions": "4.16.0"
+      },
+      "scope": "INV-F10 source inventory and payload hygiene; not S4 approval or scientific acceptance."
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "check": "check.goal.components_present",
+  "variant": "pass",
+  "expected": "PASS",
+  "params": {
+    "components": [
+      {
+        "name": "wanted",
+        "sequence": "CCCG"
+      }
+    ]
+  },
+  "kind": "material",
+  "value": {
+    "sequence": "AAACCCGGGTTT",
+    "topology": "linear",
+    "strandedness": "double",
+    "ends": null,
+    "features": []
+  },
+  "oracle": {
+    "kind": "construction",
+    "reason": "CCCG occupies [3,7) in the positive. The negative has only A/T but an intentionally misleading annotation."
+  }
+}

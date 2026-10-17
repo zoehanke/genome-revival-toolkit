@@ -1,0 +1,44 @@
+{
+  "schema": "capability-v1",
+  "id": "check.goal.output_present",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Check that the constrained target has a retained output.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "fields": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.checks:output_present"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "user_goal",
+  "evaluates_constraint": true,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/checks/check.goal.output_present.pass.json",
+    "fail": "tests/fixtures/checks/check.goal.output_present.fail.json"
+  }
+}

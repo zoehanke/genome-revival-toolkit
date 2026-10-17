@@ -1,0 +1,86 @@
+{
+  "schema": "capability-v1",
+  "id": "cut_plasmid.inspect_guide",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for cut_plasmid.inspect_guide; no Kit implementation exists.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "vector",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "vector"
+    },
+    {
+      "name": "target",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "target"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "promoter_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "transcription_strand": {
+        "enum": [
+          -1,
+          1
+        ]
+      },
+      "scaffold_sequence": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "promoter_end",
+      "transcription_strand",
+      "scaffold_sequence"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "guide",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "guide-inspection-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "cut_plasmid.check_direction"
+    },
+    {
+      "check": "cut_plasmid.check_pam"
+    },
+    {
+      "check": "cut_plasmid.check_vector_self_target"
+    }
+  ],
+  "does_not_establish": [
+    "Cleavage activity",
+    "Editing efficiency",
+    "Genome-wide off-target safety",
+    "Wet-laboratory PCR, DpnI, KLD or transformation."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_cut_plasmid.capabilities.operations:inspect_guide"
+  },
+  "owner": "kit:cut-plasmid",
+  "granularity": "atomic"
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "capability-v1",
+  "id": "seq.rotate",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Rotate a declared circle; D9 identity changes with the selected origin.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "origin": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [
+      "origin"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "output_role": "component"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.seq.operations:rotate_circle"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

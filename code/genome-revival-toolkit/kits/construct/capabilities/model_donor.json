@@ -1,0 +1,91 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.model_donor",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Compute the independent linear donor expectation from explicit source intervals.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "reference",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reference"
+    },
+    {
+      "name": "cargo",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "cargo"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "arm_length": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "cargo_start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cargo_end": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [
+      "start",
+      "end",
+      "arm_length",
+      "cargo_start",
+      "cargo_end"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival"
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11",
+      "MIGRATION-LOG.md: S5a"
+    ],
+    "implemented_in": "construct.capabilities.model:model_donor"
+  },
+  "owner": "kit:construct",
+  "granularity": "atomic"
+}

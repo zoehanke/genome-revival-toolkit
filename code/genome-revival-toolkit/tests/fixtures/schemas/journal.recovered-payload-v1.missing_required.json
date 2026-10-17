@@ -1,0 +1,11 @@
+{
+  "schema_id": "journal.recovered-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required discarded_bytes."
+  },
+  "data": {
+    "reason": "Incomplete last line."
+  }
+}

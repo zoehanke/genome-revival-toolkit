@@ -1,0 +1,25 @@
+E
+======================================================================
+ERROR: test_region_edit_sequence_and_annotation_retirement (test_biology_round2_common.Round2CommonTests.test_region_edit_sequence_and_annotation_retirement)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_round2_common.py", line 13, in test_region_edit_sequence_and_annotation_retirement
+    product, report = biology.replace_material_region(source, 3, 6, insert)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s1b_round2_mutation_kw7mgcuq\dna_design_core\biology\sequence\preparation.py", line 59, in replace_material_region
+    return material_from_record(result, strandedness=value["strandedness"]), {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s1b_round2_mutation_kw7mgcuq\dna_design_core\biology\materials.py", line 100, in material_from_record
+    return make_material(str(record.seq), topology=record.annotations.get("topology"),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s1b_round2_mutation_kw7mgcuq\dna_design_core\biology\materials.py", line 45, in make_material
+    value = normalize({"sequence": sequence, "topology": topology, "strandedness": strandedness,
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<TEMP>\s1b_round2_mutation_kw7mgcuq\dna_design_core\kernel\material.py", line 18, in normalize
+    raise ToolkitError('CAPABILITY_OUTPUT_INVALID','Feature interval is outside material.')
+dna_design_core.kernel.errors.ToolkitError: Feature interval is outside material.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.007s
+
+FAILED (errors=1)

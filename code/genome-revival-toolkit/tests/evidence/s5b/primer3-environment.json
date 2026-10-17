@@ -1,0 +1,7 @@
+{
+  "scope": "External backend configured for the full regression suite, not used to certify this Kit assay.",
+  "executable_sha256": "19a546a0166fd979c41317e45696de1b383ab5fa21ec362bcc5053b2068b6e5f",
+  "version_output": "libprimer3 release 2.6.1",
+  "stderr": "",
+  "exit_code": 0
+}

@@ -1,0 +1,14 @@
+{
+  "schema_id": "judge.finished-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "candidate_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "obligation_ids": [],
+    "verdict_ids": [],
+    "unsatisfied": []
+  }
+}

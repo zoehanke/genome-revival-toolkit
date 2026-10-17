@@ -1,0 +1,6 @@
+{
+  "docker": false,
+  "podman": false,
+  "bash": false,
+  "scope": "Executable availability only; no container engine, remote context or Linux distribution was started."
+}

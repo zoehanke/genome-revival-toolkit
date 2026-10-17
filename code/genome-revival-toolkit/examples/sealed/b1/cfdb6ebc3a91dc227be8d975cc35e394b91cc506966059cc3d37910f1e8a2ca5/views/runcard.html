@@ -1,0 +1,1299 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Run card</title><style>
+*{box-sizing:border-box}body{margin:0;background:#f4f4f0;color:#192720;font:15px/1.55 system-ui,sans-serif}
+main{max-width:1180px;margin:32px auto;padding:0 20px}h1{margin:0}header p{margin:6px 0}.head{overflow-wrap:anywhere;font-size:12px}
+.chain{width:100%;height:auto;background:white;border:1px solid #d5dad5;border-radius:10px;margin:20px 0}.chain rect{fill:#f3f6f3;stroke:#b5c5ba}.chain text{fill:#192720;font:12px system-ui}.chain .hash{font:11px monospace;fill:#4d6858}.chain .lane{font-weight:700}
+.link{fill:none}.verified{stroke:#176246;stroke-width:2.5}.declared{stroke:#6c706d;stroke-width:1.5;stroke-dasharray:5 4}.structure{stroke:#b8bdb9;stroke-width:1}
+.columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.columns section{background:#fff;border-top:3px solid #527c63;padding:16px;overflow-wrap:anywhere}h2{font-size:17px;margin:0 0 12px}ul{padding-left:20px}li{margin:8px 0}details{margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}footer{border-top:1px solid #b5c5ba;padding:18px 0}
+@media(max-width:700px){main{margin:20px auto}.columns{grid-template-columns:1fr}}
+</style><main><header><h1>Run card</h1><p>Through event 34</p><p class="head">Journal head: 70cdff47d42a016cfc83e235b9be3130eef0936076e0f765a7d956653e57631a</p></header><svg class="chain" viewBox="0 0 900 185" role="img" aria-label="Recorded data chain"><text x="20" y="22" class="lane">Input sources</text><text x="320" y="22" class="lane">Executed steps</text><text x="620" y="22" class="lane">Retained outputs</text><path class="link structure" data-basis="" d="M585 77 C615 77 590 77 620 77"/><path class="link declared" data-basis="declared" d="M285 77 C315 77 290 77 320 77"/><g><title>reverse · seq.reverse_complement</title><rect x="320" y="45" width="265" height="82" rx="7"/><text x="330" y="67">reverse · seq.reverse_complement</text><text x="330" y="112" class="hash">37c6246e61be</text></g><g><title>reverse.result[0]</title><rect x="620" y="45" width="265" height="82" rx="7"/><text x="630" y="67">reverse.result[0]</text><text x="630" y="112" class="hash">80e74c9e7bef</text></g><g><title>Host-reported goal and reasons</title><rect x="20" y="45" width="265" height="82" rx="7"/><text x="30" y="67">Host-reported goal and reasons</text><text x="30" y="112" class="hash"></text></g></svg><p>Solid: explicit input binding and equal content hashes. Dashed: declared only. Thin gray: record structure.</p><div class="columns"><section><h2>Checked by the program</h2><ul><li>Pipeline admitted after static validation.</li><li>check.readback [file]: PASS · Exported content comparison.</li><li>check.manifest [file]: PASS · File list and byte hashes checked.</li><li>check.journal_chain [file]: PASS · Recorded event chain checked.</li><li>check.store_hashes [file]: PASS · Stored content identities checked.</li><li>check.inputs_unchanged [file]: PASS · Registered input copies checked.</li><li>check.goal.nonempty [user_goal]: PASS · Active goal constraints counted.</li><li>check.goal.target_role_met [user_goal]: PASS · Producer roles compared with target roles.</li><li>check.goal.output_present [user_goal]: PASS · Bound output presence checked.</li><li>check.replay [content_model]: PASS · Deterministic output identities compared.</li><li>check.lineage [content_model]: PASS · Input bindings and identities compared.</li><li>check.dna_value_valid [content_model]: PASS · DNA-valued document alphabet checked.</li></ul></section><section><h2>Declared only</h2><ul><li>Host-reported original request: Report the reverse complement of [sequence omitted].</li><li>plan_declared: Reverse and complement a synthetic eight-base literal.</li><li>c1 [user_quoted]: Report the reverse complement</li><li>host_expectation: check.goal.output_present [user_goal]: PASS · Host expectation satisfied.</li></ul></section><section><h2>Not done</h2><ul><li>Computed sequence only; no physical molecule was prepared.</li><li>Experimental performance or correctness of a scientific conclusion.</li><li>Revisions recorded: 0</li><li>This development-tree package is not release evidence.</li><li>Wet-laboratory performance or biological function.</li><li>reviewed 0 / stale 0 / none 5</li></ul></section></div><details><summary>Technical details</summary><pre>[
+  {
+    &quot;seq&quot;: 1,
+    &quot;type&quot;: &quot;run.created&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;
+  },
+  {
+    &quot;seq&quot;: 2,
+    &quot;type&quot;: &quot;goal.declared&quot;,
+    &quot;actor&quot;: &quot;ai_host&quot;,
+    &quot;hash&quot;: &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;
+  },
+  {
+    &quot;seq&quot;: 3,
+    &quot;type&quot;: &quot;pipeline.declared&quot;,
+    &quot;actor&quot;: &quot;ai_host&quot;,
+    &quot;hash&quot;: &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;
+  },
+  {
+    &quot;seq&quot;: 4,
+    &quot;type&quot;: &quot;declaration.recorded&quot;,
+    &quot;actor&quot;: &quot;ai_host&quot;,
+    &quot;hash&quot;: &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;
+  },
+  {
+    &quot;seq&quot;: 5,
+    &quot;type&quot;: &quot;step.started&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;
+  },
+  {
+    &quot;seq&quot;: 6,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.output_present&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Final qualification.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;operator&quot;: &quot;equals&quot;
+      },
+      &quot;issuer&quot;: &quot;host_expectation&quot;,
+      &quot;moment&quot;: &quot;step&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;reverse&quot;,
+        &quot;kind&quot;: &quot;step&quot;
+      },
+      &quot;summary&quot;: &quot;Host expectation satisfied.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 7,
+    &quot;type&quot;: &quot;step.completed&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;
+  },
+  {
+    &quot;seq&quot;: 8,
+    &quot;type&quot;: &quot;run.completed&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;
+  },
+  {
+    &quot;seq&quot;: 9,
+    &quot;type&quot;: &quot;call.recorded&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;
+  },
+  {
+    &quot;seq&quot;: 10,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.readback&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_files&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Exported content comparison.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 11,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.manifest&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;actual&quot;: 1,
+        &quot;listed&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;File list and byte hashes checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 12,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.journal_chain&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;events&quot;: 11,
+        &quot;head&quot;: &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Recorded event chain checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 13,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.store_hashes&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_ids&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Stored content identities checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 14,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.inputs_unchanged&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_sources&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Registered input copies checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 15,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.nonempty&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;active&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Active goal constraints counted.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 16,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.target_role_met&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;unmet_targets&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Producer roles compared with target roles.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 17,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.output_present&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: &quot;c1&quot;,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;missing_fields&quot;: [],
+        &quot;outputs&quot;: 1,
+        &quot;required_fields&quot;: [
+          &quot;sequence&quot;
+        ]
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Bound output presence checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 18,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.replay&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;differences&quot;: [],
+        &quot;not_replayed&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Deterministic output identities compared.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 19,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.lineage&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_steps&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Input bindings and identities compared.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 20,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.dna_value_valid&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;sequence_count&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;DNA-valued document alphabet checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 21,
+    &quot;type&quot;: &quot;judge.finished&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;
+  },
+  {
+    &quot;seq&quot;: 22,
+    &quot;type&quot;: &quot;call.recorded&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;
+  },
+  {
+    &quot;seq&quot;: 23,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.readback&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_files&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Exported content comparison.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 24,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.manifest&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;actual&quot;: 1,
+        &quot;listed&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;File list and byte hashes checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 25,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.journal_chain&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;events&quot;: 24,
+        &quot;head&quot;: &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Recorded event chain checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 26,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.store_hashes&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_ids&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Stored content identities checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 27,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.inputs_unchanged&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_sources&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;file&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Registered input copies checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 28,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.nonempty&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;active&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Active goal constraints counted.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 29,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;f3d4f8db0f4359f412ae82931fe62e281c0c825f6aa62f7103a53422c4ac0dd8&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+        &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.target_role_met&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;unmet_targets&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Producer roles compared with target roles.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 30,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;98256f158f262fed769679cf071a7bb88dfbcc703d2913451828b077948d13ca&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+        &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;,
+        &quot;f3d4f8db0f4359f412ae82931fe62e281c0c825f6aa62f7103a53422c4ac0dd8&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.goal.output_present&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: &quot;c1&quot;,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;missing_fields&quot;: [],
+        &quot;outputs&quot;: 1,
+        &quot;required_fields&quot;: [
+          &quot;sequence&quot;
+        ]
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;user_goal&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Bound output presence checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 31,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;317fb013ccfe5a274be8db1c8c12f0fd5d8d26c32e13377a2b236959be1a6dfb&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+        &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;,
+        &quot;f3d4f8db0f4359f412ae82931fe62e281c0c825f6aa62f7103a53422c4ac0dd8&quot;,
+        &quot;98256f158f262fed769679cf071a7bb88dfbcc703d2913451828b077948d13ca&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.replay&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;differences&quot;: [],
+        &quot;not_replayed&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Deterministic output identities compared.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 32,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;df5614a414c1628ff044c42a5aa169dee5e36516cd4f1278b079f58d4b08773c&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+        &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;,
+        &quot;f3d4f8db0f4359f412ae82931fe62e281c0c825f6aa62f7103a53422c4ac0dd8&quot;,
+        &quot;98256f158f262fed769679cf071a7bb88dfbcc703d2913451828b077948d13ca&quot;,
+        &quot;317fb013ccfe5a274be8db1c8c12f0fd5d8d26c32e13377a2b236959be1a6dfb&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.lineage&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;different_steps&quot;: []
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;Input bindings and identities compared.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 33,
+    &quot;type&quot;: &quot;verdict.issued&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;e135d6f5888db72a92c95ff2aea714eb74820d546af02db7308c3d2ff37da92d&quot;,
+    &quot;verdict&quot;: {
+      &quot;applicability&quot;: null,
+      &quot;basis&quot;: [
+        &quot;7fd5f8fa50ac24b5fba5e9b110d9102dbdb0f9cbfe4903b9ca35c3bb70954e10&quot;,
+        &quot;28f6468143b9060899b58ff87b94a12c47daea9f63bd14089e4e02a6f89f3e25&quot;,
+        &quot;6ceb7b1b153744580eed73f47384630f3fa6027798413cf84fa9515ed68c10e6&quot;,
+        &quot;76d6a5cfab361b9da2582dccc7a52d58a168cf60a29be8d27c1ea8de64d96aa2&quot;,
+        &quot;37c6246e61bef331688a11ecdeec8f114c6f32db7400657f570f06ddb32d5486&quot;,
+        &quot;c56988a13ddefd8838ce7babfc6bcbe2649e0ad6df6a9155e960b59cce0e47be&quot;,
+        &quot;d506bc6e2f1c0acadd602222c823613cfeb4c3f8730d9e1cefa18b63dde020b9&quot;,
+        &quot;dfbe5d7a7506eff0aad40ef6cc94de0fd888b6e589146b772e9320e7b4e52e56&quot;,
+        &quot;1657ad85daa74cb69f3ca9350d9dc4758a768420831d106afe0f3c92e3f21098&quot;,
+        &quot;e007db64c5440fe5b750fa35b0d98e8819a619303690e01143081271a0c8625a&quot;,
+        &quot;845c50c150016cc5a9169de515622ff86722a46a9181f496894001014fe16797&quot;,
+        &quot;cc862ecbbfad3ba3674236dce408199c70958dbeaa75b2c2be56400b514db4e6&quot;,
+        &quot;5b0d26d773765f5f5082aa5d957f50246e3c000c1c33206488cb01601ea867f2&quot;,
+        &quot;e9f6de9385f1bc196bfd5d855e600f61bddc1d056c34ea185fcc8db7358e35c9&quot;,
+        &quot;03f6b950152b4983a0b1c1364c7d1282dd696f128568ee2a1ffbf82614526916&quot;,
+        &quot;455b040fcb6ca1217c63f8bf96f0547ed6e9628466de7ff1fb68ae21eb765e1a&quot;,
+        &quot;fb4eca9fb7007e0ac0a901a573dc3068dfe8678b104411eea995768732a24595&quot;,
+        &quot;f5e6025b819e0559cae3c0021ea0ba579626bda72ad731d1aea4c36c23b52b37&quot;,
+        &quot;a9840158ad260a11b8d30840700d1e7b50c8c61f103f94c78c23ad3e4df386e2&quot;,
+        &quot;d552f20a063ab064b5493aeab93eea5c826f6f7f62070709bc6e9203260163c9&quot;,
+        &quot;36ac5ed4258c3049e806658a7e943746a5c52aa9f8e0e590843975ae3bfe4c02&quot;,
+        &quot;0a6094ea352daf6108b5a8146d0b628962d6810447506ab541c8042b5bf314d7&quot;,
+        &quot;3e2624a478e61e32edb46279a7c0216bccda31c2ea66556f0f368d2519064b0a&quot;,
+        &quot;7364bf57208927f5afeae3bf7cf59e7ce0108535b00ac5ffec12754350ec6101&quot;,
+        &quot;f4aa182f429605264ad1242b2f2ad8371e55627a7c384e58f130c4757f7a455a&quot;,
+        &quot;cafd662fb29243fc37b9ec689d71d60a235c313157ad1a52d8d613fc01552f29&quot;,
+        &quot;0b5691861ef8abc510e3a5dfe0e49c29504f22c1959959a1c23f0d9cceb338d7&quot;,
+        &quot;168724f2121d9767602cb35dd28eaeab293203360f063ad0b5bcc9f05ded9d33&quot;,
+        &quot;f3d4f8db0f4359f412ae82931fe62e281c0c825f6aa62f7103a53422c4ac0dd8&quot;,
+        &quot;98256f158f262fed769679cf071a7bb88dfbcc703d2913451828b077948d13ca&quot;,
+        &quot;317fb013ccfe5a274be8db1c8c12f0fd5d8d26c32e13377a2b236959be1a6dfb&quot;,
+        &quot;df5614a414c1628ff044c42a5aa169dee5e36516cd4f1278b079f58d4b08773c&quot;
+      ],
+      &quot;check&quot;: {
+        &quot;id&quot;: &quot;check.dna_value_valid&quot;,
+        &quot;version&quot;: &quot;0.0.0&quot;
+      },
+      &quot;constraint_id&quot;: null,
+      &quot;does_not_establish&quot;: [
+        &quot;Experimental performance or correctness of a scientific conclusion.&quot;
+      ],
+      &quot;evidence&quot;: {
+        &quot;sequence_count&quot;: 1
+      },
+      &quot;issuer&quot;: &quot;check_capability&quot;,
+      &quot;moment&quot;: &quot;final&quot;,
+      &quot;outcome&quot;: &quot;PASS&quot;,
+      &quot;rule_refs&quot;: [],
+      &quot;schema&quot;: &quot;verdict-v1&quot;,
+      &quot;scope&quot;: &quot;content_model&quot;,
+      &quot;subject&quot;: {
+        &quot;id&quot;: &quot;d2c2739df5fc7fbf&quot;,
+        &quot;kind&quot;: &quot;run&quot;
+      },
+      &quot;summary&quot;: &quot;DNA-valued document alphabet checked.&quot;
+    }
+  },
+  {
+    &quot;seq&quot;: 34,
+    &quot;type&quot;: &quot;judge.finished&quot;,
+    &quot;actor&quot;: &quot;program&quot;,
+    &quot;hash&quot;: &quot;70cdff47d42a016cfc83e235b9be3130eef0936076e0f765a7d956653e57631a&quot;
+  }
+]</pre></details><footer>This record shows what ran and what was checked. It does not prove that a conclusion is true.</footer></main></html>

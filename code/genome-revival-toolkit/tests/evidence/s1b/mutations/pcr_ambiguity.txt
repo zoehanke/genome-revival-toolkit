@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_repeated_sites_enumerated_and_unique_simulator_rejects (test_biology_primer_pcr.PCRTests.test_repeated_sites_enumerated_and_unique_simulator_rejects)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_primer_pcr.py", line 130, in test_repeated_sites_enumerated_and_unique_simulator_rejects
+    with self.assertRaisesRegex(ValueError, "found 2"):
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

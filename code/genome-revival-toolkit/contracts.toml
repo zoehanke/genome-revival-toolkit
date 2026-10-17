@@ -1,0 +1,40 @@
+# SPEC D1; draft contract for human review, not a runtime implementation.
+# DEP-1..DEP-9: project imports only. Standard-library/third-party use is
+# checked separately; an allowed parent does not grant access to siblings.
+[layers]
+order = ["kernel", "biology|storage|knowledge", "catalog|capabilities", "engine", "assurance|record", "application"]
+
+[allow]
+# DEP-1
+kernel = []
+# DEP-2
+biology = ["kernel"]
+storage = ["kernel"]
+knowledge = ["kernel"]
+# DEP-3: metadata discovery must not import implementations.
+catalog = ["kernel", "knowledge"]
+# DEP-4
+capabilities = ["kernel.public", "biology.public", "knowledge"]
+# DEP-5: implementation loading is dynamic through the Invoker in S1.
+engine = ["kernel", "storage", "catalog"]
+# DEP-6: use the kernel Invoker protocol, never import engine.
+assurance = ["kernel", "storage", "knowledge", "catalog"]
+# DEP-7
+record = ["kernel", "storage.read"]
+# DEP-8: the composition root alone knows engine and assurance.
+application = ["kernel", "storage", "knowledge", "catalog", "engine", "assurance", "record"]
+
+# DEP-9: each Kit may also import its own package.
+[kit_allow]
+"*" = ["dna_design_core.kernel.public", "dna_design_core.biology.public"]
+
+[forbid_patterns]
+# DEP-10
+"os.environ" = ["application/config.py"]
+# DEP-11
+"hashlib" = ["kernel/ids.py"]
+# DEP-12
+"print(" = ["application/cli.py"]
+# DEP-13
+"except Exception" = ["engine/invoker.py", "application/cli.py"]
+

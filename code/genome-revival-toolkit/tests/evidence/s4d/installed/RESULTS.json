@@ -1,0 +1,109 @@
+{
+  "module_inside_new_venv": true,
+  "system_site_packages": false,
+  "installed_release_id": "cc49c2418248e0aaeb2c95a77f4a0dc02e1dc3fcbfbdccabdc9ef1061ff59ee4",
+  "wheel_sha256": "5d2bd3177ef1f60b8741ce085f2bf9c69e8d6c7a9c85fa6b7cdae7bbc29956fa",
+  "cases": [
+    {
+      "path": "<WORK>\\venv\\Lib\\site-packages\\dna_design_core\\examples\\sealed\\b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "new installation",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<SOURCE>\\examples\\sealed\\b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "source",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "new installation",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "source",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\one-byte-corruption\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "new installation",
+      "expected_error": "STORE_CORRUPT",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "path": "<WORK>\\one-byte-corruption\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "source",
+      "expected_error": "STORE_CORRUPT",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "path": "<SOURCE>\\tests\\evidence\\s4d\\legacy-b1\\c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658",
+      "environment": "new installation",
+      "expected_error": "JOURNAL_CHAIN_BROKEN",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "path": "<SOURCE>\\tests\\evidence\\s4d\\legacy-b1\\c100fa75b753ac15094a689a82cc633161ae9bb4b4a0a7475f8775fa48e12658",
+      "environment": "source",
+      "expected_error": "JOURNAL_CHAIN_BROKEN",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "path": "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba",
+      "environment": "new installation",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba",
+      "environment": "source",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba",
+      "environment": "new installation",
+      "expected_error": "SOURCE_CHANGED",
+      "exit_code": 1,
+      "verified": false
+    },
+    {
+      "path": "<WORK>\\portable-b1\\cfdb6ebc3a91dc227be8d975cc35e394b91cc506966059cc3d37910f1e8a2ca5",
+      "environment": "new installation",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    },
+    {
+      "path": "<WORK>\\release-bound-example\\portable\\4b9f0256790fbbc5b56b16473d34a93c47e8af4fdea89a2c2e309114d520b8ba",
+      "environment": "new installation",
+      "expected_error": null,
+      "exit_code": 0,
+      "verified": true
+    }
+  ],
+  "different_valid_release_id": "dfca214dd1d85fec5d4403723ac29abbbfe4602c8a94d1b8823133f7ae463269",
+  "installation_restored_byte_for_byte": true,
+  "hand_answer": {
+    "sequence": "TTCTGACT"
+  },
+  "builtin_release_id": "dev-tree",
+  "card_and_markdown_disclose_non_release_evidence": true,
+  "no_wet_lab_work": true,
+  "official_gitlab_ci": "NOT_RUN",
+  "github_ci": "NOT_RUN"
+}

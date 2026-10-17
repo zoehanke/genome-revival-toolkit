@@ -1,0 +1,8 @@
+test_backend_locates_build_module_and_ships_exact_payload_without_source_path (tests.integration.test_release_wheel.ReleaseWheelTests.test_backend_locates_build_module_and_ships_exact_payload_without_source_path) ... ok
+test_wheel_preserves_supplied_zip_manifest_instead_of_regenerating_identity (tests.integration.test_release_wheel.ReleaseWheelTests.test_wheel_preserves_supplied_zip_manifest_instead_of_regenerating_identity) ... ok
+test_actual_backend_reads_a_changed_single_version_source (tests.integration.test_release_metadata.ReleaseMetadataTests.test_actual_backend_reads_a_changed_single_version_source) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 3.293s
+
+OK

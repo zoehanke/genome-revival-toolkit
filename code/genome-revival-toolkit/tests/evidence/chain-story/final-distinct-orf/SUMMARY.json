@@ -1,0 +1,24 @@
+{
+  "construct": "construct\\portable\\36dfb1018b16b30e8d81b6dafc51a96081e05887841e38845668b66f95bbc26c",
+  "identity": "identity\\portable\\7e6f7d8968754acb7450a8c23454e67001ad08cd3dcbc69c8324e53183634546",
+  "evidence": "evidence\\portable\\427f9e3e9ac171a59af64afd6a30419634545abca0613bde38790d5aeb321540",
+  "foreign_background": "foreign-background\\portable\\cd0c51f8b2e0b684827d8b222444a1e61111183bbd26d8edb3d2cc78c1d4abca",
+  "seed": 2026101701,
+  "reference_bp": 800,
+  "edit": [
+    300,
+    420
+  ],
+  "arm_bp": 50,
+  "marker_bp": 96,
+  "donor_bp": 196,
+  "gene_codon": "GCT",
+  "expected_band_bp": {
+    "original": 260,
+    "edited": 236
+  },
+  "connections": 0,
+  "commands": 42,
+  "laboratory": "PLANNED / NOT_PERFORMED",
+  "official_gitlab_ci": "not executed"
+}

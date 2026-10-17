@@ -1,0 +1,47 @@
+{
+  "schema": "capability-v1",
+  "id": "check.annotation_integrity",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Validate annotation locations and classify findings against explicit input ancestry.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Biological correctness of feature names or strand/function claims.",
+    "Experimental function or correct transcription."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D7; INV-A10; D8",
+      "Biopython SeqFeature exact local location contract"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.content:annotation_integrity"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/s1c/check.annotation_integrity.pass.json",
+    "fail": "tests/fixtures/s1c/check.annotation_integrity.fail.json"
+  }
+}

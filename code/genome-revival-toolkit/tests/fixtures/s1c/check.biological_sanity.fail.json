@@ -1,0 +1,8 @@
+{
+  "check": "check.biological_sanity",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "A circle explicitly given linear duplex ends is internally contradictory. Empty sequence is not a DNA material. These findings have no inherited exemption."
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.genome_elimination",
+  "name": "whole_genome_elimination",
+  "version": 1,
+  "status": "active",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "claim": "whole_genome_elimination",
+    "context": "summary",
+    "truth_table": [
+      {
+        "when": [
+          {
+            "field": "tested_genotypes",
+            "op": "eq",
+            "value": false
+          }
+        ],
+        "status": "NOT_TESTED",
+        "reason": "No genotype observations were supplied.",
+        "source_ref": "evidence.genome_elimination"
+      },
+      {
+        "when": [
+          {
+            "field": "tested_genotypes",
+            "op": "eq",
+            "value": true
+          }
+        ],
+        "status": "INSUFFICIENT",
+        "reason": "Selected-region observations do not cover a whole genome.",
+        "source_ref": "evidence.genome_elimination"
+      }
+    ]
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "Genome Revival Toolkit SPEC D12 and Appendix B3 (2026-10-16)",
+    "locator": "spec/SPEC.md D12; B3",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Project files retained in repository history.",
+    "supports": [
+      "Local assays cannot support a whole-genome elimination conclusion."
+    ],
+    "does_not_support": [
+      "Biological proof of revival, elimination, causality or record authenticity."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Project interpretation boundary; not an experimentally established biological sufficiency rule."
+  ],
+  "review": "knowledge/review/genome_elimination.review.json",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-16"
+  }
+}

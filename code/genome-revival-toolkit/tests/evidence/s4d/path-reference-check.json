@@ -1,0 +1,155 @@
+[
+  {
+    "path": "kits/cut-plasmid/README.md",
+    "old_file_sha256": "abf227e6126de644658395bcf8fe11eaa7e0d952a49924eb392b83d802917ade",
+    "hash_references": [
+      "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload/source-installed-comparison.json",
+      "tests/evidence/s4b/payload/source-wheel-manifest.json"
+    ],
+    "current_sha256": "044e37d306b04391b3a5dd3df18a8feb87cfbfd338cb27b37cd3b895a76e50de",
+    "reference_checks": [
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-installed-comparison.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-wheel-manifest.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      }
+    ]
+  },
+  {
+    "path": "kits/genome-identity/REPORT.md",
+    "old_file_sha256": "b2fb9b5277d8cfde8be64972653609fc1dd1ab49da6116fcdf43fdc00bddac5f",
+    "hash_references": [
+      "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload/source-installed-comparison.json",
+      "tests/evidence/s4b/payload/source-wheel-manifest.json"
+    ],
+    "current_sha256": "fcfd0cc8bbcc677bf350be9a9c40d56c2db58e5cb9d47d79c32433975ea44e98",
+    "reference_checks": [
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-installed-comparison.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-wheel-manifest.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      }
+    ]
+  },
+  {
+    "path": "tests/oracles/prepare_cut_plasmid.py",
+    "old_file_sha256": "b4348d59170e5ee4b30925b6c311f984a4dc55e742ce88896d2e8d1a711c3281",
+    "hash_references": [
+      "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+      "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+      "tests/evidence/s4b/payload/source-installed-comparison.json",
+      "tests/evidence/s4b/payload/source-wheel-manifest.json"
+    ],
+    "current_sha256": "46a0b9b3ef159a64bff24d6933e282f1af6032736bd8bf2c8328d4a68c9bc883",
+    "reference_checks": [
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-final/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-installed-comparison.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload-post-suite/source-wheel-manifest.json",
+        "source_commit": "49dd32b37bbdf55ef5c4f6c33af497bb649e3658",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-installed-comparison.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      },
+      {
+        "inventory": "tests/evidence/s4b/payload/source-wheel-manifest.json",
+        "source_commit": "f3b3792d490e94209030e135adea8ecfa67c31e5",
+        "inventory_unchanged": true,
+        "referenced_commit_bytes_unchanged": true
+      }
+    ]
+  }
+]

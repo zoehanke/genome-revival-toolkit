@@ -1,0 +1,61 @@
+{
+  "schema": "rule-v1",
+  "id": "evidence.whole-genome-elimination-scope",
+  "name": "Complete host-genome elimination",
+  "version": 1,
+  "status": "draft",
+  "purpose": "interpretation",
+  "evaluator": "evidence.assess_observations",
+  "parameters": {
+    "claim": "Complete host-genome elimination",
+    "status_by_state": [
+      "NOT_TESTED",
+      "NOT_TESTED",
+      "INSUFFICIENT",
+      "INSUFFICIENT"
+    ],
+    "reason": "Negative selected-region tests do not cover the complete genome.",
+    "state_index": [
+      {
+        "index": 0,
+        "observed_counts": false,
+        "tested_genotypes": false
+      },
+      {
+        "index": 1,
+        "observed_counts": true,
+        "tested_genotypes": false
+      },
+      {
+        "index": 2,
+        "observed_counts": false,
+        "tested_genotypes": true
+      },
+      {
+        "index": 3,
+        "observed_counts": true,
+        "tested_genotypes": true
+      }
+    ]
+  },
+  "applies_when": [],
+  "source": {
+    "source_class": "project_contract",
+    "citation": "specs/genome-revival-toolkit.md: local genetic assessment boundary",
+    "locator": "specs/genome-revival-toolkit.md: local genetic assessment boundary@bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+    "retrieved_at": "2026-10-16",
+    "content_ref": null,
+    "archive_note": "Legacy project-policy citation retained; no current human verification is asserted.",
+    "supports": [
+      "Negative selected-region tests do not cover the complete genome."
+    ],
+    "does_not_support": [
+      "Sufficient evidence of functional revival or genome-wide elimination."
+    ],
+    "verification_status": "unverified"
+  },
+  "limits": [
+    "Draft with retained provenance; no human review or experimental verification is asserted."
+  ],
+  "review": "knowledge/review/evidence.whole-genome-elimination-scope.json"
+}

@@ -1,0 +1,19 @@
+test_license_missing_and_one_byte_changed_both_reject (test_release_engineering.ReleaseEngineeringTests.test_license_missing_and_one_byte_changed_both_reject) ... FAIL
+
+======================================================================
+FAIL: test_license_missing_and_one_byte_changed_both_reject (test_release_engineering.ReleaseEngineeringTests.test_license_missing_and_one_byte_changed_both_reject)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 44, in test_license_missing_and_one_byte_changed_both_reject
+    self.assert_fails("license")
+  File "<SOURCE>\tests\unit\test_release_engineering.py", line 29, in assert_fails
+    self.assertEqual(result["status"], "FAIL", result)
+AssertionError: 'PASS' != 'FAIL'
+- PASS
++ FAIL
+ : {'status': 'PASS', 'findings': [], 'placeholder_count': 0, 'placeholder_files': {}, 'tracked_bytes': 9407, 'tracked_limit_bytes': 50000000, 'tracked_files': 9, 'selected_files': 9, 'license_sha256': None, 'dependencies': {'rfc8785': '0.1.4'}, 'scope': 'INV-F10 source inventory and payload hygiene; not S4 approval or scientific acceptance.'}
+
+----------------------------------------------------------------------
+Ran 1 test in 0.825s
+
+FAILED (failures=1)

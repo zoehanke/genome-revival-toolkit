@@ -1,0 +1,19 @@
+test_format_read_fasta_and_native_binary (integration.test_biology_capabilities.CapabilityTests.test_format_read_fasta_and_native_binary) ... ok
+test_format_read_genbank_literal_independent_record (integration.test_biology_capabilities.CapabilityTests.test_format_read_genbank_literal_independent_record) ... ok
+test_format_write_fasta_literal_text (integration.test_biology_capabilities.CapabilityTests.test_format_write_fasta_literal_text) ... ok
+test_format_write_genbank_then_read_independent_fields (integration.test_biology_capabilities.CapabilityTests.test_format_write_genbank_then_read_independent_fields) ... ok
+test_gibson_and_inverse_pcr_independent_products (integration.test_biology_capabilities.CapabilityTests.test_gibson_and_inverse_pcr_independent_products) ... ok
+test_pcr_actual_store_and_recorded_input_bindings (integration.test_biology_capabilities.CapabilityTests.test_pcr_actual_store_and_recorded_input_bindings) ... ok
+test_primer3_missing_backend_returns_unknown_guidance (integration.test_biology_capabilities.CapabilityTests.test_primer3_missing_backend_returns_unknown_guidance) ... ok
+test_primer3_real_ctx_external_calls_and_recorded_fingerprint (integration.test_biology_capabilities.CapabilityTests.test_primer3_real_ctx_external_calls_and_recorded_fingerprint) ... ok
+test_primer_measurements_and_binding_independent_answers (integration.test_biology_capabilities.CapabilityTests.test_primer_measurements_and_binding_independent_answers) ... ok
+test_restriction_scan_digest_and_ligation (integration.test_biology_capabilities.CapabilityTests.test_restriction_scan_digest_and_ligation) ... ok
+test_seq_make_material_literal_answer (integration.test_biology_capabilities.CapabilityTests.test_seq_make_material_literal_answer) ... ok
+test_seq_make_slice_and_rotate_independent_answers (integration.test_biology_capabilities.CapabilityTests.test_seq_make_slice_and_rotate_independent_answers) ... ok
+test_every_declared_pass_and_fail_fixture_actually_runs (integration.test_biology_checks.BiologyCheckTests.test_every_declared_pass_and_fail_fixture_actually_runs) ... ok
+test_missing_quality_limits_is_unknown_and_no_reaction_is_not_applicable (integration.test_biology_checks.BiologyCheckTests.test_missing_quality_limits_is_unknown_and_no_reaction_is_not_applicable) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 26.059s
+
+OK

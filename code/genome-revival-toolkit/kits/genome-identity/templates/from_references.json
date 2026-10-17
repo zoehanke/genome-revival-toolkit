@@ -1,0 +1,201 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "read_original",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{original_source}}"
+        }
+      },
+      "params": {
+        "topology": "{{original_topology}}",
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic original FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_edited",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{edited_source}}"
+        }
+      },
+      "params": {
+        "topology": "{{edited_topology}}",
+        "strandedness": "double"
+      },
+      "why": "Read the registered synthetic edited FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_forward",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{forward_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "single"
+      },
+      "why": "Read the registered synthetic forward FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "read_reverse",
+      "use": "format.read_fasta",
+      "inputs": {
+        "file": {
+          "source": "{{reverse_source}}"
+        }
+      },
+      "params": {
+        "topology": "linear",
+        "strandedness": "single"
+      },
+      "why": "Read the registered synthetic reverse FASTA with explicit physical properties."
+    },
+    {
+      "step_id": "regions",
+      "use": "identity.compare_regions",
+      "inputs": {
+        "reference_original": {
+          "step": "read_original",
+          "port": "material"
+        },
+        "reference_edited": {
+          "step": "read_edited",
+          "port": "material"
+        }
+      },
+      "params": {},
+      "why": "Compare the two complete supplied reference intervals."
+    },
+    {
+      "step_id": "assay",
+      "use": "identity.analyze_assay",
+      "inputs": {
+        "reference_original": {
+          "step": "read_original",
+          "port": "material"
+        },
+        "reference_edited": {
+          "step": "read_edited",
+          "port": "material"
+        },
+        "forward": {
+          "step": "read_forward",
+          "port": "material"
+        },
+        "reverse": {
+          "step": "read_reverse",
+          "port": "material"
+        },
+        "reference_original_file": {
+          "source": "{{original_source}}"
+        },
+        "reference_edited_file": {
+          "source": "{{edited_source}}"
+        }
+      },
+      "params": {
+        "assay_id": "{{assay_id}}",
+        "forward_id": "{{forward_id}}",
+        "reverse_id": "{{reverse_id}}"
+      },
+      "why": "Bind reference file bytes to materials and predict exact products in both backgrounds."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "identity-expected-results",
+      "from": {
+        "step": "assay",
+        "port": "expected_results"
+      },
+      "target": "{{target}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Digest returned by goal declare."
+      },
+      "original_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered original FASTA source id."
+      },
+      "edited_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered edited FASTA source id."
+      },
+      "forward_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered forward-primer FASTA source id."
+      },
+      "reverse_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered reverse-primer FASTA source id."
+      },
+      "target": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Required analysis target id."
+      },
+      "assay_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Assay id written into the expectation file."
+      },
+      "forward_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Forward primer id in the handoff, if supplied."
+      },
+      "reverse_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Reverse primer id in the handoff, if supplied."
+      },
+      "original_topology": {
+        "enum": [
+          "linear",
+          "circular"
+        ],
+        "description": "Explicit topology of the original reference."
+      },
+      "edited_topology": {
+        "enum": [
+          "linear",
+          "circular"
+        ],
+        "description": "Explicit topology of the edited reference."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "original_source",
+      "edited_source",
+      "forward_source",
+      "reverse_source",
+      "target",
+      "assay_id",
+      "forward_id",
+      "reverse_id",
+      "original_topology",
+      "edited_topology"
+    ],
+    "additionalProperties": false
+  }
+}

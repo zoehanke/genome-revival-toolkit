@@ -1,0 +1,140 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_structure.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 1.469
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_schemas.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.562
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/docgen.py",
+      "--check"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "003.stdout.txt",
+    "stderr": "003.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.094
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "<REPOSITORY>\\tools\\spec_lint.py",
+      "<REPOSITORY>\\spec\\SPEC.md",
+      "--fields-report",
+      "<SOURCE>\\tests\\evidence\\s4d\\preflight\\spec-fields.json"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "004.stdout.txt",
+    "stderr": "004.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.125
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-m",
+      "unittest",
+      "tests.integration.test_release_identity",
+      "-v"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "005.stdout.txt",
+    "stderr": "005.stderr.txt",
+    "exit_code": 0,
+    "seconds": 50.5
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_release.py",
+      "--report",
+      "<SOURCE>\\tests\\evidence\\s4d\\preflight\\release-check.json"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "006.stdout.txt",
+    "stderr": "006.stderr.txt",
+    "exit_code": 2,
+    "seconds": 1.906
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/build_release.py",
+      "--out",
+      "<WORK>\\must-not-exist"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "007.stdout.txt",
+    "stderr": "007.stderr.txt",
+    "exit_code": 1,
+    "seconds": 1.89
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tests/oracles/prepare_cut_plasmid.py",
+      "--help"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "008.stdout.txt",
+    "stderr": "008.stderr.txt",
+    "exit_code": 0,
+    "seconds": 0.141
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tests/oracles/prepare_cut_plasmid.py"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "009.stdout.txt",
+    "stderr": "009.stderr.txt",
+    "exit_code": 2,
+    "seconds": 0.141
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "schema_id": "declaration.recorded-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required text."
+  },
+  "data": {
+    "origin": "plan_declared",
+    "actor": {
+      "kind": "ai_host",
+      "name": "synthetic"
+    },
+    "about": {
+      "kind": "step",
+      "id": "s1"
+    },
+    "basis_refs": []
+  }
+}

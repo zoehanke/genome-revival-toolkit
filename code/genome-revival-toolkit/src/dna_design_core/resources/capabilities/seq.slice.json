@@ -1,0 +1,76 @@
+{
+  "schema": "capability-v1",
+  "id": "seq.slice",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Extract a zero-based half-open interval and transform exact annotations.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "whole": {
+        "type": "boolean"
+      },
+      "strand": {
+        "enum": [
+          -1,
+          1
+        ]
+      }
+    },
+    "required": [
+      "start",
+      "end"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "output_role": "component"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.seq.operations:extract_material"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

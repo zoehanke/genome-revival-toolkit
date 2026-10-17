@@ -1,0 +1,46 @@
+{
+  "schema": "capability-v1",
+  "id": "evidence.check_record_consistency",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Check recorded source parsing, truth-table conclusions and exported report against fixed rule snapshots.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental success (实验已成功).",
+    "Functional revival (功能已复活).",
+    "Authenticity of submitted observations (观察本身真实)."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D11, D12, B3; prompts/s3-revival-evidence.md"
+    ],
+    "implemented_in": "grt_kit_revival_evidence.capabilities.evidence:check_record_consistency"
+  },
+  "owner": "kit:revival-evidence",
+  "granularity": "atomic",
+  "authorship": {
+    "kind": "ai",
+    "tool_or_model": "Codex",
+    "date": "2026-10-16"
+  },
+  "scope": "content_model",
+  "evaluates_constraint": false,
+  "offline": true,
+  "fixtures": {
+    "pass": "capabilities/fixtures/consistency.pass.json",
+    "fail": "capabilities/fixtures/consistency.fail.json"
+  }
+}

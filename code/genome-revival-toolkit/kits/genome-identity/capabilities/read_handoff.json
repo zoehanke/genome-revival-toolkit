@@ -1,0 +1,155 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.read_handoff",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Parse the D11 Construct handoff; file and material binding is checked by analyze_assay.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "file"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "handoff",
+      "type": "document",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "identity-handoff-v1"
+          },
+          "references": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                "role": {
+                  "enum": [
+                    "original",
+                    "edited"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "sha256",
+                "role"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "regions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "reference_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "id",
+                "reference_id",
+                "start",
+                "end"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "primers": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sequence": {
+                  "type": "string",
+                  "pattern": "^[ACGTacgt]+$"
+                }
+              },
+              "required": [
+                "id",
+                "sequence"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "schema",
+          "references",
+          "regions",
+          "primers"
+        ],
+        "additionalProperties": false
+      },
+      "output_role": null
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Primer specificity in an actual strain.",
+    "Observed experimental products.",
+    "Authentic genotype.",
+    "Whole-genome discrimination outside supplied references."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D11",
+      "MIGRATION-LOG.md S5b"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:read_handoff"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

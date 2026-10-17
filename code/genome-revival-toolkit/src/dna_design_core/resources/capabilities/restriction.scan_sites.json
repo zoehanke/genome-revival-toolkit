@@ -1,0 +1,63 @@
+{
+  "schema": "capability-v1",
+  "id": "restriction.scan_sites",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Scan both recognition orientations and report double-strand cut geometry.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "enzyme": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "required": [
+      "enzyme"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.restriction.operations:scan_sites"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

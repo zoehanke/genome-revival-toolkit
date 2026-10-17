@@ -1,0 +1,55 @@
+{
+  "schema_id": "pipeline-template-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "schema": "pipeline-template-v1",
+    "version": 1,
+    "goal_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "steps": [
+      {
+        "step_id": "s1",
+        "use": "demo.length@0.0.0",
+        "inputs": {
+          "sequence": {
+            "literal": "{{sequence}}"
+          }
+        },
+        "params": {},
+        "why": "Count four constructed symbols."
+      }
+    ],
+    "outputs": [
+      {
+        "name": "length",
+        "from": {
+          "step": "s1",
+          "port": "length"
+        },
+        "target": "t1"
+      }
+    ],
+    "library_ref": null,
+    "params_schema": {
+      "type": "object",
+      "properties": {
+        "sequence": {
+          "type": "string",
+          "description": "Synthetic sequence parameter."
+        }
+      },
+      "required": [
+        "sequence"
+      ],
+      "additionalProperties": false
+    },
+    "authorship": {
+      "kind": "unknown",
+      "tool_or_model": "synthetic fixture",
+      "date": "2026-01-01"
+    }
+  }
+}

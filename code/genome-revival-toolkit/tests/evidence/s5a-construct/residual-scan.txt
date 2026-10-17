@@ -1,0 +1,5 @@
+docs\kit-prep\drafts\construct\capabilities\design_donor.json:89:      "schema_ref": "primer-set-v1"
+docs\kit-prep\drafts\construct\capabilities\design_donor.json:95:      "schema_ref": "route-plan-v1"
+docs\kit-prep\drafts\construct\knowledge\construct.donor-not-integration.json:15:    "citation": "scripts/workflow.py:run_construct checked_scope/not_checked",
+docs\kit-prep\drafts\construct\capabilities\export_handoff.json:34:      "schema_ref": "primer-set-v1"
+docs\kit-prep\drafts\construct\capabilities\design_junction_assay.json:68:      "schema_ref": "primer-set-v1"

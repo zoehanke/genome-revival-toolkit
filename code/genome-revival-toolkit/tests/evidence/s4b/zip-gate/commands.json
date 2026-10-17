@@ -1,0 +1,18 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "tools/check_release.py",
+      "--report",
+      "tests/evidence/s4b/zip-gate/release-check.json"
+    ],
+    "cwd": "<SOURCE>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 2.063
+  }
+]

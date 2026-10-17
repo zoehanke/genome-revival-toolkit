@@ -1,0 +1,53 @@
+{
+  "schema": "capability-v1",
+  "id": "format.write_file",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Copy an existing artifact without changing its bytes.",
+  "effects": [
+    "reads_files",
+    "writes_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "Existing file bytes to export unchanged."
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9._-]*$"
+      }
+    },
+    "required": [
+      "name"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "output_role": null
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory performance or biological function."
+  ],
+  "source": {
+    "algorithm_refs": [],
+    "implemented_in": "dna_design_core.capabilities.builtin.format_json:write_file"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

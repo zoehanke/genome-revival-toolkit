@@ -1,0 +1,62 @@
+{
+  "schema": "goal-v1",
+  "version": 1,
+  "parent_digest": null,
+  "original_request": "Synthetic computational chain; laboratory steps PLANNED / NOT_PERFORMED.",
+  "sources": [
+    {
+      "source_id": "original",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\construct\\portable\\36dfb1018b16b30e8d81b6dafc51a96081e05887841e38845668b66f95bbc26c\\work\\original_file\\original.gb",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "edited",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\construct\\portable\\36dfb1018b16b30e8d81b6dafc51a96081e05887841e38845668b66f95bbc26c\\work\\edited_file\\edited.gb",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "forward",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\left_forward.fasta",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "reverse",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\inputs\\right_reverse.fasta",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    },
+    {
+      "source_id": "handoff",
+      "from": "tests\\evidence\\chain-story\\final-distinct-orf\\construct\\portable\\36dfb1018b16b30e8d81b6dafc51a96081e05887841e38845668b66f95bbc26c\\identity-handoff.json",
+      "as": "artifact",
+      "input_origin": "user_file",
+      "declared": {}
+    }
+  ],
+  "declared_context": [],
+  "targets": [
+    {
+      "id": "table",
+      "role": "analysis",
+      "required": true
+    }
+  ],
+  "constraints": [
+    {
+      "id": "present",
+      "check": "check.goal.output_present@0.0.0",
+      "params": {},
+      "target": "table",
+      "source_quote": "report result",
+      "status": "active"
+    }
+  ],
+  "intents": []
+}

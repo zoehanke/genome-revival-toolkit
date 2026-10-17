@@ -1,0 +1,21 @@
+{
+  "schema_id": "declaration.recorded-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "text": "Constructed statement.",
+    "origin": "plan_declared",
+    "actor": {
+      "kind": "ai_host",
+      "name": "synthetic"
+    },
+    "about": {
+      "kind": "step",
+      "id": "s1"
+    },
+    "basis_refs": []
+  }
+}

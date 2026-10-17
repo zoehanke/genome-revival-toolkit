@@ -1,0 +1,156 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [
+    {
+      "step_id": "read_original",
+      "use": "identity.read_reference",
+      "inputs": {
+        "file": {
+          "source": "{{original_source}}"
+        }
+      },
+      "params": {
+        "topology": "{{original_topology}}"
+      },
+      "why": "Read the actual file format while retaining reference material and byte-hash checks."
+    },
+    {
+      "step_id": "read_edited",
+      "use": "identity.read_reference",
+      "inputs": {
+        "file": {
+          "source": "{{edited_source}}"
+        }
+      },
+      "params": {
+        "topology": "{{edited_topology}}"
+      },
+      "why": "Read the actual file format while retaining reference material and byte-hash checks."
+    },
+    {
+      "step_id": "read_handoff",
+      "use": "identity.read_handoff",
+      "inputs": {
+        "file": {
+          "source": "{{handoff_source}}"
+        }
+      },
+      "params": {},
+      "why": "Read the Construct handoff without guessing a legacy format."
+    },
+    {
+      "step_id": "assay",
+      "use": "identity.analyze_assay",
+      "inputs": {
+        "reference_original": {
+          "step": "read_original",
+          "port": "material"
+        },
+        "reference_edited": {
+          "step": "read_edited",
+          "port": "material"
+        },
+        "reference_original_file": {
+          "source": "{{original_source}}"
+        },
+        "reference_edited_file": {
+          "source": "{{edited_source}}"
+        },
+        "handoff": {
+          "step": "read_handoff",
+          "port": "handoff"
+        }
+      },
+      "params": {
+        "assay_id": "{{assay_id}}",
+        "forward_id": "{{forward_id}}",
+        "reverse_id": "{{reverse_id}}"
+      },
+      "why": "Select explicit primer ids from the D11 handoff and bind reference file bytes before predicting PCR."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "identity-expected-results",
+      "from": {
+        "step": "assay",
+        "port": "expected_results"
+      },
+      "target": "{{target}}"
+    }
+  ],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Digest returned by goal declare."
+      },
+      "original_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered reference artifact id: FASTA, GenBank or native DNA; bytes must match the handoff."
+      },
+      "edited_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered reference artifact id: FASTA, GenBank or native DNA; bytes must match the handoff."
+      },
+      "target": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Required analysis target id."
+      },
+      "assay_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Assay id written into the expectation file."
+      },
+      "forward_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Forward primer id in the handoff, if supplied."
+      },
+      "reverse_id": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Reverse primer id in the handoff, if supplied."
+      },
+      "original_topology": {
+        "enum": [
+          "linear",
+          "circular"
+        ],
+        "description": "Explicit topology of the original reference."
+      },
+      "edited_topology": {
+        "enum": [
+          "linear",
+          "circular"
+        ],
+        "description": "Explicit topology of the edited reference."
+      },
+      "handoff_source": {
+        "type": "string",
+        "minLength": 1,
+        "description": "Registered Construct handoff artifact source id."
+      }
+    },
+    "required": [
+      "goal_digest",
+      "original_source",
+      "edited_source",
+      "target",
+      "assay_id",
+      "forward_id",
+      "reverse_id",
+      "original_topology",
+      "edited_topology",
+      "handoff_source"
+    ],
+    "additionalProperties": false
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AssertionError
+
+The probe initially expected SOURCE_CHANGED from a different release_id.
+Actual public CLI receipt is JOURNAL_CHAIN_BROKEN at event 9, before that
+comparison. Source CLI independently returns the same failure. Public JCS/hash
+recomputation finds intact hashes; current public JSON Schema finds missing
+params and params_digest at events 9 and 22. See independent-journal-check.json.
+This failure is retained and is not counted as a passing negative or ZIP run.

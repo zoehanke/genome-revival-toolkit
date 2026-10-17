@@ -1,0 +1,22 @@
+F
+======================================================================
+FAIL: test_primer_candidates_core_tail_and_reverse_anchor (test_biology_round2_common.Round2CommonTests.test_primer_candidates_core_tail_and_reverse_anchor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_round2_common.py", line 44, in test_primer_candidates_core_tail_and_reverse_anchor
+    self.assertEqual([row["full_sequence"] for row in forward["candidates"]], ["GCAAA", "GCAAAC"])
+AssertionError: Lists differ: ['AAA', 'AAAC'] != ['GCAAA', 'GCAAAC']
+
+First differing element 0:
+'AAA'
+'GCAAA'
+
+- ['AAA', 'AAAC']
++ ['GCAAA', 'GCAAAC']
+?   ++       ++
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

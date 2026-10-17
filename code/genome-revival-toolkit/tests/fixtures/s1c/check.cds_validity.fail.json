@@ -1,0 +1,8 @@
+{
+  "check": "check.cds_validity",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Replacing ATG AAA TAA by ATG TAA TAA introduces one internal stop. Additional literals introduce a 10 nt frame, CCC start or CAA terminal non-stop."
+  }
+}

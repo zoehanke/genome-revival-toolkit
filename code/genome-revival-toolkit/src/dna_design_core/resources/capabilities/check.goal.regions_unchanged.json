@@ -1,0 +1,88 @@
+{
+  "schema": "capability-v1",
+  "id": "check.goal.regions_unchanged",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Compare explicit nonwrapping reference/target intervals in retained materials.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "reference_material_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      },
+      "regions": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "properties": {
+            "source_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "source_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "target_start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "target_end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "strand": {
+              "enum": [
+                1,
+                -1
+              ]
+            }
+          },
+          "required": [
+            "source_start",
+            "source_end",
+            "target_start",
+            "target_end"
+          ],
+          "additionalProperties": false
+        }
+      }
+    },
+    "required": [
+      "reference_material_id",
+      "regions"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental performance, functional identity or truth of a reported claim.",
+    "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D2 GOL-4/GOL-6",
+      "SPEC D9 retained content identities"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.goal:regions_unchanged"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "user_goal",
+  "evaluates_constraint": true,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/goal_checks/regions_unchanged.pass.json",
+    "fail": "tests/fixtures/goal_checks/regions_unchanged.fail.json"
+  }
+}

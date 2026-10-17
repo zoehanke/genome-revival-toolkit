@@ -1,0 +1,19 @@
+{
+  "schema_id": "review-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove required object."
+  },
+  "data": {
+    "schema": "review-v1",
+    "reviewer": {
+      "name": "",
+      "role": ""
+    },
+    "date": "",
+    "scope": "",
+    "decision": "changes_requested",
+    "notes": "Unsigned schema fixture; not a review record."
+  }
+}

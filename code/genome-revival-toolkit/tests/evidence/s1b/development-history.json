@@ -1,0 +1,43 @@
+[
+  {
+    "run": "initial-unit",
+    "tests": 39,
+    "errors": 1,
+    "test": "test_origin_spanning_recognition",
+    "observed": "IndexError: tuple index out of range",
+    "reason": "Authored test circle AATTCCGGGA did not contain the claimed EcoRI motif. Hand construction corrected to suffix GA + prefix ATTC, circle ATTCCGGGGA; expected coordinates unchanged.",
+    "following_run": {
+      "tests": 39,
+      "errors": 0,
+      "failures": 0
+    }
+  },
+  {
+    "run": "initial-contract",
+    "tests": 5,
+    "errors": 1,
+    "test": "test_boulder_parser_against_independent_cli_text",
+    "observed": "ValueError: malformed or duplicate Boulder tag",
+    "reason": "Actual Primer3 *_STUCT output contains SEQ/STR continuation lines. Parser now retains precisely those lines; malformed and duplicate tag checks retained.",
+    "following_run": {
+      "tests": 5,
+      "errors": 0,
+      "failures": 0
+    }
+  },
+  {
+    "run": "development-run-01",
+    "raw_evidence": "development-run-01/validation.json",
+    "reason": "Two new structure failures exposed missing top-level oracle.kind in newly authored fixture registry, in addition to two known baseline spec/schema failures. Registry now uses existing oracle envelope; tests unchanged."
+  },
+  {
+    "run": "post-S1-material-integration",
+    "observed": [
+      "GenBank refused an authored feature with unknown direction because the visible format defaults to forward orientation.",
+      "The first corruption test assumed unwrapped ORIGIN sequence text, but the writer groups bases.",
+      "The first complete validation command used a default SPEC.md path relative to the code directory."
+    ],
+    "correction": "Use the independently specified forward-direction feature; keep explicit unknown-orientation refusal. Corrupt the actual final ORIGIN base while preserving its spacing. Pass SPEC.md explicitly. No expected scientific value was changed.",
+    "following_result": "153 tests and eight CHECK fixtures pass; corrected spec_lint has zero hard findings. Failed command preserved in development-run-02."
+  }
+]

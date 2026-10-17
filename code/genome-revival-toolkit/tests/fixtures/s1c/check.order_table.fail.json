@@ -1,0 +1,5 @@
+{
+  "check": "check.order_table",
+  "expected": "FAIL",
+  "oracle": {"kind":"construction","reason":"The order gains a GG 5-prime tail while the recorded complete primer remains AACT. Its 3-prime core still matches; full-sequence comparison must fail."}
+}

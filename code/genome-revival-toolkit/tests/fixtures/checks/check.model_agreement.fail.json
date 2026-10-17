@@ -1,0 +1,9 @@
+{
+  "check": "check.model_agreement",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Original product is ACGT; independently constructed model product is ACGA, differing at one base. Separate controls change only topology or ends."
+  }
+}

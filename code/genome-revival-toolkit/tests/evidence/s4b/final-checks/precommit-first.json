@@ -1,0 +1,11 @@
+{
+  "status": "FAIL",
+  "scope": "Staged text privacy scan",
+  "findings": [
+    {
+      "file": "QUESTIONS.md",
+      "kind": "pre-existing absolute worktree path"
+    }
+  ],
+  "disposition": "Replaced that single old documentation path with SEPARATE_WORKTREE placeholder; no scientific content, source history or runtime changed."
+}

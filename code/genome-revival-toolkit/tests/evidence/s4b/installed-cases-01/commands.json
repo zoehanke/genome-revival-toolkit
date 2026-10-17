@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "<WORK>\\venv\\Scripts\\python.exe",
+      "-I",
+      "-X",
+      "utf8",
+      "-B",
+      "<SOURCE>\\tests\\e2e\\run_s4b_installed.py",
+      "--out",
+      "<WORK>\\cases-01"
+    ],
+    "cwd": "<WORK>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 0,
+    "seconds": 539.079
+  }
+]

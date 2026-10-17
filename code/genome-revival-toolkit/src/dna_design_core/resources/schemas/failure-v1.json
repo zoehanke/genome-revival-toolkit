@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:failure-v1",
+  "title": "failure-v1",
+  "x-spec-ref": "D14; A7; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "code": {
+      "enum": [
+        "PLAN_SCHEMA_INVALID",
+        "PLAN_ID_INVALID",
+        "PLAN_REF_UNRESOLVED",
+        "PLAN_CAPABILITY_UNKNOWN",
+        "PLAN_INPUT_UNBOUND",
+        "PLAN_PARAM_INVALID",
+        "PLAN_WHY_MISSING",
+        "PLAN_OUTPUT_INVALID",
+        "PLAN_GOAL_BINDING_INVALID",
+        "PLAN_EXPECT_INVALID",
+        "CAPABILITY_UNKNOWN",
+        "CAPABILITY_VERSION_MISMATCH",
+        "CAPABILITY_OUTPUT_INVALID",
+        "CAPABILITY_INTERNAL",
+        "SOURCE_CHANGED",
+        "STEP_EXPECTATION_FAILED",
+        "STEP_INTERRUPTED",
+        "JOURNAL_CHAIN_BROKEN",
+        "RUN_LOCKED",
+        "STORE_CORRUPT",
+        "CHECK_UNAVAILABLE",
+        "KIT_MANIFEST_INVALID",
+        "KIT_CORE_INCOMPATIBLE",
+        "KIT_NAME_CONFLICT",
+        "KNOWLEDGE_SOURCE_INVALID",
+        "SEAL_RUN_NOT_COMPLETED"
+      ]
+    },
+    "category": {
+      "enum": [
+        "INVALID_INPUT",
+        "CAPABILITY_FAILURE",
+        "ENVIRONMENT",
+        "POLICY",
+        "INTEGRITY",
+        "INTERNAL"
+      ]
+    },
+    "message": {
+      "type": "string"
+    },
+    "details": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "additionalProperties": false
+    },
+    "recovery": {
+      "type": "string"
+    },
+    "retryable": {
+      "type": "boolean"
+    },
+    "cause_chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "message": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "message"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "code",
+    "category",
+    "message",
+    "details",
+    "recovery",
+    "retryable",
+    "cause_chain"
+  ],
+  "additionalProperties": false
+}

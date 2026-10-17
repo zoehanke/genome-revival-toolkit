@@ -1,0 +1,2 @@
+# Immutable sealed records must retain exact bytes, including line endings.
+* -text whitespace=cr-at-eol

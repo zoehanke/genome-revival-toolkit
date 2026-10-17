@@ -1,0 +1,56 @@
+{
+  "acceptance_passed": false,
+  "initial_step_failed": true,
+  "revision_before_replacement": true,
+  "original_goal_preserved": true,
+  "independent_sequence_and_pcr": "PASS",
+  "genbank_readback_equal": true,
+  "selection_status": "UNKNOWN",
+  "seal_created": false,
+  "portable_verify_performed": false,
+  "unsatisfied": [
+    {
+      "check": "check.annotation_integrity",
+      "outcome": "UNKNOWN",
+      "verdict_id": "f15006e4e6b1fbf0208c150f5f1c01f730c4161900abebc96cd7ee0bcb4e734c",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    },
+    {
+      "check": "check.cds_validity",
+      "outcome": "UNKNOWN",
+      "verdict_id": "31d0f5010e97f878838b307c05890ef249e4c92af52cec279fea74e27bb3dd66",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    },
+    {
+      "check": "check.biological_sanity",
+      "outcome": "UNKNOWN",
+      "verdict_id": "59d1088b491077426a750923dc522d01eb9083587bb98f8e22dcdbbefa2cedd9",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    },
+    {
+      "check": "check.reaction_chain",
+      "outcome": "UNKNOWN",
+      "verdict_id": "66edb069c2cbdbc92911434ddf2003ac67240a017bac904cbe2a431a5590a731",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    },
+    {
+      "check": "check.primer_quality",
+      "outcome": "UNKNOWN",
+      "verdict_id": "77f361a12cb3964c19b0fdd25d3963b6d0a72ff1b9c46564ee7044f2b189497c",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    },
+    {
+      "check": "check.order_table",
+      "outcome": "UNKNOWN",
+      "verdict_id": "eb162d9721f5b15b3ff58df2194186b873685a9fa3c8c3c202edbf94b457b3e7",
+      "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+    }
+  ],
+  "connection_attempts": 0,
+  "commands": 12,
+  "run": "<WORK>\\.s2-cut-plasmid-evidence\\b2-run01\\run",
+  "candidate": "<WORK>\\.s2-cut-plasmid-evidence\\b2-run01\\run\\candidate\\1",
+  "official_gitlab_ci": "not executed",
+  "github_ci": "not run",
+  "laboratory": "PLANNED / NOT_PERFORMED"
+}

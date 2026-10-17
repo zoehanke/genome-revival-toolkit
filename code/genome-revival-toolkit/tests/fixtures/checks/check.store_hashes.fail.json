@@ -1,0 +1,9 @@
+{
+  "check": "check.store_hashes",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Store an empty object under an intentionally false content id."
+  }
+}

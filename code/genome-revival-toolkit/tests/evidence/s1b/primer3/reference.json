@@ -1,0 +1,247 @@
+{
+  "outcome": "PASS",
+  "version": "2.6.1",
+  "version_output": "libprimer3 release 2.6.1",
+  "executable": "<WORK>\\.primer3-artifacts\\wheel\\primer3\\src\\libprimer3\\primer3_core.exe",
+  "sha256": "19a546a0166fd979c41317e45696de1b383ab5fa21ec362bcc5053b2068b6e5f",
+  "thermodynamic_files": {
+    "dangle.dh": "3656cc207364c8ada7dc495291030f3b104b99f4b9ec743abe73b93ec5b3fd1d",
+    "dangle.ds": "e12c03609e93527a41d810a2f2a3580e74a86f092a84e0123445abf564b722e7",
+    "loops.dh": "508555cdf5db13500fe5edb3f1b14e0d3822c8a242d705a00b0c6cf0edaedb68",
+    "loops.ds": "79ad5f30994059caf84c774ce503b756019b0ce1bba6c289e2d9e6fcdd037a2d",
+    "stack.dh": "87c5755fdd2bac387c4b25ff358099accda603483da19ab8a7ba9a7eec4d3f94",
+    "stack.ds": "272bb6331db79692fde6e4872113cfd7ff5fbd23c83521e4656268cc70b01b12",
+    "stackmm.dh": "897210bce2cd00fd522a8100576b21ce2c1f8f1e9bc4e236d03ae61bdc84f526",
+    "stackmm.ds": "e329bc228799b9c130f09e41cb3da5bab1189ddc78019d0877cf6d2a96440573",
+    "tetraloop.dh": "e0f22b4c777c749c7a92a020692bd18b64d89ff94189f669dd2ee681b0288e91",
+    "tetraloop.ds": "2c24b8b14137ae8534d478d201998cb373d1bc1b293d4a8607e786d5ee674548",
+    "triloop.dh": "1c7b5accf170a6b462fd288732df92d3743dfffc93b7dfc59289a89b9e2e0b9f",
+    "triloop.ds": "70ddce7702b5ae8ea77faf565e8b0bea16ec7c16015394bc577c5c0fd8091d57",
+    "tstack.dh": "f4d8baf0cfa26ca70f9b5c0148b5b2df629bb5cceebfc66cbdada7cb3a9384cb",
+    "tstack2.dh": "ab4769e9a0f21763f4dc063b6f0331a5594bcbb7feb23f9bdfc094afdfd2986c",
+    "tstack2.ds": "1632472a8ad6e4840742c6029e1788aa84cae0313f3876d28a242daeffc4f636",
+    "tstack_tm_inf.ds": "49a3b2b47d2470a61ad8ecc57c73f8ce5ba42a5acfeed9d6f0e9a632da811fac"
+  },
+  "command": [
+    "<WORK>\\.primer3-artifacts\\wheel\\primer3\\src\\libprimer3\\primer3_core.exe",
+    "--strict_tags"
+  ],
+  "timeout_s": 30,
+  "cases": [
+    {
+      "id": "hand_8nt",
+      "sequence": "ACGTACGA",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "48.254700",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTACGA",
+        "PRIMER_LEFT_0_TM": "11.745",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "21.31",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\tA      A",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "0.00",
+        "PRIMER_LEFT_0_END_STABILITY": "3.4300"
+      },
+      "exit_code": 0,
+      "request": "hand_8nt.request.txt",
+      "stdout": "hand_8nt.stdout.txt",
+      "stderr": "hand_8nt.stderr.txt"
+    },
+    {
+      "id": "symmetry_8nt",
+      "sequence": "ACGTACGT",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "45.605024",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTACGT",
+        "PRIMER_LEFT_0_TM": "14.395",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "16.27",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t",
+        "PRIMER_LEFT_0_SELF_END_TH": "16.27",
+        "PRIMER_LEFT_0_SELF_END_STUCT": "SEQ\t",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "0.00",
+        "PRIMER_LEFT_0_END_STABILITY": "3.5700"
+      },
+      "exit_code": 0,
+      "request": "symmetry_8nt.request.txt",
+      "stdout": "symmetry_8nt.stdout.txt",
+      "stderr": "symmetry_8nt.stderr.txt"
+    },
+    {
+      "id": "ordinary_20nt",
+      "sequence": "ACGTCGATGCTAGCTACGTA",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "7.268603",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTCGATGCTAGCTACGTA",
+        "PRIMER_LEFT_0_TM": "52.731",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "20.97",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t     CGAT      T---    A",
+        "PRIMER_LEFT_0_SELF_END_TH": "10.62",
+        "PRIMER_LEFT_0_SELF_END_STUCT": "SEQ\t     CGAT      TA  T ---",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "39.63",
+        "PRIMER_LEFT_0_HAIRPIN_STUCT": "SEQ\t////-----------\\\\\\\\-",
+        "PRIMER_LEFT_0_END_STABILITY": "3.5700"
+      },
+      "exit_code": 0,
+      "request": "ordinary_20nt.request.txt",
+      "stdout": "ordinary_20nt.stdout.txt",
+      "stderr": "ordinary_20nt.stderr.txt"
+    },
+    {
+      "id": "magnesium_20nt",
+      "sequence": "ACGTCGATGCTAGCTACGTA",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "2",
+        "dntp_mM": "0.5",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "0.674038",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTCGATGCTAGCTACGTA",
+        "PRIMER_LEFT_0_TM": "59.326",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "26.16",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t     CGAT      T---    A",
+        "PRIMER_LEFT_0_SELF_END_TH": "15.24",
+        "PRIMER_LEFT_0_SELF_END_STUCT": "SEQ\t     CGAT      TA  T ---",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "44.94",
+        "PRIMER_LEFT_0_HAIRPIN_STUCT": "SEQ\t////-----------\\\\\\\\-",
+        "PRIMER_LEFT_0_END_STABILITY": "3.5700"
+      },
+      "exit_code": 0,
+      "request": "magnesium_20nt.request.txt",
+      "stdout": "magnesium_20nt.stdout.txt",
+      "stderr": "magnesium_20nt.stderr.txt"
+    },
+    {
+      "id": "hairpin_20nt",
+      "sequence": "GCGAAACGCTATACGAGCTT",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "6.792411",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_LEFT_0_SEQUENCE": "GCGAAACGCTATACGAGCTT",
+        "PRIMER_LEFT_0_TM": "53.208",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "6.30",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t              AAA   TATACGAGCTT",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "46.38",
+        "PRIMER_LEFT_0_HAIRPIN_STUCT": "SEQ\t-------///-----\\\\\\--",
+        "PRIMER_LEFT_0_END_STABILITY": "3.7400"
+      },
+      "exit_code": 0,
+      "request": "hairpin_20nt.request.txt",
+      "stdout": "hairpin_20nt.stdout.txt",
+      "stderr": "hairpin_20nt.stderr.txt"
+    },
+    {
+      "id": "polyT_20nt",
+      "sequence": "ACGTTTTTTTTAGCTACGTA",
+      "partner": null,
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_LEFT_0_PENALTY": "14.515413",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low; Contains too-long poly nucleotide tract;",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTTTTTTTTAGCTACGTA",
+        "PRIMER_LEFT_0_TM": "45.485",
+        "PRIMER_LEFT_0_GC_PERCENT": "30.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "1.38",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t     TTTTTTT    -------    A",
+        "PRIMER_LEFT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "38.42",
+        "PRIMER_LEFT_0_HAIRPIN_STUCT": "SEQ\t////-----------\\\\\\\\-",
+        "PRIMER_LEFT_0_END_STABILITY": "3.5700"
+      },
+      "exit_code": 0,
+      "request": "polyT_20nt.request.txt",
+      "stdout": "polyT_20nt.stdout.txt",
+      "stderr": "polyT_20nt.stderr.txt"
+    },
+    {
+      "id": "pair_20nt",
+      "sequence": "ACGTCGATGCTAGCTACGTA",
+      "partner": "TAGGCTACGATTCGACGTCA",
+      "parameters": {
+        "sodium_mM": "50",
+        "magnesium_mM": "0",
+        "dntp_mM": "0",
+        "total_oligo_nM": "50"
+      },
+      "measurements": {
+        "PRIMER_PAIR_0_PENALTY": "14.646854",
+        "PRIMER_LEFT_0_PENALTY": "7.268603",
+        "PRIMER_RIGHT_0_PENALTY": "7.378251",
+        "PRIMER_LEFT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_RIGHT_0_PROBLEMS": " Temperature too low;",
+        "PRIMER_LEFT_0_SEQUENCE": "ACGTCGATGCTAGCTACGTA",
+        "PRIMER_RIGHT_0_SEQUENCE": "TAGGCTACGATTCGACGTCA",
+        "PRIMER_LEFT_0_TM": "52.731",
+        "PRIMER_RIGHT_0_TM": "52.622",
+        "PRIMER_LEFT_0_GC_PERCENT": "50.000",
+        "PRIMER_RIGHT_0_GC_PERCENT": "50.000",
+        "PRIMER_LEFT_0_SELF_ANY_TH": "20.97",
+        "PRIMER_RIGHT_0_SELF_ANY_TH": "14.28",
+        "PRIMER_LEFT_0_SELF_ANY_STUCT": "SEQ\t     CGAT      T---    A",
+        "PRIMER_RIGHT_0_SELF_ANY_STUCT": "SEQ\tTAGGCTACGATTC      A------------",
+        "PRIMER_LEFT_0_SELF_END_TH": "10.62",
+        "PRIMER_RIGHT_0_SELF_END_TH": "0.00",
+        "PRIMER_LEFT_0_SELF_END_STUCT": "SEQ\t     CGAT      TA  T ---",
+        "PRIMER_LEFT_0_HAIRPIN_TH": "39.63",
+        "PRIMER_RIGHT_0_HAIRPIN_TH": "42.11",
+        "PRIMER_LEFT_0_HAIRPIN_STUCT": "SEQ\t////-----------\\\\\\\\-",
+        "PRIMER_RIGHT_0_HAIRPIN_STUCT": "SEQ\t------///------\\\\\\--",
+        "PRIMER_LEFT_0_END_STABILITY": "3.5700",
+        "PRIMER_RIGHT_0_END_STABILITY": "4.3500",
+        "PRIMER_PAIR_0_COMPL_ANY_TH": "16.70",
+        "PRIMER_PAIR_0_COMPL_ANY_STUCT": "SEQ\t         TGC-    TACGTA",
+        "PRIMER_PAIR_0_COMPL_END_TH": "20.55",
+        "PRIMER_PAIR_0_COMPL_END_STUCT": "SEQ\tTACGTA    GCA-       --",
+        "PRIMER_PAIR_0_PRODUCT_SIZE": "200",
+        "PRIMER_PAIR_0_PRODUCT_TM": "61.0"
+      },
+      "exit_code": 0,
+      "request": "pair_20nt.request.txt",
+      "stdout": "pair_20nt.stdout.txt",
+      "stderr": "pair_20nt.stderr.txt"
+    }
+  ]
+}

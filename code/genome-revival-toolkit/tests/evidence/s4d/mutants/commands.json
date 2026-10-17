@@ -1,0 +1,38 @@
+[
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import sys,unittest; sys.path.insert(0,sys.argv[1]); from tests.integration import test_release_identity as t; from pathlib import Path; t.ROOT=Path(sys.argv[2]); r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite([t.ReleaseIdentityTests(sys.argv[3])])); sys.exit(not r.wasSuccessful())",
+      "<SOURCE>",
+      "<MUTANTS>\\rejects_development_seal",
+      "test_development_seal_verifies_in_an_installed_release"
+    ],
+    "cwd": "<MUTANTS>",
+    "stdout": "001.stdout.txt",
+    "stderr": "001.stderr.txt",
+    "exit_code": 1,
+    "seconds": 15.531
+  },
+  {
+    "command": [
+      "<SOURCE>\\.venv\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "import sys,unittest; sys.path.insert(0,sys.argv[1]); from tests.integration import test_release_identity as t; from pathlib import Path; t.ROOT=Path(sys.argv[2]); r=unittest.TextTestRunner(verbosity=2).run(unittest.TestSuite([t.ReleaseIdentityTests(sys.argv[3])])); sys.exit(not r.wasSuccessful())",
+      "<SOURCE>",
+      "<MUTANTS>\\ignores_release_mismatch",
+      "test_installed_seal_verifies_portably_but_different_release_is_rejected"
+    ],
+    "cwd": "<MUTANTS>",
+    "stdout": "002.stdout.txt",
+    "stderr": "002.stderr.txt",
+    "exit_code": 1,
+    "seconds": 11.844
+  }
+]

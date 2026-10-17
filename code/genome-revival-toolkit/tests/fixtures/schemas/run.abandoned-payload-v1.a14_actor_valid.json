@@ -1,0 +1,15 @@
+{
+  "schema_id": "run.abandoned-payload-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: Constructed from the named A14 shape."
+  },
+  "data": {
+    "reason": "Synthetic stop.",
+    "by": {
+      "kind": "unknown",
+      "name": "synthetic"
+    }
+  }
+}

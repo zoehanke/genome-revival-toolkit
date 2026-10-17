@@ -1,0 +1,33 @@
+{
+  "schema": "kit-v1",
+  "name": "genome-identity",
+  "version": "0.0.0",
+  "title": "Genome Identity",
+  "requires_core": {
+    "minimum": "0.0.0",
+    "maximum_exclusive": "1.0.0"
+  },
+  "contributes": {
+    "capabilities": [
+      "capabilities/compare_regions.json",
+      "capabilities/analyze_assay.json",
+      "capabilities/read_handoff.json",
+      "capabilities/read_reference.json"
+    ],
+    "knowledge": [],
+    "templates": [
+      "templates/from_references.json",
+      "templates/from_handoff.json"
+    ],
+    "text": [
+      "text/en.json"
+    ]
+  },
+  "does_not_establish": [
+    "Primer specificity in an actual strain.",
+    "Observed experimental products.",
+    "Authentic genotype.",
+    "Whole-genome discrimination outside supplied references."
+  ],
+  "review": "knowledge/review/"
+}

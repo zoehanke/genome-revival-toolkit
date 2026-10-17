@@ -1,0 +1,50 @@
+{
+  "schema": "capability-v1",
+  "id": "check.goal.exact_sequence",
+  "version": "0.0.0",
+  "role": "CHECK",
+  "summary": "Compare complete target sequences literally at their declared origin and orientation.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [],
+  "params": {
+    "type": "object",
+    "properties": {
+      "sequence": {
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[ACGTRYSWKMBDHVNacgtryswkmbdhvn]+$"
+      }
+    },
+    "required": [
+      "sequence"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Experimental performance, functional identity or truth of a reported claim.",
+    "Constraint meaning beyond the explicit sequences, coordinates and report topic."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "SPEC D2 GOL-4/GOL-6",
+      "SPEC D9 retained content identities"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.check.goal:exact_sequence"
+  },
+  "owner": "core",
+  "granularity": "atomic",
+  "scope": "user_goal",
+  "evaluates_constraint": true,
+  "offline": true,
+  "fixtures": {
+    "pass": "tests/fixtures/goal_checks/exact_sequence.pass.json",
+    "fail": "tests/fixtures/goal_checks/exact_sequence.fail.json"
+  }
+}

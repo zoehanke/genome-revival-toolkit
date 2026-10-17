@@ -1,0 +1,96 @@
+{
+  "oracle": {
+    "kind": "construction",
+    "reason": "Every ACTION maps to a literal/preconstructed/independent-program answer; every CHECK maps to both actually executed fixture variants."
+  },
+  "data": {
+    "seq.make_material": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_seq_make_material_literal_answer",
+      "kind": "hand"
+    },
+    "seq.slice": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_seq_make_slice_and_rotate_independent_answers",
+      "kind": "hand"
+    },
+    "seq.rotate": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_seq_make_slice_and_rotate_independent_answers",
+      "kind": "hand"
+    },
+    "format.read_fasta": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_format_read_fasta_and_native_binary",
+      "kind": "construction"
+    },
+    "format.read_dna": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_format_read_fasta_and_native_binary",
+      "kind": "construction"
+    },
+    "format.read_genbank": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_format_read_genbank_literal_independent_record",
+      "kind": "hand"
+    },
+    "format.write_genbank": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_format_write_genbank_then_read_independent_fields",
+      "kind": "construction"
+    },
+    "format.write_fasta": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_format_write_fasta_literal_text",
+      "kind": "hand"
+    },
+    "primer.calculate_tm": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_primer_measurements_and_binding_independent_answers",
+      "kind": "hand"
+    },
+    "primer.inspect_quality": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_primer_measurements_and_binding_independent_answers",
+      "kind": "hand"
+    },
+    "primer.find_binding_sites": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_primer_measurements_and_binding_independent_answers",
+      "kind": "hand"
+    },
+    "primer.run_primer3": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_primer3_real_ctx_external_calls_and_recorded_fingerprint",
+      "kind": "independent_program"
+    },
+    "pcr.simulate": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_pcr_actual_store_and_recorded_input_bindings",
+      "kind": "hand"
+    },
+    "restriction.scan_sites": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_restriction_scan_digest_and_ligation",
+      "kind": "hand"
+    },
+    "restriction.digest": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_restriction_scan_digest_and_ligation",
+      "kind": "construction"
+    },
+    "assembly.ligate": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_restriction_scan_digest_and_ligation",
+      "kind": "construction"
+    },
+    "assembly.gibson": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_gibson_and_inverse_pcr_independent_products",
+      "kind": "construction"
+    },
+    "assembly.inverse_pcr": {
+      "test_id": "test_biology_capabilities.CapabilityTests.test_gibson_and_inverse_pcr_independent_products",
+      "kind": "hand"
+    },
+    "check.primer_quality": {
+      "test_id": "test_biology_checks.BiologyCheckTests.test_every_declared_pass_and_fail_fixture_actually_runs",
+      "kind": "construction"
+    },
+    "check.format_roundtrip": {
+      "test_id": "test_biology_checks.BiologyCheckTests.test_every_declared_pass_and_fail_fixture_actually_runs",
+      "kind": "construction"
+    },
+    "check.pcr_product": {
+      "test_id": "test_biology_checks.BiologyCheckTests.test_every_declared_pass_and_fail_fixture_actually_runs",
+      "kind": "construction"
+    },
+    "check.assembly_product": {
+      "test_id": "test_biology_checks.BiologyCheckTests.test_every_declared_pass_and_fail_fixture_actually_runs",
+      "kind": "construction"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "code": "PLAN_SCHEMA_INVALID",
+  "category": "INVALID_INPUT",
+  "message": "Document violates its declared schema.",
+  "details": {
+    "findings": [
+      {
+        "location": "/constraints/0/check",
+        "rule": "pattern"
+      }
+    ]
+  },
+  "recovery": "Correct the request against goal-v1 and submit the goal again.",
+  "retryable": false,
+  "cause_chain": []
+}

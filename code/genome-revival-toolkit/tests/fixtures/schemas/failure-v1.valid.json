@@ -1,0 +1,17 @@
+{
+  "schema_id": "failure-v1",
+  "expected_valid": true,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Fields hand-transcribed from the cited D/A/E contract; synthetic values."
+  },
+  "data": {
+    "code": "PLAN_SCHEMA_INVALID",
+    "category": "INVALID_INPUT",
+    "message": "Constructed failure.",
+    "details": {},
+    "recovery": "Correct request.",
+    "retryable": false,
+    "cause_chain": []
+  }
+}

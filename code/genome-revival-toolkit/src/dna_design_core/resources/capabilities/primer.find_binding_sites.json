@@ -1,0 +1,78 @@
+{
+  "schema": "capability-v1",
+  "id": "primer.find_binding_sites",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Find every exact declared 3-prime core on both strands, including a circular origin.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "template",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "template"
+    },
+    {
+      "name": "primer",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "primer"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "core_length": {
+        "type": [
+          "integer",
+          "null"
+        ],
+        "minimum": 1
+      },
+      "strand": {
+        "enum": [
+          null,
+          -1,
+          1
+        ]
+      }
+    },
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.primer.operations:binding_sites"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

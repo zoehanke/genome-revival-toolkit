@@ -1,0 +1,73 @@
+{
+  "schema": "capability-v1",
+  "id": "seq.inspect_cds",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Report frame, start/stop and ambiguity under an explicit genetic code.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "material",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "material"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "translation_table": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "codon_start": {
+        "enum": [
+          1,
+          2,
+          3
+        ]
+      },
+      "partial": {
+        "type": "boolean"
+      }
+    },
+    "required": [
+      "translation_table"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "report",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "urn:grt:schema:goal-v1#/$defs/value"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [],
+  "does_not_establish": [
+    "Wet-laboratory success, biological function or reaction efficiency.",
+    "Genome-wide safety or thermodynamic structure quality unless explicitly measured."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md: batches 1-4",
+      "MIGRATION-LOG.md"
+    ],
+    "implemented_in": "dna_design_core.capabilities.builtin.seq.preparation:inspect_cds_material"
+  },
+  "owner": "core",
+  "granularity": "atomic"
+}

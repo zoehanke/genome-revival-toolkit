@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_actual_extensions_must_be_reverse_complements (test_biology_restriction_assembly.AssemblyTests.test_actual_extensions_must_be_reverse_complements)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_restriction_assembly.py", line 82, in test_actual_extensions_must_be_reverse_complements
+    self.assertTrue(biology.compatible_ends({"kind": "5prime", "overhang": "AGTC"}, {"kind": "5prime", "overhang": "GACT"}))
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

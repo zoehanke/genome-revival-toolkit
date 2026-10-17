@@ -1,0 +1,23 @@
+{
+  "schema": "pipeline-template-v1",
+  "version": 1,
+  "goal_digest": "{{goal_digest}}",
+  "steps": [{
+    "step_id": "count",
+    "use": "word_count.count_words@0.0.0",
+    "inputs": {},
+    "params": {"text": "{{text}}"},
+    "why": "Count a tutorial phrase and apply the frozen example rule."
+  }],
+  "outputs": [{"name": "word-count", "from": {"step": "count", "port": "report"}, "target": "t1"}],
+  "params_schema": {
+    "type": "object",
+    "properties": {
+      "goal_digest": {"type": "string", "description": "Digest returned by goal declare."},
+      "text": {"type": "string", "description": "Phrase to count; whitespace separates words."}
+    },
+    "required": ["goal_digest", "text"],
+    "additionalProperties": false
+  },
+  "authorship": {"kind": "ai", "tool_or_model": "Codex", "date": "2026-10-17"}
+}

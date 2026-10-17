@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:step.failed-payload-v1",
+  "title": "step.failed-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E: step.failed; A14 (12c4274)",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "step_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_]{0,31}$"
+    },
+    "failure": {
+      "$ref": "urn:grt:schema:failure-v1"
+    },
+    "retained_outputs": {
+      "type": "object",
+      "properties": {
+        "outputs": {
+          "type": "object",
+          "properties": {
+            "materials": {
+              "type": "object",
+              "patternProperties": {
+                "^.*$": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "documents": {
+              "type": "object",
+              "patternProperties": {
+                "^.*$": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "additionalProperties": false
+            },
+            "artifacts": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "run_path": {
+                    "type": "string"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "role": {
+                    "type": "string"
+                  },
+                  "media_type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "run_path",
+                  "sha256",
+                  "role",
+                  "media_type"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "materials",
+            "documents",
+            "artifacts"
+          ],
+          "additionalProperties": false
+        },
+        "values": {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        },
+        "unverified": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "outputs",
+        "values",
+        "unverified"
+      ],
+      "additionalProperties": false
+    },
+    "superseded_by": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "step_id",
+    "failure",
+    "retained_outputs",
+    "superseded_by"
+  ],
+  "additionalProperties": false
+}

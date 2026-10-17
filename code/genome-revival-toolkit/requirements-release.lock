@@ -1,0 +1,12 @@
+# Offline metadata inventory from the provisioned environment, 2026-10-17.
+# Runtime roots and their installed dependency closure, plus the pinned build backend.
+rfc8785==0.1.4
+jsonschema==4.26.0
+biopython==1.88
+attrs==26.1.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.6.3
+numpy==2.0.2
+typing_extensions==4.16.0
+setuptools==83.0.0

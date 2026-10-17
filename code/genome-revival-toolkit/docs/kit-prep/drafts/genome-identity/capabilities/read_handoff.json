@@ -1,0 +1,55 @@
+{
+  "schema": "capability-v1",
+  "id": "identity.read_handoff",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Draft contract for identity.read_handoff; no Kit implementation exists.",
+  "effects": [
+    "reads_files"
+  ],
+  "deterministic": true,
+  "requires_runtime": [],
+  "inputs": [
+    {
+      "name": "file",
+      "type": "artifact",
+      "required": true,
+      "constraints": {},
+      "description": "file"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {},
+    "required": [],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "handoff",
+      "type": "document",
+      "output_role": "analysis",
+      "schema_ref": "identity-handoff-v1"
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "identity.check_handoff"
+    }
+  ],
+  "does_not_establish": [
+    "Primer specificity in an actual strain",
+    "Observed experimental products",
+    "Authentic genotype",
+    "Whole-genome discrimination."
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/MIGRATION-MAP.md section 6"
+    ],
+    "implemented_in": "grt_kit_genome_identity.capabilities.operations:read_handoff"
+  },
+  "owner": "kit:genome-identity",
+  "granularity": "atomic"
+}

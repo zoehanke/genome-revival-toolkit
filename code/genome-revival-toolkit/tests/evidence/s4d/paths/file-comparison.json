@@ -1,0 +1,224 @@
+[
+  {
+    "path": "kits/cut-plasmid/README.md",
+    "before_sha256": "044e37d306b04391b3a5dd3df18a8feb87cfbfd338cb27b37cd3b895a76e50de",
+    "after_sha256": "044e37d306b04391b3a5dd3df18a8feb87cfbfd338cb27b37cd3b895a76e50de",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/SKILL.md",
+    "before_sha256": "3247041ed9027587381f67798a5d003e91a12ad9df1f8f6cb4954fe98d42f06e",
+    "after_sha256": "3247041ed9027587381f67798a5d003e91a12ad9df1f8f6cb4954fe98d42f06e",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/__init__.py",
+    "before_sha256": "50bb068c9fe82639134da193a127b1a8ca2ce1600bcc76f608bf426297521443",
+    "after_sha256": "50bb068c9fe82639134da193a127b1a8ca2ce1600bcc76f608bf426297521443",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/assess_selection.json",
+    "before_sha256": "0c12381e7f614de10ba8739b0b6af23537fcaf790bc46fed532521ac98da0eb5",
+    "after_sha256": "0c12381e7f614de10ba8739b0b6af23537fcaf790bc46fed532521ac98da0eb5",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/check_direction.json",
+    "before_sha256": "3dd577a5f0819cedc90fad5794dda51d136ec2bb8fa68d66832dc513a5293202",
+    "after_sha256": "3dd577a5f0819cedc90fad5794dda51d136ec2bb8fa68d66832dc513a5293202",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/check_pam.json",
+    "before_sha256": "9524f41ed9f0dd5281b3d6d2aaa25e14a7b09c3137caf297d6632de214d8f976",
+    "after_sha256": "9524f41ed9f0dd5281b3d6d2aaa25e14a7b09c3137caf297d6632de214d8f976",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/check_vector_self_target.json",
+    "before_sha256": "460aa6ea95d8c535754f9d9ae3543265edbda7bb69b70bd87ef3cfacd0d42e6c",
+    "after_sha256": "460aa6ea95d8c535754f9d9ae3543265edbda7bb69b70bd87ef3cfacd0d42e6c",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/checks.py",
+    "before_sha256": "0830c1c6915be2fdd630adf8886b9e474c13cbbfb11a7fdbc499096e316a511b",
+    "after_sha256": "0830c1c6915be2fdd630adf8886b9e474c13cbbfb11a7fdbc499096e316a511b",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/contracts.py",
+    "before_sha256": "a8257426e277988714f72eb9259f6e45bcc437e2be0851fb900900d3b2ab5e10",
+    "after_sha256": "a8257426e277988714f72eb9259f6e45bcc437e2be0851fb900900d3b2ab5e10",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_direction.fail.json",
+    "before_sha256": "b9594022d4a07bda793b2a6a10f80629a514ee46af12c1d43c68b982cbb0d903",
+    "after_sha256": "b9594022d4a07bda793b2a6a10f80629a514ee46af12c1d43c68b982cbb0d903",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_direction.pass.json",
+    "before_sha256": "cc7e5b0154c79341b05a2dcbccd755c83980a0476c94c4a342a6f0b13255d9f7",
+    "after_sha256": "cc7e5b0154c79341b05a2dcbccd755c83980a0476c94c4a342a6f0b13255d9f7",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_pam.fail.json",
+    "before_sha256": "71ee816f0fa07e5d0282695471af3e8e5ab392686f936bcc2253ed5d584cca51",
+    "after_sha256": "71ee816f0fa07e5d0282695471af3e8e5ab392686f936bcc2253ed5d584cca51",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_pam.pass.json",
+    "before_sha256": "bdf8a8678f3188581399b49d2999847e99a06aa0eaf22e2a060e550e38f16ab1",
+    "after_sha256": "bdf8a8678f3188581399b49d2999847e99a06aa0eaf22e2a060e550e38f16ab1",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_vector_self_target.fail.json",
+    "before_sha256": "e262afdc83af1d2387c186d7e404d6f66e60a456df48b60cb88fd6f2a6538dfd",
+    "after_sha256": "e262afdc83af1d2387c186d7e404d6f66e60a456df48b60cb88fd6f2a6538dfd",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/fixtures/check_vector_self_target.pass.json",
+    "before_sha256": "3df791566fed3e6f520b93c1120b0e49330b0c7fb3f169ff06f32fdc6b3a03d8",
+    "after_sha256": "3df791566fed3e6f520b93c1120b0e49330b0c7fb3f169ff06f32fdc6b3a03d8",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/guide.py",
+    "before_sha256": "22f02dfd9cc5971636b0f294b1267e20fb423a408a0d6beea19fe69496638061",
+    "after_sha256": "22f02dfd9cc5971636b0f294b1267e20fb423a408a0d6beea19fe69496638061",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/inspect_guide.json",
+    "before_sha256": "98b8bcb61a39307e88972e81f3674d286df04e4766497c73b48598c6c1cf1bdd",
+    "after_sha256": "98b8bcb61a39307e88972e81f3674d286df04e4766497c73b48598c6c1cf1bdd",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/model.py",
+    "before_sha256": "fc0cb9bb35e1a3ef8d53eb1ef3b5f2d7beb5f4345e44298dfe5a3a2374ee5cc9",
+    "after_sha256": "fc0cb9bb35e1a3ef8d53eb1ef3b5f2d7beb5f4345e44298dfe5a3a2374ee5cc9",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/model_replace.json",
+    "before_sha256": "4dfc3f5fea32f68919a9a750c255705ed2911446d415f33fcd02b2c6ac68def8",
+    "after_sha256": "4dfc3f5fea32f68919a9a750c255705ed2911446d415f33fcd02b2c6ac68def8",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/preparation.py",
+    "before_sha256": "30df7ab527376acfd24cbac930b5cbfc2ad47a05d4db6c3b63d1da0591f4f2ba",
+    "after_sha256": "30df7ab527376acfd24cbac930b5cbfc2ad47a05d4db6c3b63d1da0591f4f2ba",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/replace_spacer.json",
+    "before_sha256": "5fcb20d44326f7dd42a07db13234c206fbe4c8336a40b9a82a69ebe17907c0f6",
+    "after_sha256": "5fcb20d44326f7dd42a07db13234c206fbe4c8336a40b9a82a69ebe17907c0f6",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/capabilities/selection.py",
+    "before_sha256": "e4ca3dd809e676fef4b08f70b64a51d847193ca5e79ffc3db5c7d4340d308f3a",
+    "after_sha256": "e4ca3dd809e676fef4b08f70b64a51d847193ca5e79ffc3db5c7d4340d308f3a",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/examples/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/examples/b2.json",
+    "before_sha256": "79d4d231269fa0d4fd02299de0b76a5f1e5937f60cb13cde0d24c2c1a8f8df72",
+    "after_sha256": "79d4d231269fa0d4fd02299de0b76a5f1e5937f60cb13cde0d24c2c1a8f8df72",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/kit.json",
+    "before_sha256": "f8d1c1fbfaae56d33d7779d5e79b4843884995da55cc0ec0042529e122915857",
+    "after_sha256": "f8d1c1fbfaae56d33d7779d5e79b4843884995da55cc0ec0042529e122915857",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/knowledge/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/knowledge/SOURCES.md",
+    "before_sha256": "56515e62b84d2078190552ab83898b7b6a56b630ef4b4760fc93f37c0e353561",
+    "after_sha256": "56515e62b84d2078190552ab83898b7b6a56b630ef4b4760fc93f37c0e353561",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/knowledge/drafts/README.md",
+    "before_sha256": "c0fc47a60b50415aa9173643e13f98fc8dfd3e8a4dbaab7fd92cfa2c7f712416",
+    "after_sha256": "c0fc47a60b50415aa9173643e13f98fc8dfd3e8a4dbaab7fd92cfa2c7f712416",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/knowledge/selection_markers.json",
+    "before_sha256": "c5d841a71df0fb52a39e611351f21295425fec2f4b0f601db89d56738fc1dd01",
+    "after_sha256": "c5d841a71df0fb52a39e611351f21295425fec2f4b0f601db89d56738fc1dd01",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/templates/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/templates/inspect_only.json",
+    "before_sha256": "4b492fc2468e0cca5cc04c6c7ea4ccb400453465eaadf69ba24f8ad777d90933",
+    "after_sha256": "4b492fc2468e0cca5cc04c6c7ea4ccb400453465eaadf69ba24f8ad777d90933",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/templates/replace_spacer.json",
+    "before_sha256": "2ee5e6f56a42dcc09b35fffc8052cd6f1190af4bfacb1d581a48934ecd9d9284",
+    "after_sha256": "2ee5e6f56a42dcc09b35fffc8052cd6f1190af4bfacb1d581a48934ecd9d9284",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/tests/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/text/.gitkeep",
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "same": true
+  },
+  {
+    "path": "kits/cut-plasmid/text/en.json",
+    "before_sha256": "3c160b7d27e2c4b48a615476f69b0e9621a90d28ef78b0fe8982d0ecdb5f9b06",
+    "after_sha256": "3c160b7d27e2c4b48a615476f69b0e9621a90d28ef78b0fe8982d0ecdb5f9b06",
+    "same": true
+  },
+  {
+    "path": "tests/evidence/s2/selection-migration.json",
+    "before_sha256": "2b0792f02e0d95ab57ecf92fd23d96314d25824f2b5f37ff8f5956320c527ff6",
+    "after_sha256": "2b0792f02e0d95ab57ecf92fd23d96314d25824f2b5f37ff8f5956320c527ff6",
+    "same": true
+  }
+]

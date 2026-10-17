@@ -1,0 +1,36 @@
+{
+  "schema_id": "verdict-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "NOT_APPLICABLE cannot have null applicability."
+  },
+  "data": {
+    "schema": "verdict-v1",
+    "check": {
+      "id": "check.dna_value_valid",
+      "version": "0.0.0"
+    },
+    "scope": "content_model",
+    "moment": "final",
+    "subject": {
+      "kind": "document",
+      "id": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "constraint_id": null,
+    "outcome": "NOT_APPLICABLE",
+    "issuer": "check_capability",
+    "summary": "Synthetic structural example, not a runtime judgment.",
+    "evidence": {
+      "length": 4
+    },
+    "basis": [
+      "1111111111111111111111111111111111111111111111111111111111111111"
+    ],
+    "applicability": null,
+    "rule_refs": [],
+    "does_not_establish": [
+      "Wet laboratory evidence."
+    ]
+  }
+}

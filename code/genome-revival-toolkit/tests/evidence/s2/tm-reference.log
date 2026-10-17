@@ -1,0 +1,68 @@
+{
+  "outcome": "PASS",
+  "backend": {
+    "version": "2.6.1",
+    "sha256": "19a546a0166fd979c41317e45696de1b383ab5fa21ec362bcc5053b2068b6e5f",
+    "about": "libprimer3 release 2.6.1"
+  },
+  "parameters": {
+    "effective_strand_concentration_nM": "250",
+    "primer3_total_oligo_nM": "1000",
+    "sodium_mM": "50"
+  },
+  "predeclared_tolerances_degC": {
+    "manual": "0.00000001",
+    "primer3": "0.0006"
+  },
+  "cases": [
+    {
+      "id": "forward",
+      "core_length": 22,
+      "production_tm_degC": "55.31763694",
+      "independent_arithmetic": {
+        "stack_counts": {
+          "GT": 5,
+          "AA": 2,
+          "CA": 5,
+          "GC": 1,
+          "CT": 3,
+          "GA": 3,
+          "AT": 1,
+          "TA": 1
+        },
+        "enthalpy_kcal_per_mol": "-172.30000000",
+        "entropy_cal_per_K_mol": "-471.20000000",
+        "tm_degC": "55.31763694"
+      },
+      "primer3_tm_degC": "55.318",
+      "manual_agreement": true,
+      "primer3_agreement": true,
+      "primer3_difference_degC": "-0.00036306"
+    },
+    {
+      "id": "reverse",
+      "core_length": 27,
+      "production_tm_degC": "55.10421641",
+      "independent_arithmetic": {
+        "stack_counts": {
+          "GT": 1,
+          "AA": 9,
+          "GA": 5,
+          "CG": 1,
+          "GG": 2,
+          "AT": 3,
+          "TA": 1,
+          "CA": 2,
+          "CT": 2
+        },
+        "enthalpy_kcal_per_mol": "-208.30000000",
+        "entropy_cal_per_K_mol": "-575.70000000",
+        "tm_degC": "55.10421641"
+      },
+      "primer3_tm_degC": "55.104",
+      "manual_agreement": true,
+      "primer3_agreement": true,
+      "primer3_difference_degC": "0.00021641"
+    }
+  ]
+}

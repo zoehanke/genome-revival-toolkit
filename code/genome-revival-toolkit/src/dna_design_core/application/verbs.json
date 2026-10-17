@@ -1,0 +1,19 @@
+[
+  "describe",
+  "run create",
+  "goal declare",
+  "goal amend",
+  "template instantiate",
+  "pipeline submit",
+  "pipeline revise",
+  "declare",
+  "run execute",
+  "run abandon",
+  "status",
+  "judge",
+  "seal",
+  "verify",
+  "record render",
+  "review sign",
+  "doctor"
+]

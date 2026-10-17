@@ -1,0 +1,111 @@
+{
+  "scope": "Synthetic fixture, not a team release or installed environment.",
+  "commands": [
+    {
+      "tool": "build_release.py",
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "build_created": true,
+        "release_id": "f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d",
+        "archive": "genome-revival-toolkit-0.0.0-f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d.zip",
+        "sha256": "c32ebe260693fc7fd8619004ed4bd8d03b1968c38a0c3d8f09fe1b06ba9c413d",
+        "manifest": "genome-revival-toolkit-0.0.0-f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d.manifest.json",
+        "files": 11,
+        "zip_timestamp": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "tool": "build_release.py",
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "build_created": true,
+        "release_id": "f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d",
+        "archive": "genome-revival-toolkit-0.0.0-f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d.zip",
+        "sha256": "c32ebe260693fc7fd8619004ed4bd8d03b1968c38a0c3d8f09fe1b06ba9c413d",
+        "manifest": "genome-revival-toolkit-0.0.0-f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d.manifest.json",
+        "files": 11,
+        "zip_timestamp": [
+          1980,
+          1,
+          1,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "tool": "check_release.py",
+      "exit_code": 0,
+      "result": {
+        "status": "PASS",
+        "findings": [],
+        "release_id": "f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d",
+        "archive_sha256": "c32ebe260693fc7fd8619004ed4bd8d03b1968c38a0c3d8f09fe1b06ba9c413d"
+      }
+    },
+    {
+      "tool": "clean_env_verify.py",
+      "exit_code": 0,
+      "result": {
+        "status": "NOT_PERFORMED",
+        "requires_user_authorization": true,
+        "reason": "Task S4a requires separate user authorization for installation into a fresh environment.",
+        "archive": "<TEMP>\\s4a_cli_vt0rsu9w\\a\\genome-revival-toolkit-0.0.0-f23231471c52c8c07a7c27ae8df54f600d2dfe4e6d4d398ddcd5989ff061762d.zip",
+        "workdir": "<TEMP>\\s4a_cli_vt0rsu9w\\fresh",
+        "system_site_packages": false,
+        "child_pythonpath": "removed",
+        "commands": [
+          [
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\venv\\Scripts\\python.exe",
+            "-m",
+            "pip",
+            "install",
+            "--disable-pip-version-check",
+            "-r",
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\source\\requirements-release.lock"
+          ],
+          [
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\venv\\Scripts\\python.exe",
+            "-m",
+            "pip",
+            "install",
+            "--disable-pip-version-check",
+            "--no-build-isolation",
+            "--no-deps",
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\source"
+          ],
+          [
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\venv\\Scripts\\python.exe",
+            "-X",
+            "utf8",
+            "-B",
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\source\\examples\\run_example.py",
+            "--out",
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\new-example",
+            "--python",
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\venv\\Scripts\\python.exe"
+          ],
+          [
+            "<TEMP>\\s4a_cli_vt0rsu9w\\fresh\\venv\\Scripts\\python.exe",
+            "-m",
+            "dna_design_core.application.cli",
+            "verify",
+            "<each bundled examples/sealed/**/manifest.json parent>"
+          ]
+        ],
+        "network": "Dependency installation can download locked packages; application examples run locally."
+      }
+    }
+  ],
+  "two_archive_bytes_equal": true
+}

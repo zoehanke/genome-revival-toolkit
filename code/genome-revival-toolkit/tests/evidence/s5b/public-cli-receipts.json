@@ -1,0 +1,664 @@
+[
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "dev-tree",
+        "kit_diagnostics": [],
+        "notices": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 7
+      },
+      "result": {
+        "goal_digest": "be19022f5a133ce6f2a29d5cfdc13bdc84af7e4f5e5ee1ac0d254157880672d6",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "template",
+      "instantiate",
+      "genome-identity.from_handoff",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": null,
+      "event_range": null,
+      "result": {
+        "draft": {
+          "schema": "pipeline-v1",
+          "version": 1,
+          "goal_digest": "be19022f5a133ce6f2a29d5cfdc13bdc84af7e4f5e5ee1ac0d254157880672d6",
+          "steps": [
+            {
+              "step_id": "read_original",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "original"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "double"
+              },
+              "why": "Read the registered synthetic original FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_edited",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "edited"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "double"
+              },
+              "why": "Read the registered synthetic edited FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_forward",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "forward"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "single"
+              },
+              "why": "Read the registered synthetic forward FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_reverse",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "reverse"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "single"
+              },
+              "why": "Read the registered synthetic reverse FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_handoff",
+              "use": "identity.read_handoff",
+              "inputs": {
+                "file": {
+                  "source": "handoff_file"
+                }
+              },
+              "params": {},
+              "why": "Read the Construct handoff without guessing a legacy format."
+            },
+            {
+              "step_id": "regions",
+              "use": "identity.compare_regions",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                }
+              },
+              "params": {},
+              "why": "Compare the two complete supplied reference intervals."
+            },
+            {
+              "step_id": "assay",
+              "use": "identity.analyze_assay",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                },
+                "forward": {
+                  "step": "read_forward",
+                  "port": "material"
+                },
+                "reverse": {
+                  "step": "read_reverse",
+                  "port": "material"
+                },
+                "reference_original_file": {
+                  "source": "original"
+                },
+                "reference_edited_file": {
+                  "source": "edited"
+                },
+                "handoff": {
+                  "step": "read_handoff",
+                  "port": "handoff"
+                }
+              },
+              "params": {
+                "assay_id": "synthetic_identity",
+                "forward_id": "forward",
+                "reverse_id": "reverse"
+              },
+              "why": "Bind reference file bytes to materials and predict exact products in both backgrounds."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "identity-expected-results",
+              "from": {
+                "step": "assay",
+                "port": "expected_results"
+              },
+              "target": "expectations"
+            }
+          ],
+          "library_ref": {
+            "name": "genome-identity.from_handoff",
+            "version": "0.0.0",
+            "template_digest": "6096cc489bf48659e14c05ef0f6a92f99180f0c17f143076889d9480811c1d58"
+          }
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 8,
+        "to_seq": 15
+      },
+      "result": {
+        "pipeline_digest": "8270267127f1de27cc98fc4678362c3ce6b3603fc159a1ba05f3b48a36d675be",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 16,
+        "to_seq": 30
+      },
+      "result": {
+        "state": "COMPLETED"
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\different_sizes\\run"
+    ],
+    "exit_code": 10,
+    "receipt": {
+      "run_id": "b7bb7a1da02c7970",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 31,
+        "to_seq": 46
+      },
+      "result": {
+        "sealed": false,
+        "candidate_digest": "d946e049fe9be599a4662fd2b1c26ade453a8f912dcfe66894ad6d7cc180d59f",
+        "unsatisfied": [
+          {
+            "check": "check.annotation_integrity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "98396663ca74df6f8a6ce18050f7b4e440e927c210c1ab116b87ed1d39fb2404",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.cds_validity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "9234585866f3b096d7cab5c7585f4b5b5535b064114c19e5c28192f405d41bac",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          },
+          {
+            "check": "check.biological_sanity",
+            "outcome": "UNKNOWN",
+            "verdict_id": "9b2cb655736272bdc3b012dd6fe490addb974388549f3ef8fb00b9a232ff87e3",
+            "recovery": "Inspect the verdict evidence; correct the input or add and supersede a step, then judge again."
+          }
+        ],
+        "present_files": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "dev-tree",
+        "kit_diagnostics": [],
+        "notices": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 7
+      },
+      "result": {
+        "goal_digest": "3030315529dba213f3c2a8cbaa5fd6564df545c1218d1afc82f4b1de47528db1",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "template",
+      "instantiate",
+      "genome-identity.from_handoff",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": null,
+      "event_range": null,
+      "result": {
+        "draft": {
+          "schema": "pipeline-v1",
+          "version": 1,
+          "goal_digest": "3030315529dba213f3c2a8cbaa5fd6564df545c1218d1afc82f4b1de47528db1",
+          "steps": [
+            {
+              "step_id": "read_original",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "original"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "double"
+              },
+              "why": "Read the registered synthetic original FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_edited",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "edited"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "double"
+              },
+              "why": "Read the registered synthetic edited FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_forward",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "forward"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "single"
+              },
+              "why": "Read the registered synthetic forward FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_reverse",
+              "use": "format.read_fasta",
+              "inputs": {
+                "file": {
+                  "source": "reverse"
+                }
+              },
+              "params": {
+                "topology": "linear",
+                "strandedness": "single"
+              },
+              "why": "Read the registered synthetic reverse FASTA with explicit physical properties."
+            },
+            {
+              "step_id": "read_handoff",
+              "use": "identity.read_handoff",
+              "inputs": {
+                "file": {
+                  "source": "handoff_file"
+                }
+              },
+              "params": {},
+              "why": "Read the Construct handoff without guessing a legacy format."
+            },
+            {
+              "step_id": "regions",
+              "use": "identity.compare_regions",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                }
+              },
+              "params": {},
+              "why": "Compare the two complete supplied reference intervals."
+            },
+            {
+              "step_id": "assay",
+              "use": "identity.analyze_assay",
+              "inputs": {
+                "reference_original": {
+                  "step": "read_original",
+                  "port": "material"
+                },
+                "reference_edited": {
+                  "step": "read_edited",
+                  "port": "material"
+                },
+                "forward": {
+                  "step": "read_forward",
+                  "port": "material"
+                },
+                "reverse": {
+                  "step": "read_reverse",
+                  "port": "material"
+                },
+                "reference_original_file": {
+                  "source": "original"
+                },
+                "reference_edited_file": {
+                  "source": "edited"
+                },
+                "handoff": {
+                  "step": "read_handoff",
+                  "port": "handoff"
+                }
+              },
+              "params": {
+                "assay_id": "synthetic_identity",
+                "forward_id": "forward",
+                "reverse_id": "reverse"
+              },
+              "why": "Bind reference file bytes to materials and predict exact products in both backgrounds."
+            }
+          ],
+          "outputs": [
+            {
+              "name": "identity-expected-results",
+              "from": {
+                "step": "assay",
+                "port": "expected_results"
+              },
+              "target": "expectations"
+            }
+          ],
+          "library_ref": {
+            "name": "genome-identity.from_handoff",
+            "version": "0.0.0",
+            "template_digest": "6096cc489bf48659e14c05ef0f6a92f99180f0c17f143076889d9480811c1d58"
+          }
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run",
+      "--request",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 8,
+        "to_seq": 15
+      },
+      "result": {
+        "pipeline_digest": "1d81e79c104cdb8e7d450c3b03580d90f5349b4d56c882a82504e998d76331e6",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": "HALTED",
+      "event_range": {
+        "from_seq": 16,
+        "to_seq": 30
+      },
+      "result": {
+        "state": "HALTED",
+        "failure": {
+          "code": "SOURCE_CHANGED",
+          "category": "INTEGRITY",
+          "message": "Reference file hash differs from the Construct handoff.",
+          "details": {},
+          "recovery": "Restore the registered input or explicitly declare a new input; do not overwrite the original history.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "SOURCE_CHANGED",
+          "category": "INTEGRITY",
+          "message": "Reference file hash differs from the Construct handoff.",
+          "recovery": "Restore the registered input or explicitly declare a new input; do not overwrite the original history.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<TEMP>\\s5b-public-cli-20261017-020237\\handoff_hash\\run"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "fa90ab7984b219b9",
+      "state": "HALTED",
+      "event_range": null,
+      "result": {
+        "failure": {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "The run has not reached the sealing preconditions.",
+          "details": {},
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "SEAL_RUN_NOT_COMPLETED",
+          "category": "INVALID_INPUT",
+          "message": "The run has not reached the sealing preconditions.",
+          "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "reviewed 0 / stale 0 / none 0"
+      ]
+    }
+  }
+]

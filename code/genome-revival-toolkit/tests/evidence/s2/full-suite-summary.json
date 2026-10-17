@@ -1,0 +1,29 @@
+{
+  "total": 247,
+  "passed": 246,
+  "errors": 1,
+  "failures": 0,
+  "skips": 0,
+  "elapsed_hours": "0.283",
+  "groups": {
+    "contract": {
+      "ok": 8
+    },
+    "e2e": {
+      "ok": 13
+    },
+    "integration": {
+      "ok": 29
+    },
+    "structure": {
+      "ok": 60
+    },
+    "unit": {
+      "ok": 136,
+      "ERROR": 1
+    }
+  },
+  "known_error": "unit.test_assurance.AssuranceTests.test_all_check_controls_are_readonly: Kit fixture path resolved against project root",
+  "acceptance_passed": false,
+  "wet_lab": "NOT_PERFORMED"
+}

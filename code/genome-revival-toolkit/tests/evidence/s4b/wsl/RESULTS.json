@@ -1,0 +1,28 @@
+{
+  "commands": [
+    {
+      "command": [
+        "wsl.exe",
+        "--list",
+        "--verbose"
+      ],
+      "exit_code": 1,
+      "stdout": "1.stdout.txt",
+      "stderr": "1.stderr.txt"
+    },
+    {
+      "command": [
+        "wsl.exe",
+        "--list",
+        "--quiet"
+      ],
+      "exit_code": 1,
+      "stdout": "2.stdout.txt",
+      "stderr": "2.stderr.txt"
+    }
+  ],
+  "wsl_command_found": true,
+  "linux_execution": "NOT_PERFORMED",
+  "installation": "NOT_PERFORMED",
+  "scope": "Local WSL list only; no image download or distribution startup."
+}

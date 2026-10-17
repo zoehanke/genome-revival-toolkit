@@ -1,0 +1,1012 @@
+{
+  "source_mode": "read_only_git_objects",
+  "sources": [
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/__init__.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 1,
+      "functions": [],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/entry.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 11,
+      "functions": [
+        {
+          "name": "run",
+          "start": 9,
+          "end": 11,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/gates.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 23,
+      "functions": [
+        {
+          "name": "evaluate",
+          "start": 9,
+          "end": 19,
+          "lines": 11,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "context_for_result",
+          "start": 22,
+          "end": 23,
+          "lines": 2,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/hooks.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 3,
+      "functions": [
+        {
+          "name": "references",
+          "start": 2,
+          "end": 3,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/presentation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 39,
+      "functions": [
+        {
+          "name": "summary",
+          "start": 6,
+          "end": 24,
+          "lines": 19,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "fact_text",
+          "start": 26,
+          "end": 39,
+          "lines": 14,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/selection.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 124,
+      "functions": [
+        {
+          "name": "mapping_rows",
+          "start": 20,
+          "end": 23,
+          "lines": 4,
+          "decision": "丢弃旧加载/字段手验/缓存外壳，使用接纳契约、来源数据和共享坐标函数"
+        },
+        {
+          "name": "_mapping_rows",
+          "start": 27,
+          "end": 37,
+          "lines": 11,
+          "decision": "丢弃旧加载/字段手验/缓存外壳，使用接纳契约、来源数据和共享坐标函数"
+        },
+        {
+          "name": "marker_mappings",
+          "start": 40,
+          "end": 41,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "mapping_sources",
+          "start": 44,
+          "end": 45,
+          "lines": 2,
+          "decision": "丢弃旧加载/字段手验/缓存外壳，使用接纳契约、来源数据和共享坐标函数"
+        },
+        {
+          "name": "marker_ids",
+          "start": 48,
+          "end": 50,
+          "lines": 3,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        },
+        {
+          "name": "selection_report",
+          "start": 53,
+          "end": 124,
+          "lines": 72,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "genome-revival-toolkit/kits/crispr/scripts/workflow.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 113,
+      "functions": [
+        {
+          "name": "write_selection",
+          "start": 17,
+          "end": 27,
+          "lines": 11,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "run_crispr",
+          "start": 30,
+          "end": 113,
+          "lines": 84,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/__init__.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 1,
+      "functions": [],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/entry.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 11,
+      "functions": [
+        {
+          "name": "run",
+          "start": 9,
+          "end": 11,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/hooks.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 4,
+      "functions": [
+        {
+          "name": "references",
+          "start": 2,
+          "end": 4,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/predictions.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 104,
+      "functions": [
+        {
+          "name": "read_expected_results",
+          "start": 9,
+          "end": 36,
+          "lines": 28,
+          "decision": "保留显式文件/参考绑定原则；按新交接形状重写，丢弃旧 Trace 与旧 schema_version 协议"
+        },
+        {
+          "name": "read_bound_observations",
+          "start": 39,
+          "end": 46,
+          "lines": 8,
+          "decision": "保留显式文件/参考绑定原则；按新交接形状重写，丢弃旧 Trace 与旧 schema_version 协议"
+        },
+        {
+          "name": "observe_reported_bands",
+          "start": 49,
+          "end": 54,
+          "lines": 6,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_assessment",
+          "start": 57,
+          "end": 72,
+          "lines": 16,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        },
+        {
+          "name": "compare_expected",
+          "start": 75,
+          "end": 104,
+          "lines": 30,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/presentation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 17,
+      "functions": [
+        {
+          "name": "format_comparison",
+          "start": 6,
+          "end": 7,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "summary",
+          "start": 9,
+          "end": 10,
+          "lines": 2,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "fact_text",
+          "start": 12,
+          "end": 17,
+          "lines": 6,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "revival-evidence",
+      "path": "genome-revival-toolkit/kits/evidence/scripts/workflow.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 158,
+      "functions": [
+        {
+          "name": "conclusion_rows",
+          "start": 16,
+          "end": 20,
+          "lines": 5,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        },
+        {
+          "name": "read_observations",
+          "start": 23,
+          "end": 29,
+          "lines": 7,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_count",
+          "start": 32,
+          "end": 44,
+          "lines": 13,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        },
+        {
+          "name": "run_evidence",
+          "start": 47,
+          "end": 158,
+          "lines": 112,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/__init__.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 1,
+      "functions": [],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/entry.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 11,
+      "functions": [
+        {
+          "name": "run",
+          "start": 9,
+          "end": 11,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/handoff.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 46,
+      "functions": [
+        {
+          "name": "validate_options",
+          "start": 7,
+          "end": 16,
+          "lines": 10,
+          "decision": "丢弃旧加载/字段手验/缓存外壳，使用接纳契约、来源数据和共享坐标函数"
+        },
+        {
+          "name": "write_handoff",
+          "start": 19,
+          "end": 46,
+          "lines": 28,
+          "decision": "保留显式文件/参考绑定原则；按新交接形状重写，丢弃旧 Trace 与旧 schema_version 协议"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/hooks.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 6,
+      "functions": [
+        {
+          "name": "references",
+          "start": 2,
+          "end": 6,
+          "lines": 5,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/presentation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 47,
+      "functions": [
+        {
+          "name": "summary",
+          "start": 6,
+          "end": 7,
+          "lines": 2,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "fact_text",
+          "start": 9,
+          "end": 47,
+          "lines": 39,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "construct",
+      "path": "genome-revival-toolkit/kits/construct/scripts/workflow.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 223,
+      "functions": [
+        {
+          "name": "_interval",
+          "start": 20,
+          "end": 26,
+          "lines": 7,
+          "decision": "丢弃旧加载/字段手验/缓存外壳，使用接纳契约、来源数据和共享坐标函数"
+        },
+        {
+          "name": "_save",
+          "start": 29,
+          "end": 30,
+          "lines": 2,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "run_construct",
+          "start": 33,
+          "end": 223,
+          "lines": 191,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "call",
+          "start": 137,
+          "end": 145,
+          "lines": 9,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "failure",
+          "start": 147,
+          "end": 155,
+          "lines": 9,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/__init__.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 1,
+      "functions": [],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/entry.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 35,
+      "functions": [
+        {
+          "name": "run",
+          "start": 18,
+          "end": 21,
+          "lines": 4,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "assess",
+          "start": 24,
+          "end": 35,
+          "lines": 12,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/handoff.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 38,
+      "functions": [
+        {
+          "name": "read_construct_handoff",
+          "start": 7,
+          "end": 21,
+          "lines": 15,
+          "decision": "保留显式文件/参考绑定原则；按新交接形状重写，丢弃旧 Trace 与旧 schema_version 协议"
+        },
+        {
+          "name": "expectation_table",
+          "start": 24,
+          "end": 38,
+          "lines": 15,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/hooks.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 3,
+      "functions": [
+        {
+          "name": "references",
+          "start": 2,
+          "end": 3,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/output.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 35,
+      "functions": [
+        {
+          "name": "_primer_outputs",
+          "start": 9,
+          "end": 23,
+          "lines": 15,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "outputs",
+          "start": 26,
+          "end": 35,
+          "lines": 10,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/presentation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 17,
+      "functions": [
+        {
+          "name": "format_comparison",
+          "start": 6,
+          "end": 8,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "summary",
+          "start": 10,
+          "end": 11,
+          "lines": 2,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        },
+        {
+          "name": "fact_text",
+          "start": 13,
+          "end": 17,
+          "lines": 5,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "discard_framework"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "genome-revival-toolkit/kits/identity/scripts/workflow.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 161,
+      "functions": [
+        {
+          "name": "_discrimination",
+          "start": 14,
+          "end": 32,
+          "lines": 19,
+          "decision": "保留领域算法/有限决策，重写输入输出；只服务一个 Kit 的判断不搬入 biology"
+        },
+        {
+          "name": "run_identity",
+          "start": 35,
+          "end": 161,
+          "lines": 127,
+          "decision": "丢弃流程/呈现/手工埋点；需要的科学分支由新能力表逐项承接"
+        }
+      ],
+      "disposition": "extract_domain_only_discard_orchestration"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "snapgene-dna-design/core/tools/grna.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 293,
+      "functions": [
+        {
+          "name": "_label",
+          "start": 19,
+          "end": 24,
+          "lines": 6,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_location",
+          "start": 27,
+          "end": 37,
+          "lines": 11,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_parts",
+          "start": 40,
+          "end": 41,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_overlaps",
+          "start": 44,
+          "end": 47,
+          "lines": 4,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_locate",
+          "start": 50,
+          "end": 117,
+          "lines": 68,
+          "decision": "科学判据留给 S2；本轮不移植 CRISPR 代码"
+        },
+        {
+          "name": "_annotation_warnings",
+          "start": 120,
+          "end": 129,
+          "lines": 10,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "replace_grna_spacer",
+          "start": 132,
+          "end": 207,
+          "lines": 76,
+          "decision": "科学判据留给 S2；本轮不移植 CRISPR 代码"
+        },
+        {
+          "name": "_target_matches",
+          "start": 210,
+          "end": 231,
+          "lines": 22,
+          "decision": "科学判据留给 S2；本轮不移植 CRISPR 代码"
+        },
+        {
+          "name": "check_grna",
+          "start": 234,
+          "end": 293,
+          "lines": 60,
+          "decision": "科学判据留给 S2；本轮不移植 CRISPR 代码"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "snapgene-dna-design/core/tools/grna_evaluation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 209,
+      "functions": [
+        {
+          "name": "validate_mismatch_limit",
+          "start": 30,
+          "end": 32,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_parts",
+          "start": 35,
+          "end": 39,
+          "lines": 5,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "pam_sites",
+          "start": 42,
+          "end": 66,
+          "lines": 25,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "matching_sites",
+          "start": 69,
+          "end": 77,
+          "lines": 9,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "vector_report",
+          "start": 80,
+          "end": 97,
+          "lines": 18,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "check_grna_vector",
+          "start": 100,
+          "end": 118,
+          "lines": 19,
+          "decision": "科学判据留给 S2；本轮不移植 CRISPR 代码"
+        },
+        {
+          "name": "exact_loci",
+          "start": 121,
+          "end": 134,
+          "lines": 14,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "evaluate_candidates",
+          "start": 137,
+          "end": 209,
+          "lines": 73,
+          "decision": "首版丢弃候选 gRNA 枚举/排序；只检查或替换用户选定 guide"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "cut-plasmid",
+      "path": "snapgene-dna-design/core/tools/grna_preparation.py",
+      "commit": "bf90910e5b0e67985aa37db4e0b8507cbc24f2b4",
+      "file_lines": 152,
+      "functions": [
+        {
+          "name": "_hits",
+          "start": 21,
+          "end": 24,
+          "lines": 4,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "preparation_warnings",
+          "start": 27,
+          "end": 47,
+          "lines": 21,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "plan_and_simulate",
+          "start": 50,
+          "end": 138,
+          "lines": 89,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "protocol_steps",
+          "start": 141,
+          "end": 152,
+          "lines": 12,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "construct",
+      "path": "snapgene-dna-design/core/handlers/integration_donor.py",
+      "commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+      "file_lines": 245,
+      "functions": [
+        {
+          "name": "validate_contract",
+          "start": 24,
+          "end": 42,
+          "lines": 19,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "clarify",
+          "start": 44,
+          "end": 54,
+          "lines": 11,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_arm_sequences",
+          "start": 56,
+          "end": 87,
+          "lines": 32,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "plan",
+          "start": 89,
+          "end": 213,
+          "lines": 125,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "recompute",
+          "start": 216,
+          "end": 229,
+          "lines": 14,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "validate_goal",
+          "start": 231,
+          "end": 245,
+          "lines": 15,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "construct",
+      "path": "snapgene-dna-design/core/recipes/gibson.py",
+      "commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+      "file_lines": 597,
+      "functions": [
+        {
+          "name": "_prepare_gibson_fragments",
+          "start": 37,
+          "end": 90,
+          "lines": 54,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_preparation_template",
+          "start": 116,
+          "end": 121,
+          "lines": 6,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_primer_delivery",
+          "start": 124,
+          "end": 145,
+          "lines": 22,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_pcr_product_record",
+          "start": 148,
+          "end": 150,
+          "lines": 3,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_restore_unique_source_features",
+          "start": 153,
+          "end": 321,
+          "lines": 169,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "recipe_gibson_assembly",
+          "start": 324,
+          "end": 597,
+          "lines": 274,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "candidate",
+          "start": 48,
+          "end": 64,
+          "lines": 17,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "all_positions",
+          "start": 184,
+          "end": 199,
+          "lines": 16,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "matched_location",
+          "start": 201,
+          "end": 218,
+          "lines": 18,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "actual_parts",
+          "start": 256,
+          "end": 278,
+          "lines": 23,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "has_machine_clip_marker",
+          "start": 280,
+          "end": 285,
+          "lines": 6,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "same_identity",
+          "start": 287,
+          "end": 288,
+          "lines": 2,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "parts_are_contained",
+          "start": 290,
+          "end": 300,
+          "lines": 11,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "construct",
+      "path": "snapgene-dna-design/core/recipes/verification.py",
+      "commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+      "file_lines": 556,
+      "functions": [
+        {
+          "name": "_verification_candidates",
+          "start": 54,
+          "end": 123,
+          "lines": 70,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_optimize_verification_primer",
+          "start": 126,
+          "end": 131,
+          "lines": 6,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_search_verification_pair",
+          "start": 134,
+          "end": 167,
+          "lines": 34,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_parental_pcr",
+          "start": 170,
+          "end": 193,
+          "lines": 24,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "_sequencing_checks",
+          "start": 196,
+          "end": 222,
+          "lines": 27,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "sequencing_coverage",
+          "start": 225,
+          "end": 256,
+          "lines": 32,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "recipe_cloning_verification",
+          "start": 259,
+          "end": 556,
+          "lines": 298,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "individually_valid",
+          "start": 139,
+          "end": 143,
+          "lines": 5,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "gaps",
+          "start": 245,
+          "end": 251,
+          "lines": 7,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    },
+    {
+      "kit": "genome-identity",
+      "path": "snapgene-dna-design/core/tools/comparison.py",
+      "commit": "750bf4849b818be00f28684513ef19c01d901bcb",
+      "file_lines": 142,
+      "functions": [
+        {
+          "name": "_region",
+          "start": 12,
+          "end": 46,
+          "lines": 35,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        },
+        {
+          "name": "compare_sequences",
+          "start": 49,
+          "end": 142,
+          "lines": 94,
+          "decision": "只保留必要领域片段；旧类型、运行器、血统和 I/O 外壳不迁移"
+        }
+      ],
+      "disposition": "retain_domain_algorithms_only"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "check": "check.annotation_integrity",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "The pipeline introduces strand 2, which is outside +1/-1/0/unknown. A second control extends a part to coordinate 10 in a 9-base material."
+  }
+}

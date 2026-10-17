@@ -1,0 +1,6 @@
+{
+  "oracle": {"kind": "construction", "reason": "Four literal tokens red, green, blue, gold. Four is at least three."},
+  "text": "red green blue gold",
+  "report": {"text": "red green blue gold", "word_count": 4, "minimum_words": 3, "meets_minimum": true, "rule_id": "word_count.minimum_words"},
+  "expected": "PASS"
+}

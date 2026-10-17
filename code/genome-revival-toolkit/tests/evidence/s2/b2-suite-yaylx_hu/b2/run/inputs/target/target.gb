@@ -1,0 +1,12 @@
+LOCUS       target                    48 bp    DNA     linear   UNK 01-JAN-1980
+DEFINITION  Synthetic S2 test input.
+ACCESSION   target
+VERSION     target
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+ORIGIN
+        1 tacatatcca tacgacatcg tacgatcgta cataggttac atatacca
+//

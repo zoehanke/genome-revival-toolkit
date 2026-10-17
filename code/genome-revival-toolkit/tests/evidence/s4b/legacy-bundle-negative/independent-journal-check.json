@@ -1,0 +1,274 @@
+{
+  "scope": "Independent hashlib plus public rfc8785 and jsonschema; no Core chain/ID/validation imports.",
+  "all_hashes_match": true,
+  "events": [
+    {
+      "seq": 1,
+      "type": "run.created",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 2,
+      "type": "goal.declared",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 3,
+      "type": "pipeline.declared",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 4,
+      "type": "declaration.recorded",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 5,
+      "type": "step.started",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 6,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 7,
+      "type": "step.completed",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 8,
+      "type": "run.completed",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 9,
+      "type": "call.recorded",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": [
+        {
+          "path": [
+            "payload"
+          ],
+          "validator": "required",
+          "message": "'params' is a required property"
+        },
+        {
+          "path": [
+            "payload"
+          ],
+          "validator": "required",
+          "message": "'params_digest' is a required property"
+        }
+      ]
+    },
+    {
+      "seq": 10,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 11,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 12,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 13,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 14,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 15,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 16,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 17,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 18,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 19,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 20,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 21,
+      "type": "judge.finished",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 22,
+      "type": "call.recorded",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": [
+        {
+          "path": [
+            "payload"
+          ],
+          "validator": "required",
+          "message": "'params' is a required property"
+        },
+        {
+          "path": [
+            "payload"
+          ],
+          "validator": "required",
+          "message": "'params_digest' is a required property"
+        }
+      ]
+    },
+    {
+      "seq": 23,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 24,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 25,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 26,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 27,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 28,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 29,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 30,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 31,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 32,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 33,
+      "type": "verdict.issued",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    },
+    {
+      "seq": 34,
+      "type": "judge.finished",
+      "hash_matches_D9_formula": true,
+      "prev_matches": true,
+      "current_schema_errors": []
+    }
+  ]
+}

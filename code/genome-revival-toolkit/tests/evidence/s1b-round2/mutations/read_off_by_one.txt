@@ -1,0 +1,26 @@
+F
+======================================================================
+FAIL: test_coverage_first_usable_base_is_after_primer_plus_trim (test_biology_round2_common.Round2CommonTests.test_coverage_first_usable_base_is_after_primer_plus_trim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<SOURCE>\tests\unit\test_biology_round2_common.py", line 54, in test_coverage_first_usable_base_is_after_primer_plus_trim
+    self.assertEqual(result["forward_positions"], [5, 6, 7])
+AssertionError: Lists differ: [4, 5, 6, 7] != [5, 6, 7]
+
+First differing element 0:
+4
+5
+
+First list contains 1 additional elements.
+First extra element 3:
+7
+
+- [4, 5, 6, 7]
+?  ---
+
++ [5, 6, 7]
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)

@@ -1,0 +1,18 @@
+[
+  {
+    "mutation": "create_reverts_to_dev_tree",
+    "changed_from": "        release=release_id()",
+    "changed_to": "        release='dev-tree'",
+    "test": "test_package_records_manifest_digest_and_detects_one_byte_change",
+    "exit_code": 1,
+    "mutation_detected": true
+  },
+  {
+    "mutation": "verify_ignores_different_release",
+    "changed_from": "if installed_release!='dev-tree' and manifest['release_id']!=installed_release:",
+    "changed_to": "if False:",
+    "test": "test_installed_seal_verifies_portably_but_different_release_is_rejected",
+    "exit_code": 1,
+    "mutation_detected": true
+  }
+]

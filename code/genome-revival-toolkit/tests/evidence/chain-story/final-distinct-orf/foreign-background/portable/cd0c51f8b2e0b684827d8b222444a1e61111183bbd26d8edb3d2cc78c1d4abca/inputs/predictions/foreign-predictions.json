@@ -1,0 +1,32 @@
+{
+  "schema": "identity-expected-results-v1",
+  "assay_id": "flanking",
+  "backgrounds": [
+    {
+      "id": "original",
+      "reference_sha256": "8be3b0738ce1a0288169253d547fe62e9faea5857baefc174c5cab9bdcd4dbec",
+      "primer_pair": [
+        "left_forward",
+        "right_reverse"
+      ],
+      "expected": {
+        "product_count": 1,
+        "product_bp": 340,
+        "status": "DISTINGUISHABLE"
+      }
+    },
+    {
+      "id": "edited",
+      "reference_sha256": "71f23c69d8dada4bab2b0f179930d93d2acc4a45adf3f7c0e78fa7fdc63a97d9",
+      "primer_pair": [
+        "left_forward",
+        "right_reverse"
+      ],
+      "expected": {
+        "product_count": 1,
+        "product_bp": 400,
+        "status": "DISTINGUISHABLE"
+      }
+    }
+  ]
+}

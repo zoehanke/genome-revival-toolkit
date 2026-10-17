@@ -1,0 +1,25 @@
+{
+  "schema_id": "pipeline-revision-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "Add a top-level field not in the closed contract."
+  },
+  "data": {
+    "schema": "pipeline-revision-v1",
+    "expected_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+    "trigger": {
+      "kind": "user_request",
+      "event_refs": [],
+      "quote": "Use a new synthetic input."
+    },
+    "reason": "Change requested before execution.",
+    "operations": [
+      {
+        "op": "set_outputs",
+        "outputs": []
+      }
+    ],
+    "undeclared_field": true
+  }
+}

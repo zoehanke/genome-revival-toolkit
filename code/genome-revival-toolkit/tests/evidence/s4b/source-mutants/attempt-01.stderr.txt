@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "<SOURCE>\tests\evidence\s4b\run-source-mutants.py", line 31, in <module>
+    assert data.count(before) == 1
+           ^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

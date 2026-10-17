@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:grt:schema:call.recorded-payload-v1",
+  "title": "call.recorded-payload-v1",
+  "x-spec-ref": "D6; D9; Appendix E call.recorded; C3 / SPEC 945d702",
+  "$defs": {
+    "value": {
+      "anyOf": [
+        {
+          "type": [
+            "null",
+            "boolean",
+            "integer",
+            "string"
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        {
+          "type": "object",
+          "patternProperties": {
+            "^.*$": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "parent": {
+      "type": "string"
+    },
+    "capability": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)+$"
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(-[0-9A-Za-z.-]+)?(\\+[0-9A-Za-z.-]+)?$"
+        },
+        "declaration_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "code_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "declaration_digest",
+        "code_digest"
+      ],
+      "additionalProperties": false
+    },
+    "input_ids": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "outputs": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "additionalProperties": false
+    },
+    "failure": {
+      "$ref": "urn:grt:schema:failure-v1"
+    },
+    "duration_ms": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "params": {
+      "type": "object",
+      "patternProperties": {
+        "^.*$": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "additionalProperties": false
+    },
+    "params_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "parent",
+    "capability",
+    "input_ids",
+    "duration_ms",
+    "params",
+    "params_digest"
+  ],
+  "additionalProperties": false,
+  "oneOf": [
+    {
+      "required": [
+        "outputs"
+      ],
+      "not": {
+        "required": [
+          "failure"
+        ]
+      }
+    },
+    {
+      "required": [
+        "failure"
+      ],
+      "not": {
+        "required": [
+          "outputs"
+        ]
+      }
+    }
+  ]
+}

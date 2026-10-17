@@ -1,0 +1,2086 @@
+[
+  {
+    "arguments": [
+      "describe",
+      "kits"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "description": [
+          {
+            "name": "construct",
+            "version": "0.0.0",
+            "manifest_sha256": "a7d539cb3ba11889aca7f5a6a2b0dfe1d0263048b96f0e0aef5a02a57ab9c208",
+            "code_digest": "3070fb369e25b86d406a81163555923be68b2c05a0a423a49d9d0f4c694371ae",
+            "origin": "bundled",
+            "source": "bundled Kit directory"
+          },
+          {
+            "name": "cut-plasmid",
+            "version": "0.1.0",
+            "manifest_sha256": "f8d1c1fbfaae56d33d7779d5e79b4843884995da55cc0ec0042529e122915857",
+            "code_digest": "a1f6908822ce2d0789d96cb09a10a10407f8cc8df222df6e1c612f3844bc4488",
+            "origin": "bundled",
+            "source": "bundled Kit directory"
+          },
+          {
+            "name": "genome-identity",
+            "version": "0.0.0",
+            "manifest_sha256": "5cc0da51edec0d5a5f051019f512aec5db8209801487aa5252819f347e683ffd",
+            "code_digest": "5f182414b2306fa5a6904a1dce81c455c8b245cfba1a6dabdb240a6679230dfe",
+            "origin": "bundled",
+            "source": "bundled Kit directory"
+          },
+          {
+            "name": "revival-evidence",
+            "version": "0.0.0",
+            "manifest_sha256": "b70a4dba3cb0b25cd1c2b3429b871baeccf576fde6062292030ca92365193d74",
+            "code_digest": "96b1b881c11de5271d8af8118f56928e8ffa099e27e979ae4348bfc7d3e96fd3",
+            "origin": "bundled",
+            "source": "bundled Kit directory"
+          },
+          {
+            "name": "phrase-counter",
+            "version": "0.0.0",
+            "manifest_sha256": "1338f608d9a7f04815e7d947304b7965fa234acbf21e13da0a0533f39381cd63",
+            "code_digest": "a87c30e37b781bcc2aa4177c04ead74d0462945a90e87be335b1d2c1f7e1fa9b",
+            "origin": "external",
+            "source": "explicit Kit directory"
+          }
+        ],
+        "kit_diagnostics": [],
+        "notices": [
+          "External Kit phrase-counter will run code with your permissions; this version has no sandbox."
+        ],
+        "unavailable": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "describe",
+      "capability",
+      "phrase_counter.count_words"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "description": {
+          "schema": "capability-v1",
+          "id": "phrase_counter.count_words",
+          "version": "0.0.0",
+          "role": "ACTION",
+          "summary": "Count whitespace-separated words and apply a sourced tutorial threshold.",
+          "effects": [
+            "pure"
+          ],
+          "deterministic": true,
+          "requires_runtime": [],
+          "inputs": [],
+          "params": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "outputs": [
+            {
+              "name": "report",
+              "type": "document",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "word_count": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minimum_words": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "meets_minimum": {
+                    "type": "boolean"
+                  },
+                  "rule_id": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text",
+                  "word_count",
+                  "minimum_words",
+                  "meets_minimum",
+                  "rule_id"
+                ],
+                "additionalProperties": false
+              },
+              "output_role": "analysis"
+            }
+          ],
+          "step_checks": [
+            "phrase_counter.check_count"
+          ],
+          "final_checks": [
+            {
+              "check": "phrase_counter.check_count"
+            }
+          ],
+          "does_not_establish": [
+            "This is a tutorial example, not any experimental or scientific claim."
+          ],
+          "source": {
+            "algorithm_refs": [
+              "README.md: Counting contract; knowledge/minimum_words.json"
+            ],
+            "implemented_in": "grt_kit_phrase_counter.capabilities.count:count_words"
+          },
+          "owner": "kit:phrase-counter",
+          "granularity": "atomic",
+          "authorship": {
+            "kind": "ai",
+            "tool_or_model": "Codex",
+            "date": "2026-10-17"
+          }
+        },
+        "kit_diagnostics": [],
+        "notices": [
+          "External Kit phrase-counter will run code with your permissions; this version has no sandbox."
+        ],
+        "unavailable": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "describe",
+      "capability",
+      "phrase_counter.check_count"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "description": {
+          "schema": "capability-v1",
+          "id": "phrase_counter.check_count",
+          "version": "0.0.0",
+          "role": "CHECK",
+          "summary": "Independently check retained counts and decisions against recorded text and the frozen rule.",
+          "effects": [
+            "pure"
+          ],
+          "deterministic": true,
+          "requires_runtime": [],
+          "inputs": [],
+          "params": {
+            "type": "object",
+            "properties": {},
+            "additionalProperties": false
+          },
+          "outputs": [],
+          "step_checks": [],
+          "final_checks": [],
+          "does_not_establish": [
+            "This is a tutorial example, not any experimental or scientific claim."
+          ],
+          "source": {
+            "algorithm_refs": [
+              "README.md: Counting contract; knowledge/minimum_words.json"
+            ],
+            "implemented_in": "grt_kit_phrase_counter.capabilities.check:check_count"
+          },
+          "owner": "kit:phrase-counter",
+          "granularity": "atomic",
+          "authorship": {
+            "kind": "ai",
+            "tool_or_model": "Codex",
+            "date": "2026-10-17"
+          },
+          "scope": "content_model",
+          "evaluates_constraint": false,
+          "offline": true,
+          "fixtures": {
+            "pass": "capabilities/fixtures/count.pass.json",
+            "fail": "capabilities/fixtures/count.fail.json"
+          }
+        },
+        "kit_diagnostics": [],
+        "notices": [
+          "External Kit phrase-counter will run code with your permissions; this version has no sandbox."
+        ],
+        "unavailable": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "describe",
+      "template",
+      "phrase-counter.count"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "description": {
+          "steps": [
+            {
+              "why": "Count a tutorial phrase and apply the frozen example rule.",
+              "use": "phrase_counter.count_words@0.0.0",
+              "inputs": {},
+              "step_id": "count",
+              "params": {
+                "text": "{{text}}"
+              }
+            }
+          ],
+          "params_schema": {
+            "properties": {
+              "text": {
+                "description": "Phrase to count; whitespace separates words.",
+                "type": "string"
+              },
+              "goal_digest": {
+                "description": "Digest returned by goal declare.",
+                "type": "string"
+              }
+            },
+            "type": "object",
+            "required": [
+              "goal_digest",
+              "text"
+            ],
+            "additionalProperties": false
+          },
+          "authorship": {
+            "tool_or_model": "Codex",
+            "kind": "ai",
+            "date": "2026-10-17"
+          },
+          "goal_digest": "{{goal_digest}}",
+          "schema": "pipeline-template-v1",
+          "outputs": [
+            {
+              "target": "t1",
+              "name": "phrase-counter",
+              "from": {
+                "step": "count",
+                "port": "report"
+              }
+            }
+          ],
+          "version": 1
+        },
+        "kit_diagnostics": [],
+        "notices": [
+          "External Kit phrase-counter will run code with your permissions; this version has no sandbox."
+        ],
+        "unavailable": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "create",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": null,
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 1
+      },
+      "result": {
+        "created": true,
+        "release_id": "dev-tree",
+        "kit_diagnostics": [],
+        "notices": [
+          "External Kit phrase-counter will run code with your permissions; this version has no sandbox."
+        ]
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "goal",
+      "declare",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run",
+      "--request",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\phrase-counter\\examples\\goal.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": null,
+      "event_range": {
+        "from_seq": 2,
+        "to_seq": 2
+      },
+      "result": {
+        "goal_digest": "908ea4f7c95a2fc0db487aa0bb446d61675916c3a5029c8690aa616d0721c7fe",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "template",
+      "instantiate",
+      "phrase-counter.count",
+      "--request",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\template-request.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "draft": {
+          "steps": [
+            {
+              "why": "Count a tutorial phrase and apply the frozen example rule.",
+              "use": "phrase_counter.count_words@0.0.0",
+              "inputs": {},
+              "step_id": "count",
+              "params": {
+                "text": "red green blue gold"
+              }
+            }
+          ],
+          "goal_digest": "908ea4f7c95a2fc0db487aa0bb446d61675916c3a5029c8690aa616d0721c7fe",
+          "schema": "pipeline-v1",
+          "outputs": [
+            {
+              "target": "t1",
+              "name": "phrase-counter",
+              "from": {
+                "step": "count",
+                "port": "report"
+              }
+            }
+          ],
+          "version": 1,
+          "library_ref": {
+            "name": "phrase-counter.count",
+            "version": "0.0.0",
+            "template_digest": "252e6ebb8b0d4633b41c73b604b5aee6bb7646b3c066f0dd22aaa9d3ecc2cf1d"
+          }
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "pipeline",
+      "submit",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run",
+      "--request",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\pipeline.json"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "PLANNED",
+      "event_range": {
+        "from_seq": 3,
+        "to_seq": 4
+      },
+      "result": {
+        "pipeline_digest": "0e28a8b59282ef20fa2506c7f9ff7635d49bb51ffdd7e28e1758ec2a229ad460",
+        "version": 1
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "run",
+      "execute",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 5,
+        "to_seq": 8
+      },
+      "result": {
+        "state": "COMPLETED"
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "judge",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 9,
+        "to_seq": 19
+      },
+      "result": {
+        "candidate_digest": "7dab4ad8138277797cbd1888d5e815cc5b010257314e72bdd05065957f3252a1",
+        "obligation_ids": [
+          "7b4955ace7cc5217bdd15fefc158962f8ab5748198389f570af65808d9ecedbe",
+          "6ffc577ea8aa0785bd6d5dd018d74aafcda0dca7cd9dbee07dcee80f11bf8feb",
+          "fd0efff153c80677038fc5ece719de5c57f69ad2bd407d754d28f6dd81ea7b19",
+          "feec4ae35761a689afb2f7de4b31a85bcd44c9030a964695e069b00421125e6f",
+          "cf1c558676e06b34515c30fd1b712bbd9d3db580263dd1cf652178b83edd4391",
+          "9edb702a591775959b531f977eb4d055920fc875972629b9b86251d09d0ce68a",
+          "feccc9a952294fceda2ec7e9ad3b7ba820fe2a45ee26c586819ef831a80c1444",
+          "e3eff01e4c107ac92aa0c492e3725d9db177828f22d1e1899c8bc49722f8183f",
+          "ca83e64527579d304693ee93e7f0d8b00cb1e1b63ef76d9e098e75e26855ab79"
+        ],
+        "verdict_ids": [
+          "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+          "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+          "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+          "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+          "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+          "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+          "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+          "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+          "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319"
+        ],
+        "unsatisfied": [],
+        "verdicts": [
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.readback",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Exported content comparison.",
+              "evidence": {
+                "different_files": []
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+            "obligation_id": "7b4955ace7cc5217bdd15fefc158962f8ab5748198389f570af65808d9ecedbe"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.manifest",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "File list and byte hashes checked.",
+              "evidence": {
+                "listed": 1,
+                "actual": 1
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+            "obligation_id": "6ffc577ea8aa0785bd6d5dd018d74aafcda0dca7cd9dbee07dcee80f11bf8feb"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.journal_chain",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Recorded event chain checked.",
+              "evidence": {
+                "events": 11,
+                "head": "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626"
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+            "obligation_id": "fd0efff153c80677038fc5ece719de5c57f69ad2bd407d754d28f6dd81ea7b19"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.store_hashes",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Stored content identities checked.",
+              "evidence": {
+                "different_ids": []
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+                "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+            "obligation_id": "feec4ae35761a689afb2f7de4b31a85bcd44c9030a964695e069b00421125e6f"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.inputs_unchanged",
+                "version": "0.0.0"
+              },
+              "scope": "file",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Registered input copies checked.",
+              "evidence": {
+                "different_sources": []
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+                "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+                "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+            "obligation_id": "cf1c558676e06b34515c30fd1b712bbd9d3db580263dd1cf652178b83edd4391"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.nonempty",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Active goal constraints counted.",
+              "evidence": {
+                "active": 1
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+                "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+                "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+                "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+            "obligation_id": "9edb702a591775959b531f977eb4d055920fc875972629b9b86251d09d0ce68a"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.target_role_met",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Producer roles compared with target roles.",
+              "evidence": {
+                "unmet_targets": []
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+                "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+                "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+                "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+                "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+            "obligation_id": "feccc9a952294fceda2ec7e9ad3b7ba820fe2a45ee26c586819ef831a80c1444"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "check.goal.output_present",
+                "version": "0.0.0"
+              },
+              "scope": "user_goal",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": "c1",
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Bound output presence checked.",
+              "evidence": {
+                "outputs": 1,
+                "required_fields": [
+                  "word_count",
+                  "minimum_words",
+                  "meets_minimum"
+                ],
+                "missing_fields": []
+              },
+              "basis": [
+                "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+                "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+                "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+                "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+                "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+                "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+                "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+                "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+                "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+                "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+                "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+                "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+                "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+                "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+                "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+                "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f"
+              ],
+              "applicability": null,
+              "rule_refs": [],
+              "does_not_establish": [
+                "Experimental performance or correctness of a scientific conclusion."
+              ]
+            },
+            "event": "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+            "obligation_id": "e3eff01e4c107ac92aa0c492e3725d9db177828f22d1e1899c8bc49722f8183f"
+          },
+          {
+            "verdict": {
+              "schema": "verdict-v1",
+              "check": {
+                "id": "phrase_counter.check_count",
+                "version": "0.0.0"
+              },
+              "scope": "content_model",
+              "moment": "final",
+              "subject": {
+                "kind": "run",
+                "id": "d8ada97df2926055"
+              },
+              "constraint_id": null,
+              "outcome": "PASS",
+              "issuer": "check_capability",
+              "summary": "Retained word counts and threshold decisions checked against recorded text.",
+              "evidence": {
+                "matches": [
+                  true
+                ]
+              },
+              "basis": [],
+              "applicability": null,
+              "rule_refs": [
+                "a9419bc2fe4eb40dff5cda10caeff87646856a2e997494c322d2c4d444a03dfa"
+              ],
+              "does_not_establish": [
+                "This is a tutorial example, not any experimental or scientific claim."
+              ]
+            },
+            "event": "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+            "obligation_id": "ca83e64527579d304693ee93e7f0d8b00cb1e1b63ef76d9e098e75e26855ab79"
+          }
+        ],
+        "not_rerun": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "Unsealed",
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "seal",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 20,
+        "to_seq": 31
+      },
+      "result": {
+        "sealed": true,
+        "seal_id": "cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a",
+        "manifest": "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run\\sealed\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a\\manifest.json",
+        "present_files": [
+          "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run\\sealed\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a\\phrase-counter.json",
+          "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run\\sealed\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a\\views\\runcard.html",
+          "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run\\sealed\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a\\views\\report.md"
+        ],
+        "labels": {
+          "EXTERNAL_KIT": "External Kit code was loaded",
+          "review": "reviewed 0 / stale 0 / none 6"
+        }
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\run"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 40
+      },
+      "result": {
+        "verified": true,
+        "seal_id": "cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a",
+        "files_checked": 19,
+        "verdicts": [
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.readback",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Exported content comparison.",
+            "evidence": {
+              "different_files": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.manifest",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "File list and byte hashes checked.",
+            "evidence": {
+              "listed": 19,
+              "actual": 19
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.journal_chain",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Recorded event chain checked.",
+            "evidence": {
+              "events": 30,
+              "head": "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.store_hashes",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Stored content identities checked.",
+            "evidence": {
+              "different_ids": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.inputs_unchanged",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Registered input copies checked.",
+            "evidence": {
+              "different_sources": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.nonempty",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Active goal constraints counted.",
+            "evidence": {
+              "active": 1
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.target_role_met",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Producer roles compared with target roles.",
+            "evidence": {
+              "unmet_targets": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.output_present",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": "c1",
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Bound output presence checked.",
+            "evidence": {
+              "outputs": 1,
+              "required_fields": [
+                "word_count",
+                "minimum_words",
+                "meets_minimum"
+              ],
+              "missing_fields": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "phrase_counter.check_count",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Retained word counts and threshold decisions checked against recorded text.",
+            "evidence": {
+              "matches": [
+                true
+              ]
+            },
+            "basis": [],
+            "applicability": null,
+            "rule_refs": [
+              "a9419bc2fe4eb40dff5cda10caeff87646856a2e997494c322d2c4d444a03dfa"
+            ],
+            "does_not_establish": [
+              "This is a tutorial example, not any experimental or scientific claim."
+            ]
+          }
+        ],
+        "not_rerun": [],
+        "unsatisfied": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\portable\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a"
+    ],
+    "exit_code": 0,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": {
+        "from_seq": 1,
+        "to_seq": 30
+      },
+      "result": {
+        "verified": true,
+        "seal_id": "cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a",
+        "files_checked": 19,
+        "verdicts": [
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.readback",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Exported content comparison.",
+            "evidence": {
+              "different_files": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.manifest",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "File list and byte hashes checked.",
+            "evidence": {
+              "listed": 19,
+              "actual": 19
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.journal_chain",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Recorded event chain checked.",
+            "evidence": {
+              "events": 30,
+              "head": "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.store_hashes",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Stored content identities checked.",
+            "evidence": {
+              "different_ids": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.inputs_unchanged",
+              "version": "0.0.0"
+            },
+            "scope": "file",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Registered input copies checked.",
+            "evidence": {
+              "different_sources": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.nonempty",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Active goal constraints counted.",
+            "evidence": {
+              "active": 1
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.target_role_met",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Producer roles compared with target roles.",
+            "evidence": {
+              "unmet_targets": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "check.goal.output_present",
+              "version": "0.0.0"
+            },
+            "scope": "user_goal",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": "c1",
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Bound output presence checked.",
+            "evidence": {
+              "outputs": 1,
+              "required_fields": [
+                "word_count",
+                "minimum_words",
+                "meets_minimum"
+              ],
+              "missing_fields": []
+            },
+            "basis": [
+              "8e29b60a9a544511634547196ba4fe4d832bed4c0dfb3ed9b5c58645ee62c2af",
+              "b042072981a102d40b4206969e854b5eea23f27d261407d9ba98a8706422299c",
+              "5c2212f6419d0bd0260daf63a3b6f2ee70491ffb5f6f3d2d13e410274ae87f9c",
+              "42a403eb894e74318e92a4e26c786689c3116694a6133cd1feeaf54af47d1c1e",
+              "942b2594b749e57340602b42206c967aece756931f3a7410211810369f178018",
+              "cdd1abf541a1be496e33ecebd7d1f70dfc1b608df4c28c5f5a5dab25332f9a94",
+              "06239964d0fc8f4dc47d59ad381514109581ae535b38a048443f63e2ee796deb",
+              "6c002a0625631089b7ffd0498046ea68b5f29f7254cedbe9b48755e8ff5bad06",
+              "1c798e786cd8d7bd64df6a476651a652a5934d691fcffdb298aeba389cc48797",
+              "c6e78ffeddcf55e8e7c2b01ad12b7eea26c656fdf1c993f2e09102274594a2ec",
+              "e75d8c62ae90bbb0ae135cba14037340e0c57c8f5ecb04e8fbf6bb73b1bec626",
+              "70b59ce8ddb39f49eb9be684208412971fa3fcc725990cba76188b1666feb5e5",
+              "2205ca786269ee58e718553e90e7c67f88dc49e73355c529702a040710f12e03",
+              "e2306c6b9e1613af30b517d3746b39730a2054c42a069c3de45e2cf159bc5779",
+              "42cd8fa058ff66cffe4f59f19f1ec69e8f01b16cf11e66c711d80501bdf7d11f",
+              "03b36adc0f8ed74465b7330678959492349d9658e381836adec042eef7667d2f",
+              "bee13926cfcbd8d78c1956b6dd729c56582bba763ae77663f7e1289a9982b18f",
+              "0a99a288d648d507d3553d41112287c406a8f6e658f330373cda41fd043a4319",
+              "3801c6188f980771a4d2b3da59ad6a559b08985331d114eabb280acee9063734",
+              "7a1ced1754d4b6e87a712409457f78b3979c91f5394c2074e1acf7c2bdc64c6c",
+              "260e7df30e5d3a03fac40fe454f2550514c35c792d0822c2b7bd8ffc5bc44901",
+              "738e1405bc0936f0170693d789e61ea8212ecb0e453da43313eade2d080d015f",
+              "351ec8eae5285bf040c2fc93c3671c7c6316264b930108d3821ead082cde2299",
+              "6c3b1cfa0984636a0d8bbc6b7931ea0299cccaca200b8dfd9f3fc5d2ff6ab2ef",
+              "c96e04a38df94217c43b4e674f994605451dd5fed3a80d6520eef8cb9923d703",
+              "0e1cab90022c189365c289b680e934e726b1670aaa9a688a85d6cfbd201bbb34",
+              "cd9f87415f832ec90bf98f0772eb4990272d948a58c82acf55a35c6664ccaabd",
+              "a26bc57ceb8cb6e0a4f2643386c21fa57b23a48928f54a71311414863b44cc28",
+              "f2b49501e7672bd314c66fe40808aece7fc01e5b7def1318e14bbf2d3b4f6cf9",
+              "583c4de0ec0cf31e372ffdefcd1045bce6a8aac16402a9e11f1705f0203d399e"
+            ],
+            "applicability": null,
+            "rule_refs": [],
+            "does_not_establish": [
+              "Experimental performance or correctness of a scientific conclusion."
+            ]
+          },
+          {
+            "schema": "verdict-v1",
+            "check": {
+              "id": "phrase_counter.check_count",
+              "version": "0.0.0"
+            },
+            "scope": "content_model",
+            "moment": "final",
+            "subject": {
+              "kind": "run",
+              "id": "d8ada97df2926055"
+            },
+            "constraint_id": null,
+            "outcome": "PASS",
+            "issuer": "check_capability",
+            "summary": "Retained word counts and threshold decisions checked against recorded text.",
+            "evidence": {
+              "matches": [
+                true
+              ]
+            },
+            "basis": [],
+            "applicability": null,
+            "rule_refs": [
+              "a9419bc2fe4eb40dff5cda10caeff87646856a2e997494c322d2c4d444a03dfa"
+            ],
+            "does_not_establish": [
+              "This is a tutorial example, not any experimental or scientific claim."
+            ]
+          }
+        ],
+        "not_rerun": [],
+        "unsatisfied": []
+      },
+      "problems": [],
+      "next": [],
+      "labels": [
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  },
+  {
+    "arguments": [
+      "verify",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\tampered\\cffebbbed44ec71671829ae98d4fb2f9cb45421bc5782504b559351b9ba51b0a"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": null,
+      "state": null,
+      "event_range": null,
+      "result": {
+        "failure": {
+          "code": "STORE_CORRUPT",
+          "category": "INTEGRITY",
+          "message": "Sealed file hash differs.",
+          "details": {
+            "path": "phrase-counter.json"
+          },
+          "recovery": "Stop consuming the object and recover the original content from an intact copy.",
+          "retryable": false,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "STORE_CORRUPT",
+          "category": "INTEGRITY",
+          "message": "Sealed file hash differs.",
+          "recovery": "Stop consuming the object and recover the original content from an intact copy.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": []
+    }
+  },
+  {
+    "arguments": [
+      "review",
+      "sign",
+      "--run",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\retained-run",
+      "--request",
+      "<TEMP>\\grt-add-a-kit-fc208ccc92674adaa61a2a42bc3ce52e\\review-request.json"
+    ],
+    "exit_code": 1,
+    "receipt": {
+      "run_id": "d8ada97df2926055",
+      "state": "COMPLETED",
+      "event_range": null,
+      "result": {
+        "failure": {
+          "code": "CHECK_UNAVAILABLE",
+          "category": "ENVIRONMENT",
+          "message": "Interactive human review signing is deferred beyond S1; no review has been signed.",
+          "details": {},
+          "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+          "retryable": true,
+          "cause_chain": []
+        }
+      },
+      "problems": [
+        {
+          "code": "CHECK_UNAVAILABLE",
+          "category": "ENVIRONMENT",
+          "message": "Interactive human review signing is deferred beyond S1; no review has been signed.",
+          "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+          "location": ""
+        }
+      ],
+      "next": [],
+      "labels": [
+        "External Kit code was loaded",
+        "reviewed 0 / stale 0 / none 6"
+      ]
+    }
+  }
+]

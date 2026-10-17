@@ -1,0 +1,329 @@
+{
+  "schema": "capability-v1",
+  "id": "construct.design_donor",
+  "version": "0.0.0",
+  "role": "ACTION",
+  "summary": "Prepare a linear donor by explicit PCR or PCR-fragment Gibson assembly.",
+  "effects": [
+    "pure"
+  ],
+  "deterministic": true,
+  "requires_runtime": [
+    {
+      "kind": "python_package",
+      "name": "biopython",
+      "probe": null
+    }
+  ],
+  "inputs": [
+    {
+      "name": "reference",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "reference"
+    },
+    {
+      "name": "cargo",
+      "type": "material",
+      "required": true,
+      "constraints": {},
+      "description": "cargo"
+    },
+    {
+      "name": "donor_template",
+      "type": "material",
+      "required": false,
+      "constraints": {},
+      "description": "donor template"
+    }
+  ],
+  "params": {
+    "type": "object",
+    "properties": {
+      "start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "arm_length": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "cargo_start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "cargo_end": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "preparation_method": {
+        "enum": [
+          "gibson",
+          "pcr"
+        ]
+      },
+      "primer_length": {
+        "type": "integer",
+        "minimum": 2
+      },
+      "overlap": {
+        "type": "integer",
+        "minimum": 1
+      },
+      "donor_start": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "donor_end": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "required": [
+      "start",
+      "end",
+      "arm_length",
+      "cargo_start",
+      "cargo_end",
+      "preparation_method",
+      "primer_length"
+    ],
+    "additionalProperties": false
+  },
+  "outputs": [
+    {
+      "name": "product",
+      "type": "material",
+      "output_role": "construct"
+    },
+    {
+      "name": "edited",
+      "type": "material",
+      "output_role": null
+    },
+    {
+      "name": "oligos",
+      "type": "materials",
+      "output_role": null
+    },
+    {
+      "name": "intermediates",
+      "type": "materials",
+      "output_role": null
+    },
+    {
+      "name": "primers",
+      "type": "document",
+      "output_role": "primer_set",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "primer-set-v1"
+          },
+          "primers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "sequence": {
+                  "type": "string",
+                  "pattern": "^[ACGT]+$"
+                },
+                "core_length": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "purpose": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "sequence",
+                "core_length",
+                "purpose"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 2
+          },
+          "pairs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "forward": {
+                  "type": "string"
+                },
+                "reverse": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "forward",
+                "reverse"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "schema",
+          "primers",
+          "pairs"
+        ],
+        "additionalProperties": false
+      }
+    },
+    {
+      "name": "route",
+      "type": "document",
+      "output_role": "analysis",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "schema": {
+            "const": "route-plan-v1"
+          },
+          "method": {
+            "enum": [
+              "gibson",
+              "pcr"
+            ]
+          },
+          "laboratory_status": {
+            "const": "NOT_PERFORMED"
+          },
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "arm_length": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "cargo_start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "cargo_end": {
+                "type": "integer",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "start",
+              "end",
+              "arm_length",
+              "cargo_start",
+              "cargo_end"
+            ],
+            "additionalProperties": false
+          },
+          "reference_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "cargo_id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "reactions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "method": {
+                  "enum": [
+                    "pcr",
+                    "gibson"
+                  ]
+                },
+                "inputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "minItems": 2
+                },
+                "params": {
+                  "type": "object"
+                },
+                "product_id": {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                }
+              },
+              "required": [
+                "id",
+                "method",
+                "inputs",
+                "params",
+                "product_id"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1
+          }
+        },
+        "required": [
+          "schema",
+          "method",
+          "laboratory_status",
+          "parameters",
+          "reference_id",
+          "cargo_id",
+          "reactions"
+        ],
+        "additionalProperties": false
+      }
+    }
+  ],
+  "step_checks": [],
+  "final_checks": [
+    {
+      "check": "construct.check_preparation"
+    }
+  ],
+  "does_not_establish": [
+    "Successful laboratory donor preparation",
+    "Transformation efficiency",
+    "Authentic integration locus",
+    "Functional revival"
+  ],
+  "source": {
+    "algorithm_refs": [
+      "spec/SPEC.md D3 D7 D11",
+      "MIGRATION-LOG.md: S5a"
+    ],
+    "implemented_in": "construct.capabilities.design:design_donor"
+  },
+  "owner": "kit:construct",
+  "granularity": "composite",
+  "model": "construct.model_donor"
+}

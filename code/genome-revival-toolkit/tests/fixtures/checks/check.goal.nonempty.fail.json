@@ -1,0 +1,9 @@
+{
+  "check": "check.goal.nonempty",
+  "variant": "fail",
+  "expected": "UNKNOWN",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Remove all active constraints."
+  }
+}

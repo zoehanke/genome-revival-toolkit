@@ -1,0 +1,28 @@
+{
+  "schema_id": "step.started-payload-v1",
+  "expected_valid": false,
+  "oracle": {
+    "kind": "construction",
+    "reason": "SPEC 12c4274 A14 / A2 / A9: source ref must use its specified representation."
+  },
+  "data": {
+    "step_id": "s1",
+    "capability": {
+      "id": "demo.length",
+      "version": "0.0.0",
+      "declaration_digest": "1111111111111111111111111111111111111111111111111111111111111111",
+      "code_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+    },
+    "inputs": {
+      "sequence": {
+        "id": "1111111111111111111111111111111111111111111111111111111111111111",
+        "origin": {
+          "kind": "source",
+          "ref": null
+        }
+      }
+    },
+    "params": {},
+    "params_digest": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}

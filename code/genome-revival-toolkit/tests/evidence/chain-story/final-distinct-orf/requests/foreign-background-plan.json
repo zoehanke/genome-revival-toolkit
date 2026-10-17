@@ -1,0 +1,57 @@
+{
+  "schema": "pipeline-v1",
+  "version": 1,
+  "goal_digest": "c5fc49558928df31bdde5f3ff39c7559a85c35b613c61c1ecf8970983d664e18",
+  "steps": [
+    {
+      "step_id": "s1",
+      "use": "evidence.parse_observations",
+      "inputs": {
+        "observations": {
+          "source": "observations"
+        },
+        "predictions": {
+          "source": "predictions"
+        }
+      },
+      "params": {
+        "observation_origin": "SYNTHETIC_NOT_EXPERIMENTAL"
+      },
+      "why": "Parse submitted observation records and retain missingness and source identity."
+    },
+    {
+      "step_id": "s2",
+      "use": "evidence.assess_observations",
+      "inputs": {
+        "document": {
+          "step": "s1",
+          "port": "document"
+        }
+      },
+      "params": {
+        "comparisons": [
+          {
+            "experiment_group": "fusion",
+            "control_group": "control"
+          }
+        ]
+      },
+      "why": "Apply sourced evidence boundaries and report tests that were not performed."
+    }
+  ],
+  "outputs": [
+    {
+      "name": "assessment",
+      "from": {
+        "step": "s2",
+        "port": "assessment"
+      },
+      "target": "t1"
+    }
+  ],
+  "library_ref": {
+    "name": "revival-evidence.assess_observations",
+    "version": "0.0.0",
+    "template_digest": "cf15cc055bfe6e8d561d4a18bd93014b5f6daee455f4a7aeade0826b0e9d11f2"
+  }
+}

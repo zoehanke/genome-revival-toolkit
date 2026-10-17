@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<string>", line 3, in <module>
+AssertionError
+
+The ad-hoc driver incorrectly expected INCOMPLETE with three total markers.
+Task described three README markers, not the total across shipped documents.
+Actual checker output (retained in 001.stdout.txt): FAIL, four markers total,
+including one architecture marker, plus three existing personal-path findings.
+The checker and its expectations were not changed. A later retained invocation
+records its real FAIL status and the build refusal without the incorrect driver
+assumption. No release ZIP or clean_env_verify execution is counted as passing.

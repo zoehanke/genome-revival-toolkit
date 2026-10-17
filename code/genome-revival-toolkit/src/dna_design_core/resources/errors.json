@@ -1,0 +1,210 @@
+[
+  {
+    "code": "PLAN_SCHEMA_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "The pipeline does not match its schema.",
+    "retryable": false,
+    "recovery": "Correct the request against pipeline-v1 and submit it again.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_ID_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "A step identifier is malformed, duplicated or conflicts with a source.",
+    "retryable": false,
+    "recovery": "Use a unique step identifier matching the documented pattern.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_REF_UNRESOLVED",
+    "category": "INVALID_INPUT",
+    "meaning": "An input or output reference cannot be resolved.",
+    "retryable": false,
+    "recovery": "Bind the reference to an earlier available step, source or artifact; specify an index when required.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_CAPABILITY_UNKNOWN",
+    "category": "INVALID_INPUT",
+    "meaning": "The planned capability is not available in the recorded catalog.",
+    "retryable": false,
+    "recovery": "Use describe to select an available ACTION capability with a matching version.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_INPUT_UNBOUND",
+    "category": "INVALID_INPUT",
+    "meaning": "A required input is absent or has the wrong type.",
+    "retryable": false,
+    "recovery": "Provide each required input using the capability declaration.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_PARAM_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "A parameter violates the capability schema.",
+    "retryable": false,
+    "recovery": "Correct the named parameter; provide sequences longer than the literal limit as files.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_WHY_MISSING",
+    "category": "INVALID_INPUT",
+    "meaning": "A step has no valid advance reason.",
+    "retryable": false,
+    "recovery": "Provide a non-empty why value within the documented length limit.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_OUTPUT_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "An output binding names an invalid port or target.",
+    "retryable": false,
+    "recovery": "Correct the output binding; an empty output list is allowed for a diagnostic plan.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_GOAL_BINDING_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "A constraint refers to a nonexistent goal target.",
+    "retryable": false,
+    "recovery": "Bind the constraint to a target declared in the goal.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "PLAN_EXPECT_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "A host expectation is malformed or incompatible with its input.",
+    "retryable": false,
+    "recovery": "Use a supported expectation operator with compatible values and a valid output pointer.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "CAPABILITY_UNKNOWN",
+    "category": "ENVIRONMENT",
+    "meaning": "The requested capability implementation is unavailable.",
+    "retryable": true,
+    "recovery": "Restore the recorded local capability; replace a failed step through a new pipeline revision.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "CAPABILITY_VERSION_MISMATCH",
+    "category": "ENVIRONMENT",
+    "meaning": "The available capability version differs from the recorded version.",
+    "retryable": false,
+    "recovery": "Provide the recorded version or explicitly revise the plan; do not substitute silently.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "CAPABILITY_OUTPUT_INVALID",
+    "category": "CAPABILITY_FAILURE",
+    "meaning": "The returned output violates the capability declaration.",
+    "retryable": false,
+    "recovery": "Retain the failure and report the contract mismatch; do not deliver the invalid output.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "CAPABILITY_INTERNAL",
+    "category": "INTERNAL",
+    "meaning": "An undeclared exception occurred inside a capability.",
+    "retryable": false,
+    "recovery": "Retain the safe failure details and report the implementation error.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "SOURCE_CHANGED",
+    "category": "INTEGRITY",
+    "meaning": "A source no longer matches its registered hash.",
+    "retryable": false,
+    "recovery": "Restore the registered input or explicitly declare a new input; do not overwrite the original history.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "STEP_EXPECTATION_FAILED",
+    "category": "CAPABILITY_FAILURE",
+    "meaning": "A host expectation was false.",
+    "retryable": false,
+    "recovery": "Inspect the retained result, then add a replacement step in a justified revision.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "STEP_INTERRUPTED",
+    "category": "ENVIRONMENT",
+    "meaning": "A started step has no completed or failed event after interruption.",
+    "retryable": true,
+    "recovery": "Retain the interrupted step and add a replacement step before continuing.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "JOURNAL_CHAIN_BROKEN",
+    "category": "INTEGRITY",
+    "meaning": "The event chain is damaged outside the recoverable tail.",
+    "retryable": false,
+    "recovery": "Stop execution; inspect the existing journal read-only and preserve the damaged copy.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "RUN_LOCKED",
+    "category": "ENVIRONMENT",
+    "meaning": "Another process holds the run lock.",
+    "retryable": true,
+    "recovery": "Wait for the owning process to finish, then retry the command; do not remove its active lock.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "STORE_CORRUPT",
+    "category": "INTEGRITY",
+    "meaning": "Stored content differs from its recorded digest.",
+    "retryable": false,
+    "recovery": "Stop consuming the object and recover the original content from an intact copy.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "CHECK_UNAVAILABLE",
+    "category": "ENVIRONMENT",
+    "meaning": "A mandatory check or its local dependency is unavailable.",
+    "retryable": true,
+    "recovery": "Restore the local check dependency and repeat judgement; keep the result UNKNOWN until checked.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "KIT_MANIFEST_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "The Kit manifest violates kit-v1.",
+    "retryable": false,
+    "recovery": "Correct the reported manifest field; keep unrelated Kits available.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "KIT_CORE_INCOMPATIBLE",
+    "category": "ENVIRONMENT",
+    "meaning": "The Kit requires a different Core version range.",
+    "retryable": false,
+    "recovery": "Use a compatible local Kit or Core version.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "KIT_NAME_CONFLICT",
+    "category": "INVALID_INPUT",
+    "meaning": "Different contributions claim the same identifier.",
+    "retryable": false,
+    "recovery": "Remove or rename the conflicting external contribution; do not select a winner by load order.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "KNOWLEDGE_SOURCE_INVALID",
+    "category": "INVALID_INPUT",
+    "meaning": "A knowledge entry has no acceptable source information.",
+    "retryable": false,
+    "recovery": "Provide the missing source, scope and limits; do not invent a citation or human verification receipt.",
+    "introduced_in": "0.0.0"
+  },
+  {
+    "code": "SEAL_RUN_NOT_COMPLETED",
+    "category": "INVALID_INPUT",
+    "meaning": "The run has not reached the sealing preconditions.",
+    "retryable": false,
+    "recovery": "Complete or revise the pending work and bind the required targets before sealing.",
+    "introduced_in": "0.0.0"
+  }
+]

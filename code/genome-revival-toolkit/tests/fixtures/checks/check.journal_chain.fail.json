@@ -1,0 +1,9 @@
+{
+  "check": "check.journal_chain",
+  "variant": "fail",
+  "expected": "FAIL",
+  "oracle": {
+    "kind": "construction",
+    "reason": "Supply a one-line empty JSON object instead of a valid event."
+  }
+}
